@@ -10,4 +10,4 @@ Turn off all the lights to progress to the next level.
 | **Move** | Left Stick/D-Pad | Arrows/WASD |
 | **Jump** | Button South (A for Xbox) | J |
 | **Interact (press switch, enter door)** | Button West (X for Xbox) | K |
-| **Back (UI)** | Button East (B for Xbox) | - |
+| **Back (UI)** | Button East (B for Xbox) | ESC |
