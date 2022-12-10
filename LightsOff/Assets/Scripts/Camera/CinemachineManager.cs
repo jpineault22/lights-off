@@ -15,7 +15,7 @@ public class CinemachineManager : MonoBehaviour
 	private void Start()
 	{
 		LevelLoader.Instance.TransitionHalfDone += OnLevelLoaded;
-		GameManager.Instance.MenuReloaded += OnMenuReloaded;
+		LevelLoader.Instance.MenuReloaded += OnMenuReloaded;
 	}
 
 	#region Event handlers

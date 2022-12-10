@@ -33,7 +33,7 @@ public class EnemyPassedOut : Enemy
 		}
 
 		// Process action for the corresponding enemy state
-		if (currentEnemyState == EnemyState.PassedOut)
+		if (currentEnemyState == EnemyState.PassedOut && GameManager.Instance.CurrentGameState == GameState.Playing)
 		{
 			DetectPlayer();
 		}

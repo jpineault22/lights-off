@@ -2,7 +2,7 @@
 
 public class OneWayPlatform : RotatableObject
 {
-	[SerializeField] private float platformWidth = 0.5f;
+	[SerializeField] private float platformWidthHalf = 0.25f;
 	[SerializeField] private DisappearingDevice disappearingDevice = default;
 
 	private EdgeCollider2D edgeCollider;
@@ -20,33 +20,33 @@ public class OneWayPlatform : RotatableObject
 		{
 			if (objectRotation == ObjectRotation.West)
 			{
-				if (PlayerController.Instance.transform.position.x + PlayerController.Instance.boxCollider.bounds.extents.x > transform.position.x - platformWidth)
+				if (PlayerController.Instance.transform.position.x + PlayerController.Instance.boxCollider.bounds.extents.x > transform.position.x - platformWidthHalf)
 				{
 					edgeCollider.isTrigger = true;
 				}
-				else if (PlayerController.Instance.transform.position.x + PlayerController.Instance.boxCollider.bounds.extents.x < transform.position.x - platformWidth)
+				else if (PlayerController.Instance.transform.position.x + PlayerController.Instance.boxCollider.bounds.extents.x < transform.position.x - platformWidthHalf)
 				{
 					edgeCollider.isTrigger = false;
 				}
 			}
 			else if (objectRotation == ObjectRotation.East)
 			{
-				if (PlayerController.Instance.transform.position.x - PlayerController.Instance.boxCollider.bounds.extents.x < transform.position.x + platformWidth)
+				if (PlayerController.Instance.transform.position.x - PlayerController.Instance.boxCollider.bounds.extents.x < transform.position.x + platformWidthHalf)
 				{
 					edgeCollider.isTrigger = true;
 				}
-				else if (PlayerController.Instance.transform.position.x - PlayerController.Instance.boxCollider.bounds.extents.x > transform.position.x + platformWidth)
+				else if (PlayerController.Instance.transform.position.x - PlayerController.Instance.boxCollider.bounds.extents.x > transform.position.x + platformWidthHalf)
 				{
 					edgeCollider.isTrigger = false;
 				}
 			}
 			else if (objectRotation == ObjectRotation.South)
 			{
-				if (PlayerController.Instance.transform.position.y + PlayerController.Instance.boxCollider.bounds.extents.y > transform.position.y - platformWidth)
+				if (PlayerController.Instance.transform.position.y + PlayerController.Instance.boxCollider.bounds.extents.y > transform.position.y - platformWidthHalf)
 				{
 					edgeCollider.isTrigger = true;
 				}
-				else if (PlayerController.Instance.transform.position.y + PlayerController.Instance.boxCollider.bounds.extents.y < transform.position.y - platformWidth)
+				else if (PlayerController.Instance.transform.position.y + PlayerController.Instance.boxCollider.bounds.extents.y < transform.position.y - platformWidthHalf)
 				{
 					edgeCollider.isTrigger = false;
 				}
@@ -55,11 +55,11 @@ public class OneWayPlatform : RotatableObject
 			{
 				// Activate/deactivate collider depending on Player's height or if the Player is climbing
 				if (PlayerController.Instance.CurrentCharacterState == CharacterState.Climbing ||
-					PlayerController.Instance.transform.position.y - PlayerController.Instance.boxCollider.bounds.extents.y < transform.position.y + platformWidth)
+					PlayerController.Instance.transform.position.y - PlayerController.Instance.boxCollider.bounds.extents.y < transform.position.y + platformWidthHalf)
 				{
 					edgeCollider.isTrigger = true;
 				}
-				else if (PlayerController.Instance.transform.position.y - PlayerController.Instance.boxCollider.bounds.extents.y > transform.position.y + platformWidth)
+				else if (PlayerController.Instance.transform.position.y - PlayerController.Instance.boxCollider.bounds.extents.y > transform.position.y + platformWidthHalf)
 				{
 					edgeCollider.isTrigger = false;
 				}

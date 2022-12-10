@@ -202,6 +202,16 @@ PrefabInstance:
       propertyPath: m_text
       value: Lights Off
       objectReference: {fileID: 0}
+    - target: {fileID: 3724841085123777780, guid: 5755d82afd44bfb46aa1231712ae114e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724841085123777780, guid: 5755d82afd44bfb46aa1231712ae114e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 446.13416
+      objectReference: {fileID: 0}
     - target: {fileID: 3724841085403035345, guid: 5755d82afd44bfb46aa1231712ae114e,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -92,8 +92,6 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Update()
     {
-        Debug.Log(CurrentCharacterState);
-        
         if (CanPerformGameplayAction())
 		{
             CheckFlipX();
@@ -157,17 +155,17 @@ public class PlayerController : Singleton<PlayerController>
 
     #region Input system methods
 
-    public void UpdateHorizontalMoveInput(InputAction.CallbackContext ctx)
+    private void UpdateHorizontalMoveInput(InputAction.CallbackContext ctx)
 	{
         horizontalMoveInput = CanPerformGameplayAction() ? ctx.ReadValue<float>() : 0;
     }
 
-    public void UpdateVerticalMoveInput(InputAction.CallbackContext ctx)
+    private void UpdateVerticalMoveInput(InputAction.CallbackContext ctx)
 	{
         verticalMoveInput = CanPerformGameplayAction() ? ctx.ReadValue<float>() : 0;
     }
 
-    public void StartJump(InputAction.CallbackContext ctx)
+    private void StartJump(InputAction.CallbackContext ctx)
     {
         if (CanPerformGameplayAction() && (isGrounded || coyoteTimeCounter > 0 || CurrentCharacterState == CharacterState.Climbing) && pivotingGateTimeCounter <= 0)
         {
@@ -182,7 +180,7 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    public void EndJump(InputAction.CallbackContext ctx)
+    private void EndJump(InputAction.CallbackContext ctx)
     {
         if (CurrentCharacterState == CharacterState.Jumping)
         {
@@ -191,7 +189,7 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    public void StartInteraction(InputAction.CallbackContext ctx)
+    private void StartInteraction(InputAction.CallbackContext ctx)
     {
         if (CanPerformGameplayAction() && interactibleGameObject != null && !CurrentCharacterState.Equals(CharacterState.Jumping) && !CurrentCharacterState.Equals(CharacterState.Falling))
         {
@@ -206,7 +204,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Move()
     {
-        bool climbingInValidDirection = false;                                                                          // Variable used to evaluate validity of the direction input when starting to climb, in order to allow it
+        bool climbingInValidDirection = false;          // Variable used to evaluate validity of the direction input when starting to climb, in order to allow it
         float playerFeetGroundedBuffer = transform.position.y - boxCollider.bounds.extents.y - groundedRadius;
         reachedLadderTop = playerFeetGroundedBuffer > highestLadderEnd - groundedRadius - spriteRenderer.bounds.extents.y && !boxCollider.IsTouchingLayers(groundLayerMask);
 
@@ -217,8 +215,8 @@ public class PlayerController : Singleton<PlayerController>
             if (CurrentCharacterState != CharacterState.Climbing)
 			{
                 // Determine if player is climbing in a valid direction
-                if (CurrentCharacterState == CharacterState.Falling || CurrentCharacterState == CharacterState.Jumping || CurrentCharacterState == CharacterState.Bouncing ||
-                    (Mathf.Abs(verticalMoveInput) >= moveInputThreshold && ((verticalMoveInput > 0 && playerFeetGroundedBuffer < highestLadderEnd - groundedRadius) || (verticalMoveInput < 0 && playerFeetGroundedBuffer > lowestLadderEnd))))
+                if (Mathf.Abs(verticalMoveInput) >= moveInputThreshold &&
+                    ((verticalMoveInput > 0 && playerFeetGroundedBuffer < highestLadderEnd - groundedRadius) || (verticalMoveInput < 0 && playerFeetGroundedBuffer > lowestLadderEnd)))
 				{
                     if (!reachedLadderTop)
 					{
@@ -255,7 +253,7 @@ public class PlayerController : Singleton<PlayerController>
             // Snap player to horizontal middle of ladder
             transform.position = new Vector2(ladderList[0].transform.position.x, transform.position.y);
 
-            // Check if reached ladder's top or bottom
+            // Check if reached ladder's bottom
             if (playerFeetGroundedBuffer > lowestLadderEnd)
 			{
                 readyToLeaveClimbingState = true;
@@ -419,6 +417,7 @@ public class PlayerController : Singleton<PlayerController>
         else if (collision.gameObject.CompareTag(Constants.TagLadder))
         {
             ladderList.Remove(collision.gameObject);
+            UpdateLadderEnds();
         }
         else if (collision.gameObject.CompareTag(Constants.TagFunctionalFan))
         {
@@ -545,7 +544,6 @@ public class PlayerController : Singleton<PlayerController>
         rb.gravityScale = gravityScale;
         climbCooldownCounter = climbCooldownTime;
         readyToLeaveClimbingState = false;
-        UpdateLadderEnds();
     }
 
     // This method is called when the player dies (touches enemy). It is soon followed by ResetCharacterForReload, called by GameManager once the death animation has finished,
@@ -578,15 +576,19 @@ public class PlayerController : Singleton<PlayerController>
         rb.velocity = Vector2.zero;
         rb.gravityScale = 0;
         boxCollider.enabled = false;
-        spriteRenderer.flipX = false;
-        facingRight = true;
         ladderList.Clear();
         nbKeys = 0;
 	}
 
-    public void ResetCharacterAfterDeath()
+    public void ResetCharacterAfterReload()
 	{
         animator.SetBool(Constants.AnimatorCharacterIsDying, false);
+        animator.SetBool(Constants.AnimatorCharacterIsJumping, false);
+        animator.SetBool(Constants.AnimatorCharacterIsFalling, false);
+        animator.SetBool(Constants.AnimatorCharacterIsClimbing, false);
+        animator.enabled = true;
+        spriteRenderer.flipX = false;
+        facingRight = true;
         boxCollider.enabled = true;
         rb.gravityScale = gravityScale;
     }

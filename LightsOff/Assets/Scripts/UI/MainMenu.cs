@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MainMenu : Singleton<MainMenu>
 {
@@ -21,6 +22,8 @@ public class MainMenu : Singleton<MainMenu>
 
 	public void PlayGame()
 	{
+		Button playButton = mainMenuFirstButton.GetComponent<Button>();     // The main menu's first button has to be the Play button for this to work.
+		playButton.interactable = false;
 		GameManager.Instance.LoadGame();
 	}
 

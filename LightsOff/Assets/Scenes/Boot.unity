@@ -535,6 +535,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: be5f7b01edd255341bbff36fb7bc8167, type: 2}
+    - target: {fileID: 1970704339554981480, guid: 019018bf2103d584daa3779cfcdc2ae1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1970704339554981481, guid: 019018bf2103d584daa3779cfcdc2ae1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -919,6 +924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   systemPrefabs: []
   testMode: 0
+  playerDoorHeightDifference: 0.5625
   player: {fileID: 0}
 --- !u!4 &2035170935
 Transform:

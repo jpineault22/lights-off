@@ -30,7 +30,7 @@ public class MovingPlatform : Device
 
 	protected bool CheckIfReachedTarget(Vector2 pTarget)
 	{
-		if (Mathf.Abs(pTarget.x - transform.position.x) <= 0.1f && Mathf.Abs(pTarget.y - transform.position.y) <= 0.1f)
+		if (Mathf.Abs(pTarget.x - transform.position.x) <= 0.01f && Mathf.Abs(pTarget.y - transform.position.y) <= 0.01f)
 		{
 			currentTargetIndex++;
 

@@ -11,8 +11,6 @@ public class GameManager : Singleton<GameManager>
 	public GameState CurrentGameState { get; private set; }
 	[HideInInspector] public GameObject player;
 
-	public event Action MenuReloaded;
-
 	private List<GameObject> instantiatedSystemPrefabs;
 
 	private Light[] levelLights;
@@ -97,9 +95,9 @@ public class GameManager : Singleton<GameManager>
 		LevelLoader.Instance.ReloadLevel();
 	}
 
-	public void ResetCharacterAfterDeath()
+	public void ResetCharacterAfterReload()
 	{
-		PlayerController.Instance.ResetCharacterAfterDeath();
+		PlayerController.Instance.ResetCharacterAfterReload();
 	}
 
 	public void ResetCharacterState()
@@ -119,12 +117,16 @@ public class GameManager : Singleton<GameManager>
 		CurrentGameState = GameState.Playing;
 	}
 
+	private void LoadMenu()
+	{
+		CurrentGameState = GameState.Menu;
+		LevelLoader.Instance.LoadScene(Constants.NameSceneStartMenu);
+	}
+
 	public void QuitToMenu()
 	{
-		LoadMenu();
-		DestroyPlayer();
-		LevelLoader.Instance.UnloadLevelToMenu();
-		MenuReloaded?.Invoke();
+		CurrentGameState = GameState.Menu;
+		LevelLoader.Instance.QuitToMenu();
 	}
 
 	public void QuitGame()
@@ -134,12 +136,6 @@ public class GameManager : Singleton<GameManager>
 	#else
 		Application.Quit();
 	#endif
-	}
-
-	private void LoadMenu()
-	{
-		CurrentGameState = GameState.Menu;
-		LevelLoader.Instance.LoadScene(Constants.NameSceneStartMenu);
 	}
 
 	private void SetPlayerPosition()
@@ -165,7 +161,7 @@ public class GameManager : Singleton<GameManager>
 		player = Spawner.Instance.InstantiatePlayer();
 	}
 
-	private void DestroyPlayer()
+	public void DestroyPlayer()
 	{
 		Spawner.Instance.DestroyPlayer(player);
 		player = null;
