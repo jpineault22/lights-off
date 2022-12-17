@@ -27,6 +27,8 @@ public class InputManager : Singleton<InputManager>
         gameplayMap = playerInput.actions.FindActionMap(Constants.InputActionMapGameplay);
         UIMap = playerInput.actions.FindActionMap(Constants.InputActionMapUI);
         CurrentControlScheme = playerInput.currentControlScheme;
+
+        DisablePlayerInput();
 	}
 
 	private void Start()
@@ -90,5 +92,15 @@ public class InputManager : Singleton<InputManager>
     public void Back(InputAction.CallbackContext ctx)
     {
         Backed?.Invoke(ctx);
+    }
+
+    public void EnablePlayerInput()
+	{
+        playerInput.enabled = true;
+	}
+
+    public void DisablePlayerInput()
+	{
+        playerInput.enabled = false;
     }
 }

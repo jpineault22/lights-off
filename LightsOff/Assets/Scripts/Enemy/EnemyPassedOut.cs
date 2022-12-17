@@ -18,33 +18,40 @@ public class EnemyPassedOut : Enemy
 
 	protected override void FixedUpdate()
 	{
-		base.FixedUpdate();
+		if (GameManager.Instance.CurrentGameState == GameState.Playing)
+		{
+			base.FixedUpdate();
 
-		// Check if player has just started climbing
-		if (PlayerController.Instance.CurrentCharacterState == CharacterState.Climbing && playerClimbingHorizontalPosition == null)
-		{
-			playerClimbingHorizontalPosition = player.transform.position.x;
-		}
+			// Check if player has just started climbing
+			if (PlayerController.Instance.CurrentCharacterState == CharacterState.Climbing && playerClimbingHorizontalPosition == null)
+			{
+				playerClimbingHorizontalPosition = player.transform.position.x;
+			}
 
-		// Update chasing flip timer
-		if (chasingFlipTimer > 0)
-		{
-			chasingFlipTimer -= Time.fixedDeltaTime;
-		}
+			// Update chasing flip timer
+			if (chasingFlipTimer > 0)
+			{
+				chasingFlipTimer -= Time.fixedDeltaTime;
+			}
 
-		// Process action for the corresponding enemy state
-		if (currentEnemyState == EnemyState.PassedOut && GameManager.Instance.CurrentGameState == GameState.Playing)
-		{
-			DetectPlayer();
+			// Process action for the corresponding enemy state
+			if (currentEnemyState == EnemyState.PassedOut && GameManager.Instance.CurrentGameState == GameState.Playing)
+			{
+				DetectPlayer();
+			}
+			else if (currentEnemyState == EnemyState.Chasing)
+			{
+				ChasePlayer();
+			}
+			else if (currentEnemyState == EnemyState.ChasingIdle && currentStateTimer <= 0)
+			{
+				playerClimbingHorizontalPosition = null;
+				ResetToDefaultEnemyState();
+			}
 		}
-		else if (currentEnemyState == EnemyState.Chasing)
+		else
 		{
-			ChasePlayer();
-		}
-		else if (currentEnemyState == EnemyState.ChasingIdle && currentStateTimer <= 0)
-		{
-			playerClimbingHorizontalPosition = null;
-			ResetToDefaultEnemyState();
+			rb.velocity = Vector2.zero;
 		}
 	}
 

@@ -6358,6 +6358,8 @@ MonoBehaviour:
   controlsClosedButton: {fileID: 3724841084589657437}
   settingsFirstButton: {fileID: 3724841084327664204}
   settingsClosedButton: {fileID: 3724841084513592380}
+  playButtonObject: {fileID: 3724841084558635928}
+  quitButtonObject: {fileID: 3724841084955254018}
 --- !u!1 &3724841084820793605
 GameObject:
   m_ObjectHideFlags: 0

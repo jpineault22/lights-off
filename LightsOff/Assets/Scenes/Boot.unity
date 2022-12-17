@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 491766202}
   - component: {fileID: 491766201}
   - component: {fileID: 491766200}
+  - component: {fileID: 491766203}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -375,6 +376,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491766203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491766199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50d6d23b4c2faa4a9ccbd06424b850a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &773539091
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +548,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: be5f7b01edd255341bbff36fb7bc8167, type: 2}
+    - target: {fileID: 1970704339554981478, guid: 019018bf2103d584daa3779cfcdc2ae1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1970704339554981480, guid: 019018bf2103d584daa3779cfcdc2ae1,
         type: 3}
       propertyPath: m_SortingOrder
@@ -670,6 +688,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 351222443}
     m_Modifications:
+    - target: {fileID: 450985882, guid: d2155d05461da864385bca4492e937ad, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 450985882, guid: d2155d05461da864385bca4492e937ad, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 450985882, guid: d2155d05461da864385bca4492e937ad, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 450985882, guid: d2155d05461da864385bca4492e937ad, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961550879155921, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961550879155921, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961550879155921, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961550879155921, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961551242386895, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961551242386895, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961551242386895, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961551242386895, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4142961551340656603, guid: d2155d05461da864385bca4492e937ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -779,6 +853,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961551858849457, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961551858849457, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961551858849457, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142961551858849457, guid: d2155d05461da864385bca4492e937ad,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2155d05461da864385bca4492e937ad, type: 3}
@@ -1088,7 +1182,7 @@ MonoBehaviour:
     m_ActionName: UI/Back[/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!4 &2098641859

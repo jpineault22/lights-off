@@ -6,9 +6,16 @@ public class EnemyDrunk : Enemy
 
 	protected override void FixedUpdate()
 	{
-		base.FixedUpdate();
+		if (GameManager.Instance.CurrentGameState == GameState.Playing)
+		{
+			base.FixedUpdate();
 
-		Wander();
+			Wander();
+		}
+		else
+		{
+			rb.velocity = Vector2.zero;
+		}
 	}
 
 	private void Wander()

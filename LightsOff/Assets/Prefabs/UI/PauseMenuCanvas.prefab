@@ -769,6 +769,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 4142961552779554860}
+  retryButtonObject: {fileID: 450985880}
+  quitToMenuButtonObject: {fileID: 4142961551858849459}
+  quitGameButtonObject: {fileID: 4142961551242386881}
   pauseFirstButton: {fileID: 4142961550879155923}
 --- !u!1 &4142961551780602036
 GameObject:

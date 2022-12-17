@@ -12,25 +12,24 @@ public class LevelLoader : Singleton<LevelLoader>
     public GameObject CurrentFunctionalLevel { get; private set; }
 
     public event Action TransitionHalfDone;                                 // This event is invoked if the CrossfadeStart animation has ended AND the next level has been loaded
-    public event Action LevelTransitionEnded;
+    public event Action CrossfadeTransitionEnded;
     public event Action MenuReloaded;
+    public event Action SceneUnloaded;
 
     private AsyncOperation currentSceneLoadOperation;
     private string previousSceneName = string.Empty;
+    private bool firstMenuLoad;
     private bool crossfadeStartEnded;
-    private bool reloadingLevel;
     private string levelNamePrefix;
 
 	protected override void Awake()
 	{
         base.Awake();
 
-        CurrentLevelNumber = 0;
-	}
-
-	private void Start()
-	{
         DontDestroyOnLoad(gameObject);
+
+        firstMenuLoad = true;
+        CurrentLevelNumber = 0;
 	}
 
 	private void Update()
@@ -39,6 +38,17 @@ public class LevelLoader : Singleton<LevelLoader>
         {
             crossfadeStartEnded = false;
             TransitionHalfDone?.Invoke();
+
+            if (GameManager.Instance.CurrentGameState == GameState.Menu)
+            {
+                PauseMenu.Instance.Resume();
+                UnloadLevelToMenu();
+            }
+            else if (previousSceneName != string.Empty)
+            {
+                UnloadScene(previousSceneName);
+                previousSceneName = string.Empty;
+            }
         }
     }
 
@@ -51,7 +61,9 @@ public class LevelLoader : Singleton<LevelLoader>
 
     public void LoadNextLevel()
 	{
-        LoadLevel(CurrentLevelNumber + 1);
+        int nextLevelNumber = CurrentLevelNumber + 1;
+        GameManager.Instance.SaveGame(nextLevelNumber);
+        LoadLevel(nextLevelNumber);
 	}
 
     public void LoadLevel(int pTargetLevelNumber)
@@ -62,7 +74,6 @@ public class LevelLoader : Singleton<LevelLoader>
 		}
 
         CurrentLevelNumber = pTargetLevelNumber;
-        GameManager.Instance.SaveGame();
         currentSceneLoadOperation = LoadScene(levelNamePrefix + pTargetLevelNumber);
 
         try
@@ -82,7 +93,6 @@ public class LevelLoader : Singleton<LevelLoader>
 
     public void ReloadLevel()
 	{
-        reloadingLevel = true;
         StartCoroutine(CrossfadeStartTransition());
 	}
 
@@ -115,6 +125,11 @@ public class LevelLoader : Singleton<LevelLoader>
             Debug.LogError("[LevelLoader] Current level not set, cannot unload scene.");
         }
     }
+
+    public void StartQuitTransition()
+	{
+        StartCoroutine(CrossfadeStartTransition());
+	}
 
     public AsyncOperation LoadScene(string pSceneName)
     {
@@ -149,7 +164,7 @@ public class LevelLoader : Singleton<LevelLoader>
         Debug.Log("Load Complete");
         UIManager.Instance.UpdateLevelNumberText(CurrentLevelNumber);
 
-        if (GameManager.Instance.CurrentGameState == GameState.Playing || GameManager.Instance.CurrentGameState == GameState.Reloading)
+        if (GameManager.Instance.CurrentGameState == GameState.LoadingGame || GameManager.Instance.CurrentGameState == GameState.Playing || GameManager.Instance.CurrentGameState == GameState.Reloading)
         {
             Scene currentLevel = SceneManager.GetSceneByName(levelNamePrefix + CurrentLevelNumber);
             GameObject[] gameObjects = currentLevel.GetRootGameObjects();
@@ -157,11 +172,15 @@ public class LevelLoader : Singleton<LevelLoader>
             CurrentFunctionalLevel = FindFunctionalLevel(gameObjects);
             GameManager.Instance.SetLevel(Spawner.Instance.FindStartDoor(CurrentFunctionalLevel));
 
-            if (reloadingLevel)
+            if (GameManager.Instance.CurrentGameState == GameState.Reloading)
 			{
                 StartCoroutine(CrossfadeEndTransition());
-                reloadingLevel = false;
 			}
+        }
+        else if (firstMenuLoad)
+		{
+            firstMenuLoad = false;
+            StartCoroutine(CrossfadeEndTransition());
         }
     }
 
@@ -169,17 +188,25 @@ public class LevelLoader : Singleton<LevelLoader>
     {
         Debug.Log("Unload Complete.");
 
-        if (reloadingLevel)
+        if (GameManager.Instance.CurrentGameState == GameState.Reloading)
 		{
-            // When the current level has finished unloading, load same level and end Crossfade animation when this is done
+            // When the current level has finished unloading, reset pause menu, load same level and end Crossfade animation when this is done
+            PauseMenu.Instance.Resume();
             currentSceneLoadOperation = LoadScene(levelNamePrefix + CurrentLevelNumber);
+            return;
         }
         else if (GameManager.Instance.CurrentGameState == GameState.Menu)
 		{
             MenuReloaded?.Invoke();
             GameManager.Instance.DestroyPlayer();
-            StartCoroutine(CrossfadeEndTransition());
         }
+        else if (GameManager.Instance.CurrentGameState == GameState.Quitting)
+		{
+            SceneUnloaded?.Invoke();
+            return;
+		}
+
+        StartCoroutine(CrossfadeEndTransition());
     }
 
     IEnumerator CrossfadeStartTransition()
@@ -190,28 +217,19 @@ public class LevelLoader : Singleton<LevelLoader>
 
         crossfadeStartEnded = true;
 
-        if (reloadingLevel)
+        if (GameManager.Instance.CurrentGameState == GameState.Reloading)
 		{
             GameManager.Instance.ResetCharacterAfterReload();
             UnloadScene(levelNamePrefix + CurrentLevelNumber);
         }
-        else if (GameManager.Instance.CurrentGameState == GameState.Menu)
+        else if (GameManager.Instance.CurrentGameState == GameState.Quitting)
 		{
-            currentSceneLoadOperation.allowSceneActivation = true;
-            UnloadLevelToMenu();
-		}
+            string sceneName = CurrentLevelNumber == 0 ? Constants.NameSceneStartMenu : levelNamePrefix + CurrentLevelNumber;
+            UnloadScene(sceneName);
+        }
         else
 		{
             currentSceneLoadOperation.allowSceneActivation = true;
-
-            if (previousSceneName != string.Empty)
-            {
-                // WHY HERE???
-                UnloadScene(previousSceneName);
-                previousSceneName = string.Empty;
-            }
-
-            StartCoroutine(CrossfadeEndTransition());
         }
     }
 
@@ -221,7 +239,17 @@ public class LevelLoader : Singleton<LevelLoader>
 
         yield return new WaitForSeconds(fadeTime);
 
-        LevelTransitionEnded?.Invoke();
+        CrossfadeTransitionEnded?.Invoke();
+
+        if (GameManager.Instance.CurrentGameState == GameState.Menu)
+		{
+            EventSystemManager.Instance.ActivateModule();
+		}
+        else if (GameManager.Instance.CurrentGameState == GameState.LoadingGame)
+		{
+            InputManager.Instance.EnablePlayerInput();
+            GameManager.Instance.SetGameState(GameState.Playing);
+        }
 
         if (GameManager.Instance.CurrentGameState == GameState.Reloading) GameManager.Instance.SetGameState(GameState.Playing);
         if (GameManager.Instance.CurrentGameState == GameState.Playing) GameManager.Instance.ResetCharacterState();

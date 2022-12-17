@@ -75,13 +75,6 @@ public class PlayerController : Singleton<PlayerController>
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
-        // Setting up controls methods
-        InputManager.Instance.MovedHorizontally += ctx => UpdateHorizontalMoveInput(ctx);
-        InputManager.Instance.MovedVertically += ctx => UpdateVerticalMoveInput(ctx);
-        InputManager.Instance.StartedJump += ctx => StartJump(ctx);
-        InputManager.Instance.EndedJump += ctx => EndJump(ctx);
-        InputManager.Instance.StartedInteraction += ctx => StartInteraction(ctx);
-
         pivotingGateList = new List<PivotingGate>();
         ladderList = new List<GameObject>();
 
@@ -90,7 +83,26 @@ public class PlayerController : Singleton<PlayerController>
         gravityScale = rb.gravityScale;
     }
 
-    private void Update()
+	private void OnEnable()
+	{
+        // Setting up controls methods
+        InputManager.Instance.MovedHorizontally += ctx => UpdateHorizontalMoveInput(ctx);
+        InputManager.Instance.MovedVertically += ctx => UpdateVerticalMoveInput(ctx);
+        InputManager.Instance.StartedJump += ctx => StartJump(ctx);
+        InputManager.Instance.EndedJump += ctx => EndJump(ctx);
+        InputManager.Instance.StartedInteraction += ctx => StartInteraction(ctx);
+    }
+
+	private void OnDisable()
+	{
+        InputManager.Instance.MovedHorizontally -= ctx => UpdateHorizontalMoveInput(ctx);
+        InputManager.Instance.MovedVertically -= ctx => UpdateVerticalMoveInput(ctx);
+        InputManager.Instance.StartedJump -= ctx => StartJump(ctx);
+        InputManager.Instance.EndedJump -= ctx => EndJump(ctx);
+        InputManager.Instance.StartedInteraction -= ctx => StartInteraction(ctx);
+    }
+
+	private void Update()
     {
         if (CanPerformGameplayAction())
 		{
@@ -157,17 +169,17 @@ public class PlayerController : Singleton<PlayerController>
 
     private void UpdateHorizontalMoveInput(InputAction.CallbackContext ctx)
 	{
-        horizontalMoveInput = CanPerformGameplayAction() ? ctx.ReadValue<float>() : 0;
+        if (this != null) horizontalMoveInput = CanPerformGameplayAction() ? ctx.ReadValue<float>() : 0;
     }
 
     private void UpdateVerticalMoveInput(InputAction.CallbackContext ctx)
 	{
-        verticalMoveInput = CanPerformGameplayAction() ? ctx.ReadValue<float>() : 0;
+        if (this != null) verticalMoveInput = CanPerformGameplayAction() ? ctx.ReadValue<float>() : 0;
     }
 
     private void StartJump(InputAction.CallbackContext ctx)
     {
-        if (CanPerformGameplayAction() && (isGrounded || coyoteTimeCounter > 0 || CurrentCharacterState == CharacterState.Climbing) && pivotingGateTimeCounter <= 0)
+        if (this != null && CanPerformGameplayAction() && (isGrounded || coyoteTimeCounter > 0 || CurrentCharacterState == CharacterState.Climbing) && pivotingGateTimeCounter <= 0)
         {
             if (CurrentCharacterState == CharacterState.Climbing)
             {
@@ -182,7 +194,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void EndJump(InputAction.CallbackContext ctx)
     {
-        if (CurrentCharacterState == CharacterState.Jumping)
+        if (this != null && CurrentCharacterState == CharacterState.Jumping)
         {
             SetStateToFalling();
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / incompleteJumpFallVelocityDivider);
@@ -191,7 +203,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void StartInteraction(InputAction.CallbackContext ctx)
     {
-        if (CanPerformGameplayAction() && interactibleGameObject != null && !CurrentCharacterState.Equals(CharacterState.Jumping) && !CurrentCharacterState.Equals(CharacterState.Falling))
+        if (this != null && CanPerformGameplayAction() && interactibleGameObject != null && !CurrentCharacterState.Equals(CharacterState.Jumping) && !CurrentCharacterState.Equals(CharacterState.Falling))
         {
             InteractibleObject interactibleObject = interactibleGameObject.GetComponent<InteractibleObject>();
             interactibleObject.Interact();

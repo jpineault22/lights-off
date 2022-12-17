@@ -21,17 +21,39 @@ public class GameManager : Singleton<GameManager>
 	{
 		DontDestroyOnLoad(gameObject);
 
-		LevelLoader.Instance.TransitionHalfDone += SetPlayerPosition;
-
 		instantiatedSystemPrefabs = new List<GameObject>();
 		InstantiateSystemPrefabs();
 
 		LoadMenu();
 	}
 
+	protected override void OnDestroy()
+	{
+		for (int i = 0; i < instantiatedSystemPrefabs.Count; i++)
+		{
+			Destroy(instantiatedSystemPrefabs[i]);
+		}
+
+		instantiatedSystemPrefabs.Clear();
+
+		base.OnDestroy();
+	}
+
+	private void OnEnable()
+	{
+		LevelLoader.Instance.TransitionHalfDone += SetPlayerPosition;
+		LevelLoader.Instance.SceneUnloaded += DestroyToQuit;
+	}
+
+	private void OnDisable()
+	{
+		LevelLoader.Instance.TransitionHalfDone -= SetPlayerPosition;
+		LevelLoader.Instance.SceneUnloaded -= DestroyToQuit;
+	}
+
 	#region Game saving and loading, pause
 
-	public void SaveGame()
+	public void SaveGame(int pCurrentLevelNumber)
 	{
 		if (testMode)
 		{
@@ -39,10 +61,9 @@ public class GameManager : Singleton<GameManager>
 		}
 		else
 		{
-			int currentLevelNumber = LevelLoader.Instance.CurrentLevelNumber;
-			Debug.Log("Saving in " + Constants.NamePrefixSceneLevel + currentLevelNumber);
+			Debug.Log("Saving in " + Constants.NamePrefixSceneLevel + pCurrentLevelNumber);
 
-			PlayerData data = new PlayerData(currentLevelNumber);
+			PlayerData data = new PlayerData(pCurrentLevelNumber);
 
 			SaveSystem.SavePlayerData(data);
 		}
@@ -69,7 +90,8 @@ public class GameManager : Singleton<GameManager>
 
 	public void StartGame(int pCurrentLevelNumber)
 	{
-		CurrentGameState = GameState.Playing;
+		InputManager.Instance.DisablePlayerInput();
+		CurrentGameState = GameState.LoadingGame;
 
 		InstantiatePlayer();
 		LevelLoader.Instance.LoadLevelFromMenu(pCurrentLevelNumber, testMode, Constants.NameSceneStartMenu);
@@ -83,6 +105,7 @@ public class GameManager : Singleton<GameManager>
 
 	public void ReloadLevel()
 	{
+		Time.timeScale = 1f;
 		CurrentGameState = GameState.Reloading;
 		PlayerController.Instance.ResetCharacterForReload();
 
@@ -114,33 +137,61 @@ public class GameManager : Singleton<GameManager>
 	public void UnpauseGame()
 	{
 		Time.timeScale = 1f;
-		CurrentGameState = GameState.Playing;
+
+		if (CurrentGameState == GameState.Paused)
+			CurrentGameState = GameState.Playing;
 	}
 
 	private void LoadMenu()
 	{
 		CurrentGameState = GameState.Menu;
+		EventSystemManager.Instance.DeactivateModule();
 		LevelLoader.Instance.LoadScene(Constants.NameSceneStartMenu);
 	}
 
 	public void QuitToMenu()
 	{
+		Time.timeScale = 1f;
 		CurrentGameState = GameState.Menu;
+		EventSystemManager.Instance.DeactivateModule();
 		LevelLoader.Instance.QuitToMenu();
+	}
+
+	// When quitting the game, first the currently loaded scene is unloaded, then some game objects/scripts need to be destroyed, and finally we quit the application
+	public void UnloadToQuit()
+	{
+		Time.timeScale = 1f;
+		CurrentGameState = GameState.Quitting;
+		LevelLoader.Instance.StartQuitTransition();
+	}
+
+	private void DestroyToQuit()
+	{
+		DestroyPlayer();
+
+		if (MainMenu.IsInitialized)
+		{
+			Spawner.Instance.DestroyMainMenu(MainMenu.Instance.gameObject);
+		}
+
+		Spawner.Instance.DestroyUIManager(UIManager.Instance.gameObject);
+
+		QuitGame();
 	}
 
 	public void QuitGame()
 	{
-	#if UNITY_EDITOR
-		UnityEditor.EditorApplication.isPlaying = false;
-	#else
-		Application.Quit();
-	#endif
+		#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+		#else
+			Application.Quit();
+		#endif
 	}
 
 	private void SetPlayerPosition()
 	{
-		player.transform.position = new Vector2(startDoorPosition.x, startDoorPosition.y - playerDoorHeightDifference);
+		if (player != null)
+			player.transform.position = new Vector2(startDoorPosition.x, startDoorPosition.y - playerDoorHeightDifference);
 	}
 
 	#endregion
@@ -163,8 +214,11 @@ public class GameManager : Singleton<GameManager>
 
 	public void DestroyPlayer()
 	{
-		Spawner.Instance.DestroyPlayer(player);
-		player = null;
+		if (player != null)
+		{
+			Spawner.Instance.DestroyPlayer(player);
+			player = null;
+		}
 	}
 
 	#endregion
@@ -200,25 +254,15 @@ public class GameManager : Singleton<GameManager>
 	}
 
 	#endregion
-
-	protected override void OnDestroy()
-	{
-		for (int i = 0; i < instantiatedSystemPrefabs.Count; i++)
-		{
-			Destroy(instantiatedSystemPrefabs[i]);
-		}
-
-		instantiatedSystemPrefabs.Clear();
-
-		base.OnDestroy();
-	}
 }
 
 public enum GameState
 {
 	Menu,
+	LoadingGame,
 	Playing,
 	Paused,
 	Reloading,
-	Cutscene		// Not implemented
+	Cutscene,		// Not implemented
+	Quitting
 }

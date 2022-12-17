@@ -20,6 +20,16 @@ public class Spawner : Singleton<Spawner>
 		Destroy(pPlayer);
 	}
 
+	public void DestroyUIManager(GameObject pUIManager)
+	{
+		Destroy(pUIManager);
+	}
+
+	public void DestroyMainMenu(GameObject pMainMenu)
+	{
+		Destroy(pMainMenu);
+	}
+
     public void InstantiateEnemyPassedOut(Vector3 pPosition, Quaternion pRotation)
 	{
         Instantiate(enemyPassedOutPrefab, pPosition, pRotation);

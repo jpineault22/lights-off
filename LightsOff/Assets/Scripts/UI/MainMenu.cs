@@ -14,15 +14,46 @@ public class MainMenu : Singleton<MainMenu>
 	[SerializeField] private GameObject settingsFirstButton = default;
 	[SerializeField] private GameObject settingsClosedButton = default;
 
+	[SerializeField] private GameObject playButtonObject = default;
+	[SerializeField] private GameObject quitButtonObject = default;
+
+	private Button playButton;
+	private Button quitButton;
+
+	protected override void Awake()
+	{
+		base.Awake();
+
+		playButton = playButtonObject.GetComponent<Button>();
+		quitButton = quitButtonObject.GetComponent<Button>();
+
+		playButton.interactable = false;
+	}
+
 	private void Start()
 	{
 		EventSystem.current.SetSelectedGameObject(null);
 		EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
 	}
 
+	private void OnEnable()
+	{
+		LevelLoader.Instance.CrossfadeTransitionEnded += ActivateMenu;
+	}
+
+	private void OnDisable()
+	{
+		LevelLoader.Instance.CrossfadeTransitionEnded -= ActivateMenu;
+	}
+
+	private void ActivateMenu()
+	{
+		playButton.interactable = true;
+		InputManager.Instance.EnablePlayerInput();
+	}
+
 	public void PlayGame()
 	{
-		Button playButton = mainMenuFirstButton.GetComponent<Button>();     // The main menu's first button has to be the Play button for this to work.
 		playButton.interactable = false;
 		GameManager.Instance.LoadGame();
 	}
@@ -85,7 +116,8 @@ public class MainMenu : Singleton<MainMenu>
 
 	public void QuitGame()
 	{
-		GameManager.Instance.QuitGame();
+		quitButton.interactable = false;
+		GameManager.Instance.UnloadToQuit();
 	}
 
 	public void DeleteSaveFile()
