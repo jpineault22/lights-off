@@ -1,13 +1,15 @@
 ﻿using Cinemachine;
 using UnityEngine;
 
-public class CinemachineManager : MonoBehaviour
+public class CinemachineManager : Singleton<CinemachineManager>
 {
 	private CinemachineVirtualCamera virtualCamera;
 	private CinemachineConfiner confiner;
 
-	private void Awake()
+	protected override void Awake()
 	{
+		base.Awake();
+		
 		virtualCamera = GetComponent<CinemachineVirtualCamera>();
 		confiner = GetComponent<CinemachineConfiner>();
 	}

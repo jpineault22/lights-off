@@ -42,13 +42,7 @@ public class GameManager : Singleton<GameManager>
 	private void OnEnable()
 	{
 		LevelLoader.Instance.TransitionHalfDone += SetPlayerPosition;
-		LevelLoader.Instance.SceneUnloaded += DestroyToQuit;
-	}
-
-	private void OnDisable()
-	{
-		LevelLoader.Instance.TransitionHalfDone -= SetPlayerPosition;
-		LevelLoader.Instance.SceneUnloaded -= DestroyToQuit;
+		LevelLoader.Instance.LastSceneUnloaded += DestroyToQuit;
 	}
 
 	#region Game saving and loading, pause
@@ -157,7 +151,7 @@ public class GameManager : Singleton<GameManager>
 		LevelLoader.Instance.QuitToMenu();
 	}
 
-	// When quitting the game, first the currently loaded scene is unloaded, then some game objects/scripts need to be destroyed, and finally we quit the application
+	// When quitting the game, first the currently loaded scene is unloaded, then some mutually dependent game objects/scripts need to be destroyed, and finally we quit the application
 	public void UnloadToQuit()
 	{
 		Time.timeScale = 1f;
@@ -165,16 +159,31 @@ public class GameManager : Singleton<GameManager>
 		LevelLoader.Instance.StartQuitTransition();
 	}
 
+	// The objects/scripts that need to be destroyed use references to other objects/scripts, or are subscribed to events from other objects/scripts. Here is the order of destruction:
+	// 1. PlayerController
+	// 2. UIManager
+	// 3. InputManager
+	// 4. MainMenu
+	// 5. CinemachineManager
+	// 6. (Unsubscribe GameManager from LevelLoader's events)
+	// 7. LevelLoader
+	// 8. (Quit game)
 	private void DestroyToQuit()
 	{
 		DestroyPlayer();
+		Destroy(UIManager.Instance.gameObject);
+		Destroy(InputManager.Instance.gameObject);
 
 		if (MainMenu.IsInitialized)
-		{
-			Spawner.Instance.DestroyMainMenu(MainMenu.Instance.gameObject);
-		}
+			Destroy(MainMenu.Instance.gameObject);
 
-		Spawner.Instance.DestroyUIManager(UIManager.Instance.gameObject);
+		if (CinemachineManager.IsInitialized)
+			Destroy(CinemachineManager.Instance.gameObject);
+
+		LevelLoader.Instance.TransitionHalfDone -= SetPlayerPosition;
+		LevelLoader.Instance.LastSceneUnloaded -= DestroyToQuit;
+
+		Destroy(LevelLoader.Instance.gameObject);
 
 		QuitGame();
 	}
@@ -216,7 +225,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		if (player != null)
 		{
-			Spawner.Instance.DestroyPlayer(player);
+			Destroy(player);
 			player = null;
 		}
 	}

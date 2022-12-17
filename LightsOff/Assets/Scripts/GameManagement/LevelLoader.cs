@@ -14,7 +14,7 @@ public class LevelLoader : Singleton<LevelLoader>
     public event Action TransitionHalfDone;                                 // This event is invoked if the CrossfadeStart animation has ended AND the next level has been loaded
     public event Action CrossfadeTransitionEnded;
     public event Action MenuReloaded;
-    public event Action SceneUnloaded;
+    public event Action LastSceneUnloaded;
 
     private AsyncOperation currentSceneLoadOperation;
     private string previousSceneName = string.Empty;
@@ -202,7 +202,7 @@ public class LevelLoader : Singleton<LevelLoader>
         }
         else if (GameManager.Instance.CurrentGameState == GameState.Quitting)
 		{
-            SceneUnloaded?.Invoke();
+            LastSceneUnloaded?.Invoke();
             return;
 		}
 
