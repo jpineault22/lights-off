@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 829598be85f71934f89ae4fef695201f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a283ef1c8d0e50840a214b5f44ef21e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,8 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConnected: 1
   isOn: 1
-  spriteOn: {fileID: 21300000, guid: 829598be85f71934f89ae4fef695201f, type: 3}
-  spriteOff: {fileID: 21300000, guid: ff55362b3bad53848967fbac4d09534a, type: 3}
+  spriteOn: {fileID: 21300000, guid: a283ef1c8d0e50840a214b5f44ef21e0, type: 3}
+  spriteOff: {fileID: 21300000, guid: 7ef0ecb626058ab49950003888e6e66f, type: 3}
 --- !u!1001 &156887385797329149
 PrefabInstance:
   m_ObjectHideFlags: 0

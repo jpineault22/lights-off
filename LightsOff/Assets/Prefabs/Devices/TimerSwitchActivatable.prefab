@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cda13d2a4d252204080a166a965982e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a8b5302823c9384faa0f771f3e87d96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,8 +129,8 @@ MonoBehaviour:
   devices:
   - {fileID: 0}
   timerTime: 5
-  spriteActive: {fileID: 21300000, guid: cda13d2a4d252204080a166a965982e4, type: 3}
-  spriteTriggered: {fileID: 21300000, guid: f6b4689db8bd8db4cbd64851f9682c91, type: 3}
+  spriteActive: {fileID: 21300000, guid: 1a8b5302823c9384faa0f771f3e87d96, type: 3}
+  spriteTriggered: {fileID: 21300000, guid: 639a098769bf7f64f89da6dd70b8929b, type: 3}
 --- !u!114 &1339713133542258970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConnected: 1
   isOn: 1
-  spriteOn: {fileID: 21300000, guid: cda13d2a4d252204080a166a965982e4, type: 3}
-  spriteOff: {fileID: 21300000, guid: ce6e51b839a8d5e4c9ad2022340bf4b2, type: 3}
+  spriteOn: {fileID: 21300000, guid: 1a8b5302823c9384faa0f771f3e87d96, type: 3}
+  spriteOff: {fileID: 21300000, guid: 798c019dd441c6b40b504e96d02aac3a, type: 3}
 --- !u!1001 &2688230611806398070
 PrefabInstance:
   m_ObjectHideFlags: 0
