@@ -219,6 +219,7 @@ public class LevelLoader : Singleton<LevelLoader>
 
         if (GameManager.Instance.CurrentGameState == GameState.Reloading)
 		{
+            Spawner.Instance.DestroyObjectsForReload();
             GameManager.Instance.ResetCharacterAfterReload();
             UnloadScene(levelNamePrefix + CurrentLevelNumber);
         }
