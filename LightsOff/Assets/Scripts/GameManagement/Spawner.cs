@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Spawner : Singleton<Spawner>
 {
@@ -10,6 +11,15 @@ public class Spawner : Singleton<Spawner>
 
 	#endregion
 
+	private List<GameObject> objectsToDestroyOnReload;
+
+	protected override void Awake()
+	{
+		base.Awake();
+
+		objectsToDestroyOnReload = new List<GameObject>();
+	}
+
 	public GameObject InstantiatePlayer()
 	{
 		return Instantiate(playerPrefab);
@@ -17,7 +27,8 @@ public class Spawner : Singleton<Spawner>
 
     public void InstantiateEnemyPassedOut(Vector3 pPosition, Quaternion pRotation)
 	{
-        Instantiate(enemyPassedOutPrefab, pPosition, pRotation);
+        GameObject enemy = Instantiate(enemyPassedOutPrefab, pPosition, pRotation);
+		objectsToDestroyOnReload.Add(enemy);
 	}
 
     public GameObject FindStartDoor(GameObject pGameObjects)
@@ -31,5 +42,15 @@ public class Spawner : Singleton<Spawner>
 		}
 
         return null;
+	}
+
+	public void DestroyObjectsForReload()
+	{
+		foreach(GameObject objectToDestroy in objectsToDestroyOnReload)
+		{
+			Destroy(objectToDestroy);
+		}
+
+		objectsToDestroyOnReload.Clear();
 	}
 }

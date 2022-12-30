@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: daeabebd11967b14bb4963a89ec763a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 731d0774193b60e4ebeb5103d4eee2b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,8 +125,8 @@ MonoBehaviour:
   interactMessageText: {fileID: 1217299542651655624}
   interactMessage: 1
   cooldownTime: 0.5
-  doorClosed: {fileID: 21300000, guid: daeabebd11967b14bb4963a89ec763a4, type: 3}
-  doorOpen: {fileID: 21300000, guid: 2b637c756121feb4d958bb4aa13d0e4e, type: 3}
+  doorClosed: {fileID: 21300000, guid: 731d0774193b60e4ebeb5103d4eee2b9, type: 3}
+  doorOpen: {fileID: 21300000, guid: 88c151387e5e51e43a7b127a6ea3f175, type: 3}
 --- !u!1001 &1434603450995999166
 PrefabInstance:
   m_ObjectHideFlags: 0
