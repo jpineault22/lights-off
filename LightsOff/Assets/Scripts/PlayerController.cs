@@ -41,6 +41,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float bounceMinFallingVerticalDistance = 4.5f;     // The minimum vertical distance the player has to be from the enemy when starting to fall in order to trigger a bounce and not die
     [SerializeField] private float bounceBuffer = 1f;                           // When bouncing, the player reaches their last falling start height + this buffer (except when it's a second bounce)
     [SerializeField] private float minBounceForce = 10f;
+    [SerializeField] private float conveyorSpeedMultiplier = 3f;
 
     // State variables
     private float horizontalMoveInput;
@@ -60,6 +61,7 @@ public class PlayerController : Singleton<PlayerController>
     private float gravityScale;
     private float lastFallingStartHeight;                                       // Stores the height at which the player last started falling. Used by ProcessBounce() to reach just above that same height, and by the collision detection, to determine if the player is high enough to trigger a bounce.
     private bool justBounced;
+    private float conveyorMomentumBonus;
     private Vector2 velocityBeforePhysicsUpdate;
 
     #region MonoBehaviour methods
@@ -81,6 +83,7 @@ public class PlayerController : Singleton<PlayerController>
         facingRight = true;
         nbKeys = 0;
         gravityScale = rb.gravityScale;
+        conveyorMomentumBonus = 1f;
     }
 
 	private void OnEnable()
@@ -143,6 +146,7 @@ public class PlayerController : Singleton<PlayerController>
             velocityBeforePhysicsUpdate = rb.velocity;
 
             CheckIfFalling();
+            ManageConveyorMomentum();
             Move();
             SetIsGrounded();
 
@@ -291,10 +295,10 @@ public class PlayerController : Singleton<PlayerController>
             }
 
             // Process horizontal movement
-            if (Mathf.Abs(horizontalMoveInput) >= moveInputThreshold)
+            if (Mathf.Abs(horizontalMoveInput) >= moveInputThreshold || conveyorMomentumBonus > 1f)
             {
                 int direction = facingRight ? 1 : -1;
-                rb.velocity = new Vector2(direction * speed, rb.velocity.y);
+                rb.velocity = new Vector2(direction * speed * conveyorMomentumBonus, rb.velocity.y);
 
                 if (isGrounded && CurrentCharacterState != CharacterState.Jumping && CurrentCharacterState != CharacterState.Bouncing)
                 {
@@ -381,7 +385,6 @@ public class PlayerController : Singleton<PlayerController>
             }
             else
             {
-                Debug.Log("DIE!!!");
                 Die();
             }
         }
@@ -396,6 +399,22 @@ public class PlayerController : Singleton<PlayerController>
         if (collision.gameObject.CompareTag(Constants.TagPivotingGate))
         {
             pivotingGateList.Remove(collision.gameObject.GetComponent<PivotingGate>());
+        }
+        else if (collision.gameObject.CompareTag(Constants.TagConveyor) && transform.position.y > collision.gameObject.transform.position.y)
+        {
+            CheckIfFalling();
+
+            if (CurrentCharacterState == CharacterState.Jumping || CurrentCharacterState == CharacterState.Falling)
+			{
+                Conveyor conveyor = collision.gameObject.GetComponent<Conveyor>();
+                bool sameDirection = (facingRight && conveyor.IsDirectionRight()) || (!facingRight && !conveyor.IsDirectionRight());
+
+                if (conveyor.IsOnAndConnected() && sameDirection)
+				{
+                    float momentumDivider = Mathf.Abs(horizontalMoveInput) > moveInputThreshold ? 1f : 2f;
+                    conveyorMomentumBonus = conveyorSpeedMultiplier / momentumDivider;
+                }
+			}
         }
     }
 
@@ -455,11 +474,15 @@ public class PlayerController : Singleton<PlayerController>
         {
             if (horizontalMoveInput > 0)
             {
+                if (!facingRight && conveyorMomentumBonus > 1f) conveyorMomentumBonus = 1f;
+
                 spriteRenderer.flipX = false;
                 facingRight = true;
             }
             else if (horizontalMoveInput < 0)
             {
+                if (facingRight && conveyorMomentumBonus > 1f) conveyorMomentumBonus = 1f;
+
                 spriteRenderer.flipX = true;
                 facingRight = false;
             }
@@ -530,6 +553,17 @@ public class PlayerController : Singleton<PlayerController>
             }
         }
     }
+
+    private void ManageConveyorMomentum()
+	{
+        if (conveyorMomentumBonus > 1f)
+		{
+            if (CurrentCharacterState == CharacterState.Idle || CurrentCharacterState == CharacterState.Walking || CurrentCharacterState == CharacterState.Climbing || CurrentCharacterState == CharacterState.Dying)
+			{
+                conveyorMomentumBonus = 1f;
+			}
+		}
+	}
 
     private void StopHorizontalMovement()
     {

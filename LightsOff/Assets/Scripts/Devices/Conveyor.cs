@@ -58,4 +58,9 @@ public class Conveyor : Device
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(forceVector);
 		}
 	}
+
+	public bool IsDirectionRight()
+	{
+		return directionRight;
+	}
 }

@@ -28,6 +28,7 @@ public static class Constants
     public const string TagFunctionalFan = "FunctionalFan";
     public const string TagEnemy = "Enemy";
     public const string TagPivotingGate = "PivotingGate";
+    public const string TagConveyor = "Conveyor";
 
     // Layers
     public const string LayerPlayer = "Player";
