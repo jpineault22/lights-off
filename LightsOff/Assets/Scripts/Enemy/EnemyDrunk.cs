@@ -27,7 +27,7 @@ public class EnemyDrunk : Enemy
 			RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, groundDetectionRaycastDistance, LayerMask.GetMask(Constants.LayerGround));
 			RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, new Vector2(direction, 0), wallDetectionRaycastDistance, LayerMask.GetMask(Constants.LayerGround));
 
-			if (!groundInfo.collider || wallInfo.collider)
+			if (currentEnemyState != EnemyState.Falling && currentEnemyState != EnemyState.Stunned && (!groundInfo.collider || wallInfo.collider))
 			{
 				Flip();
 			}

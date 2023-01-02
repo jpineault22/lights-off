@@ -6,7 +6,7 @@ public class GameManager : Singleton<GameManager>
 {
 	[SerializeField] private GameObject[] systemPrefabs = default;          // Prefabs to instantiate when launching the game
 	[SerializeField] private bool testMode = default;
-	[SerializeField] private float playerDoorHeightDifference = 0.5625f;	// The player's position at the start of a level will be lower than the start door's position by this amount
+	[SerializeField] private float playerDoorHeightDifference = 0.56f;		// The player's position at the start of a level will be lower than the start door's position by this amount
 
 	public GameState CurrentGameState { get; private set; }
 	[HideInInspector] public GameObject player;
@@ -250,6 +250,8 @@ public class GameManager : Singleton<GameManager>
 
 	public void CheckIfAllLightsOff()
 	{
+		if (PlayerController.Instance.CurrentCharacterState == CharacterState.LevelTransition) return;
+		
 		foreach (Light light in levelLights)
 		{
 			if (light.IsOnAndConnected())

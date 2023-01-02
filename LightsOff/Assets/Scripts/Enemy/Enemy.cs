@@ -20,6 +20,7 @@ public abstract class Enemy : MonoBehaviour
     protected bool facingRight;
     protected bool isGrounded;
     protected float currentStateTimer = 0f;
+    protected float? horizontalPositionToMaintain;
 
     protected GameObject player;
 
@@ -34,7 +35,18 @@ public abstract class Enemy : MonoBehaviour
         player = PlayerController.Instance.gameObject;
     }
 
-    protected virtual void FixedUpdate()
+	private void Update()
+	{
+		if (horizontalPositionToMaintain != null)
+		{
+            transform.position = new Vector2((float) horizontalPositionToMaintain, transform.position.y);
+
+            if (currentEnemyState != EnemyState.Stunned)
+                horizontalPositionToMaintain = null;
+		}
+	}
+
+	protected virtual void FixedUpdate()
 	{
         SetIsGrounded();
         CheckIfFalling();
@@ -100,6 +112,7 @@ public abstract class Enemy : MonoBehaviour
         if (currentEnemyState != EnemyState.Stunned)
 		{
             previousEnemyState = currentEnemyState;
+            horizontalPositionToMaintain = transform.position.x;
         }
 
         currentEnemyState = EnemyState.Stunned;

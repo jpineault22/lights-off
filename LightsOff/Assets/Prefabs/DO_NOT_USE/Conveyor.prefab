@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5823766613927542775}
   - component: {fileID: 5823766613927542774}
-  - component: {fileID: 5823766613927542772}
+  - component: {fileID: -3415956239576461127}
   m_Layer: 9
   m_Name: Conveyor
   m_TagString: Conveyor
@@ -142,7 +142,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9801328, y: 0.9918852}
   m_EdgeRadius: 0
---- !u!114 &5823766613927542772
+--- !u!114 &-3415956239576461127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,8 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConnected: 1
   isOn: 0
-  spriteOn: {fileID: 21300000, guid: 9d63378ffb8a34c40aa5c8e5736f8a16, type: 3}
-  spriteOff: {fileID: 21300000, guid: 412394aa84e06f2448a08177e9a5f3be, type: 3}
+  spriteOn: {fileID: 21300000, guid: 1eb140fc91b095443928e939fc2f4f40, type: 3}
+  spriteOff: {fileID: 21300000, guid: 84b1fff30e67cb1419e08afd786dc501, type: 3}
   directionRight: 0
   force: 500
 --- !u!1 &5823766614317564728

@@ -18,6 +18,7 @@ TagManager:
   - FunctionalFan
   - Enemy
   - PivotingGate
+  - Conveyor
   layers:
   - Default
   - TransparentFX

@@ -54,6 +54,11 @@ public class Conveyor : Device
 			{
 				collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			}
+			else if (PlayerController.Instance.CurrentCharacterState == CharacterState.Dying ||PlayerController.Instance.CurrentCharacterState == CharacterState.LevelTransition ||
+				PlayerController.Instance.CurrentCharacterState == CharacterState.Climbing)
+			{
+				return;
+			}
 
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(forceVector);
 		}

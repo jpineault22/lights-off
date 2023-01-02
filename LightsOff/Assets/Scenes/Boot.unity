@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   systemPrefabs: []
   testMode: 0
-  playerDoorHeightDifference: 0.5625
+  playerDoorHeightDifference: 0.56
   player: {fileID: 0}
 --- !u!4 &2035170935
 Transform:

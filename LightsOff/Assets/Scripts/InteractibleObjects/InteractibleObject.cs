@@ -45,12 +45,17 @@ public abstract class InteractibleObject : MonoBehaviour
 		interactMessageText.text = interactMessageRoot + " (" + inputText + ")";
 	}
 
+	protected void EnableDisableInteractMessage(bool pValue)
+	{
+		interactMessageText.enabled = pValue;
+		InRange = pValue;
+	}
+
 	protected virtual void OnTriggerEnter2D(Collider2D pCollision)
 	{
 		if (pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
-			interactMessageText.enabled = true;
-			InRange = true;
+			EnableDisableInteractMessage(true);
 		}
 	}
 
@@ -58,8 +63,7 @@ public abstract class InteractibleObject : MonoBehaviour
 	{
 		if (pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
-			interactMessageText.enabled = false;
-			InRange = false;
+			EnableDisableInteractMessage(false);
 		}
 	}
 

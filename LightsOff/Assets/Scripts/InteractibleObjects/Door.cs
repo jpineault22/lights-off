@@ -28,14 +28,14 @@ public class Door : InteractibleObject
 	{
 		isOpen = false;
 		spriteRenderer.sprite = doorClosed;
+		EnableDisableInteractMessage(false);
 	}
 
 	protected override void OnTriggerEnter2D(Collider2D pCollision)
 	{
 		if (isOpen && pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
-			interactMessageText.enabled = true;
-			InRange = true;
+			EnableDisableInteractMessage(true);
 		}
 	}
 

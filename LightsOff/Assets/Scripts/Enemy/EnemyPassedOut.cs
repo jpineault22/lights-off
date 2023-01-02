@@ -123,7 +123,7 @@ public class EnemyPassedOut : Enemy
 		{
 			int newChasingDirection = transform.position.x <= player.transform.position.x ? 1 : -1;
 
-			if (pPlayerWithinVerticalRange && ((newChasingDirection == 1 && !facingRight) || (newChasingDirection == -1 && facingRight)))
+			if (pPlayerWithinVerticalRange && currentEnemyState != EnemyState.Falling && currentEnemyState != EnemyState.Stunned && ((newChasingDirection == 1 && !facingRight) || (newChasingDirection == -1 && facingRight)))
 			{
 				chasingDirection = newChasingDirection;
 				Flip();
