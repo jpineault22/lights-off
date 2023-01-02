@@ -144,7 +144,8 @@ MonoBehaviour:
   isConnected: 1
   isOn: 1
   spriteOn: {fileID: 21300000, guid: d76aa4a1029eed948aa9cc7c84e661b0, type: 3}
-  spriteOff: {fileID: 21300000, guid: ef9114f27b987be4d90eda991a4df320, type: 3}
+  spriteOff: {fileID: 21300000, guid: d76aa4a1029eed948aa9cc7c84e661b0, type: 3}
+  spriteInactive: {fileID: 21300000, guid: ef9114f27b987be4d90eda991a4df320, type: 3}
 --- !u!1001 &156887385797329149
 PrefabInstance:
   m_ObjectHideFlags: 0

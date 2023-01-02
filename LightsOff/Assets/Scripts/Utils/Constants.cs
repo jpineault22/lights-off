@@ -43,10 +43,13 @@ public static class Constants
     public const string AnimatorCharacterIsDying = "IsDying";
     public const string AnimatorCharacterIsLevelTransitioning = "IsLevelTransitioning";
     public const string AnimatorCharacterSpeed = "Speed";
+    public const string AnimatorDoorIsOpen = "IsOpen";
+    public const string AnimatorGateIsOpen = "IsOpen";
     public const string AnimatorCrossfadeStart = "CrossfadeStart";
     public const string AnimatorCrossfadeEnd = "CrossfadeEnd";
     public const string AnimationCharacterClimb = "CharacterClimb";
     public const string AnimationCharacterDeath = "CharacterDeath";
+    public const string AnimationKeygateOpen = "KeygateOpen";
 
     // Audio mixer parameters
     public const string AudioMasterVolume = "MasterVolume";

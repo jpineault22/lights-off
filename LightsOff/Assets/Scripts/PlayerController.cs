@@ -370,7 +370,7 @@ public class PlayerController : Singleton<PlayerController>
         else if (collision.gameObject.CompareTag(Constants.TagKeygate) && nbKeys > 0)
         {
             nbKeys--;
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<GateTypeA>().SwitchOnOff();
             Debug.Log("Key used. Number of keys: " + nbKeys);
         }
         else if (collision.gameObject.CompareTag(Constants.TagEnemy))

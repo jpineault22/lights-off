@@ -142,8 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConnected: 1
   isOn: 1
-  spriteOn: {fileID: 21300000, guid: cd19dd272b1c51a4ba4ae581144f3747, type: 3}
-  spriteOff: {fileID: 21300000, guid: 2e6ee4b5ae1b4af45a2c9f446773779a, type: 3}
+  spriteOn: {fileID: 21300000, guid: bae283a4fd9fac34186861c120bcdd47, type: 3}
+  spriteOff: {fileID: 21300000, guid: cd19dd272b1c51a4ba4ae581144f3747, type: 3}
+  spriteInactive: {fileID: 21300000, guid: 2e6ee4b5ae1b4af45a2c9f446773779a, type: 3}
 --- !u!1001 &7005823215418196065
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class TimerSwitch : Switch
 	
 	[SerializeField] private float timerTime = 5f;
 	[SerializeField] private Sprite spriteActive = default;
-	[SerializeField] private Sprite spriteTriggered = default;
+	[SerializeField] private Sprite[] spritesTriggered = default;
 
 	private float timer = 0;
 	private bool triggered = false;
@@ -18,11 +18,9 @@ public class TimerSwitch : Switch
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-	protected override void FixedUpdate()
+	private void Update()
 	{
-		base.FixedUpdate();
-
-		if (switchDevice != null && !switchDevice.IsConnected())
+		if (!switchDevice.IsConnected())
 		{
 			if (triggered)
 			{
@@ -33,14 +31,15 @@ public class TimerSwitch : Switch
 		}
 		else if (timer > 0)
 		{
-			timer -= Time.fixedDeltaTime;
 			triggered = true;
+			spriteRenderer.sprite = spritesTriggered[Mathf.CeilToInt(timer * spritesTriggered.Length / timerTime) - 1];
+			timer -= Time.deltaTime;
 		}
 		else if (triggered)
 		{
 			triggered = false;
 			SwitchDevices();
-			UpdateSprite();
+			spriteRenderer.sprite = spriteActive;
 		}
 	}
 
@@ -56,7 +55,7 @@ public class TimerSwitch : Switch
 
 		timer = timerTime;
 		triggered = true;
-		UpdateSprite();
+		spriteRenderer.sprite = spritesTriggered[0];
 	}
 
 	private void SwitchDevices()
@@ -66,18 +65,7 @@ public class TimerSwitch : Switch
 			device.SwitchOnOff();
 		}
 
-		GameManager.Instance.CheckIfAllLightsOff();
-	}
-
-	private void UpdateSprite()
-	{
-		if (triggered)
-		{
-			spriteRenderer.sprite = spriteTriggered;
-		}
-		else
-		{
-			spriteRenderer.sprite = spriteActive;
-		}
+		if (PlayerController.Instance.CurrentCharacterState != CharacterState.LevelTransition)
+			GameManager.Instance.CheckIfAllLightsOff();
 	}
 }

@@ -180,3 +180,4 @@ MonoBehaviour:
   isOn: 1
   spriteOn: {fileID: 21300000, guid: 2f951c47c620a894689e8f09f5c93a83, type: 3}
   spriteOff: {fileID: 21300000, guid: 84822e0775748d94a90bbd1826ca25a0, type: 3}
+  spriteInactive: {fileID: 21300000, guid: 84822e0775748d94a90bbd1826ca25a0, type: 3}

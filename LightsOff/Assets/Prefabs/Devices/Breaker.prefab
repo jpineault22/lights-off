@@ -145,6 +145,7 @@ MonoBehaviour:
   isOn: 1
   spriteOn: {fileID: 21300000, guid: 7fd8305d14cf65a45968b46b15c0b409, type: 3}
   spriteOff: {fileID: 21300000, guid: b7babb676dec93b45a618f9fe3619b6d, type: 3}
+  spriteInactive: {fileID: 21300000, guid: b7babb676dec93b45a618f9fe3619b6d, type: 3}
 --- !u!1001 &1849412977556937463
 PrefabInstance:
   m_ObjectHideFlags: 0

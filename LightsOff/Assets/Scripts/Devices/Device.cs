@@ -6,6 +6,7 @@ public class Device : RotatableObject
 	[SerializeField] protected bool isOn;
     [SerializeField] protected Sprite spriteOn = default;
     [SerializeField] protected Sprite spriteOff = default;
+	[SerializeField] protected Sprite spriteInactive = default;
 
     protected SpriteRenderer spriteRenderer;
 
@@ -14,6 +15,9 @@ public class Device : RotatableObject
 		base.Awake();
 		
 		spriteRenderer = GetComponent<SpriteRenderer>();
+
+		if (spriteInactive == null)
+			spriteInactive = spriteOff;
 
 		ApplyOnOffBehavior();
 	}
@@ -34,13 +38,16 @@ public class Device : RotatableObject
 
 	public virtual void ApplyOnOffBehavior()
 	{
-		if (IsOnAndConnected())
+		if (isConnected)
 		{
-			spriteRenderer.sprite = spriteOn;
+			if (isOn)
+				spriteRenderer.sprite = spriteOn;
+			else
+				spriteRenderer.sprite = spriteOff;
 		}
 		else
 		{
-			spriteRenderer.sprite = spriteOff;
+			spriteRenderer.sprite = spriteInactive;
 		}
 	}
 

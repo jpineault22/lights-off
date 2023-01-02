@@ -2,32 +2,27 @@
 
 public class Door : InteractibleObject
 {
-	[SerializeField] private Sprite doorClosed = default;
-	[SerializeField] private Sprite doorOpen = default;
-
-	private SpriteRenderer spriteRenderer;
+	private Animator animator;
 
 	private bool isOpen;
 
 	protected override void Awake()
 	{
 		base.Awake();
-		
-		spriteRenderer = GetComponent<SpriteRenderer>();
 
-		spriteRenderer.sprite = doorClosed;
+		animator = GetComponent<Animator>();
 	}
 
 	public void OpenDoor()
 	{
 		isOpen = true;
-		spriteRenderer.sprite = doorOpen;
+		animator.SetBool(Constants.AnimatorDoorIsOpen, true);
 	}
 
 	public void CloseDoor()
 	{
 		isOpen = false;
-		spriteRenderer.sprite = doorClosed;
+		animator.SetBool(Constants.AnimatorDoorIsOpen, false);
 		EnableDisableInteractMessage(false);
 	}
 

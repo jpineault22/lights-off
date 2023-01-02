@@ -3,7 +3,13 @@
 // The Moving Platform Type B works only with exactly 2 target points
 public class MovingPlatformTypeB : MovingPlatform
 {
-	public bool readyToSwitch;
+	[SerializeField] private Sprite spriteOtherDirectionOn = default;
+	[SerializeField] private Sprite spriteOtherDirectionOff = default;
+	[SerializeField] private Sprite spriteOtherDirectionInactive = default;
+	
+	[HideInInspector] public bool readyToSwitch;
+	private bool otherDirection;
+	public bool Moving { get; set; }
 
 	protected override void Awake()
 	{
@@ -16,8 +22,7 @@ public class MovingPlatformTypeB : MovingPlatform
 	{
 		if (isConnected)
 		{
-			// The variable isOn is used here as an alternating state between the two possible positions for the Type B platform
-			if ((isOn && currentTargetIndex == 1) || (!isOn && currentTargetIndex == 0))
+			if (Moving)
 			{
 				Vector2 target = targetPoints[currentTargetIndex].transform.position;
 
@@ -30,8 +35,26 @@ public class MovingPlatformTypeB : MovingPlatform
 				else
 				{
 					readyToSwitch = true;
+					Moving = false;
+					otherDirection = !otherDirection;
+					SwitchOnOff();
 				}
 			}
+		}
+	}
+
+	public override void ApplyOnOffBehavior()
+	{
+		if (isConnected)
+		{
+			if (isOn)
+				spriteRenderer.sprite = otherDirection ? spriteOtherDirectionOn : spriteOn;
+			else
+				spriteRenderer.sprite = otherDirection ? spriteOtherDirectionOff : spriteOff;
+		}
+		else
+		{
+			spriteRenderer.sprite = otherDirection ? spriteOtherDirectionInactive : spriteInactive;
 		}
 	}
 }

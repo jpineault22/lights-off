@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2722381356245434684}
   - component: {fileID: 2722381356245434682}
   - component: {fileID: 2722381356245434687}
+  - component: {fileID: -2786808680167310838}
   m_Layer: 10
   m_Name: CycleSwitchLeft
   m_TagString: Untagged
@@ -128,6 +129,24 @@ MonoBehaviour:
   devices:
   - {fileID: 0}
   cycleSwitchLeft: 1
+  pressedTime: 0.15
+--- !u!114 &-2786808680167310838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722381356245434686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3361ff5c7ba6e4aba08f3ba8edb3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConnected: 1
+  isOn: 1
+  spriteOn: {fileID: 21300000, guid: 877e5c4ca326b264c8142de77e123ab9, type: 3}
+  spriteOff: {fileID: 21300000, guid: d76aa4a1029eed948aa9cc7c84e661b0, type: 3}
+  spriteInactive: {fileID: 21300000, guid: ef9114f27b987be4d90eda991a4df320, type: 3}
 --- !u!1001 &156887385797329149
 PrefabInstance:
   m_ObjectHideFlags: 0

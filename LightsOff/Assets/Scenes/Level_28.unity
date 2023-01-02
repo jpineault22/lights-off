@@ -5637,18 +5637,23 @@ PrefabInstance:
       propertyPath: isOn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8877653424072205086, guid: 3b9f5f89b1368934bac81a7c64890b2c,
+        type: 3}
+      propertyPath: isOn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9f5f89b1368934bac81a7c64890b2c, type: 3}
 --- !u!114 &290700682 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7923685645303908569, guid: 3b9f5f89b1368934bac81a7c64890b2c,
+  m_CorrespondingSourceObject: {fileID: 8877653424072205086, guid: 3b9f5f89b1368934bac81a7c64890b2c,
     type: 3}
   m_PrefabInstance: {fileID: 290700681}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c892348940d518c4ea858c86c690185a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ce0816baeceac6429a09edc52c98418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &311931467
@@ -6587,12 +6592,12 @@ PrefabInstance:
     - target: {fileID: 6162696010989982175, guid: 9a74c145d2a413246b71850bef824c15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.4
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6162696010989982175, guid: 9a74c145d2a413246b71850bef824c15,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.6
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6162696010989982175, guid: 9a74c145d2a413246b71850bef824c15,
         type: 3}
@@ -7457,7 +7462,7 @@ PrefabInstance:
         type: 3}
       propertyPath: devices.Array.data[3]
       value: 
-      objectReference: {fileID: 290700682}
+      objectReference: {fileID: 0}
     - target: {fileID: 8182601378598821702, guid: f62827e74c2c7784f9d599f8853d0389,
         type: 3}
       propertyPath: devices.Array.data[4]
@@ -7472,7 +7477,7 @@ PrefabInstance:
         type: 3}
       propertyPath: devices.Array.data[6]
       value: 
-      objectReference: {fileID: 290700682}
+      objectReference: {fileID: 0}
     - target: {fileID: 8182601378598821753, guid: f62827e74c2c7784f9d599f8853d0389,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7555,12 +7560,12 @@ PrefabInstance:
     - target: {fileID: 6162696010989982175, guid: 9a74c145d2a413246b71850bef824c15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.6
+      value: -15.5
       objectReference: {fileID: 0}
     - target: {fileID: 6162696010989982175, guid: 9a74c145d2a413246b71850bef824c15,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.35
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6162696010989982175, guid: 9a74c145d2a413246b71850bef824c15,
         type: 3}

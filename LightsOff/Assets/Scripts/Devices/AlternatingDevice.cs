@@ -11,12 +11,14 @@ public class AlternatingDevice : Device
 		// Add animations later on
 		if (IsOnAndConnected())
 		{
+			spriteRenderer.sprite = spriteOn;
 			transform.position = movesHorizontally
 				? new Vector2(positionA, transform.position.y)
 				: new Vector2(transform.position.x, positionA);
 		}
 		else
 		{
+			spriteRenderer.sprite = spriteOff;
 			transform.position = movesHorizontally
 				? new Vector2(positionB, transform.position.y)
 				: new Vector2(transform.position.x, positionB);

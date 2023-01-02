@@ -132,7 +132,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2195854fd7c135449a31a142914ed05c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f11c1ad24a9b9745bf470ab2d280fdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -212,8 +212,16 @@ MonoBehaviour:
   isOn: 0
   spriteOn: {fileID: 21300000, guid: 2195854fd7c135449a31a142914ed05c, type: 3}
   spriteOff: {fileID: 21300000, guid: 3f11c1ad24a9b9745bf470ab2d280fdb, type: 3}
+  spriteInactive: {fileID: 21300000, guid: 3f11c1ad24a9b9745bf470ab2d280fdb, type: 3}
   targetPoints:
   - {fileID: 0}
   - {fileID: 0}
   speed: 5
+  spriteOtherDirectionOn: {fileID: 21300000, guid: 1b766a5e026e5394183c94597a0d9641,
+    type: 3}
+  spriteOtherDirectionOff: {fileID: 21300000, guid: b1850a1483092cc489fa61a2f769df27,
+    type: 3}
+  spriteOtherDirectionInactive: {fileID: 21300000, guid: b1850a1483092cc489fa61a2f769df27,
+    type: 3}
   readyToSwitch: 0
+  otherDirection: 0

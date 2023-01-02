@@ -125,6 +125,7 @@ MonoBehaviour:
   isOn: 1
   spriteOn: {fileID: 21300000, guid: 8f1dc2347f0373a48bc3f2d4231279a9, type: 3}
   spriteOff: {fileID: 21300000, guid: 3137d7a992670284fac6cda617ff6692, type: 3}
+  spriteInactive: {fileID: 21300000, guid: 3137d7a992670284fac6cda617ff6692, type: 3}
   positionA: -3
   positionB: 1
   movesHorizontally: 0

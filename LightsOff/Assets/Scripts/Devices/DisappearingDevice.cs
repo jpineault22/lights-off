@@ -2,11 +2,12 @@
 
 public class DisappearingDevice : Device
 {
-	private Collider2D deviceCollider;
+	protected Collider2D deviceCollider;
 
 	protected override void Awake()
 	{
 		deviceCollider = GetComponent<Collider2D>();
+
 		base.Awake();
 	}
 

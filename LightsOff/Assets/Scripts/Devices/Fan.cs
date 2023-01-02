@@ -9,6 +9,7 @@ public class Fan : Device
 	private SpriteRenderer functionalFanSpriteRenderer;
 	private AreaEffector2D functionalFanAreaEffector;
 	private BoxCollider2D functionalFanCollider;
+	private Animator animator;
 
 	protected override void Awake()
 	{
@@ -16,6 +17,7 @@ public class Fan : Device
 		functionalFanSpriteRenderer = functionalFan.GetComponent<SpriteRenderer>();
 		functionalFanAreaEffector = functionalFan.GetComponent<AreaEffector2D>();
 		functionalFanCollider = functionalFan.GetComponent<BoxCollider2D>();
+		animator = GetComponent<Animator>();
 
 		//functionalFanAreaEffector.forceMagnitude = transform.localEulerAngles.z == 90 ? forceMagnitudeUpwards : forceMagnitude;
 		
@@ -28,8 +30,7 @@ public class Fan : Device
 	{
 		if (IsOnAndConnected())
 		{
-			// Switch for an animation eventually
-			spriteRenderer.sprite = spriteOn;
+			animator.enabled = true;
 
 			functionalFanSpriteRenderer.enabled = true;
 			//functionalFanAreaEffector.forceMagnitude = forceMagnitude;
@@ -37,7 +38,7 @@ public class Fan : Device
 		}
 		else
 		{
-			spriteRenderer.sprite = spriteOff;
+			animator.enabled = false;
 
 			functionalFanSpriteRenderer.enabled = false;
 			//functionalFanAreaEffector.forceMagnitude = 0;

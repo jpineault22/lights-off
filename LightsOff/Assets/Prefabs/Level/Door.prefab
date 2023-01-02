@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8059171538929901329}
   - component: {fileID: 8059171538929901328}
   - component: {fileID: 7106339381152936205}
+  - component: {fileID: 590948385}
   m_Layer: 10
   m_Name: Door
   m_TagString: Door
@@ -125,8 +126,25 @@ MonoBehaviour:
   interactMessageText: {fileID: 1217299542651655624}
   interactMessage: 1
   cooldownTime: 0.5
-  doorClosed: {fileID: 21300000, guid: 731d0774193b60e4ebeb5103d4eee2b9, type: 3}
-  doorOpen: {fileID: 21300000, guid: 88c151387e5e51e43a7b127a6ea3f175, type: 3}
+--- !u!95 &590948385
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059171538929901331}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d8a2586566087a43a84e953824b70f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1434603450995999166
 PrefabInstance:
   m_ObjectHideFlags: 0

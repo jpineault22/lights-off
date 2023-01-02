@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3235655757013745087}
   - component: {fileID: 3235655757013745081}
   - component: {fileID: 3235655757013745084}
+  - component: {fileID: -287277549175328623}
   m_Layer: 10
   m_Name: TimerSwitch
   m_TagString: Untagged
@@ -129,7 +130,28 @@ MonoBehaviour:
   - {fileID: 0}
   timerTime: 5
   spriteActive: {fileID: 21300000, guid: 199aed94c6e8dca488fc153e2d8f2712, type: 3}
-  spriteTriggered: {fileID: 21300000, guid: 1e39af1cc6c91f744bb243847b959b9a, type: 3}
+  spritesTriggered:
+  - {fileID: 21300000, guid: 1e39af1cc6c91f744bb243847b959b9a, type: 3}
+  - {fileID: 21300000, guid: ae44ff24d87c0264380675ce098e62c5, type: 3}
+  - {fileID: 21300000, guid: df1881eef4278934285221baa1dbcc89, type: 3}
+  - {fileID: 21300000, guid: e5005b85215f7fb42b650119ae462c61, type: 3}
+--- !u!114 &-287277549175328623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235655757013745085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3361ff5c7ba6e4aba08f3ba8edb3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConnected: 1
+  isOn: 0
+  spriteOn: {fileID: 21300000, guid: 199aed94c6e8dca488fc153e2d8f2712, type: 3}
+  spriteOff: {fileID: 21300000, guid: 199aed94c6e8dca488fc153e2d8f2712, type: 3}
+  spriteInactive: {fileID: 21300000, guid: 798c019dd441c6b40b504e96d02aac3a, type: 3}
 --- !u!1001 &988787716727788271
 PrefabInstance:
   m_ObjectHideFlags: 0

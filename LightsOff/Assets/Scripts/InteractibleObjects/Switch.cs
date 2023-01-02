@@ -5,7 +5,7 @@ public class Switch : InteractibleObject
 {
 	[SerializeField] protected Device[] devices = default;
 
-	protected Device switchDevice;											// The Device script component of a switch. It should not be null only if the switch is connected to a breaker, which can activate/deactivate it.
+	protected Device switchDevice;											// The Device script component of a switch. It should not be null. when connected to a breaker, it can activate/deactivate it.
 	protected List<MovingPlatformTypeB> blockingDevices;					// Adapt if you add more types of blocking devices
 	protected bool blocked;
 
@@ -46,7 +46,7 @@ public class Switch : InteractibleObject
 
 	protected override void OnTriggerEnter2D(Collider2D pCollision)
 	{
-		if (!blocked && (switchDevice == null || switchDevice.IsConnected()) && pCollision.gameObject.CompareTag(Constants.TagPlayer))
+		if (!blocked && switchDevice.IsConnected() && pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
 			interactMessageText.enabled = true;
 			InRange = true;
@@ -55,14 +55,22 @@ public class Switch : InteractibleObject
 
 	public override void Interact()
 	{
-		if (blocked || (switchDevice != null && !switchDevice.IsConnected()))
+		if (blocked || !switchDevice.IsConnected())
 		{
 			return;
 		}
+
+		switchDevice.SwitchOnOff();
 		
 		foreach (Device device in devices)
 		{
 			device.SwitchOnOff();
+
+			if (device is MovingPlatformTypeB)
+			{
+				MovingPlatformTypeB platform = device as MovingPlatformTypeB;
+				platform.Moving = true;
+			}
 		}
 
 		GameManager.Instance.CheckIfAllLightsOff();

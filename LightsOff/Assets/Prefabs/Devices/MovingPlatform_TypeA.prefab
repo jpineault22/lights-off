@@ -212,6 +212,7 @@ MonoBehaviour:
   isOn: 0
   spriteOn: {fileID: 21300000, guid: 357c5fc53b2b4c34a9b29576ebc3032c, type: 3}
   spriteOff: {fileID: 21300000, guid: 0da4df0e1241d6a40ba8f51108a314a7, type: 3}
+  spriteInactive: {fileID: 21300000, guid: 0da4df0e1241d6a40ba8f51108a314a7, type: 3}
   targetPoints:
   - {fileID: 0}
   - {fileID: 0}

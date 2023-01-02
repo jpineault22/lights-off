@@ -250,8 +250,6 @@ public class GameManager : Singleton<GameManager>
 
 	public void CheckIfAllLightsOff()
 	{
-		if (PlayerController.Instance.CurrentCharacterState == CharacterState.LevelTransition) return;
-		
 		foreach (Light light in levelLights)
 		{
 			if (light.IsOnAndConnected())

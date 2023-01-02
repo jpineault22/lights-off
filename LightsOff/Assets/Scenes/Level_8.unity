@@ -6195,6 +6195,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatform_TypeB (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3675807208867457913, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 18c3c247fe400b14bbd46e8f295eaa29,
+        type: 3}
     - target: {fileID: 3675807208867457918, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6254,12 +6260,48 @@ PrefabInstance:
         type: 3}
       propertyPath: targetPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 2144581975}
+      objectReference: {fileID: 911604193}
     - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
         type: 3}
       propertyPath: targetPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 911604193}
+      objectReference: {fileID: 2144581975}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 18c3c247fe400b14bbd46e8f295eaa29,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteInactive
+      value: 
+      objectReference: {fileID: 21300000, guid: 18c3c247fe400b14bbd46e8f295eaa29,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 55d83d8670440bb4885138ccf6d830e0,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 30806c6775e99294a81a2182c31e70b5,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionInactive
+      value: 
+      objectReference: {fileID: 21300000, guid: 30806c6775e99294a81a2182c31e70b5,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c442c3d10ac6074a9ca3e6505de92e9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a81176ab92c0a14c9d11bfe177fdd62, type: 3}
 --- !u!114 &667849466 stripped
@@ -7138,6 +7180,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatform_TypeB (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3675807208867457913, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 30806c6775e99294a81a2182c31e70b5,
+        type: 3}
     - target: {fileID: 3675807208867457918, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7197,12 +7245,48 @@ PrefabInstance:
         type: 3}
       propertyPath: targetPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1265352714}
+      objectReference: {fileID: 165330692}
     - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
         type: 3}
       propertyPath: targetPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 165330692}
+      objectReference: {fileID: 1265352714}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 30806c6775e99294a81a2182c31e70b5,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteInactive
+      value: 
+      objectReference: {fileID: 21300000, guid: 30806c6775e99294a81a2182c31e70b5,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c442c3d10ac6074a9ca3e6505de92e9,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 18c3c247fe400b14bbd46e8f295eaa29,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionInactive
+      value: 
+      objectReference: {fileID: 21300000, guid: 18c3c247fe400b14bbd46e8f295eaa29,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 55d83d8670440bb4885138ccf6d830e0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a81176ab92c0a14c9d11bfe177fdd62, type: 3}
 --- !u!114 &1881220662 stripped
@@ -7470,6 +7554,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatform_TypeB
       objectReference: {fileID: 0}
+    - target: {fileID: 3675807208867457913, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 30806c6775e99294a81a2182c31e70b5,
+        type: 3}
     - target: {fileID: 3675807208867457918, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7529,12 +7619,48 @@ PrefabInstance:
         type: 3}
       propertyPath: targetPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 530035826}
+      objectReference: {fileID: 624757953}
     - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
         type: 3}
       propertyPath: targetPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 624757953}
+      objectReference: {fileID: 530035826}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 30806c6775e99294a81a2182c31e70b5,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteInactive
+      value: 
+      objectReference: {fileID: 21300000, guid: 30806c6775e99294a81a2182c31e70b5,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c442c3d10ac6074a9ca3e6505de92e9,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionOff
+      value: 
+      objectReference: {fileID: 21300000, guid: 18c3c247fe400b14bbd46e8f295eaa29,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionInactive
+      value: 
+      objectReference: {fileID: 21300000, guid: 18c3c247fe400b14bbd46e8f295eaa29,
+        type: 3}
+    - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
+        type: 3}
+      propertyPath: spriteOtherDirectionOn
+      value: 
+      objectReference: {fileID: 21300000, guid: 55d83d8670440bb4885138ccf6d830e0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a81176ab92c0a14c9d11bfe177fdd62, type: 3}
 --- !u!114 &2023913747 stripped
