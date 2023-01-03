@@ -5,8 +5,12 @@ public class Conveyor : Device
 {
 	[SerializeField] private bool directionRight = default;
 	[SerializeField] private float force = 500f;
+	[SerializeField] private Sprite[] conveyorSprites = default;
+	[SerializeField] private float spriteChangeTime = 0.1f;
 
 	private List<SpriteRenderer> conveyorBlocks = default;
+	private float spriteChangeTimer;
+	private int currentSprite;
 
 	protected override void Awake()
 	{
@@ -18,24 +22,39 @@ public class Conveyor : Device
 			block.flipX = !directionRight;
 			conveyorBlocks.Add(block);
 		}
-
-		ApplyOnOffBehavior();
 	}
 
-	public override void ApplyOnOffBehavior()
+	private void Update()
 	{
 		if (IsOnAndConnected())
 		{
-			foreach (SpriteRenderer block in conveyorBlocks)
+			if (spriteChangeTimer > 0)
 			{
-				block.sprite = spriteOn;
+				spriteChangeTimer -= Time.deltaTime;
 			}
-		}
-		else
-		{
-			foreach (SpriteRenderer block in conveyorBlocks)
+			else
 			{
-				block.sprite = spriteOff;
+				spriteChangeTimer = spriteChangeTime;
+
+				if (directionRight)
+				{
+					currentSprite++;
+
+					if (currentSprite > conveyorSprites.Length - 1)
+						currentSprite = 0;
+				}
+				else
+				{
+					currentSprite--;
+
+					if (currentSprite < 0)
+						currentSprite = conveyorSprites.Length - 1;
+				}
+
+				foreach (SpriteRenderer block in conveyorBlocks)
+				{
+					block.sprite = conveyorSprites[currentSprite];
+				}
 			}
 		}
 	}
@@ -67,5 +86,11 @@ public class Conveyor : Device
 	public bool IsDirectionRight()
 	{
 		return directionRight;
+	}
+
+	// The physics part is handled in OnCollisionStay2D, whereas the animation is handled in Update, so we don't want anything to happen in this method
+	public override void ApplyOnOffBehavior()
+	{
+		return;
 	}
 }

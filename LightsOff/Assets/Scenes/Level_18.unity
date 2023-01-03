@@ -5707,12 +5707,12 @@ PrefabInstance:
         type: 3}
       propertyPath: targetPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1172318936}
+      objectReference: {fileID: 344886235}
     - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
         type: 3}
       propertyPath: targetPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 344886235}
+      objectReference: {fileID: 1172318936}
     - target: {fileID: 5688753082061827822, guid: 6a81176ab92c0a14c9d11bfe177fdd62,
         type: 3}
       propertyPath: spriteOff

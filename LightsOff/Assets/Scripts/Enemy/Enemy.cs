@@ -14,6 +14,7 @@ public abstract class Enemy : MonoBehaviour
     protected Rigidbody2D rb;
     protected CircleCollider2D circleCollider;
     protected SpriteRenderer spriteRenderer;
+    protected Animator animator;
     
     protected EnemyState currentEnemyState;
     protected EnemyState previousEnemyState;
@@ -29,6 +30,7 @@ public abstract class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
         currentEnemyState = defaultEnemyState;
 
@@ -53,9 +55,10 @@ public abstract class Enemy : MonoBehaviour
         
         if (currentEnemyState == EnemyState.Stunned || currentEnemyState == EnemyState.ChasingIdle)
 		{
-            if (currentStateTimer > 0)
+            if (currentStateTimer >= 0)
 			{
                 currentStateTimer -= Time.fixedDeltaTime;
+                animator.SetFloat(Constants.AnimatorEnemyCurrentStateTimer, currentStateTimer);
             }
             else
 			{
@@ -115,9 +118,14 @@ public abstract class Enemy : MonoBehaviour
             horizontalPositionToMaintain = transform.position.x;
         }
 
-        currentEnemyState = EnemyState.Stunned;
         currentStateTimer = stunnedTime;
-	}
+        currentEnemyState = EnemyState.Stunned;
+        animator.SetTrigger(Constants.AnimatorEnemyBouncedOn);
+        animator.SetFloat(Constants.AnimatorEnemyCurrentStateTimer, currentStateTimer);
+
+        if (GameObjectUtils.AnimatorHasParameter(animator, Constants.AnimatorEnemyIsChasing))
+            animator.SetBool(Constants.AnimatorEnemyIsChasing, false);
+    }
 
     protected void ResetToDefaultEnemyState()
 	{

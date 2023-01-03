@@ -10,7 +10,7 @@ public class EnemyPassedOut : Enemy
 	[SerializeField] private float chasingFlipTimeMin = 1f;                     // The minimum time between each flip when chasing
 	[SerializeField] private float ladderMaxWaitingDistance = 2f;               // The maximum distance from the ladder at which the enemy will stop and become ChasingIdle
 	[SerializeField] private float ladderMinWaitingDistance = 1.8f;				// The minimum distance from the ladder at which the enemy will stop and become ChasingIdle
-	[SerializeField] private float climbingVerticalExitChasingDistance = 2f;	// The minimum distance the player has to be from the enemy while climbing for it to stop chasing them
+	[SerializeField] private float climbingVerticalExitChasingDistance = 2f;    // The minimum distance the player has to be from the enemy while climbing for it to stop chasing them
 
 	private float chasingFlipTimer;
 	private float? playerClimbingHorizontalPosition;                            // The player's horizontal position when they start climbing
@@ -43,7 +43,7 @@ public class EnemyPassedOut : Enemy
 			{
 				ChasePlayer();
 			}
-			else if (currentEnemyState == EnemyState.ChasingIdle && currentStateTimer <= 0)
+			else if (currentEnemyState == EnemyState.ChasingIdle && currentStateTimer < 0)
 			{
 				playerClimbingHorizontalPosition = null;
 				ResetToDefaultEnemyState();
@@ -65,6 +65,7 @@ public class EnemyPassedOut : Enemy
 		if (playerInfoFront.collider || playerInfoBack.collider)
 		{
 			currentEnemyState = EnemyState.Chasing;
+			animator.SetBool(Constants.AnimatorEnemyIsChasing, true);
 		}
 	}
 
@@ -136,8 +137,10 @@ public class EnemyPassedOut : Enemy
 
 	private void BecomeChasingIdle(float pChasingIdleTime)
 	{
-		currentEnemyState = EnemyState.ChasingIdle;
 		currentStateTimer = pChasingIdleTime;
+		currentEnemyState = EnemyState.ChasingIdle;
+		animator.SetBool(Constants.AnimatorEnemyIsChasing, false);
+		animator.SetFloat(Constants.AnimatorEnemyCurrentStateTimer, currentStateTimer);
 		rb.velocity = Vector2.zero;
 	}
 }

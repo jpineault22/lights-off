@@ -43,6 +43,9 @@ public static class Constants
     public const string AnimatorCharacterIsDying = "IsDying";
     public const string AnimatorCharacterIsLevelTransitioning = "IsLevelTransitioning";
     public const string AnimatorCharacterSpeed = "Speed";
+    public const string AnimatorEnemyIsChasing = "IsChasing";
+    public const string AnimatorEnemyBouncedOn = "BouncedOn";
+    public const string AnimatorEnemyCurrentStateTimer = "CurrentStateTimer";
     public const string AnimatorDoorIsOpen = "IsOpen";
     public const string AnimatorGateIsOpen = "IsOpen";
     public const string AnimatorCrossfadeStart = "CrossfadeStart";

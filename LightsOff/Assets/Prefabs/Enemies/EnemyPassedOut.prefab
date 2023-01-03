@@ -10,9 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1188597375888545500}
   - component: {fileID: 1188597375888545503}
+  - component: {fileID: 2852202511862169919}
+  - component: {fileID: 4146163213807904421}
   - component: {fileID: 1188597375888545498}
   - component: {fileID: 1188597375888545473}
   - component: {fileID: 1188597375888545501}
+  - component: {fileID: 8422500853250159631}
   m_Layer: 11
   m_Name: EnemyPassedOut
   m_TagString: Enemy
@@ -74,9 +77,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 1903431ff7a258947aad012b2bbaa6a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 711211bf67ec4774e8e60570fa22ce30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 2}
@@ -85,6 +88,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &2852202511862169919
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188597375888545472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.16}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1, y: 0}
+  - {x: 1, y: 0}
+--- !u!61 &4146163213807904421
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188597375888545472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.4465475}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.68834305, y: 1.4079118}
+  m_EdgeRadius: 0
 --- !u!58 &1188597375888545498
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,9 +145,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.16}
+  m_Offset: {x: 0, y: -1.12}
   serializedVersion: 2
-  m_Radius: 1.15
+  m_Radius: 0.35
 --- !u!50 &1188597375888545473
 Rigidbody2D:
   serializedVersion: 4
@@ -153,6 +200,25 @@ MonoBehaviour:
   ladderMaxWaitingDistance: 2
   ladderMinWaitingDistance: 1.8
   climbingVerticalExitChasingDistance: 2
+--- !u!95 &8422500853250159631
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188597375888545472}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 012b7ef995c55a545b375951ddd1ec2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1188597376693236527
 GameObject:
   m_ObjectHideFlags: 0

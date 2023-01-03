@@ -63,6 +63,12 @@ public class TimerSwitch : Switch
 		foreach (Device device in devices)
 		{
 			device.SwitchOnOff();
+
+			if (device is MovingPlatformTypeB)
+			{
+				MovingPlatformTypeB platform = device as MovingPlatformTypeB;
+				platform.Moving = true;
+			}
 		}
 
 		if (PlayerController.Instance.CurrentCharacterState != CharacterState.LevelTransition)

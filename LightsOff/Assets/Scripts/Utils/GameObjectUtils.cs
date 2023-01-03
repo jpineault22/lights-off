@@ -13,4 +13,15 @@ public static class GameObjectUtils
 
 		return gameObjects;
 	}
+
+	public static bool AnimatorHasParameter(Animator pAnimator, string pParameterName)
+	{
+		foreach (AnimatorControllerParameter parameter in pAnimator.parameters)
+		{
+			if (parameter.name == pParameterName)
+				return true;
+		}
+
+		return false;
+	}
 }

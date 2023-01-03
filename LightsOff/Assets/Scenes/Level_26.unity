@@ -193,18 +193,23 @@ PrefabInstance:
       propertyPath: isOn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8877653424072205086, guid: 3b9f5f89b1368934bac81a7c64890b2c,
+        type: 3}
+      propertyPath: isOn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9f5f89b1368934bac81a7c64890b2c, type: 3}
 --- !u!114 &152706625 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7923685645303908569, guid: 3b9f5f89b1368934bac81a7c64890b2c,
+  m_CorrespondingSourceObject: {fileID: 8877653424072205086, guid: 3b9f5f89b1368934bac81a7c64890b2c,
     type: 3}
   m_PrefabInstance: {fileID: 152706624}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c892348940d518c4ea858c86c690185a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ce0816baeceac6429a09edc52c98418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &260397669
@@ -4211,14 +4216,14 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 3b9f5f89b1368934bac81a7c64890b2c, type: 3}
 --- !u!114 &529479403 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7923685645303908569, guid: 3b9f5f89b1368934bac81a7c64890b2c,
+  m_CorrespondingSourceObject: {fileID: 8877653424072205086, guid: 3b9f5f89b1368934bac81a7c64890b2c,
     type: 3}
   m_PrefabInstance: {fileID: 529479402}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c892348940d518c4ea858c86c690185a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ce0816baeceac6429a09edc52c98418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &575473152
@@ -4466,28 +4471,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f62827e74c2c7784f9d599f8853d0389, type: 3}
---- !u!1 &1134235801 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8182601378598821755, guid: f62827e74c2c7784f9d599f8853d0389,
+--- !u!114 &1134235801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -7108859226572717592, guid: f62827e74c2c7784f9d599f8853d0389,
     type: 3}
   m_PrefabInstance: {fileID: 1134235800}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1134235802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134235801}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a3361ff5c7ba6e4aba08f3ba8edb3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isConnected: 1
-  isOn: 1
-  spriteOn: {fileID: 21300000, guid: 703416bb0de1dca4198619b6b81ec60a, type: 3}
-  spriteOff: {fileID: 21300000, guid: fe42df9371429dd4b9f608acc6bcf435, type: 3}
 --- !u!1001 &1222743815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4714,7 +4709,7 @@ PrefabInstance:
         type: 3}
       propertyPath: devices.Array.data[2]
       value: 
-      objectReference: {fileID: 1134235802}
+      objectReference: {fileID: 1134235801}
     - target: {fileID: 2881135434741204381, guid: fd3f57c1840752548ba6081934edb147,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5045,25 +5040,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f62827e74c2c7784f9d599f8853d0389, type: 3}
---- !u!1 &8182601378361039143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8182601378598821755, guid: f62827e74c2c7784f9d599f8853d0389,
-    type: 3}
-  m_PrefabInstance: {fileID: 8182601378361039142}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8182601378361039144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8182601378361039143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3361ff5c7ba6e4aba08f3ba8edb3bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isConnected: 1
-  isOn: 1
-  spriteOn: {fileID: 21300000, guid: 703416bb0de1dca4198619b6b81ec60a, type: 3}
-  spriteOff: {fileID: 21300000, guid: fe42df9371429dd4b9f608acc6bcf435, type: 3}
