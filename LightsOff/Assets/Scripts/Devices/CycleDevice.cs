@@ -20,6 +20,8 @@ public abstract class CycleDevice : RotatableObject
 	private int stateLowerLimitChangeCheck = -1000;
 	private int stateUpperLimitChangeCheck = -1000;
 
+	protected SpriteRenderer outlineSpriteRenderer;
+
 	private void OnValidate()
 	{
 		if (numberOfStatesChangeCheck == -1000) numberOfStatesChangeCheck = numberOfStates;
@@ -90,6 +92,16 @@ public abstract class CycleDevice : RotatableObject
 					break;
 			}
 		}
+
+		foreach (GameObject obj in GameObjectUtils.GetChildren(gameObject))
+		{
+			if (obj.CompareTag(Constants.TagOutline))
+			{
+				outlineSpriteRenderer = obj.GetComponent<SpriteRenderer>();
+				outlineSpriteRenderer.color = UIManager.Instance.deviceOutlineColor;
+				ShowOutline(false);
+			}
+		}
 	}
 
 	public void SwitchToNextState()
@@ -135,6 +147,11 @@ public abstract class CycleDevice : RotatableObject
 	}
 
 	public abstract void ApplyBehavior();
+
+	public virtual void ShowOutline(bool pShow)
+	{
+		outlineSpriteRenderer.enabled = pShow;
+	}
 
 	public bool IsConnected()
 	{

@@ -39,8 +39,25 @@ public class CycleSwitch : InteractibleObject
 	{
 		if (switchDevice.IsConnected() && pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
-			interactMessageText.enabled = true;
-			InRange = true;
+			EnableDisableInteractMessage(true);
+
+			foreach (CycleDevice device in devices)
+			{
+				device.ShowOutline(true);
+			}
+		}
+	}
+
+	protected override void OnTriggerExit2D(Collider2D pCollision)
+	{
+		if (pCollision.gameObject.CompareTag(Constants.TagPlayer))
+		{
+			EnableDisableInteractMessage(false);
+
+			foreach (CycleDevice device in devices)
+			{
+				device.ShowOutline(true);
+			}
 		}
 	}
 

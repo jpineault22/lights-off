@@ -48,8 +48,25 @@ public class Switch : InteractibleObject
 	{
 		if (!blocked && switchDevice.IsConnected() && pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
-			interactMessageText.enabled = true;
-			InRange = true;
+			EnableDisableInteractMessage(true);
+
+			foreach (Device device in devices)
+			{
+				device.ShowOutline(true);
+			}
+		}
+	}
+
+	protected override void OnTriggerExit2D(Collider2D pCollision)
+	{
+		if (pCollision.gameObject.CompareTag(Constants.TagPlayer))
+		{
+			EnableDisableInteractMessage(false);
+
+			foreach (Device device in devices)
+			{
+				device.ShowOutline(false);
+			}
 		}
 	}
 

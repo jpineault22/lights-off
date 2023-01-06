@@ -10,10 +10,19 @@ public class Fan : Device
 	private AreaEffector2D functionalFanAreaEffector;
 	private BoxCollider2D functionalFanCollider;
 	private Animator animator;
+	private Animator outlineAnimator;
 
 	protected override void Awake()
 	{
-		functionalFan = GameObjectUtils.GetChildren(gameObject)[0];
+		foreach (GameObject obj in GameObjectUtils.GetChildren(gameObject))
+		{
+			if (obj.CompareTag(Constants.TagFunctionalFan))
+				functionalFan = obj;
+			else if (obj.CompareTag(Constants.TagOutline))
+				outlineAnimator = obj.GetComponent<Animator>();
+		}
+
+		//functionalFan = GameObjectUtils.GetChildren(gameObject)[0];
 		functionalFanSpriteRenderer = functionalFan.GetComponent<SpriteRenderer>();
 		functionalFanAreaEffector = functionalFan.GetComponent<AreaEffector2D>();
 		functionalFanCollider = functionalFan.GetComponent<BoxCollider2D>();
@@ -31,6 +40,7 @@ public class Fan : Device
 		if (IsOnAndConnected())
 		{
 			animator.enabled = true;
+			outlineAnimator.enabled = true;
 
 			functionalFanSpriteRenderer.enabled = true;
 			//functionalFanAreaEffector.forceMagnitude = forceMagnitude;
@@ -39,6 +49,7 @@ public class Fan : Device
 		else
 		{
 			animator.enabled = false;
+			outlineAnimator.enabled = false;
 
 			functionalFanSpriteRenderer.enabled = false;
 			//functionalFanAreaEffector.forceMagnitude = 0;

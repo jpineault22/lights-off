@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 4199164049310659033, guid: 8a46fdd9ef41b074ba81029625091ceb,
         type: 3}
       propertyPath: m_Name
-      value: MovingPlatform_TypeA
+      value: MovingPlatform_TypeA_UpDown
       objectReference: {fileID: 0}
     - target: {fileID: 4199164049310659039, guid: 8a46fdd9ef41b074ba81029625091ceb,
         type: 3}

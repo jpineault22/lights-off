@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class UIManager : Singleton<UIManager>
 {
 	[SerializeField] private TMP_Text levelNumberText = default;
+	
+	public Color deviceOutlineColor = Color.white;
 
 	private void Start()
 	{

@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,11 +140,11 @@ MonoBehaviour:
   isOn: 0
   spriteOn: {fileID: 21300000, guid: 66f10fddd6eacd44f8b6b5ddaab60f6c, type: 3}
   spriteOff: {fileID: 21300000, guid: fd0c13f79e4345545a3dbb8d8c42fb80, type: 3}
+  spriteInactive: {fileID: 0}
   targetPoints:
   - {fileID: 0}
   - {fileID: 0}
   speed: 5
-  idleTime: 2
 --- !u!114 &1490847753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,4 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcecd68442744bb4aab000de8d81e9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHeightThreshold: 0.1
+  platformWidthHalf: 0.25
+  disappearingDevice: {fileID: 0}

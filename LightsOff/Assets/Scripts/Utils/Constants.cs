@@ -29,6 +29,9 @@ public static class Constants
     public const string TagEnemy = "Enemy";
     public const string TagPivotingGate = "PivotingGate";
     public const string TagConveyor = "Conveyor";
+    public const string TagOutline = "Outline";
+    public const string TagHaloLight = "HaloLight";
+    public const string TagDirectionalLight = "DirectionalLight";
 
     // Layers
     public const string LayerPlayer = "Player";

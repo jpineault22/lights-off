@@ -9,12 +9,23 @@ public class Device : RotatableObject
 	[SerializeField] protected Sprite spriteInactive = default;
 
     protected SpriteRenderer spriteRenderer;
+	protected SpriteRenderer outlineSpriteRenderer;
 
 	protected override void Awake()
 	{
 		base.Awake();
 		
 		spriteRenderer = GetComponent<SpriteRenderer>();
+
+		foreach (GameObject obj in GameObjectUtils.GetChildren(gameObject))
+		{
+			if (obj.CompareTag(Constants.TagOutline))
+			{
+				outlineSpriteRenderer = obj.GetComponent<SpriteRenderer>();
+				outlineSpriteRenderer.color = UIManager.Instance.deviceOutlineColor;
+				ShowOutline(false);
+			}
+		}
 
 		if (spriteInactive == null)
 			spriteInactive = spriteOff;
@@ -49,6 +60,11 @@ public class Device : RotatableObject
 		{
 			spriteRenderer.sprite = spriteInactive;
 		}
+	}
+
+	public virtual void ShowOutline(bool pShow)
+	{
+		outlineSpriteRenderer.enabled = pShow;
 	}
 
 	public bool IsOnAndConnected()
