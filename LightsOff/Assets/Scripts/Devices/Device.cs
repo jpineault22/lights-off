@@ -67,6 +67,11 @@ public class Device : RotatableObject
 		outlineSpriteRenderer.enabled = pShow;
 	}
 
+	public virtual void ChangeOutlineColor(Color pColor)
+	{
+		outlineSpriteRenderer.color = pColor;
+	}
+
 	public bool IsOnAndConnected()
 	{
 		return isOn && isConnected;

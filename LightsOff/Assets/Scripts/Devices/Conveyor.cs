@@ -21,7 +21,7 @@ public class Conveyor : Device
 		foreach (GameObject child in GameObjectUtils.GetChildren(gameObject))
 		{
 			SpriteRenderer block = child.GetComponent<SpriteRenderer>();
-			block.flipX = !directionRight;
+			block.flipX = directionRight;
 			conveyorBlocks.Add(block);
 
 			foreach (GameObject obj in GameObjectUtils.GetChildren(child))
@@ -113,6 +113,14 @@ public class Conveyor : Device
 		foreach (SpriteRenderer blockOutline in conveyorBlockOutlines)
 		{
 			blockOutline.enabled = pShow;
+		}
+	}
+
+	public override void ChangeOutlineColor(Color pColor)
+	{
+		foreach (SpriteRenderer blockOutline in conveyorBlockOutlines)
+		{
+			blockOutline.color = pColor;
 		}
 	}
 }

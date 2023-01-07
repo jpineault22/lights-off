@@ -56,7 +56,7 @@ public class CycleSwitch : InteractibleObject
 
 			foreach (CycleDevice device in devices)
 			{
-				device.ShowOutline(true);
+				device.ShowOutline(false);
 			}
 		}
 	}

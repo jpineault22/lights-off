@@ -3,7 +3,7 @@
 public class Breaker : InteractibleObject
 {
 	[SerializeField] private Device[] devices = default;
-	//[SerializeField] private Color outlineColor = Color.white;	// TO IMPLEMENT
+	[SerializeField] private Color outlineColor = Color.white;	// TO IMPLEMENT
 
 	private Device breakerDevice = default;
 
@@ -34,6 +34,7 @@ public class Breaker : InteractibleObject
 
 			foreach (Device device in devices)
 			{
+				device.ChangeOutlineColor(outlineColor);
 				device.ShowOutline(true);
 			}
 		}
@@ -47,6 +48,7 @@ public class Breaker : InteractibleObject
 
 			foreach (Device device in devices)
 			{
+				device.ChangeOutlineColor(UIManager.Instance.deviceOutlineColor);
 				device.ShowOutline(false);
 			}
 		}

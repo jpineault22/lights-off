@@ -422,6 +422,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 438113915505043540, guid: 49aa352298bfdc84badf00e9467df103,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685195809310463724, guid: 49aa352298bfdc84badf00e9467df103,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030181141677746358, guid: 49aa352298bfdc84badf00e9467df103,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4900190752244335288, guid: 49aa352298bfdc84badf00e9467df103,
         type: 3}
       propertyPath: directionRight
@@ -440,7 +455,7 @@ PrefabInstance:
     - target: {fileID: 4920957206914379254, guid: 49aa352298bfdc84badf00e9467df103,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.75
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4920957206914379254, guid: 49aa352298bfdc84badf00e9467df103,
         type: 3}
@@ -490,17 +505,27 @@ PrefabInstance:
     - target: {fileID: 4920957206914379255, guid: 49aa352298bfdc84badf00e9467df103,
         type: 3}
       propertyPath: m_Size.x
-      value: 14.862386
+      value: 15.036908
       objectReference: {fileID: 0}
     - target: {fileID: 4920957206914379255, guid: 49aa352298bfdc84badf00e9467df103,
         type: 3}
       propertyPath: m_Offset.x
-      value: -5.9330115
+      value: -6.0202727
       objectReference: {fileID: 0}
     - target: {fileID: 4920957206914379256, guid: 49aa352298bfdc84badf00e9467df103,
         type: 3}
       propertyPath: m_Name
       value: ConveyorLong
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162910397609800014, guid: 49aa352298bfdc84badf00e9467df103,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6410769017520784280, guid: 49aa352298bfdc84badf00e9467df103,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6847232490340955008, guid: 49aa352298bfdc84badf00e9467df103,
         type: 3}
