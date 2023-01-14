@@ -6,7 +6,7 @@ public class GameManager : Singleton<GameManager>
 {
 	[SerializeField] private GameObject[] systemPrefabs = default;          // Prefabs to instantiate when launching the game
 	[SerializeField] private bool testMode = default;
-	[SerializeField] private float playerDoorHeightDifference = 0.56f;		// The player's position at the start of a level will be lower than the start door's position by this amount
+	[SerializeField] private float playerDoorHeightDifference = 0.5f;		// The player's position at the start of a level will be lower than the start door's position by this amount (initial 0.56f)
 
 	public GameState CurrentGameState { get; private set; }
 	[HideInInspector] public GameObject player;
@@ -41,7 +41,6 @@ public class GameManager : Singleton<GameManager>
 
 	private void OnEnable()
 	{
-		LevelLoader.Instance.TransitionHalfDone += SetPlayerPosition;
 		LevelLoader.Instance.LastSceneUnloaded += DestroyToQuit;
 	}
 
@@ -88,12 +87,12 @@ public class GameManager : Singleton<GameManager>
 		CurrentGameState = GameState.LoadingGame;
 
 		InstantiatePlayer();
-		LevelLoader.Instance.LoadLevelFromMenu(pCurrentLevelNumber, testMode, Constants.NameSceneStartMenu);
+		LevelLoader.Instance.LoadLevelFromMenu(pCurrentLevelNumber, testMode);
 	}
 
 	public void LoadNextLevel()
 	{
-		PlayerController.Instance.ResetCharacterForLevelTransition();
+		PlayerController.Instance.ResetCharacterForLevelTransition(door.gameObject.transform.position.x);
 		LevelLoader.Instance.LoadNextLevel();
 	}
 
@@ -180,7 +179,6 @@ public class GameManager : Singleton<GameManager>
 		if (CinemachineManager.IsInitialized)
 			Destroy(CinemachineManager.Instance.gameObject);
 
-		LevelLoader.Instance.TransitionHalfDone -= SetPlayerPosition;
 		LevelLoader.Instance.LastSceneUnloaded -= DestroyToQuit;
 
 		Destroy(LevelLoader.Instance.gameObject);
@@ -195,12 +193,6 @@ public class GameManager : Singleton<GameManager>
 		#else
 			Application.Quit();
 		#endif
-	}
-
-	private void SetPlayerPosition()
-	{
-		if (player != null)
-			player.transform.position = new Vector2(startDoorPosition.x, startDoorPosition.y - playerDoorHeightDifference);
 	}
 
 	#endregion
@@ -246,6 +238,8 @@ public class GameManager : Singleton<GameManager>
 		startDoorPosition = pStartDoor.transform.position;
 
 		CheckIfAllLightsOff();
+		SetPlayerPosition();
+		PlayerController.Instance.SetCharacterAnimationToEnterLevel();
 	}
 
 	public void CheckIfAllLightsOff()
@@ -260,6 +254,12 @@ public class GameManager : Singleton<GameManager>
 		}
 
 		door.OpenDoor();
+	}
+
+	private void SetPlayerPosition()
+	{
+		if (player != null)
+			player.transform.position = new Vector2(startDoorPosition.x, startDoorPosition.y - playerDoorHeightDifference);
 	}
 
 	#endregion

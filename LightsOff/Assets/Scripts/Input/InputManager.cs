@@ -22,6 +22,7 @@ public class InputManager : Singleton<InputManager>
 	protected override void Awake()
 	{
 		base.Awake();
+        DontDestroyOnLoad(gameObject);
 
 		playerInput = GetComponent<PlayerInput>();
         gameplayMap = playerInput.actions.FindActionMap(Constants.InputActionMapGameplay);

@@ -52,10 +52,10 @@ public class LevelLoader : Singleton<LevelLoader>
         }
     }
 
-    public void LoadLevelFromMenu(int pTargetLevelNumber, bool pTestMode, string pCurrentSceneName)
+    public void LoadLevelFromMenu(int pTargetLevelNumber, bool pTestMode)
     {
         levelNamePrefix = pTestMode ? Constants.NamePrefixSceneTest : Constants.NamePrefixSceneLevel;
-        previousSceneName = pCurrentSceneName;
+        previousSceneName = Constants.NameSceneStartMenu;
         LoadLevel(pTargetLevelNumber);
     }
 
@@ -164,18 +164,10 @@ public class LevelLoader : Singleton<LevelLoader>
         Debug.Log("Load Complete");
         UIManager.Instance.UpdateLevelNumberText(CurrentLevelNumber);
 
-        if (GameManager.Instance.CurrentGameState == GameState.LoadingGame || GameManager.Instance.CurrentGameState == GameState.Playing || GameManager.Instance.CurrentGameState == GameState.Reloading)
+        if (GameManager.Instance.CurrentGameState == GameState.Reloading)
         {
-            Scene currentLevel = SceneManager.GetSceneByName(levelNamePrefix + CurrentLevelNumber);
-            GameObject[] gameObjects = currentLevel.GetRootGameObjects();
-
-            CurrentFunctionalLevel = FindFunctionalLevel(gameObjects);
-            GameManager.Instance.SetLevel(Spawner.Instance.FindStartDoor(CurrentFunctionalLevel));
-
-            if (GameManager.Instance.CurrentGameState == GameState.Reloading)
-			{
-                StartCoroutine(CrossfadeEndTransition());
-			}
+            SetLevel();
+            StartCoroutine(CrossfadeEndTransition());
         }
         else if (firstMenuLoad)
 		{
@@ -205,6 +197,10 @@ public class LevelLoader : Singleton<LevelLoader>
             LastSceneUnloaded?.Invoke();
             return;
 		}
+        else
+		{
+            SetLevel();
+		}
 
         StartCoroutine(CrossfadeEndTransition());
     }
@@ -230,6 +226,7 @@ public class LevelLoader : Singleton<LevelLoader>
         }
         else
 		{
+            // When the scene has been loaded, this line allows the AsyncOperation to be completed and OnLoadOperationComplete to be called
             currentSceneLoadOperation.allowSceneActivation = true;
         }
     }
@@ -254,6 +251,15 @@ public class LevelLoader : Singleton<LevelLoader>
 
         if (GameManager.Instance.CurrentGameState == GameState.Reloading) GameManager.Instance.SetGameState(GameState.Playing);
         if (GameManager.Instance.CurrentGameState == GameState.Playing) GameManager.Instance.ResetCharacterState();
+    }
+
+    private void SetLevel()
+	{
+        Scene currentLevel = SceneManager.GetSceneByName(levelNamePrefix + CurrentLevelNumber);
+        GameObject[] gameObjects = currentLevel.GetRootGameObjects();
+
+        CurrentFunctionalLevel = FindFunctionalLevel(gameObjects);
+        GameManager.Instance.SetLevel(Spawner.Instance.FindStartDoor(CurrentFunctionalLevel));
     }
 
     private GameObject FindFunctionalLevel(GameObject[] pGameObjects)

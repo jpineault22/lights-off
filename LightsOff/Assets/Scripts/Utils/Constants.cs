@@ -44,7 +44,8 @@ public static class Constants
     public const string AnimatorCharacterIsFalling = "IsFalling";
     public const string AnimatorCharacterIsClimbing = "IsClimbing";
     public const string AnimatorCharacterIsDying = "IsDying";
-    public const string AnimatorCharacterIsLevelTransitioning = "IsLevelTransitioning";
+    public const string AnimatorCharacterIsExitingLevel = "IsExitingLevel";
+    public const string AnimatorCharacterIsEnteringLevel = "IsEnteringLevel";
     public const string AnimatorCharacterSpeed = "Speed";
     public const string AnimatorEnemyIsChasing = "IsChasing";
     public const string AnimatorEnemyBouncedOn = "BouncedOn";

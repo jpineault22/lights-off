@@ -7,6 +7,8 @@ public abstract class InteractibleObject : MonoBehaviour
 	[SerializeField] protected TMP_Text interactMessageText = default;
 	[SerializeField] private InteractMessage interactMessage = default;
 	[SerializeField] protected float cooldownTime = 0.5f;
+	[SerializeField] protected Color accessibleColor = default;
+	[SerializeField] protected Color inaccessibleColor = default;
 
 	public bool InRange { get; protected set; }
 	protected float cooldownCounter = 0;
@@ -18,6 +20,7 @@ public abstract class InteractibleObject : MonoBehaviour
 		else if (interactMessage == InteractMessage.Enter) interactMessageRoot = Constants.UIInteractMessageEnter;
 		
 		interactMessageText.enabled = false;
+		interactMessageText.color = accessibleColor;
 	}
 
 	private void Start()
@@ -25,6 +28,14 @@ public abstract class InteractibleObject : MonoBehaviour
 		InputManager.Instance.ControlSchemeChanged += ctx => UpdateInteractMessage(ctx);
 
 		UpdateInteractMessage(InputManager.Instance.CurrentControlScheme);
+	}
+
+	protected virtual void Update()
+	{
+		if (interactMessageText.enabled)
+		{
+			UpdateInteractMessageColor(PlayerController.Instance.CanAccessInteractibleObject());
+		}
 	}
 
 	protected virtual void FixedUpdate()
@@ -43,6 +54,11 @@ public abstract class InteractibleObject : MonoBehaviour
 		else if (pControlScheme == Constants.InputControlSchemeGamepad) inputText = Constants.InputInteractGamepad;
 
 		interactMessageText.text = interactMessageRoot + " (" + inputText + ")";
+	}
+
+	private void UpdateInteractMessageColor(bool pAccessible)
+	{
+		interactMessageText.color = pAccessible ? accessibleColor : inaccessibleColor;
 	}
 
 	protected void EnableDisableInteractMessage(bool pValue)

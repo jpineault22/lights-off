@@ -199,6 +199,8 @@ MonoBehaviour:
   interactMessageText: {fileID: 1217299542651655624}
   interactMessage: 1
   cooldownTime: 0.5
+  accessibleColor: {r: 1, g: 0, b: 0.4222908, a: 1}
+  inaccessibleColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
 --- !u!95 &590948385
 Animator:
   serializedVersion: 3

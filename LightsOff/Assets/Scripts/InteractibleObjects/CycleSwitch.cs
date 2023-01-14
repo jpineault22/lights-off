@@ -20,8 +20,10 @@ public class CycleSwitch : InteractibleObject
 			cooldownTime = pressedTime;
 	}
 
-	private void Update()
+	protected override void Update()
 	{
+		base.Update();
+
 		if (switchDevice.IsOnAndConnected())
 		{
 			if (pressedCounter > 0)

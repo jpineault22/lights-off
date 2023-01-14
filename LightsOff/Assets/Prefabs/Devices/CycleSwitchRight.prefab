@@ -128,6 +128,8 @@ MonoBehaviour:
   interactMessageText: {fileID: 8856294511941338357}
   interactMessage: 0
   cooldownTime: 0.5
+  accessibleColor: {r: 1, g: 0, b: 0.4222908, a: 1}
+  inaccessibleColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   devices:
   - {fileID: 0}
   cycleSwitchLeft: 0

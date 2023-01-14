@@ -29,6 +29,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float speed = 7f;
     [SerializeField] private float climbingSpeed = 5f;
     [SerializeField] private float climbCooldownTime = 0.25f;
+    [SerializeField] private float gravityScale = 10f;
     [SerializeField] private float jumpForce = 11f;
     [SerializeField] private float jumpTime = 0.2f;
     [SerializeField] private float jumpTimeFanArea = 0.02f;
@@ -38,7 +39,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float groundedRadius = 0.2f;
     [SerializeField] private float minVerticalVelocity = -35f;                  // Minimum vertical velocity that the player can reach when falling
     [SerializeField] private float incompleteJumpFallVelocityDivider = 2f;      // When cancelling jump, divide current vertical velocity by this number
-    [SerializeField] private float bounceMinFallingVerticalDistance = 4.5f;     // The minimum vertical distance the player has to be from the enemy when starting to fall in order to trigger a bounce and not die
+    [SerializeField] private float bounceMinFallingVerticalDistance = 4f;       // The minimum vertical distance the player has to be from the enemy when starting to fall in order to trigger a bounce and not die
     [SerializeField] private float bounceBuffer = 1f;                           // When bouncing, the player reaches their last falling start height + this buffer (except when it's a second bounce)
     [SerializeField] private float minBounceForce = 10f;
     [SerializeField] private float conveyorSpeedMultiplier = 3f;
@@ -58,7 +59,6 @@ public class PlayerController : Singleton<PlayerController>
     private float highestLadderEnd;
     private float lowestLadderEnd;
     private int nbKeys;
-    private float gravityScale;
     private float lastFallingStartHeight;                                       // Stores the height at which the player last started falling. Used by ProcessBounce() to reach just above that same height, and by the collision detection, to determine if the player is high enough to trigger a bounce.
     private bool justBounced;
     private float conveyorMomentumBonus;
@@ -82,7 +82,6 @@ public class PlayerController : Singleton<PlayerController>
 
         facingRight = true;
         nbKeys = 0;
-        gravityScale = rb.gravityScale;
         conveyorMomentumBonus = 1f;
     }
 
@@ -373,25 +372,14 @@ public class PlayerController : Singleton<PlayerController>
             collision.gameObject.GetComponent<GateTypeA>().SwitchOnOff();
             Debug.Log("Key used. Number of keys: " + nbKeys);
         }
-        else if (collision.gameObject.CompareTag(Constants.TagEnemy))
-		{
-            if (CurrentCharacterState == CharacterState.Falling && lastFallingStartHeight - collision.gameObject.transform.position.y >= bounceMinFallingVerticalDistance)
-			{
-                collision.gameObject.GetComponent<Enemy>().GetStunned();
-                CurrentCharacterState = CharacterState.Bouncing;
-                animator.SetTrigger(Constants.AnimatorCharacterIsJumping);
-                rb.velocity = new Vector2(velocityBeforePhysicsUpdate.x, -velocityBeforePhysicsUpdate.y);
-                justBounced = true;
-            }
-            else
-            {
-                Die();
-            }
-        }
         else if (collision.gameObject.CompareTag(Constants.TagPivotingGate))
         {
             pivotingGateList.Add(collision.gameObject.GetComponent<PivotingGate>());
         }
+        else if (collision.gameObject.CompareTag(Constants.TagEnemy))
+		{
+            Die();
+		}
     }
 
 	private void OnCollisionExit2D(Collision2D collision)
@@ -437,6 +425,17 @@ public class PlayerController : Singleton<PlayerController>
 		{
             inFanArea = true;
 		}
+        else if (collision.gameObject.CompareTag(Constants.TagEnemy))
+        {
+            if (CurrentCharacterState == CharacterState.Falling && lastFallingStartHeight - collision.gameObject.transform.position.y >= bounceMinFallingVerticalDistance)
+            {
+                collision.gameObject.GetComponent<Enemy>().GetStunned();
+                CurrentCharacterState = CharacterState.Bouncing;
+                animator.SetTrigger(Constants.AnimatorCharacterIsJumping);
+                rb.velocity = new Vector2(velocityBeforePhysicsUpdate.x, -velocityBeforePhysicsUpdate.y);
+                justBounced = true;
+            }
+        }
     }
 
 	private void OnTriggerExit2D(Collider2D collision)
@@ -533,6 +532,13 @@ public class PlayerController : Singleton<PlayerController>
         return GameManager.Instance.CurrentGameState == GameState.Playing && CurrentCharacterState != CharacterState.Dying && CurrentCharacterState != CharacterState.LevelTransition;
 	}
 
+    public bool CanAccessInteractibleObject()
+	{
+        return CanPerformGameplayAction() && CurrentCharacterState != CharacterState.Jumping && CurrentCharacterState != CharacterState.Falling &&
+            CurrentCharacterState != CharacterState.Bouncing && CurrentCharacterState != CharacterState.Climbing;
+
+    }
+
     private void UpdateLadderEnds()
 	{
         highestLadderEnd = -1000f;
@@ -609,11 +615,18 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     // Called by GameManager at Level Transition, Death, or Level Retry
-    public void ResetCharacterForLevelTransition()
+    public void ResetCharacterForLevelTransition(float pDoorHorizontalPosition)
 	{
+        transform.position = new Vector2(pDoorHorizontalPosition, transform.position.y);
         ResetCharacterForReload();
-        animator.SetBool(Constants.AnimatorCharacterIsLevelTransitioning, true);
+        animator.SetBool(Constants.AnimatorCharacterIsExitingLevel, true);
 	}
+
+    public void SetCharacterAnimationToEnterLevel()
+	{
+        animator.SetBool(Constants.AnimatorCharacterIsExitingLevel, false);
+        animator.SetBool(Constants.AnimatorCharacterIsEnteringLevel, true);
+    }
 
     public void ResetCharacterForReload()
 	{
@@ -642,7 +655,8 @@ public class PlayerController : Singleton<PlayerController>
     public void ResetState()
 	{
         CurrentCharacterState = CharacterState.Idle;
-        animator.SetBool(Constants.AnimatorCharacterIsLevelTransitioning, false);
+        animator.SetBool(Constants.AnimatorCharacterIsExitingLevel, false);
+        animator.SetBool(Constants.AnimatorCharacterIsEnteringLevel, false);
         boxCollider.enabled = true;
         rb.gravityScale = gravityScale;
     }

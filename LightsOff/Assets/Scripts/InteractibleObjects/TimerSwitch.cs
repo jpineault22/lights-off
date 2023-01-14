@@ -18,8 +18,10 @@ public class TimerSwitch : Switch
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-	private void Update()
+	protected override void Update()
 	{
+		base.Update();
+		
 		if (!switchDevice.IsConnected())
 		{
 			if (triggered)

@@ -3,7 +3,7 @@
 public class Breaker : InteractibleObject
 {
 	[SerializeField] private Device[] devices = default;
-	[SerializeField] private Color outlineColor = Color.white;	// TO IMPLEMENT
+	[SerializeField] private Color outlineColor = Color.white;
 
 	private Device breakerDevice = default;
 
