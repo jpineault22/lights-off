@@ -8,6 +8,7 @@ public class InputManager : Singleton<InputManager>
     private PlayerInput playerInput;
     private InputActionMap gameplayMap;
     private InputActionMap UIMap;                                           // Currently used only for the pause menu
+    private InputActionMap creditsEndMap;
     public string CurrentControlScheme { get; private set; }
 
     public Action<string> ControlSchemeChanged;
@@ -27,6 +28,7 @@ public class InputManager : Singleton<InputManager>
 		playerInput = GetComponent<PlayerInput>();
         gameplayMap = playerInput.actions.FindActionMap(Constants.InputActionMapGameplay);
         UIMap = playerInput.actions.FindActionMap(Constants.InputActionMapUI);
+        creditsEndMap = playerInput.actions.FindActionMap(Constants.InputActionMapCreditsEnd);
         CurrentControlScheme = playerInput.currentControlScheme;
 
         DisablePlayerInput();
@@ -41,6 +43,7 @@ public class InputManager : Singleton<InputManager>
     {
         gameplayMap.Enable();
         UIMap.Enable();
+        creditsEndMap.Disable();
         InputUser.onChange += ChangeControlScheme;
     }
 
@@ -49,6 +52,7 @@ public class InputManager : Singleton<InputManager>
         InputUser.onChange -= ChangeControlScheme;
         gameplayMap.Disable();
         UIMap.Disable();
+        creditsEndMap.Disable();
     }
 
     private void ChangeControlScheme(InputUser pUser, InputUserChange pChange, InputDevice pDevice)
@@ -60,6 +64,7 @@ public class InputManager : Singleton<InputManager>
 		}
     }
 
+    // These methods are assigned in Unity, in the Events section of the InputManager's PlayerInput component
     // Gameplay Control Scheme
 
     public void MoveHorizontally(InputAction.CallbackContext ctx)
@@ -95,6 +100,19 @@ public class InputManager : Singleton<InputManager>
         Backed?.Invoke(ctx);
     }
 
+    // Credits End Control Scheme
+
+    public void Exit(InputAction.CallbackContext ctx)
+	{
+        if (ctx.phase == InputActionPhase.Performed)
+		{
+            DisablePlayerInputCreditsEnd();
+            GameManager.Instance.EndAndReturnToMenu();
+        }
+	}
+
+    // Enabling/Disabling Input
+
     public void EnablePlayerInput()
 	{
         playerInput.enabled = true;
@@ -104,4 +122,19 @@ public class InputManager : Singleton<InputManager>
 	{
         playerInput.enabled = false;
     }
+
+    public void EnablePlayerInputCreditsEnd()
+	{
+        gameplayMap.Disable();
+        UIMap.Disable();
+        creditsEndMap.Enable();
+        playerInput.enabled = true;
+	}
+
+    public void DisablePlayerInputCreditsEnd()
+	{
+        creditsEndMap.Disable();
+        gameplayMap.Enable();
+        UIMap.Enable();
+	}
 }

@@ -1,66 +1,63 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelLoader : Singleton<LevelLoader>
 {
-    [SerializeField] private Animator crossfadeAnimator = default;
-    [SerializeField] private float fadeTime = 1;                          // Time for fade out/in, total transition animation time is twice that amount
-
     public int CurrentLevelNumber { get; private set; }
     public GameObject CurrentFunctionalLevel { get; private set; }
+    public MenuLevelState CurrentMenuLevelState { get; set; }
 
-    public event Action TransitionHalfDone;                                 // This event is invoked if the CrossfadeStart animation has ended AND the next level has been loaded
-    public event Action CrossfadeTransitionEnded;
     public event Action MenuReloaded;
     public event Action LastSceneUnloaded;
 
-    private AsyncOperation currentSceneLoadOperation;
+    private List<AsyncOperation> currentSceneLoadOperations;
     private string previousSceneName = string.Empty;
-    private bool firstMenuLoad;
-    private bool crossfadeStartEnded;
     private string levelNamePrefix;
 
 	protected override void Awake()
 	{
         base.Awake();
 
-        DontDestroyOnLoad(gameObject);
-
-        firstMenuLoad = true;
-        CurrentLevelNumber = 0;
+        currentSceneLoadOperations = new List<AsyncOperation>();
+        CurrentMenuLevelState = MenuLevelState.None;
 	}
 
-	private void Update()
+    public void LoadMenu(int pSavedLevelNumber, bool pIsTestMode)
 	{
-        if (crossfadeStartEnded && currentSceneLoadOperation.isDone)
-        {
-            crossfadeStartEnded = false;
-            TransitionHalfDone?.Invoke();
+        levelNamePrefix = pIsTestMode ? Constants.NamePrefixSceneTest : Constants.NamePrefixSceneLevel;
+        //TransitionManager.Instance.SetCrossfadeCanvasAlpha(1f);
+        LoadMenuAndAddOperation();
+        LoadLevel(pSavedLevelNumber);
+	}
 
-            if (GameManager.Instance.CurrentGameState == GameState.Menu)
-            {
-                PauseMenu.Instance.Resume();
-                UnloadLevelToMenu();
-            }
-            else if (previousSceneName != string.Empty)
-            {
-                UnloadScene(previousSceneName);
-                previousSceneName = string.Empty;
-            }
-        }
+    public void LoadMenuAndAddOperation()
+	{
+        currentSceneLoadOperations.Add(LoadScene(Constants.NameSceneStartMenu));
     }
 
-    public void LoadLevelFromMenu(int pTargetLevelNumber, bool pTestMode)
-    {
-        levelNamePrefix = pTestMode ? Constants.NamePrefixSceneTest : Constants.NamePrefixSceneLevel;
+    public void FadeOutMenu()
+	{
+        CurrentMenuLevelState = MenuLevelState.FadingOutMenu;
+        TransitionManager.Instance.SetTransitionCounter(TransitionManager.Instance.menuFadeOutTime);
+    }
+
+    public void UnloadMenu()
+	{
+        CurrentMenuLevelState = MenuLevelState.None;
         previousSceneName = Constants.NameSceneStartMenu;
-        LoadLevel(pTargetLevelNumber);
+        UnloadScene(Constants.NameSceneStartMenu);
+    }
+
+    public void UnloadCurrentLevel()
+	{
+        UnloadScene(levelNamePrefix + CurrentLevelNumber);
     }
 
     public void LoadNextLevel()
 	{
+        previousSceneName = levelNamePrefix + CurrentLevelNumber;
         int nextLevelNumber = CurrentLevelNumber + 1;
         GameManager.Instance.SaveGame(nextLevelNumber);
         LoadLevel(nextLevelNumber);
@@ -68,67 +65,46 @@ public class LevelLoader : Singleton<LevelLoader>
 
     public void LoadLevel(int pTargetLevelNumber)
     {
-        if (!previousSceneName.Equals(Constants.NameSceneStartMenu))
-		{
-            previousSceneName = levelNamePrefix + CurrentLevelNumber;
-		}
-
         CurrentLevelNumber = pTargetLevelNumber;
-        currentSceneLoadOperation = LoadScene(levelNamePrefix + pTargetLevelNumber);
 
         try
 		{
-            currentSceneLoadOperation.allowSceneActivation = false;
+            AsyncOperation operation = LoadScene(levelNamePrefix + pTargetLevelNumber);
+            operation.allowSceneActivation = GameManager.Instance.CurrentGameState == GameState.PresentationScreen ||
+                                            GameManager.Instance.CurrentGameState == GameState.Menu ||
+                                            GameManager.Instance.CurrentGameState == GameState.DeletingSaveFile;
+            currentSceneLoadOperations.Add(operation);
 		}
         catch (NullReferenceException e)
 		{
             Debug.LogException(e);
-            Debug.LogWarning("[LevelLoader] Unable to find next level. Quitting game...");
+            Debug.LogWarning("[LevelLoader] Unable to load level. Quitting game...");
             GameManager.Instance.QuitGame();
 		}
 
-        // Start Crossfade animation
-        StartCoroutine(CrossfadeStartTransition());
+        if (GameManager.Instance.CurrentGameState != GameState.Menu && GameManager.Instance.CurrentGameState != GameState.PresentationScreen)
+            TransitionManager.Instance.TriggerCrossfadeStart();
     }
 
     public void ReloadLevel()
 	{
-        StartCoroutine(CrossfadeStartTransition());
-	}
+        TransitionManager.Instance.TriggerCrossfadeStart();
+    }
 
     public void QuitToMenu()
 	{
-        currentSceneLoadOperation = LoadScene(Constants.NameSceneStartMenu);
-        StartCoroutine(CrossfadeStartTransition());
-
-        try
-		{
-            currentSceneLoadOperation.allowSceneActivation = false;
-        }
-        catch (NullReferenceException e)
-		{
-            Debug.LogException(e);
-            Debug.LogWarning("[LevelLoader] Unable to load menu. Quitting game...");
-            GameManager.Instance.QuitGame();
-        }
-    }
-
-    public void UnloadLevelToMenu()
-    {
-        if (CurrentLevelNumber != 0)
-        {
-            UnloadScene(levelNamePrefix + CurrentLevelNumber);
-            CurrentLevelNumber = 0;
-        }
-        else
-        {
-            Debug.LogError("[LevelLoader] Current level not set, cannot unload scene.");
-        }
+        CurrentMenuLevelState = MenuLevelState.LoadMenuAndCrossfadeStart;
+        TransitionManager.Instance.TriggerCrossfadeStart();
     }
 
     public void StartQuitTransition()
 	{
-        StartCoroutine(CrossfadeStartTransition());
+        TransitionManager.Instance.TriggerCrossfadeStart();
+    }
+
+    public void RefreshMenuLevelAfterFileDeletion()
+	{
+        TransitionManager.Instance.TriggerCrossfadeStartFileDeletion();
 	}
 
     public AsyncOperation LoadScene(string pSceneName)
@@ -164,16 +140,57 @@ public class LevelLoader : Singleton<LevelLoader>
         Debug.Log("Load Complete");
         UIManager.Instance.UpdateLevelNumberText(CurrentLevelNumber);
 
-        if (GameManager.Instance.CurrentGameState == GameState.Reloading)
-        {
-            SetLevel();
-            StartCoroutine(CrossfadeEndTransition());
-        }
-        else if (firstMenuLoad)
+        Scene currentLevel = SceneManager.GetSceneByName(levelNamePrefix + CurrentLevelNumber);
+        Spawner.Instance.SetRootGameObjects(currentLevel.GetRootGameObjects());
+        Spawner.Instance.FindFunctionalLevel();
+        CinemachineManagerV2.Instance.ChangeCameraPositionAndSize(Spawner.Instance.GetLevelCameraPosition(), Spawner.Instance.GetLevelCameraSize());
+
+        if (GameManager.Instance.CurrentGameState == GameState.PresentationScreen || GameManager.Instance.CurrentGameState == GameState.Menu || GameManager.Instance.CurrentGameState == GameState.DeletingSaveFile)
+            CinemachineManagerV2.Instance.ZoomOutInstantly();
+
+        if (GameManager.Instance.CurrentGameState == GameState.PresentationScreen)
 		{
-            firstMenuLoad = false;
-            StartCoroutine(CrossfadeEndTransition());
+            UIManager.Instance.EnableLevelNumberText(true);
+            CreditsManager.Instance.DisableLastScreen();
         }
+        else if (GameManager.Instance.CurrentGameState == GameState.Menu)
+        {
+            if (CurrentMenuLevelState == MenuLevelState.LoadMenuAndCrossfadeStart)
+			{
+                return;
+            }
+            else if (CurrentMenuLevelState == MenuLevelState.ReloadLevel)
+			{
+                CurrentMenuLevelState = MenuLevelState.CrossfadeEnd;
+                
+                MenuReloaded?.Invoke();
+                PauseMenu.Instance.Resume();
+            }
+
+            UIManager.Instance.EnableLevelNumberText(true);
+            CreditsManager.Instance.DisableLastScreen();
+
+            if (TransitionManager.Instance.CrossfadeState == CrossfadeState.NotFading)
+                TransitionManager.Instance.TriggerCrossfadeEnd();
+        }
+        else if (GameManager.Instance.CurrentGameState == GameState.Reloading)
+		{
+            SetLevel();
+            TransitionManager.Instance.TriggerCrossfadeEnd();
+        }
+        else if (GameManager.Instance.CurrentGameState == GameState.DeletingSaveFile)
+		{
+            TransitionManager.Instance.TriggerCrossfadeEndFileDeletion();
+        }
+        else if (previousSceneName != string.Empty)
+        {
+            currentSceneLoadOperations.Clear();
+            UnloadScene(previousSceneName);
+            previousSceneName = string.Empty;
+        }
+
+        if (GameManager.Instance.CurrentGameState != GameState.Playing && CheckIfAllOperationsDone())
+            currentSceneLoadOperations.Clear();
     }
 
     private void OnUnloadOperationComplete(AsyncOperation pAsyncOperation)
@@ -184,94 +201,84 @@ public class LevelLoader : Singleton<LevelLoader>
 		{
             // When the current level has finished unloading, reset pause menu, load same level and end Crossfade animation when this is done
             PauseMenu.Instance.Resume();
-            currentSceneLoadOperation = LoadScene(levelNamePrefix + CurrentLevelNumber);
+            currentSceneLoadOperations.Add(LoadScene(levelNamePrefix + CurrentLevelNumber));
             return;
         }
         else if (GameManager.Instance.CurrentGameState == GameState.Menu)
 		{
-            MenuReloaded?.Invoke();
+            if (GameManager.Instance.EndingGame)
+			{
+                GameManager.Instance.EndingGame = false;
+                CurrentLevelNumber = Constants.StartingLevelNumber;
+            }
+            
+            CurrentMenuLevelState = MenuLevelState.ReloadLevel;
             GameManager.Instance.DestroyPlayer();
+            LoadLevel(CurrentLevelNumber);
+            return;
         }
         else if (GameManager.Instance.CurrentGameState == GameState.Quitting)
 		{
-            LastSceneUnloaded?.Invoke();
+            if (GameObjectUtils.GetLoadedScenesNoBoot().Count == 0)
+                LastSceneUnloaded?.Invoke();
+
             return;
 		}
-        else
+        else if (GameManager.Instance.CurrentGameState == GameState.DeletingSaveFile)
 		{
-            SetLevel();
-		}
-
-        StartCoroutine(CrossfadeEndTransition());
-    }
-
-    IEnumerator CrossfadeStartTransition()
-    {
-        crossfadeAnimator.SetTrigger(Constants.AnimatorCrossfadeStart);
-
-        yield return new WaitForSeconds(fadeTime);
-
-        crossfadeStartEnded = true;
-
-        if (GameManager.Instance.CurrentGameState == GameState.Reloading)
-		{
-            Spawner.Instance.DestroyObjectsForReload();
-            GameManager.Instance.ResetCharacterAfterReload();
-            UnloadScene(levelNamePrefix + CurrentLevelNumber);
-        }
-        else if (GameManager.Instance.CurrentGameState == GameState.Quitting)
-		{
-            string sceneName = CurrentLevelNumber == 0 ? Constants.NameSceneStartMenu : levelNamePrefix + CurrentLevelNumber;
-            UnloadScene(sceneName);
-        }
-        else
-		{
-            // When the scene has been loaded, this line allows the AsyncOperation to be completed and OnLoadOperationComplete to be called
-            currentSceneLoadOperation.allowSceneActivation = true;
-        }
-    }
-
-    IEnumerator CrossfadeEndTransition()
-    {
-        crossfadeAnimator.SetTrigger(Constants.AnimatorCrossfadeEnd);
-
-        yield return new WaitForSeconds(fadeTime);
-
-        CrossfadeTransitionEnded?.Invoke();
-
-        if (GameManager.Instance.CurrentGameState == GameState.Menu)
-		{
-            EventSystemManager.Instance.ActivateModule();
-		}
-        else if (GameManager.Instance.CurrentGameState == GameState.LoadingGame)
-		{
-            InputManager.Instance.EnablePlayerInput();
-            GameManager.Instance.SetGameState(GameState.Playing);
+            LoadLevel(Constants.StartingLevelNumber);
+            return;
         }
 
-        if (GameManager.Instance.CurrentGameState == GameState.Reloading) GameManager.Instance.SetGameState(GameState.Playing);
-        if (GameManager.Instance.CurrentGameState == GameState.Playing) GameManager.Instance.ResetCharacterState();
+        SetLevel();
+
+        if (GameManager.Instance.CurrentGameState == GameState.LoadingGame)
+		{
+            CurrentMenuLevelState = MenuLevelState.StartGameMenuUnloaded;
+            TransitionManager.Instance.SetTransitionCounter(TransitionManager.Instance.defaultFadeTime);
+            return;
+        }
+
+        TransitionManager.Instance.TriggerCrossfadeEnd();
     }
 
     private void SetLevel()
 	{
-        Scene currentLevel = SceneManager.GetSceneByName(levelNamePrefix + CurrentLevelNumber);
-        GameObject[] gameObjects = currentLevel.GetRootGameObjects();
-
-        CurrentFunctionalLevel = FindFunctionalLevel(gameObjects);
-        GameManager.Instance.SetLevel(Spawner.Instance.FindStartDoor(CurrentFunctionalLevel));
+        Spawner.Instance.SpawnEnemies();
+        GameManager.Instance.SetLevel(Spawner.Instance.FindStartDoor(), Spawner.Instance.FindWindow());
     }
 
-    private GameObject FindFunctionalLevel(GameObject[] pGameObjects)
-    {
-        foreach (GameObject obj in pGameObjects)
+    public bool CheckIfAllOperationsDone()
+	{
+        bool allOperationsDone = true;
+
+        foreach (AsyncOperation operation in currentSceneLoadOperations)
         {
-            if (obj.CompareTag(Constants.TagFunctionalLevel))
-            {
-                return obj;
-            }
+            if (!operation.isDone)
+                allOperationsDone = false;
         }
 
-        return null;
+        return allOperationsDone;
     }
+
+    public void ActivateAllLoadedScenes()
+	{
+        foreach (AsyncOperation operation in currentSceneLoadOperations)
+        {
+            // When the scene has been loaded, this line allows the AsyncOperation to be completed and OnLoadOperationComplete to be called
+            operation.allowSceneActivation = true;
+        }
+    }
+}
+
+// This enum defines the state of the transition between the menu and the levels. It is used for the Quit to Menu transition, as well as the Start Game transition.
+public enum MenuLevelState
+{
+    None,
+    LoadMenuAndCrossfadeStart,
+    UnloadLevel,
+    ReloadLevel,
+    CrossfadeEnd,
+    FadingOutMenu,
+    StartGameMenuUnloaded
 }

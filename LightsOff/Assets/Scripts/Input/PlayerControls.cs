@@ -433,6 +433,111 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CreditsEnd"",
+            ""id"": ""944caab4-f7ce-49a9-8b28-485cd842d548"",
+            ""actions"": [
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""0579718e-e473-40f7-bff9-5dabbde4bd5b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""03e43d74-4970-46b9-ad13-15f71def2077"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard/Mouse"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4ac2c77f-4c95-4e40-b0b6-aacde55bbc28"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard/Mouse"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bde4e943-8e1c-46af-8335-8b9291084c4c"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard/Mouse"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e014321-e926-4643-9f6f-39e5a3af4488"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf4e601f-bd20-426d-a445-c5c6379c0565"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fcd9d114-47fc-44a5-9c0e-3e5966f65f4f"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b58c539c-2b0a-430f-abbd-4f9b06d27de7"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a45553b6-69d6-4026-b8bf-3e180017b20f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -475,6 +580,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
         m_UI_Back = m_UI.FindAction("Back", throwIfNotFound: true);
+        // CreditsEnd
+        m_CreditsEnd = asset.FindActionMap("CreditsEnd", throwIfNotFound: true);
+        m_CreditsEnd_Exit = m_CreditsEnd.FindAction("Exit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -628,6 +736,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // CreditsEnd
+    private readonly InputActionMap m_CreditsEnd;
+    private ICreditsEndActions m_CreditsEndActionsCallbackInterface;
+    private readonly InputAction m_CreditsEnd_Exit;
+    public struct CreditsEndActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CreditsEndActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Exit => m_Wrapper.m_CreditsEnd_Exit;
+        public InputActionMap Get() { return m_Wrapper.m_CreditsEnd; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CreditsEndActions set) { return set.Get(); }
+        public void SetCallbacks(ICreditsEndActions instance)
+        {
+            if (m_Wrapper.m_CreditsEndActionsCallbackInterface != null)
+            {
+                @Exit.started -= m_Wrapper.m_CreditsEndActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_CreditsEndActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_CreditsEndActionsCallbackInterface.OnExit;
+            }
+            m_Wrapper.m_CreditsEndActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
+            }
+        }
+    }
+    public CreditsEndActions @CreditsEnd => new CreditsEndActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -657,5 +798,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnPause(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
+    }
+    public interface ICreditsEndActions
+    {
+        void OnExit(InputAction.CallbackContext context);
     }
 }

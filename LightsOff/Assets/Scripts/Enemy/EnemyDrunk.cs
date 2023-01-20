@@ -39,7 +39,7 @@ public class EnemyDrunk : Enemy
 	private void PassOut()
 	{
 		// Instantiate EnemyPassedOut at same position and destroy self
-		Spawner.Instance.InstantiateEnemyPassedOut(transform.position, transform.rotation);
+		Spawner.Instance.SpawnNewEnemyPassedOut(transform.position, transform.rotation);
 		Destroy(gameObject);
 	}
 

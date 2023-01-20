@@ -68,4 +68,9 @@ public class UIManager : Singleton<UIManager>
 			levelNumberText.enabled = true;
 		}
 	}
+
+	public void EnableLevelNumberText(bool pEnable)
+	{
+		levelNumberText.enabled = pEnable;
+	}
 }

@@ -624,6 +624,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public void SetCharacterAnimationToEnterLevel()
 	{
+        spriteRenderer.enabled = true;
         animator.SetBool(Constants.AnimatorCharacterIsExitingLevel, false);
         animator.SetBool(Constants.AnimatorCharacterIsEnteringLevel, true);
     }

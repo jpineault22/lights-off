@@ -3,12 +3,17 @@ using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
+	private AudioSource music;
+
 	protected override void Awake()
 	{
 		base.Awake();
 
-		AudioSource music = GetComponent<AudioSource>();
+		music = GetComponent<AudioSource>();
+	}
 
+	public void PlayMusic()
+	{
 		music.Play();
 	}
 }

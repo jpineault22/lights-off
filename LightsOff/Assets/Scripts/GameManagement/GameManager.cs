@@ -1,54 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-	[SerializeField] private GameObject[] systemPrefabs = default;          // Prefabs to instantiate when launching the game
-	[SerializeField] private bool testMode = default;
-	[SerializeField] private float playerDoorHeightDifference = 0.5f;		// The player's position at the start of a level will be lower than the start door's position by this amount (initial 0.56f)
+	[SerializeField] private bool isTestMode = default;
 
-	public GameState CurrentGameState { get; private set; }
+	public GameState CurrentGameState { get; set; }
 	[HideInInspector] public GameObject player;
-
-	private List<GameObject> instantiatedSystemPrefabs;
 
 	private Light[] levelLights;
 	private Door door;
-	private Vector2 startDoorPosition;
+
+	public bool EndingGame { get; set; }
 
 	private void Start()
 	{
 		DontDestroyOnLoad(gameObject);
 
-		instantiatedSystemPrefabs = new List<GameObject>();
-		InstantiateSystemPrefabs();
-
-		LoadMenu();
-	}
-
-	protected override void OnDestroy()
-	{
-		for (int i = 0; i < instantiatedSystemPrefabs.Count; i++)
-		{
-			Destroy(instantiatedSystemPrefabs[i]);
-		}
-
-		instantiatedSystemPrefabs.Clear();
-
-		base.OnDestroy();
-	}
-
-	private void OnEnable()
-	{
 		LevelLoader.Instance.LastSceneUnloaded += DestroyToQuit;
+
+		DisplayPresentationScreen();
+		//LoadMenu();
 	}
 
 	#region Game saving and loading, pause
 
 	public void SaveGame(int pCurrentLevelNumber)
 	{
-		if (testMode)
+		if (isTestMode)
 		{
 			Debug.Log("Cannot save while in test mode.");
 		}
@@ -63,31 +41,67 @@ public class GameManager : Singleton<GameManager>
 		
 	}
 
-	public void LoadGame()
+	public int GetSavedLevelNumber()
 	{
 		PlayerData data = SaveSystem.LoadPlayerData();
-		int currentLevelNumber = Constants.StartingLevelNumber;
+		int savedLevelNumber = Constants.StartingLevelNumber;
 
-		if (data != null && !testMode)
+		if (data != null && !isTestMode)
 		{
-			currentLevelNumber = data.CurrentLevelNumber;
+			savedLevelNumber = data.CurrentLevelNumber;
 		}
 
-		StartGame(currentLevelNumber);
+		return savedLevelNumber;
 	}
 
 	public void DeleteSaveFile()
 	{
 		SaveSystem.DeleteSaveFile();
+
+		if (LevelLoader.Instance.CurrentLevelNumber == Constants.StartingLevelNumber)
+			return;
+
+		CurrentGameState = GameState.DeletingSaveFile;
+		InputManager.Instance.DisablePlayerInput();
+		LevelLoader.Instance.RefreshMenuLevelAfterFileDeletion();
 	}
 
-	public void StartGame(int pCurrentLevelNumber)
+	private void DisplayPresentationScreen()
+	{
+		CurrentGameState = GameState.PresentationScreen;
+		PresentationScreen.Instance.SwitchToNextState();
+		TransitionManager.Instance.SetTransitionCounter(TransitionManager.Instance.presentationScreenFadeTime);
+	}
+
+	public void LoadMenu()
+	{
+		EventSystemManager.Instance.DeactivateModule();
+		LevelLoader.Instance.LoadMenu(GetSavedLevelNumber(), isTestMode);
+	}
+
+	public void QuitToMenu()
+	{
+		Time.timeScale = 1f;
+		CurrentGameState = GameState.Menu;
+		EventSystemManager.Instance.DeactivateModule();
+		LevelLoader.Instance.QuitToMenu();
+	}
+
+	public void EndAndReturnToMenu()
+	{
+		//DeleteSaveFile();
+		CurrentGameState = GameState.Menu;
+		EndingGame = true;
+		SaveSystem.DeleteSaveFile();
+		QuitToMenu();
+	}
+
+	public void StartGame()
 	{
 		InputManager.Instance.DisablePlayerInput();
 		CurrentGameState = GameState.LoadingGame;
-
 		InstantiatePlayer();
-		LevelLoader.Instance.LoadLevelFromMenu(pCurrentLevelNumber, testMode);
+		LevelLoader.Instance.FadeOutMenu();
 	}
 
 	public void LoadNextLevel()
@@ -133,21 +147,6 @@ public class GameManager : Singleton<GameManager>
 
 		if (CurrentGameState == GameState.Paused)
 			CurrentGameState = GameState.Playing;
-	}
-
-	private void LoadMenu()
-	{
-		CurrentGameState = GameState.Menu;
-		EventSystemManager.Instance.DeactivateModule();
-		LevelLoader.Instance.LoadScene(Constants.NameSceneStartMenu);
-	}
-
-	public void QuitToMenu()
-	{
-		Time.timeScale = 1f;
-		CurrentGameState = GameState.Menu;
-		EventSystemManager.Instance.DeactivateModule();
-		LevelLoader.Instance.QuitToMenu();
 	}
 
 	// When quitting the game, first the currently loaded scene is unloaded, then some mutually dependent game objects/scripts need to be destroyed, and finally we quit the application
@@ -199,18 +198,9 @@ public class GameManager : Singleton<GameManager>
 
 	#region Instantiate/Destroy methods
 
-	private void InstantiateSystemPrefabs()
-	{
-		for (int i = 0; i < systemPrefabs.Length; i++)
-		{
-			GameObject prefabInstance = Instantiate(systemPrefabs[i]);
-			instantiatedSystemPrefabs.Add(prefabInstance);
-		}
-	}
-
 	private void InstantiatePlayer()
 	{
-		player = Spawner.Instance.InstantiatePlayer();
+		player = Spawner.Instance.SpawnPlayer();
 	}
 
 	public void DestroyPlayer()
@@ -226,40 +216,38 @@ public class GameManager : Singleton<GameManager>
 
 	#region State setting
 
-	public void SetGameState(GameState pGameState)
-	{
-		CurrentGameState = pGameState;
-	}
-	
-	public void SetLevel(GameObject pStartDoor)
+	public void SetLevel(GameObject pStartDoor, GameObject pWindow)
 	{
 		levelLights = FindObjectsOfType<Light>();
 		door = FindObjectOfType<Door>();
-		startDoorPosition = pStartDoor.transform.position;
+		Spawner.Instance.SetStartDoorPosition(pStartDoor.transform.position);
+		TransitionManager.Instance.SetWindow(pWindow);
+		TransitionManager.Instance.SetWindowAnimator();
 
 		CheckIfAllLightsOff();
-		SetPlayerPosition();
 		PlayerController.Instance.SetCharacterAnimationToEnterLevel();
+		SetPlayerPosition();
 	}
 
-	public void CheckIfAllLightsOff()
+	public bool CheckIfAllLightsOff()
 	{
 		foreach (Light light in levelLights)
 		{
 			if (light.IsOnAndConnected())
 			{
 				door.CloseDoor();
-				return;
+				return false;
 			}
 		}
 
 		door.OpenDoor();
+		return true;
 	}
 
 	private void SetPlayerPosition()
 	{
 		if (player != null)
-			player.transform.position = new Vector2(startDoorPosition.x, startDoorPosition.y - playerDoorHeightDifference);
+			player.transform.position = Spawner.Instance.GetPositionForPlayerSpawn();
 	}
 
 	#endregion
@@ -267,11 +255,13 @@ public class GameManager : Singleton<GameManager>
 
 public enum GameState
 {
+	PresentationScreen,
 	Menu,
 	LoadingGame,
 	Playing,
 	Paused,
 	Reloading,
-	Cutscene,		// Not implemented
-	Quitting
+	Cutscene,
+	Quitting,
+	DeletingSaveFile
 }

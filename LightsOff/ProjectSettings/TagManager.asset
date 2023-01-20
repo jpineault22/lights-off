@@ -22,6 +22,10 @@ TagManager:
   - Outline
   - HaloLight
   - DirectionalLight
+  - Window
+  - SpawnPoints
+  - SpawnPointEnemyDrunk
+  - SpawnPointEnemyPassedOut
   layers:
   - Default
   - TransparentFX

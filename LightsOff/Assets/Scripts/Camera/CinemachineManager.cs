@@ -16,7 +16,7 @@ public class CinemachineManager : Singleton<CinemachineManager>
 
 	private void Start()
 	{
-		LevelLoader.Instance.TransitionHalfDone += OnLevelLoaded;
+		//LevelLoader.Instance.TransitionHalfDone += OnLevelLoaded;
 		LevelLoader.Instance.MenuReloaded += OnMenuReloaded;
 	}
 

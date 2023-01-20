@@ -16,7 +16,7 @@ public class OneWayPlatform : RotatableObject
 
 	private void Update()
 	{
-		if (disappearingDevice == default || disappearingDevice.IsOnAndConnected())
+		if (PlayerController.IsInitialized && (disappearingDevice == default || disappearingDevice.IsOnAndConnected()))
 		{
 			if (objectRotation == ObjectRotation.West)
 			{

@@ -18,7 +18,8 @@ public abstract class InteractibleObject : MonoBehaviour
 	{
 		if (interactMessage == InteractMessage.Press) interactMessageRoot = Constants.UIInteractMessagePress;
 		else if (interactMessage == InteractMessage.Enter) interactMessageRoot = Constants.UIInteractMessageEnter;
-		
+		else if (interactMessage == InteractMessage.Sleep) interactMessageRoot = Constants.UIInteractMessageSleep;
+
 		interactMessageText.enabled = false;
 		interactMessageText.color = accessibleColor;
 	}
@@ -89,5 +90,6 @@ public abstract class InteractibleObject : MonoBehaviour
 public enum InteractMessage
 {
 	Press,
-	Enter
+	Enter,
+	Sleep
 }

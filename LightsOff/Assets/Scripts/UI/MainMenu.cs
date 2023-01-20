@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class MainMenu : Singleton<MainMenu>
 {
@@ -17,6 +19,11 @@ public class MainMenu : Singleton<MainMenu>
 	[SerializeField] private GameObject playButtonObject = default;
 	[SerializeField] private GameObject quitButtonObject = default;
 
+	[SerializeField] private CanvasGroup startMenuCanvasGroup;
+	[SerializeField] private GameObject startMenuGlobalVolume;
+
+	private DepthOfField backgroundBlur;
+
 	private Button playButton;
 	private Button quitButton;
 
@@ -26,6 +33,8 @@ public class MainMenu : Singleton<MainMenu>
 
 		playButton = playButtonObject.GetComponent<Button>();
 		quitButton = quitButtonObject.GetComponent<Button>();
+
+		startMenuGlobalVolume.GetComponent<Volume>().profile.TryGet(out backgroundBlur);
 
 		playButton.interactable = false;
 	}
@@ -38,12 +47,12 @@ public class MainMenu : Singleton<MainMenu>
 
 	private void OnEnable()
 	{
-		LevelLoader.Instance.CrossfadeTransitionEnded += ActivateMenu;
+		TransitionManager.Instance.CrossfadeTransitionEnded += ActivateMenu;
 	}
 
 	private void OnDisable()
 	{
-		LevelLoader.Instance.CrossfadeTransitionEnded -= ActivateMenu;
+		TransitionManager.Instance.CrossfadeTransitionEnded -= ActivateMenu;
 	}
 
 	private void ActivateMenu()
@@ -55,7 +64,7 @@ public class MainMenu : Singleton<MainMenu>
 	public void PlayGame()
 	{
 		playButton.interactable = false;
-		GameManager.Instance.LoadGame();
+		GameManager.Instance.StartGame();
 	}
 
 	public Menu GetCurrentMenu()
@@ -123,6 +132,17 @@ public class MainMenu : Singleton<MainMenu>
 	public void DeleteSaveFile()
 	{
 		GameManager.Instance.DeleteSaveFile();
+	}
+
+	public void AddToCanvasGroupAlpha(float pDifference)
+	{
+		startMenuCanvasGroup.alpha += pDifference;
+	}
+
+	public void AddToDepthOfFieldFocalLength(float pDifference)
+	{
+		backgroundBlur.focalLength.value += pDifference;
+		backgroundBlur.focalLength.overrideState = true;
 	}
 }
 

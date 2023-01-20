@@ -5,6 +5,7 @@ public static class Constants
     public const int StartingLevelNumber = 1;
 
     // Game object/Scene names and prefixes
+    public const string NameSceneBoot = "Boot";
     public const string NamePrefixSceneLevel = "Level_";
     public const string NamePrefixSceneTest = "Test_";
     public const string NameSceneStartMenu = "StartMenu";
@@ -16,7 +17,8 @@ public static class Constants
     public const string TagFunctionalLevel = "FunctionalLevel";
     public const string TagLevelBoundaries = "LevelBoundaries";
     public const string TagSpawnPoints = "SpawnPoints";
-    public const string TagFirstPlayerSpawnPoint = "FirstPlayerSpawnPoint";
+    public const string TagSpawnPointEnemyDrunk = "SpawnPointEnemyDrunk";
+    public const string TagSpawnPointEnemyPassedOut = "SpawnPointEnemyPassedOut";
     public const string TagLight = "Light";
     public const string TagStartDoor = "StartDoor";
     public const string TagDoor = "Door";
@@ -32,6 +34,7 @@ public static class Constants
     public const string TagOutline = "Outline";
     public const string TagHaloLight = "HaloLight";
     public const string TagDirectionalLight = "DirectionalLight";
+    public const string TagWindow = "Window";
 
     // Layers
     public const string LayerPlayer = "Player";
@@ -52,11 +55,13 @@ public static class Constants
     public const string AnimatorEnemyCurrentStateTimer = "CurrentStateTimer";
     public const string AnimatorDoorIsOpen = "IsOpen";
     public const string AnimatorGateIsOpen = "IsOpen";
+    public const string AnimatorBedWakingUp = "WakingUp";
     public const string AnimatorCrossfadeStart = "CrossfadeStart";
     public const string AnimatorCrossfadeEnd = "CrossfadeEnd";
     public const string AnimationCharacterClimb = "CharacterClimb";
     public const string AnimationCharacterDeath = "CharacterDeath";
     public const string AnimationKeygateOpen = "KeygateOpen";
+    public const string AnimationWindowSunrise = "WindowSunrise";
 
     // Audio mixer parameters
     public const string AudioMasterVolume = "MasterVolume";
@@ -64,6 +69,7 @@ public static class Constants
     // Input
     public const string InputActionMapGameplay = "Gameplay";
     public const string InputActionMapUI = "UI";
+    public const string InputActionMapCreditsEnd = "CreditsEnd";
     public const string InputControlSchemeKeyboardMouse = "Keyboard/Mouse";
     public const string InputControlSchemeGamepad = "Gamepad";
     public const string InputInteractKeyboardMouse = "K";
@@ -73,4 +79,5 @@ public static class Constants
     public const string UILevelNumberText = "Level ";
     public const string UIInteractMessagePress = "Press";
     public const string UIInteractMessageEnter = "Enter";
+    public const string UIInteractMessageSleep = "Sleep";
 }
