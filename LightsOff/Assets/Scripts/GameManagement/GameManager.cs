@@ -19,7 +19,6 @@ public class GameManager : Singleton<GameManager>
 		LevelLoader.Instance.LastSceneUnloaded += DestroyToQuit;
 
 		DisplayPresentationScreen();
-		//LoadMenu();
 	}
 
 	#region Game saving and loading, pause
@@ -62,7 +61,7 @@ public class GameManager : Singleton<GameManager>
 			return;
 
 		CurrentGameState = GameState.DeletingSaveFile;
-		InputManager.Instance.DisablePlayerInput();
+		EventSystemManager.Instance.DeactivateModule();
 		LevelLoader.Instance.RefreshMenuLevelAfterFileDeletion();
 	}
 
@@ -89,7 +88,6 @@ public class GameManager : Singleton<GameManager>
 
 	public void EndAndReturnToMenu()
 	{
-		//DeleteSaveFile();
 		CurrentGameState = GameState.Menu;
 		EndingGame = true;
 		SaveSystem.DeleteSaveFile();
@@ -98,7 +96,6 @@ public class GameManager : Singleton<GameManager>
 
 	public void StartGame()
 	{
-		InputManager.Instance.DisablePlayerInput();
 		CurrentGameState = GameState.LoadingGame;
 		InstantiatePlayer();
 		LevelLoader.Instance.FadeOutMenu();

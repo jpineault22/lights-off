@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 // This class defines objects that have a trigger collider displaying a short message when in range, and with which the player can interact (such as switches, breakers and exit doors)
 public abstract class InteractibleObject : MonoBehaviour
 {
 	[SerializeField] protected TMP_Text interactMessageText = default;
+	[SerializeField] private Image interactMessageImage = default;
 	[SerializeField] private InteractMessage interactMessage = default;
 	[SerializeField] protected float cooldownTime = 0.5f;
 	[SerializeField] protected Color accessibleColor = default;
@@ -12,16 +14,16 @@ public abstract class InteractibleObject : MonoBehaviour
 
 	public bool InRange { get; protected set; }
 	protected float cooldownCounter = 0;
-	private string interactMessageRoot = string.Empty;
 
 	protected virtual void Awake()
 	{
-		if (interactMessage == InteractMessage.Press) interactMessageRoot = Constants.UIInteractMessagePress;
-		else if (interactMessage == InteractMessage.Enter) interactMessageRoot = Constants.UIInteractMessageEnter;
-		else if (interactMessage == InteractMessage.Sleep) interactMessageRoot = Constants.UIInteractMessageSleep;
+		if (interactMessage == InteractMessage.Press) interactMessageText.text = Constants.UIInteractMessagePress;
+		else if (interactMessage == InteractMessage.Enter) interactMessageText.text = Constants.UIInteractMessageEnter;
+		else if (interactMessage == InteractMessage.Sleep) interactMessageText.text = Constants.UIInteractMessageSleep;
 
-		interactMessageText.enabled = false;
+		EnableDisableInteractMessage(false);
 		interactMessageText.color = accessibleColor;
+		interactMessageText.outlineWidth = 0.4f;
 	}
 
 	private void Start()
@@ -49,12 +51,12 @@ public abstract class InteractibleObject : MonoBehaviour
 
 	private void UpdateInteractMessage(string pControlScheme)
 	{
-		string inputText = string.Empty;
 
-		if (pControlScheme == Constants.InputControlSchemeKeyboardMouse) inputText = Constants.InputInteractKeyboardMouse;
-		else if (pControlScheme == Constants.InputControlSchemeGamepad) inputText = Constants.InputInteractGamepad;
-
-		interactMessageText.text = interactMessageRoot + " (" + inputText + ")";
+		if (interactMessageImage != null)
+		{
+			if (pControlScheme == Constants.InputControlSchemeKeyboardMouse) interactMessageImage.sprite = UIManager.Instance.interactMessageImageKeyboard;
+			else if (pControlScheme == Constants.InputControlSchemeGamepad) interactMessageImage.sprite = UIManager.Instance.interactMessageImageController;
+		}
 	}
 
 	private void UpdateInteractMessageColor(bool pAccessible)
@@ -65,6 +67,8 @@ public abstract class InteractibleObject : MonoBehaviour
 	protected void EnableDisableInteractMessage(bool pValue)
 	{
 		interactMessageText.enabled = pValue;
+		if (interactMessageImage != null)
+			interactMessageImage.enabled = pValue;
 		InRange = pValue;
 	}
 

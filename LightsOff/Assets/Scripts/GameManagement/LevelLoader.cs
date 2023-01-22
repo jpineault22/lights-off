@@ -150,7 +150,6 @@ public class LevelLoader : Singleton<LevelLoader>
 
         if (GameManager.Instance.CurrentGameState == GameState.PresentationScreen)
 		{
-            UIManager.Instance.EnableLevelNumberText(true);
             CreditsManager.Instance.DisableLastScreen();
         }
         else if (GameManager.Instance.CurrentGameState == GameState.Menu)
@@ -167,7 +166,6 @@ public class LevelLoader : Singleton<LevelLoader>
                 PauseMenu.Instance.Resume();
             }
 
-            UIManager.Instance.EnableLevelNumberText(true);
             CreditsManager.Instance.DisableLastScreen();
 
             if (TransitionManager.Instance.CrossfadeState == CrossfadeState.NotFading)

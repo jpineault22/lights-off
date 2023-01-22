@@ -5,14 +5,41 @@ using UnityEngine.InputSystem;
 
 public class UIManager : Singleton<UIManager>
 {
+	[SerializeField] private CanvasGroup inGameUICanvasGroup = default;
 	[SerializeField] private TMP_Text levelNumberText = default;
+	[SerializeField] private TMP_Text keyNumberText = default;
+	[SerializeField] private float fadeTime = 0.5f;
+
+	public Sprite interactMessageImageKeyboard = default;
+	public Sprite interactMessageImageController = default;
 	
 	public Color deviceOutlineColor = Color.white;
+
+	private bool uiIsFadingIn;
+	private float fadeCounter;
+
+	protected override void Awake()
+	{
+		base.Awake();
+	}
 
 	private void Start()
 	{
 		InputManager.Instance.Paused += ctx => PauseButtonPressed(ctx);
 		InputManager.Instance.Backed += ctx => BackButtonPressed(ctx);
+	}
+
+	private void Update()
+	{
+		if (uiIsFadingIn)
+		{
+			inGameUICanvasGroup.alpha += Time.deltaTime / fadeTime;
+
+			fadeCounter -= Time.deltaTime;
+
+			if (fadeCounter <= 0 && (inGameUICanvasGroup.alpha <= 0 || inGameUICanvasGroup.alpha >= 1))
+				uiIsFadingIn = false;
+		}
 	}
 
 	private void PauseButtonPressed(InputAction.CallbackContext ctx)
@@ -58,19 +85,24 @@ public class UIManager : Singleton<UIManager>
 
 	public void UpdateLevelNumberText(int pLevelNumber)
 	{
-		if (pLevelNumber == 0)
+		levelNumberText.text = Constants.UILevelNumberText + pLevelNumber;
+	}
+
+	public void UpdateKeyNumberText(int pKeyNumber)
+	{
+		keyNumberText.text = Constants.UIKeyNumberText + pKeyNumber;
+	}
+
+	public void EnableInGameUI(bool pEnable)
+	{
+		if (pEnable)
 		{
-			levelNumberText.enabled = false;
+			uiIsFadingIn = true;
+			fadeCounter = fadeTime;
 		}
 		else
 		{
-			levelNumberText.text = Constants.UILevelNumberText + pLevelNumber;
-			levelNumberText.enabled = true;
+			inGameUICanvasGroup.alpha = 0;
 		}
-	}
-
-	public void EnableLevelNumberText(bool pEnable)
-	{
-		levelNumberText.enabled = pEnable;
 	}
 }

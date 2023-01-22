@@ -20,7 +20,8 @@ public class MovingPlatform : Device
 
 	protected void MoveTowardsTarget(Vector2 pTarget)
 	{
-		transform.position = Vector3.MoveTowards(transform.position, pTarget, speed * Time.fixedDeltaTime);
+		if (GameManager.Instance.CurrentGameState == GameState.Playing)
+			transform.position = Vector3.MoveTowards(transform.position, pTarget, speed * Time.fixedDeltaTime);
 	}
 
 	protected void StopPlatform()

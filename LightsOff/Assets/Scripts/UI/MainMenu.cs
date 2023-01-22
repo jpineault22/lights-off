@@ -58,7 +58,7 @@ public class MainMenu : Singleton<MainMenu>
 	private void ActivateMenu()
 	{
 		playButton.interactable = true;
-		InputManager.Instance.EnablePlayerInput();
+		EventSystemManager.Instance.ActivateModule();
 	}
 
 	public void PlayGame()

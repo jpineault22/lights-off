@@ -72,11 +72,10 @@ public static class Constants
     public const string InputActionMapCreditsEnd = "CreditsEnd";
     public const string InputControlSchemeKeyboardMouse = "Keyboard/Mouse";
     public const string InputControlSchemeGamepad = "Gamepad";
-    public const string InputInteractKeyboardMouse = "K";
-    public const string InputInteractGamepad = "X";
 
     // UI
     public const string UILevelNumberText = "Level ";
+    public const string UIKeyNumberText = "x";
     public const string UIInteractMessagePress = "Press";
     public const string UIInteractMessageEnter = "Enter";
     public const string UIInteractMessageSleep = "Sleep";

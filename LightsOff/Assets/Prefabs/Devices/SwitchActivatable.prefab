@@ -207,9 +207,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactMessageText: {fileID: 7076743089376334871}
+  interactMessageImage: {fileID: 6720470396492437072}
   interactMessage: 0
   cooldownTime: 0.5
-  accessibleColor: {r: 1, g: 0, b: 0.4222908, a: 1}
+  accessibleColor: {r: 1, g: 1, b: 1, a: 1}
   inaccessibleColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   devices:
   - {fileID: 0}
@@ -355,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 5879423098443700536, guid: 23aa0ee5790ed4440bf53e23c8dbb1ad,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 525
       objectReference: {fileID: 0}
     - target: {fileID: 5879423098443700536, guid: 23aa0ee5790ed4440bf53e23c8dbb1ad,
         type: 3}
@@ -440,5 +441,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6720470396492437072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4357873794352289329, guid: 23aa0ee5790ed4440bf53e23c8dbb1ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 7005823215418196065}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

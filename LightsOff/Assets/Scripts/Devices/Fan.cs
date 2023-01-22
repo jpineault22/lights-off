@@ -6,7 +6,7 @@ public class Fan : Device
 	[SerializeField] private float forceMagnitudeUpwards = 125f;
 	
 	private GameObject functionalFan;
-	private SpriteRenderer functionalFanSpriteRenderer;
+	private ParticleSystem functionalFanParticleSystem;
 	private AreaEffector2D functionalFanAreaEffector;
 	private BoxCollider2D functionalFanCollider;
 	private Animator animator;
@@ -23,7 +23,7 @@ public class Fan : Device
 		}
 
 		//functionalFan = GameObjectUtils.GetChildren(gameObject)[0];
-		functionalFanSpriteRenderer = functionalFan.GetComponent<SpriteRenderer>();
+		functionalFanParticleSystem = functionalFan.GetComponent<ParticleSystem>();
 		functionalFanAreaEffector = functionalFan.GetComponent<AreaEffector2D>();
 		functionalFanCollider = functionalFan.GetComponent<BoxCollider2D>();
 		animator = GetComponent<Animator>();
@@ -42,7 +42,7 @@ public class Fan : Device
 			animator.enabled = true;
 			outlineAnimator.enabled = true;
 
-			functionalFanSpriteRenderer.enabled = true;
+			functionalFanParticleSystem.Play();
 			//functionalFanAreaEffector.forceMagnitude = forceMagnitude;
 			functionalFanCollider.enabled = true;
 		}
@@ -51,7 +51,7 @@ public class Fan : Device
 			animator.enabled = false;
 			outlineAnimator.enabled = false;
 
-			functionalFanSpriteRenderer.enabled = false;
+			functionalFanParticleSystem.Stop();
 			//functionalFanAreaEffector.forceMagnitude = 0;
 			functionalFanCollider.enabled = false;
 		}

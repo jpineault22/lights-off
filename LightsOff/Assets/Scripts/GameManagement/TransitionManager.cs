@@ -124,6 +124,8 @@ public class TransitionManager : Singleton<TransitionManager>
                     else if (GameManager.Instance.CurrentGameState == GameState.Menu)
                     {
                         crossfadeStartEnded = true;
+                        UIManager.Instance.UpdateKeyNumberText(0);
+                        UIManager.Instance.EnableInGameUI(false);
                         LevelLoader.Instance.LoadMenuAndAddOperation();
                     }
                     else if (GameManager.Instance.CurrentGameState == GameState.DeletingSaveFile)
@@ -152,7 +154,7 @@ public class TransitionManager : Singleton<TransitionManager>
 					{
                         GameManager.Instance.CurrentGameState = GameState.Menu;
                         crossfadeCanvas.sortingOrder = crossfadeCanvasDefaultSortOrder;
-                        InputManager.Instance.EnablePlayerInput();
+                        EventSystemManager.Instance.ActivateModule();
                     }
 
                     if (GameManager.Instance.CurrentGameState == GameState.Playing)
@@ -181,6 +183,7 @@ public class TransitionManager : Singleton<TransitionManager>
             {
                 if (LevelLoader.Instance.CurrentMenuLevelState == MenuLevelState.FadingOutMenu)
                 {
+                    UIManager.Instance.EnableInGameUI(true);
                     LevelLoader.Instance.UnloadMenu();
                 }
                 else if (LevelLoader.Instance.CurrentMenuLevelState == MenuLevelState.StartGameMenuUnloaded)
