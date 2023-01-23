@@ -10,7 +10,7 @@ public class TransitionManager : Singleton<TransitionManager>
     [SerializeField] private float endingCinematicWaitTime = 10f;
     [SerializeField] private int crossfadeCanvasDefaultSortOrder = 3;
     [SerializeField] private int crossfadeCanvasFileDeletionSortOrder = 1;
-    [SerializeField] private float defaultBackgroundBlurFocalLength = 50f;
+    [SerializeField] private float defaultBackgroundBlurFocalLength = 300f;
 
     private float currentTransitionTime;
     public float defaultFadeTime = 1;                            // Time for fade out/in, total transition animation time is twice that amount

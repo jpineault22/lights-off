@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Player" ID="{8DA60E2F-6FB9-4494-8751-609249246301}" ShortID="391987152">
+					<ChildrenList>
+						<Event Name="Play_PlayerWalk" ID="{E0D7B63B-41F3-4033-8E96-AF469AB3B255}">
+							<ChildrenList>
+								<Action Name="" ID="{E54FA68C-7237-4477-9DFF-0D7565ED8616}" ShortID="468393851">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps" ID="{92EA1115-4C18-43D0-9337-79085B2ECFCE}" WorkUnitID="{B9FCEF36-6F36-4608-B495-5E14E90C26D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_PlayerJump" ID="{C1DAEF8A-1235-4104-80AD-0280E8F0DE3B}"/>
+						<Event Name="Play_PlayerLand" ID="{5207AD87-2634-413F-86A6-6CB87977AEEB}"/>
+						<Event Name="Stop_PlayerWalk" ID="{24966683-FAD9-4C85-9BFF-DF2DD31F94C2}"/>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class Light : Device
 {
-	private Light2D haloLight;
-	private Light2D directionalLight;
+	private UnityEngine.Rendering.Universal.Light2D haloLight;
+	private UnityEngine.Rendering.Universal.Light2D directionalLight;
 
 	protected override void Awake()
 	{
 		foreach (GameObject obj in GameObjectUtils.GetChildren(gameObject))
 		{
 			if (obj.CompareTag(Constants.TagHaloLight))
-				haloLight = obj.GetComponent<Light2D>();
+				haloLight = obj.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 			else if (obj.CompareTag(Constants.TagDirectionalLight))
-				directionalLight = obj.GetComponent<Light2D>();
+				directionalLight = obj.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 		}
 		
 		base.Awake();
