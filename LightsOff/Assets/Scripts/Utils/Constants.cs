@@ -63,9 +63,6 @@ public static class Constants
     public const string AnimationKeygateOpen = "KeygateOpen";
     public const string AnimationWindowSunrise = "WindowSunrise";
 
-    // Audio mixer parameters
-    public const string AudioMasterVolume = "MasterVolume";
-
     // Input
     public const string InputActionMapGameplay = "Gameplay";
     public const string InputActionMapUI = "UI";
@@ -79,4 +76,12 @@ public static class Constants
     public const string UIInteractMessagePress = "Press";
     public const string UIInteractMessageEnter = "Enter";
     public const string UIInteractMessageSleep = "Sleep";
+
+    // Audio mixer parameters
+    public const string AudioMasterVolume = "MasterVolume";
+
+    // Wwise
+    public const string WwiseEventPlayPlayerWalk = "Play_PlayerWalk";
+    public const string WwiseEventStopPlayerWalk = "Stop_PlayerWalk";
+    public const string WwiseEventPlayPlayerJump = "Play_PlayerJump";
 }

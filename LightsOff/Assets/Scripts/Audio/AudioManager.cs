@@ -16,4 +16,19 @@ public class AudioManager : Singleton<AudioManager>
 	{
 		music.Play();
 	}
+
+	public void PlayPlayerWalk(GameObject pGameObject)
+	{
+		//AkSoundEngine.PostEvent(Constants.WwiseEventPlayPlayerWalk, pGameObject);
+	}
+
+	public void StopPlayerWalk(GameObject pGameObject)
+	{
+		//AkSoundEngine.PostEvent(Constants.WwiseEventStopPlayerWalk, pGameObject);
+	}
+
+	public void PlayPlayerJump(GameObject pGameObject)
+	{
+		AkSoundEngine.PostEvent(Constants.WwiseEventPlayPlayerJump, pGameObject);
+	}
 }

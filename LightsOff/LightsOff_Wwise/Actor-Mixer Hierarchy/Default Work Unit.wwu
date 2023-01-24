@@ -164,6 +164,28 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="mireille-prout" ID="{B3DA87C6-F4E4-4373-AB02-EEA2A67071F0}" ShortID="953109752">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="mireille-prout" ID="{C98E5CF2-7F3E-40D9-979A-EE38696FF93F}">
+									<Language>SFX</Language>
+									<AudioFile>mireille-prout.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="99681611"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="mireille-prout" ID="{C98E5CF2-7F3E-40D9-979A-EE38696FF93F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

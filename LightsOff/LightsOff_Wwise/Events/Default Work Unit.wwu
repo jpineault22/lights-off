@@ -16,7 +16,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_PlayerJump" ID="{C1DAEF8A-1235-4104-80AD-0280E8F0DE3B}"/>
+						<Event Name="Play_PlayerJump" ID="{C1DAEF8A-1235-4104-80AD-0280E8F0DE3B}">
+							<ChildrenList>
+								<Action Name="" ID="{AFA22225-D9AD-4171-947B-6F47E2A0B56C}" ShortID="224024551">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="mireille-prout" ID="{B3DA87C6-F4E4-4373-AB02-EEA2A67071F0}" WorkUnitID="{B9FCEF36-6F36-4608-B495-5E14E90C26D5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="Play_PlayerLand" ID="{5207AD87-2634-413F-86A6-6CB87977AEEB}"/>
 						<Event Name="Stop_PlayerWalk" ID="{24966683-FAD9-4C85-9BFF-DF2DD31F94C2}"/>
 					</ChildrenList>

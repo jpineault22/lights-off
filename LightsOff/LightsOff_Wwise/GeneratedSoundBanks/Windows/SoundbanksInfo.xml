@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{5EEF4E70-4D32-1CD8-3002-53CC9AF87AD2}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3157003241" Type="User" Language="SFX" Hash="{7DFB5C1A-3928-2D5B-3C76-8689A3C8E079}">
+			<ShortName>Test</ShortName>
+			<Path>Test.bnk</Path>
+			<Media>
+				<File Id="99681611" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>mireille-prout.wav</ShortName>
+					<CachePath>SFX/mireille-prout_10C4C929.wem</CachePath>
+				</File>
+				<File Id="197509611" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep_Walking_Concrete_03.wav</ShortName>
+					<CachePath>SFX/Footstep_Walking_Concrete_03_10C4C929.wem</CachePath>
+				</File>
+				<File Id="605506694" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep_Walking_Concrete_04.wav</ShortName>
+					<CachePath>SFX/Footstep_Walking_Concrete_04_10C4C929.wem</CachePath>
+				</File>
+				<File Id="666706489" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep_Walking_Concrete_02.wav</ShortName>
+					<CachePath>SFX/Footstep_Walking_Concrete_02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1018181879" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep_Walking_Concrete_06.wav</ShortName>
+					<CachePath>SFX/Footstep_Walking_Concrete_06_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1048166027" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep_Walking_Concrete_01.wav</ShortName>
+					<CachePath>SFX/Footstep_Walking_Concrete_01_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3817990921" Name="Play_PlayerJump" DurationType="OneShot" DurationMin="0.26993197" DurationMax="0.26993197">
+					<MediaRefs>
+						<MediaRef Id="99681611"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2093119550" Name="Play_PlayerWalk" DurationType="OneShot" DurationMin="0.22314614" DurationMax="0.46512574">
+					<MediaRefs>
+						<MediaRef Id="197509611"/>
+						<MediaRef Id="605506694"/>
+						<MediaRef Id="666706489"/>
+						<MediaRef Id="1018181879"/>
+						<MediaRef Id="1048166027"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{8350DD31-9283-B12C-3E5E-F3FDACB543CF}</FileHash>
+</SoundBanksInfo>

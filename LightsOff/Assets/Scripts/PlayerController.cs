@@ -191,6 +191,7 @@ public class PlayerController : Singleton<PlayerController>
 
             CurrentCharacterState = CharacterState.Jumping;
             animator.SetBool(Constants.AnimatorCharacterIsJumping, true);
+            AudioManager.Instance.PlayPlayerJump(gameObject);
             jumpTimeCounter = inFanArea ? jumpTimeFanArea : jumpTime;
         }
     }
@@ -302,6 +303,7 @@ public class PlayerController : Singleton<PlayerController>
                 if (isGrounded && CurrentCharacterState != CharacterState.Jumping && CurrentCharacterState != CharacterState.Bouncing)
                 {
                     CurrentCharacterState = CharacterState.Walking;
+                    AudioManager.Instance.PlayPlayerWalk(gameObject);
                 }
             }
             else
