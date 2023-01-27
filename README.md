@@ -1,9 +1,10 @@
 # lights-off
-*Lights off* WIP (platformer puzzle game).  
-Unity version: 2019.4.40f1  
-URP version: 7.7.1  
+*Party's Over* (new name) WIP (platformer puzzle game).  
+Unity version: 2022.1.23f
+URP version: 13.1.8
+Wwise: 2022.1.1.8100  
 
-*Turn off all the lights to progress to the next level.*
+*Party's over, just go to bed. But don't forget to turn off all the lights.*
 
 ### Controls
 |  | Controller | Keyboard |
