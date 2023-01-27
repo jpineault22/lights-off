@@ -81,6 +81,7 @@ public static class Constants
     public const string AudioMasterVolume = "MasterVolume";
 
     // Wwise
+    public const string WwiseEventTestMusic = "TestMusic";
     public const string WwiseEventPlayPlayerWalk = "Play_PlayerWalk";
     public const string WwiseEventStopPlayerWalk = "Stop_PlayerWalk";
     public const string WwiseEventPlayPlayerJump = "Play_PlayerJump";

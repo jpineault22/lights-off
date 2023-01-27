@@ -31,6 +31,17 @@
 						<Event Name="Stop_PlayerWalk" ID="{24966683-FAD9-4C85-9BFF-DF2DD31F94C2}"/>
 					</ChildrenList>
 				</Folder>
+				<Event Name="TestMusic" ID="{BFCA2EBB-3D08-4FCB-9DEA-B258EAC8A887}">
+					<ChildrenList>
+						<Action Name="" ID="{E3FE79E3-8640-4380-8EA5-F86958E9ECE3}" ShortID="657340923">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FullMusic" ID="{38B7E84C-625B-456C-A78B-96204FE5A135}" WorkUnitID="{A6352788-CA52-41F6-A36B-E4183518306A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

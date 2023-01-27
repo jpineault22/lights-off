@@ -14,7 +14,8 @@ public class AudioManager : Singleton<AudioManager>
 
 	public void PlayMusic()
 	{
-		music.Play();
+		//music.Play();
+		AkSoundEngine.PostEvent(Constants.WwiseEventTestMusic, gameObject);
 	}
 
 	public void PlayPlayerWalk(GameObject pGameObject)
@@ -29,6 +30,6 @@ public class AudioManager : Singleton<AudioManager>
 
 	public void PlayPlayerJump(GameObject pGameObject)
 	{
-		AkSoundEngine.PostEvent(Constants.WwiseEventPlayPlayerJump, pGameObject);
+		//AkSoundEngine.PostEvent(Constants.WwiseEventPlayPlayerJump, pGameObject);
 	}
 }

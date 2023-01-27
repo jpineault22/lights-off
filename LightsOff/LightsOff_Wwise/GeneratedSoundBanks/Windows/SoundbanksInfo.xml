@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3157003241" Type="User" Language="SFX" Hash="{7DFB5C1A-3928-2D5B-3C76-8689A3C8E079}">
+		<SoundBank Id="3157003241" Type="User" Language="SFX" Hash="{47131184-09AC-DD86-B51A-AC934E188683}">
 			<ShortName>Test</ShortName>
 			<Path>Test.bnk</Path>
 			<Media>
@@ -41,6 +41,10 @@
 				<File Id="666706489" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footstep_Walking_Concrete_02.wav</ShortName>
 					<CachePath>SFX/Footstep_Walking_Concrete_02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="902403963" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Lights Off-test-wav.wav</ShortName>
+					<CachePath>SFX/Lights Off-test-wav_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="1018181879" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footstep_Walking_Concrete_06.wav</ShortName>
@@ -66,8 +70,13 @@
 						<MediaRef Id="1048166027"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1324413170" Name="TestMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="902403963"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8350DD31-9283-B12C-3E5E-F3FDACB543CF}</FileHash>
+	<FileHash>{71DF5830-F80E-AA85-F51B-DED1ECC79A4B}</FileHash>
 </SoundBanksInfo>

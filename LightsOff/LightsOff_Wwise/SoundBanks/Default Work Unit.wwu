@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_PlayerWalk" ID="{E0D7B63B-41F3-4033-8E96-AF469AB3B255}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerJump" ID="{C1DAEF8A-1235-4104-80AD-0280E8F0DE3B}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="TestMusic" ID="{BFCA2EBB-3D08-4FCB-9DEA-B258EAC8A887}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
