@@ -104,34 +104,48 @@ public abstract class CycleDevice : RotatableObject
 		}
 	}
 
-	public void SwitchToNextState()
+	public void SwitchToNextState(bool pByFan)
 	{
 		if ((!hasLimits || currentState != stateUpperLimit) && (!BlockingDeviceIsOn() || currentState != blockingDeviceUpperThreshold - 1))
 		{
-			currentState++;
-
-			if (currentState >= nbStates)
-			{
-				currentState = 0;
-			}
-
+			IncrementState();
 			ApplyBehavior();
+		}
+		else if (!pByFan)
+		{
+			IncrementState();
+			FailToSwitch(true);
 		}
 	}
 
-	public void SwitchToPreviousState()
+	public void SwitchToPreviousState(bool pByFan)
 	{
 		if ((!hasLimits || currentState != stateLowerLimit) && (!BlockingDeviceIsOn() || currentState != blockingDeviceUpperThreshold))
 		{
-			currentState--;
-
-			if (currentState < 0)
-			{
-				currentState = nbStates - 1;
-			}
-
+			DecrementState();
 			ApplyBehavior();
 		}
+		else if (!pByFan)
+		{
+			DecrementState();
+			FailToSwitch(false);
+		}
+	}
+
+	protected void IncrementState()
+	{
+		currentState++;
+
+		if (currentState >= nbStates)
+			currentState = 0;
+	}
+
+	protected void DecrementState()
+	{
+		currentState--;
+
+		if (currentState < 0)
+			currentState = nbStates - 1;
 	}
 
 	private bool BlockingDeviceIsOn()
@@ -147,6 +161,8 @@ public abstract class CycleDevice : RotatableObject
 	}
 
 	public abstract void ApplyBehavior();
+
+	public abstract void FailToSwitch(bool pNextState);
 
 	public virtual void ShowOutline(bool pShow)
 	{

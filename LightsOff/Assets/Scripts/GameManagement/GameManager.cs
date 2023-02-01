@@ -83,6 +83,7 @@ public class GameManager : Singleton<GameManager>
 		Time.timeScale = 1f;
 		CurrentGameState = GameState.Menu;
 		EventSystemManager.Instance.DeactivateModule();
+		AudioManager.Instance.TransitionBackToMenuMusic();
 		LevelLoader.Instance.QuitToMenu();
 	}
 
@@ -98,6 +99,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		CurrentGameState = GameState.LoadingGame;
 		InstantiatePlayer();
+		AudioManager.Instance.TransitionInGameMusic();
 		LevelLoader.Instance.FadeOutMenu();
 	}
 

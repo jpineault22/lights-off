@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingsMenu : Singleton<SettingsMenu>
 {
 	[SerializeField] private TMP_Dropdown resolutionDropDown = default;
-	[SerializeField] private AudioMixer mainMixer = default;
+	[SerializeField] private Slider volumeSlider = default;
 
 	private Resolution[] resolutions;
 
@@ -33,6 +33,8 @@ public class SettingsMenu : Singleton<SettingsMenu>
 		resolutionDropDown.AddOptions(resolutionOptions);
 		resolutionDropDown.value = currentResolutionIndex;
 		resolutionDropDown.RefreshShownValue();
+
+		volumeSlider.value = AudioManager.Instance.MainVolume;
 	}
 
 	public void SetResolution(int pResolutionIndex)
@@ -53,6 +55,6 @@ public class SettingsMenu : Singleton<SettingsMenu>
 
 	public void SetVolume(float pVolume)
 	{
-		mainMixer.SetFloat(Constants.AudioMasterVolume, pVolume);
+		AudioManager.Instance.UpdateMainVolume(pVolume);
 	}
 }

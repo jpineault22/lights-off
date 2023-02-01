@@ -3,28 +3,62 @@
 public class PivotingGate : CycleDevice
 {
 	[SerializeField] private float rotatingSpeed = 350f;
+	[SerializeField] private float failToSwitchTime = 0.03f;
 	[SerializeField] private NearbyFunctionalFan[] nearbyFunctionalFans = default;
 	
 	private bool rotating = false;
+	private bool attemptingSwitchToNext;
+	private bool firstPartOfAttempt;
+	private float failToSwitchTimer;
 
 	private void FixedUpdate()
 	{
 		if (rotating)
 		{
-			Quaternion targetRotation = Quaternion.Euler(0, 0, 90 * (nbStates - currentState));											// States/rotation: 0/0, 1/270, 2/180, 3/90
+			ProcessSwitchAttempt();
+			ProcessRotation();
+		}
+	}
 
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotatingSpeed * Time.fixedDeltaTime);
+	private void ProcessRotation()
+	{
+		Quaternion targetRotation = Quaternion.Euler(0, 0, 90 * (nbStates - currentState));                                         // States/rotation: 0/0, 1/270, 2/180, 3/90
 
-			if (transform.rotation == targetRotation)
-			{
-				rotating = false;
-			}
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotatingSpeed * Time.fixedDeltaTime);
+
+		if (transform.rotation == targetRotation)
+		{
+			rotating = false;
+		}
+	}
+
+	private void ProcessSwitchAttempt()
+	{
+		if (failToSwitchTimer > 0)
+		{
+			failToSwitchTimer -= Time.fixedDeltaTime;
+		}
+		else if (firstPartOfAttempt)
+		{
+			firstPartOfAttempt = false;
+
+			if (attemptingSwitchToNext)
+				DecrementState();
+			else
+				IncrementState();
 		}
 	}
 
 	public override void ApplyBehavior()
 	{
 		rotating = true;
+	}
+
+	public override void FailToSwitch(bool pNextState)
+	{
+		rotating = firstPartOfAttempt = true;
+		attemptingSwitchToNext = pNextState;
+		failToSwitchTimer = failToSwitchTime;
 	}
 
 	private void OnTriggerStay2D(Collider2D pCollision)
@@ -36,13 +70,9 @@ public class PivotingGate : CycleDevice
 				if (fan.functionalFan == pCollision.gameObject)
 				{
 					if (fan.directionLeft)
-					{
-						SwitchToPreviousState();
-					}
+						SwitchToPreviousState(true);
 					else
-					{
-						SwitchToNextState();
-					}
+						SwitchToNextState(true);
 					
 					break;
 				}

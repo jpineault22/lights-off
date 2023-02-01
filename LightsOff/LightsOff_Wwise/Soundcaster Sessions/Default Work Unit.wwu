@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{66EF4E91-1FC7-4E66-8038-D1E30C025FAE}" SchemaVersion="110">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{66EF4E91-1FC7-4E66-8038-D1E30C025FAE}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{66EF4E91-1FC7-4E66-8038-D1E30C025FAE}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Game_Music" ID="{30176AB4-A5B5-475D-A342-EFFBA0515396}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Music_Start" ID="{D2BD6DBB-AD5C-4881-A04D-2D73162956D9}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music_PlayGame" ID="{B717019A-071A-4BE3-A428-A22FEBD63179}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music_End" ID="{8B4947B0-54D9-4893-8B39-DFCBE1EE4DD9}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music_BackToMenu" ID="{51EF6B4D-8154-4A2B-8A74-D56B4C6CAB31}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="MasterVolume" ID="{DF62500C-5E07-427A-915C-51D6A35E5D2A}"/>
+							<Value>100</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Menu" ID="{6C2617E6-23B2-4FAD-9E1B-DBF7878BC623}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

@@ -2012,6 +2012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13743e3a1b3d2bd428745eb5859bcefe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMainVolume: 100
 --- !u!4 &1505843036
 Transform:
   m_ObjectHideFlags: 0

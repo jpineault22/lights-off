@@ -81,8 +81,12 @@ public static class Constants
     public const string AudioMasterVolume = "MasterVolume";
 
     // Wwise
-    public const string WwiseEventTestMusic = "TestMusic";
+    public const string WwiseEventMusicStart = "Music_Start";
+    public const string WwiseEventMusicPlayGame = "Music_PlayGame";
+    public const string WwiseEventMusicBackToMenu = "Music_BackToMenu";
+    public const string WwiseEventMusicEnd = "Music_End";
     public const string WwiseEventPlayPlayerWalk = "Play_PlayerWalk";
     public const string WwiseEventStopPlayerWalk = "Stop_PlayerWalk";
     public const string WwiseEventPlayPlayerJump = "Play_PlayerJump";
+    public const string WwiseRTPCMasterVolume = "MasterVolume";
 }

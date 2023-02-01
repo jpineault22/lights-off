@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99349fc398379664ca955d3364e1e614, type: 3}
   m_Name: F2DC8348-29A2-4467-9DFB-A806BF02C867
   m_EditorClassIdentifier: 
-  objectName: Test
-  id: 3157003241
+  objectName: LightsOff
+  id: 416807801
   guid: F2DC8348-29A2-4467-9DFB-A806BF02C867

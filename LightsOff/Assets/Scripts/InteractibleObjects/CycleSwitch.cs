@@ -76,13 +76,9 @@ public class CycleSwitch : InteractibleObject
 		foreach (CycleDevice device in devices)
 		{
 			if (cycleSwitchLeft)
-			{
-				device.SwitchToPreviousState();
-			}
+				device.SwitchToPreviousState(false);
 			else
-			{
-				device.SwitchToNextState();
-			}
+				device.SwitchToNextState(false);
 		}
 
 		cooldownCounter = cooldownTime;

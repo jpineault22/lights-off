@@ -3,10 +3,13 @@
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{38F75E07-A55B-4338-8502-9CEDD6373DC9}" PersistMode="Standalone">
 			<ChildrenList>
-				<SoundBank Name="Test" ID="{F2DC8348-29A2-4467-9DFB-A806BF02C867}">
+				<SoundBank Name="LightsOff" ID="{F2DC8348-29A2-4467-9DFB-A806BF02C867}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Play_PlayerWalk" ID="{E0D7B63B-41F3-4033-8E96-AF469AB3B255}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_PlayerJump" ID="{C1DAEF8A-1235-4104-80AD-0280E8F0DE3B}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GameMusic" ID="{A998E392-3201-433A-8958-0ABF7FF1F7D3}" WorkUnitID="{A6352788-CA52-41F6-A36B-E4183518306A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Player" ID="{8DA60E2F-6FB9-4494-8751-609249246301}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Test" ID="{417ADD65-7033-4BD9-B283-71022427215A}" WorkUnitID="{B9FCEF36-6F36-4608-B495-5E14E90C26D5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music" ID="{9FCB241F-C208-4E5B-9606-CDF13D6CD6CF}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestMusic" ID="{BFCA2EBB-3D08-4FCB-9DEA-B258EAC8A887}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

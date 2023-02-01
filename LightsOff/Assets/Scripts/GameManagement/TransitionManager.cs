@@ -86,6 +86,7 @@ public class TransitionManager : Singleton<TransitionManager>
     {
         GameManager.Instance.CurrentGameState = GameState.Cutscene;
         GameManager.Instance.DestroyPlayer();
+        AudioManager.Instance.EndGameMusic();
         bed = pBed;
 
         yield return new WaitForSeconds(endingCinematicWaitTime);
@@ -232,7 +233,7 @@ public class TransitionManager : Singleton<TransitionManager>
                 else if (PresentationScreen.Instance.CurrentPresentationScreenState == PresentationScreenState.ScreenFadeOut)
                 {
                     SetTransitionCounter(presentationScreenFadeTime);
-                    AudioManager.Instance.PlayMusic();
+                    AudioManager.Instance.StartGameMusic();
                 }
                 else if (PresentationScreen.Instance.CurrentPresentationScreenState == PresentationScreenState.ScreenGone)
                 {

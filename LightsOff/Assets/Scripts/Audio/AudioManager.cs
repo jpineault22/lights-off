@@ -1,22 +1,49 @@
-﻿using UnityEngine.Audio;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
-	private AudioSource music;
+	[SerializeField] private float defaultMainVolume = 100f;
+	
+	public float MainVolume { get; private set; }
 
 	protected override void Awake()
 	{
 		base.Awake();
 
-		music = GetComponent<AudioSource>();
+		MainVolume = defaultMainVolume;
 	}
 
-	public void PlayMusic()
+	public void UpdateMainVolume(float pVolume)
 	{
-		//music.Play();
-		AkSoundEngine.PostEvent(Constants.WwiseEventTestMusic, gameObject);
+		MainVolume = pVolume;
+		AkSoundEngine.SetRTPCValue(Constants.WwiseRTPCMasterVolume, pVolume, AkSoundEngine.AK_INVALID_GAME_OBJECT);
 	}
+
+	#region Music methods
+
+	public void StartGameMusic()
+	{
+		AkSoundEngine.PostEvent(Constants.WwiseEventMusicStart, gameObject);
+	}
+
+	public void TransitionInGameMusic()
+	{
+		AkSoundEngine.PostEvent(Constants.WwiseEventMusicPlayGame, gameObject);
+	}
+
+	public void TransitionBackToMenuMusic()
+	{
+		AkSoundEngine.PostEvent(Constants.WwiseEventMusicBackToMenu, gameObject);
+	}
+
+	public void EndGameMusic()
+	{
+		AkSoundEngine.PostEvent(Constants.WwiseEventMusicEnd, gameObject);
+	}
+
+	#endregion
+
+	#region Player SFX methods
 
 	public void PlayPlayerWalk(GameObject pGameObject)
 	{
@@ -32,4 +59,6 @@ public class AudioManager : Singleton<AudioManager>
 	{
 		//AkSoundEngine.PostEvent(Constants.WwiseEventPlayPlayerJump, pGameObject);
 	}
+
+	#endregion
 }
