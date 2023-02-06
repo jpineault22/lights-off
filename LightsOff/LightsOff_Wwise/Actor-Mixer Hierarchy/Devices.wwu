@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="Devices" ID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="breaker-off" ID="{4AFB18A9-5F8D-4677-8C85-F03FC93FEC8E}" ShortID="1032466448">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="breaker-off" ID="{15056F30-70ED-442C-B2AF-A547C67798F1}">
+							<Language>SFX</Language>
+							<AudioFile>breaker-off.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="52485885"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="breaker-off" ID="{15056F30-70ED-442C-B2AF-A547C67798F1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="breaker-on" ID="{E3C9F7CF-A062-4413-A6EC-42489583958F}" ShortID="790296910">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="breaker-on" ID="{F7316518-4A13-4C85-A4BB-6708BD9882DA}">
+							<Language>SFX</Language>
+							<AudioFile>breaker-on.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="138006938"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="breaker-on" ID="{F7316518-4A13-4C85-A4BB-6708BD9882DA}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="conveyor" ID="{B11829DD-1B9B-4CDB-9595-0AB0D765E71F}" ShortID="203966571">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom CreatedFrom="{F9627628-0B10-4272-BC30-D4C20423CB38}">
+								<Effect Name="High_Pass_60Hz (Custom)" ID="{D1142DA0-3034-4570-AB98-7F1676F54061}" ShortID="487866522" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="120"/>
+										<Property Name="OnOffBand2" Type="bool" Value="False"/>
+										<Property Name="OnOffBand3" Type="bool" Value="False"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="conveyor" ID="{8FD848FB-35AA-4DD2-A58F-C17E85C5C267}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="1"/>
+								<Property Name="LoopBegin" Type="Real64" Value="0.147565258661604"/>
+								<Property Name="LoopEnd" Type="Real64" Value="0.906472303206997"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>conveyor.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="963634068"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="conveyor" ID="{8FD848FB-35AA-4DD2-A58F-C17E85C5C267}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="door-closes" ID="{9E654F03-F74D-4BA9-8D9B-0E450368776A}" ShortID="230753194">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="door-closes" ID="{215E0337-1617-4071-9852-AED6B184609D}">
+							<Language>SFX</Language>
+							<AudioFile>door-closes.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="487794462"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="door-closes" ID="{215E0337-1617-4071-9852-AED6B184609D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="door-opens-full" ID="{1BE637A1-7C5A-40AF-B4B1-0F4362358ADE}" ShortID="748232985">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="door-opens-full" ID="{059717CB-E53F-4AE5-A936-413E35FB0ED4}">
+							<Language>SFX</Language>
+							<AudioFile>door-opens-full.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="201012351"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="door-opens-full" ID="{059717CB-E53F-4AE5-A936-413E35FB0ED4}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="key-collect" ID="{50F46422-E750-4FFC-932F-DDA88EC6EF55}" ShortID="142368265">
+					<PropertyList>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="key-collect" ID="{67BCE02E-9411-4BE9-A213-BCA4ED8CF885}">
+							<Language>SFX</Language>
+							<AudioFile>key-collect.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="591881644"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="key-collect" ID="{67BCE02E-9411-4BE9-A213-BCA4ED8CF885}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="key-lands" ID="{CC25ED56-F5CF-4EDA-BB34-037A123E0E3E}" ShortID="260456804">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="key-lands" ID="{55B7F2EA-56B5-439A-A564-99B92BE79750}">
+							<Language>SFX</Language>
+							<AudioFile>key-lands.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="408265785"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="key-lands" ID="{55B7F2EA-56B5-439A-A564-99B92BE79750}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="moving-platform-type-a" ID="{8FCBB4AF-FC16-43B1-8267-EACCC4999B9A}" ShortID="754020224">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="moving-platform-type-a" ID="{E8662C90-53F5-49C2-8E77-882EA03C0563}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="1"/>
+								<Property Name="LoopBegin" Type="Real64" Value="0.048047249907715"/>
+								<Property Name="LoopEnd" Type="Real64" Value="0.448726994673839"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>moving-platform-type-a.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="118652009"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="moving-platform-type-a" ID="{E8662C90-53F5-49C2-8E77-882EA03C0563}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="moving-platform-type-b" ID="{C0E7B4FA-9D25-453A-AC87-E33AFC36FE1D}" ShortID="908645439">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="moving-platform-type-b" ID="{0C06559C-B732-4548-9185-1F298A657F20}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="0.5"/>
+								<Property Name="LoopBegin" Type="Real64" Value="0.0195113164451827"/>
+								<Property Name="LoopEnd" Type="Real64" Value="0.470816549003322"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>moving-platform-type-b.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="283827296"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="moving-platform-type-b" ID="{0C06559C-B732-4548-9185-1F298A657F20}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="owb-appears" ID="{E5376B0D-50E3-4F1A-9BD7-BC24FAC32636}" ShortID="245352951">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="owb-appears" ID="{CBDAEC01-6C13-4F0A-B30D-66665B5E0DDF}">
+							<Language>SFX</Language>
+							<AudioFile>owb-appears.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="199886752"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="owb-appears" ID="{CBDAEC01-6C13-4F0A-B30D-66665B5E0DDF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="owb-disappears" ID="{B927935C-7D82-4F72-9617-8DA8357441A8}" ShortID="274824779">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="owb-disappears" ID="{7E247C74-5B55-44FB-A9F6-E172F3602118}">
+							<Language>SFX</Language>
+							<AudioFile>owb-disappears.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="518728630"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="owb-disappears" ID="{7E247C74-5B55-44FB-A9F6-E172F3602118}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="switch-timer-ends" ID="{2D4B5DAB-EB9C-4E44-89BA-6CAC88396179}" ShortID="625710088">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="switch-timer-ends" ID="{6E90627B-A636-4FF9-A2B8-5F7F382D7602}">
+							<Language>SFX</Language>
+							<AudioFile>switch-timer-ends.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="168883880"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="switch-timer-ends" ID="{6E90627B-A636-4FF9-A2B8-5F7F382D7602}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="switch-timer-on" ID="{0B37DD33-8BE8-49C9-93CE-A1CCB38D58C5}" ShortID="497597768">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="switch-timer-on" ID="{46502F02-9CAF-4B2D-949E-3D28A6EF3D61}">
+							<Language>SFX</Language>
+							<AudioFile>switch-timer-on.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="287891295"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="switch-timer-on" ID="{46502F02-9CAF-4B2D-949E-3D28A6EF3D61}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="fan" ID="{1B8255EC-5D0A-453C-948C-D398E9BBA8EB}" ShortID="626132005">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+							<ObjectRef Name="High_Pass_60Hz" ID="{F9627628-0B10-4272-BC30-D4C20423CB38}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="fan-2" ID="{CD351656-5569-4E1E-AE43-1C183849BA91}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="0.5"/>
+								<Property Name="LoopBegin" Type="Real64" Value="0.0991946723318342"/>
+								<Property Name="LoopEnd" Type="Real64" Value="1.40608448030375"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>fan-2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1039224084"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="fan-2" ID="{CD351656-5569-4E1E-AE43-1C183849BA91}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="KeygateOpens" ID="{E0BCE67C-0AE2-4033-A649-E05F45AC05F2}" ShortID="852725197">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.6"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="keygate-opens" ID="{862A51F4-6EB9-41BA-B505-E56C549FC5A6}" ShortID="813614723">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="keygate-opens" ID="{64DCD196-24B5-4558-A2EB-C5ECED01CA38}">
+									<Language>SFX</Language>
+									<AudioFile>keygate-opens.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="274844215"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="keygate-opens" ID="{64DCD196-24B5-4558-A2EB-C5ECED01CA38}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="gate-moves" ID="{EC81FE3C-8C82-46F8-B8AD-B775B84DD348}" ShortID="911199700">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{F2F6EBF8-02B9-429D-A9E0-22E97F1179E4}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="250"/>
+													<Property Name="Min" Type="Real64" Value="-250"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{662498B8-A289-490F-8063-0138B8F6C5AF}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="gate-moves" ID="{9D55F9F3-02FF-40E2-86FA-296AD8B8052B}">
+									<Language>SFX</Language>
+									<AudioFile>gate-moves.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="488856948"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="gate-moves" ID="{9D55F9F3-02FF-40E2-86FA-296AD8B8052B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<Playlist>
+						<ItemRef Name="keygate-opens" ID="{862A51F4-6EB9-41BA-B505-E56C549FC5A6}"/>
+						<ItemRef Name="gate-moves" ID="{EC81FE3C-8C82-46F8-B8AD-B775B84DD348}"/>
+					</Playlist>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="CycleSwitchPressed" ID="{19D0228F-E78A-44C9-8424-68209B5997EA}" ShortID="945511282">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="switch-on" ID="{06D3AB93-B249-4DD8-A000-73ED0A9D95C4}" ShortID="552059543">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="switch-on" ID="{C3222D3B-318F-4AEF-97B8-0F9A925819A4}">
+									<Language>SFX</Language>
+									<AudioFile>switch-on.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="643338500"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="switch-on" ID="{C3222D3B-318F-4AEF-97B8-0F9A925819A4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="switch-off" ID="{AF26E6C2-CE70-46E9-B98D-D39A1970212D}" ShortID="159050710">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>16</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="switch-off" ID="{F3052015-0A15-4F6E-9C8B-ADED4977D584}">
+									<Language>SFX</Language>
+									<AudioFile>switch-off.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="666901976"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="switch-off" ID="{F3052015-0A15-4F6E-9C8B-ADED4977D584}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<Playlist>
+						<ItemRef Name="switch-on" ID="{06D3AB93-B249-4DD8-A000-73ED0A9D95C4}"/>
+						<ItemRef Name="switch-off" ID="{AF26E6C2-CE70-46E9-B98D-D39A1970212D}"/>
+					</Playlist>
+				</RandomSequenceContainer>
+				<Sound Name="pivoting-gate-blocks" ID="{EBA97C56-7030-436B-8A2A-006C16ACDCBF}" ShortID="254728109">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="pivoting-gate-blocks_louder" ID="{2F17DE71-0BC4-42CA-85C1-C25C14094593}">
+							<Language>SFX</Language>
+							<AudioFile>pivoting-gate-blocks_louder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="955218869"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="pivoting-gate-blocks_louder" ID="{2F17DE71-0BC4-42CA-85C1-C25C14094593}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="pivoting-gate-rotates" ID="{F601EC57-53F0-4F82-88A6-1E4AB8449D18}" ShortID="58325663">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="pivoting-gate-rotates_louder" ID="{8FB1E8CB-6768-4AFD-A6F4-7EC148B612C5}">
+							<Language>SFX</Language>
+							<AudioFile>pivoting-gate-rotates_louder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="609840789"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="pivoting-gate-rotates_louder" ID="{8FB1E8CB-6768-4AFD-A6F4-7EC148B612C5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="ladder-moves" ID="{1250DA04-4274-4923-9E64-D56710E3B237}" ShortID="279684373">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{9E0A0663-F1A9-48F6-BE14-264E2C3E5220}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ladder-moves" ID="{21929839-2365-4350-9B79-743380D4156D}">
+							<Language>SFX</Language>
+							<AudioFile>ladder-moves.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="913261334"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ladder-moves" ID="{21929839-2365-4350-9B79-743380D4156D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -36,6 +36,15 @@ public class Conveyor : Device
 		}
 
 		ShowOutline(false);
+
+		if (IsOnAndConnected())
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayConveyor, gameObject);
+	}
+
+	private void OnDestroy()
+	{
+		if (IsOnAndConnected())
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopConveyor, gameObject);
 	}
 
 	private void Update()
@@ -102,9 +111,13 @@ public class Conveyor : Device
 		return directionRight;
 	}
 
-	// The physics part is handled in OnCollisionStay2D, whereas the animation is handled in Update, so we don't want anything to happen in this method
+	// The physics part is handled in OnCollisionStay2D, whereas the animation is handled in Update
+	// Only the audio is handled here, but this would need to be changed to make it cleaner and more consistent
 	public override void ApplyOnOffBehavior()
 	{
+		string wwiseEventName = IsOnAndConnected() ? Constants.WwiseEventPlayConveyor : Constants.WwiseEventStopConveyor;
+		AudioManager.Instance.TriggerWwiseEvent(wwiseEventName, gameObject);
+
 		return;
 	}
 

@@ -9,6 +9,372 @@
 							<ObjectRef Name="System" ID="{2AEE1F89-9C3A-4938-9737-A274BA05CAC3}" WorkUnitID="{0B740C1F-A2F2-4E9D-822D-E5F66D146240}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Transition Music Bus" ID="{BDCC2CDA-233F-4774-BAAB-D7C07FBBAF93}">
+							<ChildrenList>
+								<Bus Name="Music Bus" ID="{E3E0DD8A-2595-4545-AEC5-439216B04B49}">
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{66FACBCA-875D-4391-A818-FCA6146AAB7F}" ShortID="75083717">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="MusicVolume" ID="{56099CAC-0666-48D1-8333-6B656AA97225}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{FEAEBE22-B4CF-47AC-8DF9-C5114969E300}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</Bus>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{85ED7774-8679-488D-826C-50A89010B7BE}" ShortID="796336342">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{D87BB896-4D94-44A5-9FC6-B19AA0725B48}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+						<Bus Name="Transition SFX Bus" ID="{E3A2E7B1-E06B-4115-A58E-80B200AC6EF3}">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Bus Name="SFX Bus" ID="{404CC516-C469-4ACE-9C59-CF62640C011F}">
+									<ChildrenList>
+										<Bus Name="Devices SFX Bus" ID="{9E75757A-F271-44BC-A472-ECD70AF8BE3B}">
+											<ReferenceList>
+												<Reference Name="Effect0">
+													<Custom CreatedFrom="{3FF9AD86-E377-40F8-970F-3D4EE73288B5}">
+														<Effect Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" ID="{77656CB8-4682-44FE-A7B5-8B961F2D0C89}" ShortID="45716448" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+															<PropertyList>
+																<Property Name="LookAhead" Type="Real32" Value="0.001"/>
+																<Property Name="Ratio" Type="Real32" Value="50"/>
+																<Property Name="ReleaseTime" Type="Real32" Value="0.02"/>
+																<Property Name="Threshold" Type="Real32" Value="-1"/>
+															</PropertyList>
+														</Effect>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+										</Bus>
+										<Bus Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}">
+											<ReferenceList>
+												<Reference Name="Effect0">
+													<Custom CreatedFrom="{3FF9AD86-E377-40F8-970F-3D4EE73288B5}">
+														<Effect Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" ID="{894D8E24-1C7F-47B2-8B24-2AA002A2B563}" ShortID="855840085" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+															<PropertyList>
+																<Property Name="LookAhead" Type="Real32" Value="0.001"/>
+																<Property Name="Ratio" Type="Real32" Value="50"/>
+																<Property Name="ReleaseTime" Type="Real32" Value="0.02"/>
+																<Property Name="Threshold" Type="Real32" Value="-1"/>
+															</PropertyList>
+														</Effect>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+										</Bus>
+										<Bus Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}">
+											<ReferenceList>
+												<Reference Name="Effect0">
+													<Custom CreatedFrom="{3FF9AD86-E377-40F8-970F-3D4EE73288B5}">
+														<Effect Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" ID="{78416717-2E04-42FC-AED1-D34E014E09BE}" ShortID="490705677" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+															<PropertyList>
+																<Property Name="LookAhead" Type="Real32" Value="0.001"/>
+																<Property Name="Ratio" Type="Real32" Value="50"/>
+																<Property Name="ReleaseTime" Type="Real32" Value="0.02"/>
+																<Property Name="Threshold" Type="Real32" Value="-0.1"/>
+															</PropertyList>
+														</Effect>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+										</Bus>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{38249FBA-F70B-4648-A967-DED3118B7BD7}" ShortID="415260138">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="SFXVolume" ID="{94339502-1346-4FC4-97A1-C63D3F1DC065}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{95B955A4-18AB-400C-9026-46025993D28A}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</Bus>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{1AC85379-874E-42F0-AC10-6AAF03CCBE6A}" ShortID="807577594">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{5C5CE4EB-8BBB-4608-A639-65B29E6717FA}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+						<Bus Name="Ambiances Bus" ID="{AB3D5B58-B8C2-4324-90D7-94BC30DA1A46}">
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{3B84CE66-018D-4C5E-AF12-FAF12FE4EA54}" ShortID="839531214">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="AmbianceVolume" ID="{A4862BB0-C20E-418A-A800-C99776A45AF8}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{FA112D1D-DEBC-4DA0-96CB-25D501C270A6}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+						<Bus Name="Transition UI Bus" ID="{08BDDECE-D0D9-45D5-9ED8-9B122D67F3A5}">
+							<ChildrenList>
+								<Bus Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}">
+									<ReferenceList>
+										<Reference Name="Effect0">
+											<Custom CreatedFrom="{3FF9AD86-E377-40F8-970F-3D4EE73288B5}">
+												<Effect Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" ID="{F7586801-0A9D-416F-8413-E13AEEAD8796}" ShortID="332853730" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+													<PropertyList>
+														<Property Name="LookAhead" Type="Real32" Value="0.001"/>
+														<Property Name="Ratio" Type="Real32" Value="50"/>
+														<Property Name="ReleaseTime" Type="Real32" Value="0.02"/>
+													</PropertyList>
+												</Effect>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{9911A2A4-304E-4D02-8C6F-4CB197AC9334}" ShortID="1010974594">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="UIVolume" ID="{8DE8807A-6D25-4705-BF01-BD46638C4C81}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{CBB8D3E2-DD33-4D22-B9BA-27EE4477F11C}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</Bus>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{B40CC92F-1212-4C2D-8FCE-B54F247BD95B}" ShortID="948161837">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="TransitionUIVolume" ID="{2FF12EAE-A3D6-4E36-8859-363B1764639E}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{0F08C9CC-D242-4F4C-BE37-E78CC051D78A}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+					</ChildrenList>
 					<ObjectLists>
 						<ObjectList Name="RTPC">
 							<Reference>

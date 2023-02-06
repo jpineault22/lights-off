@@ -4,6 +4,8 @@ public class EnemyDrunk : Enemy
 {
 	[SerializeField] private float wanderingSpeed = 3f;
 
+	private bool startedWandering;
+
 	protected override void FixedUpdate()
 	{
 		if (GameManager.Instance.CurrentGameState == GameState.Playing)
@@ -16,6 +18,11 @@ public class EnemyDrunk : Enemy
 		{
 			rb.velocity = Vector2.zero;
 		}
+	}
+
+	private void OnDestroy()
+	{
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopEnemyWander, gameObject);
 	}
 
 	private void Wander()
@@ -33,9 +40,20 @@ public class EnemyDrunk : Enemy
 			}
 
 			rb.velocity = new Vector2(direction * wanderingSpeed, rb.velocity.y);
+
+			if (!startedWandering)
+			{
+				startedWandering = true;
+				AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyWander, gameObject);
+			}
+		}
+		else
+		{
+			startedWandering = false;
 		}
 	}
 
+	// This mechanic is not used anymore in game. The enemies would have to be redesigned for it to be functional.
 	private void PassOut()
 	{
 		// Instantiate EnemyPassedOut at same position and destroy self

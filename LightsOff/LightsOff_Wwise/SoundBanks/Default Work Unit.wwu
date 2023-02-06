@@ -3,14 +3,39 @@
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{38F75E07-A55B-4338-8502-9CEDD6373DC9}" PersistMode="Standalone">
 			<ChildrenList>
-				<SoundBank Name="LightsOff" ID="{F2DC8348-29A2-4467-9DFB-A806BF02C867}">
+				<SoundBank Name="LightsOff_Music" ID="{F2DC8348-29A2-4467-9DFB-A806BF02C867}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Default Work Unit" ID="{A6352788-CA52-41F6-A36B-E4183518306A}" WorkUnitID="{A6352788-CA52-41F6-A36B-E4183518306A}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music" ID="{EFD2E0CA-F8E7-4957-A2B7-D53B5FA96C66}" WorkUnitID="{EFD2E0CA-F8E7-4957-A2B7-D53B5FA96C66}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="LightsOff_SFX" ID="{B786B07D-7899-441D-89B1-F4581C1EDC49}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Player" ID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Enemies" ID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Enemies" ID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}" WorkUnitID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Devices" ID="{7B9FEC51-77A0-45D4-954B-9047E56EF4E6}" WorkUnitID="{7B9FEC51-77A0-45D4-954B-9047E56EF4E6}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Devices" ID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Player" ID="{3A9EF16B-045C-49D2-A8D9-BFC0469A8252}" WorkUnitID="{3A9EF16B-045C-49D2-A8D9-BFC0469A8252}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="LightsOff_UI" ID="{2A2EC7E8-B400-44E8-90CE-0CCF70477DA3}">
+					<ObjectInclusionList>
+						<ObjectRef Name="UI" ID="{16A7549C-187A-42D1-83B4-752C82B34C39}" WorkUnitID="{16A7549C-187A-42D1-83B4-752C82B34C39}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="UI" ID="{F92DB286-1937-4934-A900-B0E731CCE806}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="LightsOff" ID="{8C567F9C-0D72-43D2-87C9-02A44267EFDA}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="GameMusic" ID="{A998E392-3201-433A-8958-0ABF7FF1F7D3}" WorkUnitID="{A6352788-CA52-41F6-A36B-E4183518306A}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Player" ID="{8DA60E2F-6FB9-4494-8751-609249246301}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Test" ID="{417ADD65-7033-4BD9-B283-71022427215A}" WorkUnitID="{B9FCEF36-6F36-4608-B495-5E14E90C26D5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Music" ID="{9FCB241F-C208-4E5B-9606-CDF13D6CD6CF}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="TestMusic" ID="{BFCA2EBB-3D08-4FCB-9DEA-B258EAC8A887}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ambiances" ID="{284A2F9D-F13D-4AFD-9E7F-5962E422DFAC}" WorkUnitID="{284A2F9D-F13D-4AFD-9E7F-5962E422DFAC}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Transitions" ID="{F90F7ED6-FEBA-4D27-A934-9512F0C5A4E2}" WorkUnitID="{F90F7ED6-FEBA-4D27-A934-9512F0C5A4E2}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

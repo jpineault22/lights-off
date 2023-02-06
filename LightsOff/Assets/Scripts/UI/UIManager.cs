@@ -2,13 +2,14 @@
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
 	[SerializeField] private CanvasGroup inGameUICanvasGroup = default;
 	[SerializeField] private TMP_Text levelNumberText = default;
 	[SerializeField] private TMP_Text keyNumberText = default;
-	[SerializeField] private float fadeTime = 0.5f;
+	[SerializeField] private float inGameUIFadeTime = 0.5f;
 
 	public Sprite interactMessageImageKeyboard = default;
 	public Sprite interactMessageImageController = default;
@@ -16,12 +17,7 @@ public class UIManager : Singleton<UIManager>
 	public Color deviceOutlineColor = Color.white;
 
 	private bool uiIsFadingIn;
-	private float fadeCounter;
-
-	protected override void Awake()
-	{
-		base.Awake();
-	}
+	private float inGameUIFadeCounter;
 
 	private void Start()
 	{
@@ -33,11 +29,11 @@ public class UIManager : Singleton<UIManager>
 	{
 		if (uiIsFadingIn)
 		{
-			inGameUICanvasGroup.alpha += Time.deltaTime / fadeTime;
+			inGameUICanvasGroup.alpha += Time.deltaTime / inGameUIFadeTime;
 
-			fadeCounter -= Time.deltaTime;
+			inGameUIFadeCounter -= Time.deltaTime;
 
-			if (fadeCounter <= 0 && (inGameUICanvasGroup.alpha <= 0 || inGameUICanvasGroup.alpha >= 1))
+			if (inGameUIFadeCounter <= 0 && (inGameUICanvasGroup.alpha <= 0 || inGameUICanvasGroup.alpha >= 1))
 				uiIsFadingIn = false;
 		}
 	}
@@ -98,7 +94,7 @@ public class UIManager : Singleton<UIManager>
 		if (pEnable)
 		{
 			uiIsFadingIn = true;
-			fadeCounter = fadeTime;
+			inGameUIFadeCounter = inGameUIFadeTime;
 		}
 		else
 		{

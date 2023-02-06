@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class SettingsMenu : Singleton<SettingsMenu>
 {
 	[SerializeField] private TMP_Dropdown resolutionDropDown = default;
-	[SerializeField] private Slider volumeSlider = default;
+	[SerializeField] private Slider mainVolumeSlider = default;
+	[SerializeField] private Slider musicVolumeSlider = default;
+	[SerializeField] private Slider sfxVolumeSlider = default;
+	[SerializeField] private Slider uiVolumeSlider = default;
 
 	private Resolution[] resolutions;
 
@@ -34,7 +37,10 @@ public class SettingsMenu : Singleton<SettingsMenu>
 		resolutionDropDown.value = currentResolutionIndex;
 		resolutionDropDown.RefreshShownValue();
 
-		volumeSlider.value = AudioManager.Instance.MainVolume;
+		mainVolumeSlider.value = AudioManager.Instance.MasterVolume;
+		musicVolumeSlider.value = AudioManager.Instance.MusicVolume;
+		sfxVolumeSlider.value = AudioManager.Instance.SFXVolume;
+		uiVolumeSlider.value = AudioManager.Instance.UIVolume;
 	}
 
 	public void SetResolution(int pResolutionIndex)
@@ -53,8 +59,23 @@ public class SettingsMenu : Singleton<SettingsMenu>
 		QualitySettings.SetQualityLevel(pQualityIndex);
 	}
 
-	public void SetVolume(float pVolume)
+	public void SetMasterVolume(float pVolume)
 	{
-		AudioManager.Instance.UpdateMainVolume(pVolume);
+		AudioManager.Instance.UpdateMasterVolume(pVolume);
+	}
+
+	public void SetMusicVolume(float pVolume)
+	{
+		AudioManager.Instance.UpdateMusicVolume(pVolume);
+	}
+
+	public void SetSFXVolume(float pVolume)
+	{
+		AudioManager.Instance.UpdateSFXVolume(pVolume);
+	}
+
+	public void SetUIVolume(float pVolume)
+	{
+		AudioManager.Instance.UpdateUIVolume(pVolume);
 	}
 }

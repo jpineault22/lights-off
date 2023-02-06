@@ -35,9 +35,21 @@ public abstract class Enemy : MonoBehaviour
         currentEnemyState = defaultEnemyState;
 
         player = PlayerController.Instance.gameObject;
+
+        AssignAudioEmitterToPlayerListener();
     }
 
-	private void Update()
+    protected virtual void OnEnable()
+	{
+        GameManager.Instance.PlayerSpawned += AssignAudioEmitterToPlayerListener;
+	}
+
+    protected virtual void OnDisable()
+	{
+        GameManager.Instance.PlayerSpawned -= AssignAudioEmitterToPlayerListener;
+    }
+
+	protected virtual void Update()
 	{
 		if (horizontalPositionToMaintain != null)
 		{
@@ -53,7 +65,7 @@ public abstract class Enemy : MonoBehaviour
         SetIsGrounded();
         CheckIfFalling();
         
-        if (currentEnemyState == EnemyState.Stunned || currentEnemyState == EnemyState.ChasingIdle)
+        if (currentEnemyState == EnemyState.Stunned || currentEnemyState == EnemyState.ChasingIdle || currentEnemyState == EnemyState.WakingUp)
 		{
             if (currentStateTimer >= 0)
 			{
@@ -62,7 +74,12 @@ public abstract class Enemy : MonoBehaviour
             }
             else
 			{
-                if (previousEnemyState != EnemyState.Stunned)
+                if (currentEnemyState == EnemyState.WakingUp)
+                {
+                    currentEnemyState = EnemyState.Chasing;
+                    AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyStartChasing, gameObject);
+                }
+                else if (previousEnemyState != EnemyState.Stunned)
 				{
                     currentEnemyState = previousEnemyState;
                 }
@@ -106,6 +123,7 @@ public abstract class Enemy : MonoBehaviour
         else if (isGrounded && currentEnemyState == EnemyState.Falling)
 		{
             currentEnemyState = previousEnemyState;
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyLand, gameObject);
 		}
 	}
 
@@ -122,6 +140,7 @@ public abstract class Enemy : MonoBehaviour
         currentEnemyState = EnemyState.Stunned;
         animator.SetTrigger(Constants.AnimatorEnemyBouncedOn);
         animator.SetFloat(Constants.AnimatorEnemyCurrentStateTimer, currentStateTimer);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyStunned, gameObject);
 
         if (GameObjectUtils.AnimatorHasParameter(animator, Constants.AnimatorEnemyIsChasing))
             animator.SetBool(Constants.AnimatorEnemyIsChasing, false);
@@ -131,12 +150,18 @@ public abstract class Enemy : MonoBehaviour
 	{
         currentEnemyState = defaultEnemyState;
     }
+
+    private void AssignAudioEmitterToPlayerListener()
+	{
+        AudioManager.Instance.AssignEmitterToPlayerListener(gameObject);
+    }
 }
 
 public enum EnemyState
 {
     PassedOut,
     Wandering,
+    WakingUp,
     Chasing,
     ChasingIdle,        // When the enemy is chasing the player and is unable to keep chasing them (ex: the player goes up a ladder), they become ChasingIdle
     Stunned,

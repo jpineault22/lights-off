@@ -6445,6 +6445,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2139991730, guid: 84f9650e1218f05479e1bbd796f897fe, type: 3}
+      propertyPath: carriedUpByFan
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139991730, guid: 84f9650e1218f05479e1bbd796f897fe, type: 3}
+      propertyPath: fliesAwayToVictory
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3213490461331444996, guid: 84f9650e1218f05479e1bbd796f897fe,
         type: 3}
       propertyPath: m_RootOrder
@@ -6508,24 +6516,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 84f9650e1218f05479e1bbd796f897fe, type: 3}
---- !u!1 &2139991729 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3213490461331445049, guid: 84f9650e1218f05479e1bbd796f897fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 2139991728}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2139991730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139991729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08b3527e69ca3d14980219ccd8e49f54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1893997916873520328
 Transform:
   m_ObjectHideFlags: 0

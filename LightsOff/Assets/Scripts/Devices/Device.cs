@@ -17,6 +17,8 @@ public class Device : RotatableObject
 		
 		spriteRenderer = GetComponent<SpriteRenderer>();
 
+		AssignAudioEmitterToPlayerListener();
+
 		foreach (GameObject obj in GameObjectUtils.GetChildren(gameObject))
 		{
 			if (obj.CompareTag(Constants.TagOutline))
@@ -31,6 +33,16 @@ public class Device : RotatableObject
 			spriteInactive = spriteOff;
 
 		ApplyOnOffBehavior();
+	}
+
+	protected virtual void OnEnable()
+	{
+		GameManager.Instance.PlayerSpawned += AssignAudioEmitterToPlayerListener;
+	}
+
+	protected virtual void OnDisable()
+	{
+		GameManager.Instance.PlayerSpawned -= AssignAudioEmitterToPlayerListener;
 	}
 
 	public void SwitchOnOff()
@@ -80,5 +92,10 @@ public class Device : RotatableObject
 	public bool IsConnected()
 	{
 		return isConnected;
+	}
+
+	private void AssignAudioEmitterToPlayerListener()
+	{
+		AudioManager.Instance.AssignEmitterToPlayerListener(gameObject);
 	}
 }

@@ -35,6 +35,7 @@ public static class Constants
     public const string TagHaloLight = "HaloLight";
     public const string TagDirectionalLight = "DirectionalLight";
     public const string TagWindow = "Window";
+    public const string TagOneWayPlatformTypeB = "OWPB";
 
     // Layers
     public const string LayerPlayer = "Player";
@@ -76,17 +77,101 @@ public static class Constants
     public const string UIInteractMessagePress = "Press";
     public const string UIInteractMessageEnter = "Enter";
     public const string UIInteractMessageSleep = "Sleep";
+    public const string UISaveFileDeletedMessage = "Save file deleted.";
+    public const string UINoSaveFileFoundMessage = "No save file found.";
 
-    // Audio mixer parameters
-    public const string AudioMasterVolume = "MasterVolume";
 
-    // Wwise
+    // WWISE
+
+    // Music
     public const string WwiseEventMusicStart = "Music_Start";
     public const string WwiseEventMusicPlayGame = "Music_PlayGame";
     public const string WwiseEventMusicBackToMenu = "Music_BackToMenu";
-    public const string WwiseEventMusicEnd = "Music_End";
-    public const string WwiseEventPlayPlayerWalk = "Play_PlayerWalk";
-    public const string WwiseEventStopPlayerWalk = "Stop_PlayerWalk";
+
+    // Player
+    public const string WwiseEventPlayPlayerBounce = "Play_PlayerBounce";
+    public const string WwiseEventPlayPlayerBunk = "Play_PlayerBunk";
+    public const string WwiseEventPlayPlayerClimb = "Play_PlayerClimb";
+    public const string WwiseEventPlayPlayerDeath = "Play_PlayerDeath";
+    public const string WwiseEventPlayPlayerEnterLevel = "Play_PlayerEnterLevel";
+    public const string WwiseEventPlayPlayerExitLevel = "Play_PlayerExitLevel";
     public const string WwiseEventPlayPlayerJump = "Play_PlayerJump";
+    public const string WwiseEventPlayPlayerLand = "Play_PlayerLand";
+    public const string WwiseEventPlayPlayerWalk = "Play_PlayerWalk";
+    public const string WwiseEventStopPlayerClimb = "Stop_PlayerClimb";
+    public const string WwiseEventStopPlayerWalk = "Stop_PlayerWalk";
+
+    // Enemies
+    public const string WwiseEventPlayEnemyLand = "Play_EnemyLand";
+    public const string WwiseEventPlayEnemyPassOut = "Play_EnemyPassOut";
+    public const string WwiseEventPlayEnemyStartChasing = "Play_EnemyStartChasing";
+    public const string WwiseEventPlayEnemyStopChasing = "Play_EnemyStopChasing";
+    public const string WwiseEventPlayEnemyStunned = "Play_EnemyStunned";
+    public const string WwiseEventPlayEnemyWakeUp = "Play_EnemyWakeUp";
+    public const string WwiseEventPlayEnemyWander = "Play_EnemyWander";
+    public const string WwiseEventStopEnemyPassOut = "Stop_EnemyPassOut";
+    public const string WwiseEventStopEnemyWander = "Stop_EnemyWander";
+
+    // Devices
+    public const string WwiseEventPlaySwitchOn = "Play_SwitchOn";
+    public const string WwiseEventPlaySwitchOff = "Play_SwitchOff";
+    public const string WwiseEventPlayTimerSwitch = "Play_TimerSwitch";
+    public const string WwiseEventStopTimerSwitch = "Stop_TimerSwitch";
+    public const string WwiseEventPlayTimerSwitchEnds = "Play_TimerSwitchEnds";
+    public const string WwiseEventPlayCycleSwitch = "Play_CycleSwitch";
+    public const string WwiseEventPlayBreakerOn = "Play_BreakerOn";
+    public const string WwiseEventPlayBreakerOff = "Play_BreakerOff";
+    public const string WwiseEventPlayDoorOpens = "Play_DoorOpens";
+    public const string WwiseEventPlayDoorCloses = "Play_DoorCloses";
+    public const string WwiseEventPlayLadderMoves = "Play_LadderMoves";
+    public const string WwiseEventPlayGateMoves = "Play_GateMoves";
+    public const string WwiseEventPlayKeygateOpens = "Play_KeygateOpens";
+    public const string WwiseEventPlayKeyCollect = "Play_KeyCollect";
+    public const string WwiseEventPlayKeyLands = "Play_KeyLands";
+    public const string WwiseEventPlayConveyor = "Play_Conveyor";
+    public const string WwiseEventStopConveyor = "Stop_Conveyor";
+    public const string WwiseEventPlayFan = "Play_Fan";
+    public const string WwiseEventStopFan = "Stop_Fan";
+    public const string WwiseEventPlayMovingPlatformTypeA = "Play_MovingPlatformTypeA";
+    public const string WwiseEventStopMovingPlatformTypeA = "Stop_MovingPlatformTypeA";
+    public const string WwiseEventPlayMovingPlatformTypeB = "Play_MovingPlatformTypeB";
+    public const string WwiseEventStopMovingPlatformTypeB = "Stop_MovingPlatformTypeB";
+    public const string WwiseEventPlayOWBOn = "Play_OWBOn";
+    public const string WwiseEventPlayOWBOff = "Play_OWBOff";
+    public const string WwiseEventPlayPivotingGateRotates = "Play_PivotingGateRotates";
+    public const string WwiseEventPlayPivotingGateBlocks = "Play_PivotingGateBlocks";
+
+    // UI
+    public const string WwiseEventPlayMenuPlay = "Play_MenuPlay";
+    public const string WwiseEventPlayMenuQuit = "Play_MenuQuit";
+    public const string WwiseEventPlayMenuButtonPress = "Play_MenuButtonPress";
+    public const string WwiseEventPlayMenuButtonBackPress = "Play_MenuButtonBackPress";
+    public const string WwiseEventPlayMenuDeleteSaveFileButtonPress = "Play_MenuDeleteSaveFileButtonPress";
+    public const string WwiseEventPlayMenuSelectionMove = "Play_MenuSelectionMove";
+    public const string WwiseEventPlayMenuChangeSetting = "Play_MenuChangeSetting";
+    public const string WwiseEventPlayPauseMenuClose = "Play_PauseMenuClose";
+    public const string WwiseEventPlayPauseMenuOpen = "Play_PauseMenuOpen";
+    public const string WwiseEventPlayPauseMenuRetry = "Play_PauseMenuRetry";
+
+    // Ambiances
+    public const string WwiseEventPlayCreditsAmbiance = "Play_CreditsAmbiance";
+    public const string WwiseEventStopCreditsAmbiance = "Stop_CreditsAmbiance";
+
+    // Transitions
+    public const string WwiseEventFadeOutForLevelTransition = "FadeOutForLevelTransition";
+    public const string WwiseEventFadeInForLevelTransition = "FadeInForLevelTransition";
+    public const string WwiseEventFadeOutForPauseMenu = "FadeOutForPauseMenu";
+    public const string WwiseEventFadeInForPauseMenu = "FadeInForPauseMenu";
+    public const string WwiseEventFadeOutForQuitTransition = "FadeOutForQuitTransition";
+    public const string WwiseEventFadeInToMenu = "FadeInToMenu";
+    public const string WwiseEventFadeOutForCredits = "FadeOutForCredits";
+    public const string WwiseEventFadeInCreditsAmbiance = "FadeInCreditsAmbiance";
+    public const string WwiseEventFadeOutCreditsAmbiance = "FadeOutCreditsAmbiance";
+    public const string WwiseEventSetTransitionSFXVolumeToMax = "SetTransitionSFXVolumeToMax";
+
+    // RTPC
     public const string WwiseRTPCMasterVolume = "MasterVolume";
+    public const string WwiseRTPCMusicVolume = "MusicVolume";
+    public const string WwiseRTPCSFXVolume = "SFXVolume";
+    public const string WwiseRTPCUIVolume = "UIVolume";
 }

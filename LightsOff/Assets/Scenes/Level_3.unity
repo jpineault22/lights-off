@@ -18248,6 +18248,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7106339381152936205, guid: a28aef461055a3145b4b9b4a4a7538b7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106339381152936205, guid: a28aef461055a3145b4b9b4a4a7538b7,
+        type: 3}
       propertyPath: targetLevelNumber
       value: 9
       objectReference: {fileID: 0}

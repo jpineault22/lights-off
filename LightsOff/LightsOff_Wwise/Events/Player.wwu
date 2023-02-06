@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3A9EF16B-045C-49D2-A8D9-BFC0469A8252}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Player" ID="{3A9EF16B-045C-49D2-A8D9-BFC0469A8252}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_PlayerClimb" ID="{7789DA53-BC58-4792-BB5A-5495D3F7B241}">
+					<ChildrenList>
+						<Action Name="" ID="{0D50EB71-409F-4AC2-AD87-DED1471DB824}" ShortID="110781963">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerClimbs" ID="{9A1174BF-BB10-48D3-92B8-48B4B243A9F2}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4268D810-B1CA-4EEE-87B0-77778199CACC}" ShortID="945105179">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerClimbsFeet" ID="{1E184D71-46F3-4D32-B9DC-231C1E21F345}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_PlayerClimb" ID="{05519934-1EAE-45BF-A612-B2DB17D1F631}">
+					<ChildrenList>
+						<Action Name="" ID="{BF74FF67-67BF-4C99-83D1-EDD6DEEF9081}" ShortID="432631479">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerClimbs" ID="{9A1174BF-BB10-48D3-92B8-48B4B243A9F2}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{853856B4-A28B-49D9-9C06-1E37AF299CA5}" ShortID="1070739511">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerClimbsFeet" ID="{1E184D71-46F3-4D32-B9DC-231C1E21F345}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerWalk" ID="{AF044FBF-F535-447B-BD7B-5C2A8D33D213}">
+					<ChildrenList>
+						<Action Name="" ID="{6510C2F2-B423-4AC2-98A9-B0FF6BDB94DA}" ShortID="961842842">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerWalksWood" ID="{CC7756A7-F27E-4A53-A2F2-86B09C9700A2}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_PlayerWalk" ID="{55187698-98D3-4FF5-B9BB-3B17B2C5B93B}">
+					<ChildrenList>
+						<Action Name="" ID="{0AE4D185-AD31-4DC8-AAD0-3B446644B0BC}" ShortID="494509537">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerWalksWood" ID="{CC7756A7-F27E-4A53-A2F2-86B09C9700A2}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerLand" ID="{E9E77135-F5C2-4C95-9643-3D3D8EE01EAF}">
+					<ChildrenList>
+						<Action Name="" ID="{D73A58DC-192E-4CB0-9EE5-0383BAF629F8}" ShortID="176120287">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerLandsWood" ID="{D5793ADD-AF76-4EE7-B52B-B5658389DA49}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EF981518-EEDC-45B4-B3CC-5B23117A83C6}" ShortID="746606098">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.05"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerLandsVoice" ID="{9EE82CFC-B685-453D-AF20-C7BE0602ADB3}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerBounce" ID="{59E80F41-246D-4C1B-A6FB-FCEC3670C433}">
+					<ChildrenList>
+						<Action Name="" ID="{BF7EFF3D-E541-4896-BFEB-C2467004C164}" ShortID="272404100">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="player-bounce_ZOOM0016_Tr1" ID="{7CA6B8C3-27EE-4622-B2E5-9BCCC183B661}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerBunk" ID="{57B5B246-6BA1-43B2-9FD0-BDB3A9613DB2}">
+					<ChildrenList>
+						<Action Name="" ID="{6D495EDA-CB91-4272-B3DA-9B35BC8CA293}" ShortID="429060207">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="player-bunks-wood-1_ZOOM0022_Tr1" ID="{59F34CF9-EA54-4BDB-BDEB-55C7E0D55BB0}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerDeath" ID="{F6336481-B9B2-42DE-9B03-C6049362A179}">
+					<ChildrenList>
+						<Action Name="" ID="{F8EB4B4C-FF70-47F6-B25A-E5C18BFC20C9}" ShortID="387553542">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerHit" ID="{9A86404C-FF90-45CF-B522-46117C57D130}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{448B0B53-6408-4C9A-833F-D1B5C7E2FAB3}" ShortID="975736721">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="player-dies-full_ZOOM0026_Tr1" ID="{1F1F8FDD-8299-45EC-9EFB-6D965BDF636E}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerEnterLevel" ID="{259192BF-557B-4A56-A530-F3541F7DE342}">
+					<ChildrenList>
+						<Action Name="" ID="{58D99172-9B5F-4CA4-8B23-1CD42C8B7353}" ShortID="759677307">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="player-enters-level_ZOOM0022_Tr1" ID="{BC84E7DF-260A-46AC-B420-F01A1C9F8481}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerExitLevel" ID="{DB0630FF-1F0F-4C6B-A5D5-158ABBFC6658}">
+					<ChildrenList>
+						<Action Name="" ID="{0DD9193F-BA9A-48E4-8018-5C3F2198F34A}" ShortID="942383041">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="player-exits-level_ZOOM0022_Tr1" ID="{14ABB842-BD29-4B04-8EEA-EDCA66088817}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerJump" ID="{E05CBE78-7A86-4A2E-A1E6-2417CB57F5EB}">
+					<ChildrenList>
+						<Action Name="" ID="{62155592-84F5-4806-AF04-F4E3EC25EAA1}" ShortID="937710609">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="player-jumps_ZOOM0018_Tr1" ID="{D77562AD-73ED-4D58-9428-E3AE54164CC4}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

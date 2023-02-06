@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7B9FEC51-77A0-45D4-954B-9047E56EF4E6}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Devices" ID="{7B9FEC51-77A0-45D4-954B-9047E56EF4E6}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Breaker" ID="{E38468BC-CAA9-45A3-BB48-235A488FA8C5}" ShortID="264801888">
+					<ChildrenList>
+						<Event Name="Play_BreakerOn" ID="{85310AE9-FB5B-4F94-A578-37E7AE26EC38}">
+							<ChildrenList>
+								<Action Name="" ID="{53146071-83BC-4DDA-B14E-534FF2A2A23C}" ShortID="314900083">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="breaker-on" ID="{E3C9F7CF-A062-4413-A6EC-42489583958F}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_BreakerOff" ID="{146199C1-01ED-4C25-B1A4-53A7EBC08398}">
+							<ChildrenList>
+								<Action Name="" ID="{1F47B7FC-237A-43E8-BCA4-4DC05BC5CF6C}" ShortID="375198544">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="breaker-off" ID="{4AFB18A9-5F8D-4677-8C85-F03FC93FEC8E}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Conveyor" ID="{E753D01A-9EA1-4094-9374-C81FA7BCF2C9}" ShortID="548336694">
+					<ChildrenList>
+						<Event Name="Play_Conveyor" ID="{7BFAEE73-C408-41D8-8C4F-D41F665A0143}">
+							<ChildrenList>
+								<Action Name="" ID="{E8083657-47DE-4A7E-A378-1C66865067E2}" ShortID="304677171">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="conveyor" ID="{B11829DD-1B9B-4CDB-9595-0AB0D765E71F}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Conveyor" ID="{DEE27815-0122-4C75-A3DB-51EDFB414295}">
+							<ChildrenList>
+								<Action Name="" ID="{AE13CA56-1D9D-4EF4-9595-C4D0F9A748FD}" ShortID="1048713763">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="conveyor" ID="{B11829DD-1B9B-4CDB-9595-0AB0D765E71F}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Door" ID="{67F8CBCE-5B83-4DEC-9102-213636BDF231}" ShortID="557980343">
+					<ChildrenList>
+						<Event Name="Play_DoorOpens" ID="{4DBB87F2-7C7F-4701-AD0A-E16809714DF6}">
+							<ChildrenList>
+								<Action Name="" ID="{ABE56281-3BCA-4FB6-AC86-DF0BB78CDE84}" ShortID="516572280">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="door-opens-full" ID="{1BE637A1-7C5A-40AF-B4B1-0F4362358ADE}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_DoorCloses" ID="{1E448D33-2901-44C2-A88C-DA33BF549009}">
+							<ChildrenList>
+								<Action Name="" ID="{A10D1604-3971-489C-93FF-574FBD0212C3}" ShortID="151051243">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="door-closes" ID="{9E654F03-F74D-4BA9-8D9B-0E450368776A}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Fan" ID="{8491EC7F-5554-4B08-ACB3-4DDC9A22549E}" ShortID="385421394">
+					<ChildrenList>
+						<Event Name="Play_Fan" ID="{29BF2C7C-16C0-46AC-B8B4-65C82D82486F}">
+							<ChildrenList>
+								<Action Name="" ID="{A6E78196-0580-4537-828A-18970201F9F8}" ShortID="878063249">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="fan" ID="{1B8255EC-5D0A-453C-948C-D398E9BBA8EB}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Fan" ID="{DDD9CF6D-B150-4EE3-B596-00CAC32FA92D}">
+							<ChildrenList>
+								<Action Name="" ID="{A531C1CB-E1A2-4FB9-A452-ED345FB18728}" ShortID="1000649170">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="fan" ID="{1B8255EC-5D0A-453C-948C-D398E9BBA8EB}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Gate" ID="{301321D7-F455-4894-A6AB-18213B0B9EB7}" ShortID="408467518">
+					<ChildrenList>
+						<Event Name="Play_GateMoves" ID="{0B34852D-28F3-4FE2-A758-8865EB9FA787}">
+							<ChildrenList>
+								<Action Name="" ID="{520694EF-DE49-4379-AFDD-574F6FA70327}" ShortID="533987380">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="gate-moves" ID="{EC81FE3C-8C82-46F8-B8AD-B775B84DD348}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Key" ID="{98C22B71-8802-45C1-96E0-13F698FEED9C}" ShortID="689930804">
+					<ChildrenList>
+						<Event Name="Play_KeyCollect" ID="{0808BA64-4738-4B48-B943-50FD4865558E}">
+							<ChildrenList>
+								<Action Name="" ID="{D9435C81-95A9-400B-AD8E-481B9A3143BB}" ShortID="788955277">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="key-collect" ID="{50F46422-E750-4FFC-932F-DDA88EC6EF55}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_KeyLands" ID="{8ACA156B-E652-48D8-A642-2FB460AFC762}">
+							<ChildrenList>
+								<Action Name="" ID="{E8A8FC6A-259A-4CE7-9F47-948B3BCE89C6}" ShortID="264558905">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="key-lands" ID="{CC25ED56-F5CF-4EDA-BB34-037A123E0E3E}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Keygate" ID="{868A93FC-0258-4DFB-8D6A-423E03F35359}" ShortID="427259842">
+					<ChildrenList>
+						<Event Name="Play_KeygateOpens" ID="{6B669F74-5E4A-4BA2-BC6B-8B0522C951E1}">
+							<ChildrenList>
+								<Action Name="" ID="{B77596B8-C2E6-4423-A713-BBF2E50FE1DD}" ShortID="560587512">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="KeygateOpens" ID="{E0BCE67C-0AE2-4033-A649-E05F45AC05F2}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="MovingPlatform" ID="{FE1D1D3C-F76E-4C73-AD0A-DBD96B507A7B}" ShortID="852677698">
+					<ChildrenList>
+						<Event Name="Play_MovingPlatformTypeA" ID="{B515E701-3B38-4E7B-B796-B465EFDA5B89}">
+							<ChildrenList>
+								<Action Name="" ID="{E033AD1B-A749-48DA-8802-B646382DE861}" ShortID="837527931">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="moving-platform-type-a" ID="{8FCBB4AF-FC16-43B1-8267-EACCC4999B9A}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MovingPlatformTypeB" ID="{86063E03-747E-48AD-AFB6-B8FDC2E07B9C}">
+							<ChildrenList>
+								<Action Name="" ID="{07988B88-4667-4E89-A6A1-1760C9C635A3}" ShortID="1057128550">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="moving-platform-type-b" ID="{C0E7B4FA-9D25-453A-AC87-E33AFC36FE1D}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MovingPlatformTypeA" ID="{CC2298E9-9334-4368-BBA5-7CB2B2DA052E}">
+							<ChildrenList>
+								<Action Name="" ID="{CF30E429-E25E-4A66-B2C2-7EA20CD116F3}" ShortID="856356978">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="moving-platform-type-a" ID="{8FCBB4AF-FC16-43B1-8267-EACCC4999B9A}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MovingPlatformTypeB" ID="{FF545722-11E8-4D39-9FC8-C660E06A88DB}">
+							<ChildrenList>
+								<Action Name="" ID="{042CC51F-4961-4829-83C1-D191A45896B4}" ShortID="419651947">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="moving-platform-type-b" ID="{C0E7B4FA-9D25-453A-AC87-E33AFC36FE1D}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="OneWayPlatform" ID="{E2641952-DB4E-47CC-B1AF-45B16481049E}" ShortID="182920455">
+					<ChildrenList>
+						<Event Name="Play_OWBOn" ID="{5BF12861-1806-47FB-B224-F4D3E864BF60}">
+							<ChildrenList>
+								<Action Name="" ID="{069337F9-0116-4305-B563-B45C2DA8CD1E}" ShortID="777921108">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="owb-appears" ID="{E5376B0D-50E3-4F1A-9BD7-BC24FAC32636}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_OWBOff" ID="{C6B4D86A-D07C-4EBB-A54C-F7481B492437}">
+							<ChildrenList>
+								<Action Name="" ID="{438E0BE3-BBE1-49CE-B74C-1252C9A9E3E9}" ShortID="1034731061">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="owb-disappears" ID="{B927935C-7D82-4F72-9617-8DA8357441A8}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="PivotingGate" ID="{A6600AFF-A9C9-4CAC-B1DC-1AD43C322846}" ShortID="183559624">
+					<ChildrenList>
+						<Event Name="Play_PivotingGateRotates" ID="{3E9D610A-F67F-4A84-8A33-3D46F48C4494}">
+							<ChildrenList>
+								<Action Name="" ID="{7CDE318B-4D45-4E54-9FC5-559D8069931B}" ShortID="517005635">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="pivoting-gate-rotates" ID="{F601EC57-53F0-4F82-88A6-1E4AB8449D18}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_PivotingGateBlocks" ID="{3EF92ED3-6CEE-4A41-BA85-C1A78DA2C882}">
+							<ChildrenList>
+								<Action Name="" ID="{A8EBA781-FD07-41B9-AEF9-CFF1DA0A4EF9}" ShortID="640384687">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="pivoting-gate-blocks" ID="{EBA97C56-7030-436B-8A2A-006C16ACDCBF}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Switch" ID="{B38D1224-7DD8-4E3D-92FB-0787214D589D}" ShortID="183528226">
+					<ChildrenList>
+						<Event Name="Play_SwitchOn" ID="{8008C834-E063-4EC4-B3CD-829F2A02444B}">
+							<ChildrenList>
+								<Action Name="" ID="{BDF0C2FC-B51A-4ACB-A0B9-52436A3545D7}" ShortID="130140763">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="switch-on" ID="{06D3AB93-B249-4DD8-A000-73ED0A9D95C4}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SwitchOff" ID="{2C570C48-DF7A-4B5E-B859-9CC0A2445B2A}">
+							<ChildrenList>
+								<Action Name="" ID="{1CF10766-76CD-47B0-84C6-AFE6E999A175}" ShortID="435313553">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="switch-off" ID="{AF26E6C2-CE70-46E9-B98D-D39A1970212D}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_TimerSwitch" ID="{C1B81227-112A-4189-8EA3-EBFB1257535D}">
+							<ChildrenList>
+								<Action Name="" ID="{FCC89E4C-A222-4BB7-AFA2-2A35C5F41167}" ShortID="417214299">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="switch-timer-on" ID="{0B37DD33-8BE8-49C9-93CE-A1CCB38D58C5}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_TimerSwitch" ID="{BF052DE7-F0A7-4F65-8C30-E05002133A40}">
+							<ChildrenList>
+								<Action Name="" ID="{F7C8CC88-8ED2-495C-B9F1-A8654B14E7F9}" ShortID="1012875927">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="switch-timer-on" ID="{0B37DD33-8BE8-49C9-93CE-A1CCB38D58C5}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_TimerSwitchEnds" ID="{52C5FD65-8BCF-4CD9-B84F-54ADDD8A252C}">
+							<ChildrenList>
+								<Action Name="" ID="{FB29B1F0-AE86-48F2-A693-57D1C72B560E}" ShortID="20892436">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="switch-timer-ends" ID="{2D4B5DAB-EB9C-4E44-89BA-6CAC88396179}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_CycleSwitch" ID="{E13921CA-50FB-4248-A92C-BD6458232466}">
+							<ChildrenList>
+								<Action Name="" ID="{F5AE9BD8-0A6C-4FEB-99C9-656BEE9B844B}" ShortID="378676301">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CycleSwitchPressed" ID="{19D0228F-E78A-44C9-8424-68209B5997EA}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Ladder" ID="{CC99FDA1-1EDC-4215-9086-7425BC41A51E}" ShortID="619141966">
+					<ChildrenList>
+						<Event Name="Play_LadderMoves" ID="{4C93E0F1-BBB9-4138-8715-AE918EA1694C}">
+							<ChildrenList>
+								<Action Name="" ID="{DA9C67ED-8425-4180-B44D-81EBE3D0AABA}" ShortID="402138284">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ladder-moves" ID="{1250DA04-4274-4923-9E64-D56710E3B237}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

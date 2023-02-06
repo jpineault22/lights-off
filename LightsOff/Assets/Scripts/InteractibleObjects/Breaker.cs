@@ -17,6 +17,9 @@ public class Breaker : InteractibleObject
 	public override void Interact()
 	{
 		breakerDevice.SwitchOnOff();
+
+		string wwiseEventName = breakerDevice.IsOnAndConnected() ? Constants.WwiseEventPlayBreakerOn : Constants.WwiseEventPlayBreakerOff;
+		AudioManager.Instance.TriggerWwiseEvent(wwiseEventName, gameObject);
 		
 		foreach (Device device in devices)
 		{

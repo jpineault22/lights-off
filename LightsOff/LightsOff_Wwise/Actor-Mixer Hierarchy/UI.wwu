@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F92DB286-1937-4934-A900-B0E731CCE806}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="UI" ID="{F92DB286-1937-4934-A900-B0E731CCE806}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="menu-change-setting" ID="{E93D30AA-1212-41AB-9F62-4663BF082F7E}" ShortID="886109857">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu-change-setting" ID="{DA8C139F-58FD-4EC5-8324-116A5EC26346}">
+							<Language>SFX</Language>
+							<AudioFile>menu-change-setting.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="962681339"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu-change-setting" ID="{DA8C139F-58FD-4EC5-8324-116A5EC26346}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="menu-play" ID="{37599B62-A274-411D-AC98-0A1471D8E7B6}" ShortID="996853140">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu-play" ID="{02062DEF-AF44-4671-908B-1FDF4A38D139}">
+							<Language>SFX</Language>
+							<AudioFile>menu-play.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="174329229"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu-play" ID="{02062DEF-AF44-4671-908B-1FDF4A38D139}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="menu-quit" ID="{111ECA27-7FC8-425D-B70E-12A2A1235542}" ShortID="398122026">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu-quit" ID="{9D429ACB-2708-4BD5-9F84-813E52A8087C}">
+							<Language>SFX</Language>
+							<AudioFile>menu-quit.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="93086034"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu-quit" ID="{9D429ACB-2708-4BD5-9F84-813E52A8087C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="menu-retry" ID="{E88A8498-F9DD-4602-B473-25D0BE160637}" ShortID="210392862">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu-retry" ID="{BC5E7E45-8162-413C-AD9C-7BE0770A2F7E}">
+							<Language>SFX</Language>
+							<AudioFile>menu-retry.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="463881881"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu-retry" ID="{BC5E7E45-8162-413C-AD9C-7BE0770A2F7E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="menu-select-button" ID="{68F4D09D-8E8A-41A9-828D-938B216CBE22}" ShortID="522599713">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu-select-button" ID="{47E34810-F127-4604-8156-65FBC16F9F16}">
+							<Language>SFX</Language>
+							<AudioFile>menu-select-button.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="227690843"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu-select-button" ID="{47E34810-F127-4604-8156-65FBC16F9F16}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="menu-select-setting" ID="{F792BF3F-A864-46EA-8348-E1110EA18558}" ShortID="574788279">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu-select-setting" ID="{9FD8630F-B1B4-478F-9AB7-FC56E2BEDF0D}">
+							<Language>SFX</Language>
+							<AudioFile>menu-select-setting.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="879937095"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu-select-setting" ID="{9FD8630F-B1B4-478F-9AB7-FC56E2BEDF0D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="menu-selection-move" ID="{B9CF02AD-9BA6-4B40-8C64-4651DF5EB1C0}" ShortID="416375790">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu-selection-move" ID="{79FAFD64-F3EE-488C-A000-837552511EE7}">
+							<Language>SFX</Language>
+							<AudioFile>menu-selection-move.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="110537044"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu-selection-move" ID="{79FAFD64-F3EE-488C-A000-837552511EE7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="menu_confirm_setting" ID="{941F8E48-1915-48E6-AA60-7FF9858E1056}" ShortID="825948209">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menu_confirm_setting" ID="{C843AD13-E352-481B-8E06-7473D529254F}">
+							<Language>SFX</Language>
+							<AudioFile>menu_confirm_setting.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="775318270"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="menu_confirm_setting" ID="{C843AD13-E352-481B-8E06-7473D529254F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="pause-menu-close" ID="{E73B8382-18BE-4D91-A5A8-2CB2B9E9FE4F}" ShortID="334892746">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="pause-menu-close" ID="{74C6FE8B-BB6A-4AC6-9615-05A2733F5D91}">
+							<Language>SFX</Language>
+							<AudioFile>pause-menu-close.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="251070764"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="pause-menu-close" ID="{74C6FE8B-BB6A-4AC6-9615-05A2733F5D91}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="pause-menu-open" ID="{490F124A-64FD-423E-86E5-615C8656D258}" ShortID="410512929">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="UI Bus" ID="{226548C6-9B85-4392-A624-9FA6411F303D}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="pause-menu-open" ID="{6DB5DED6-BB66-4F09-9213-E18F8AD507CD}">
+							<Language>SFX</Language>
+							<AudioFile>pause-menu-open.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="132037434"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="pause-menu-open" ID="{6DB5DED6-BB66-4F09-9213-E18F8AD507CD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

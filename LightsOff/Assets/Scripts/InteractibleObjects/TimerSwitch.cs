@@ -18,6 +18,12 @@ public class TimerSwitch : Switch
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
+	private void OnDestroy()
+	{
+		if (triggered)
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopTimerSwitch, gameObject);
+	}
+
 	protected override void Update()
 	{
 		base.Update();
@@ -29,6 +35,8 @@ public class TimerSwitch : Switch
 				triggered = false;
 				timer = 0f;
 				SwitchDevices();
+				AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopTimerSwitch, gameObject);
+				AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayTimerSwitchEnds, gameObject);
 			}
 		}
 		else if (timer > 0)
@@ -42,6 +50,9 @@ public class TimerSwitch : Switch
 			triggered = false;
 			SwitchDevices();
 			spriteRenderer.sprite = spriteActive;
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopTimerSwitch, gameObject);
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayTimerSwitchEnds, gameObject);
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlaySwitchOff, gameObject);
 		}
 	}
 
@@ -58,6 +69,8 @@ public class TimerSwitch : Switch
 		timer = timerTime;
 		triggered = true;
 		spriteRenderer.sprite = spritesTriggered[0];
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlaySwitchOn, gameObject);
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayTimerSwitch, gameObject);
 	}
 
 	private void SwitchDevices()
@@ -69,7 +82,7 @@ public class TimerSwitch : Switch
 			if (device is MovingPlatformTypeB)
 			{
 				MovingPlatformTypeB platform = device as MovingPlatformTypeB;
-				platform.Moving = true;
+				platform.StartMoving();
 			}
 		}
 

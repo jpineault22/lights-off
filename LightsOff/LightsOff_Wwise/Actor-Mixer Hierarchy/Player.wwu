@@ -1,0 +1,2082 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="Player" ID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="player-bunks-wood-1_ZOOM0022_Tr1" ID="{59F34CF9-EA54-4BDB-BDEB-55C7E0D55BB0}" ShortID="748116155">
+					<PropertyList>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom CreatedFrom="{F9627628-0B10-4272-BC30-D4C20423CB38}">
+								<Effect Name="High_Pass_60Hz (Custom)" ID="{F67320C1-9AC0-445A-BD88-33E7A6FDE030}" ShortID="130504123" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="120"/>
+										<Property Name="OnOffBand2" Type="bool" Value="False"/>
+										<Property Name="OnOffBand3" Type="bool" Value="False"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="player-bunks-wood-1_ZOOM0022_Tr1" ID="{AEB6950F-AC24-4FDD-A939-176B95CF7383}">
+							<Language>SFX</Language>
+							<AudioFile>player-bunks-wood-1_ZOOM0022_Tr1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="610436761"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="player-bunks-wood-1_ZOOM0022_Tr1" ID="{AEB6950F-AC24-4FDD-A939-176B95CF7383}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="player-dies-1_ZOOM0026_Tr1" ID="{D366A505-B6CC-4656-8B4B-70C090685961}" ShortID="642378863">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="player-dies-1_ZOOM0026_Tr1" ID="{7A452F64-B687-4D76-B287-51438480A209}">
+							<Language>SFX</Language>
+							<AudioFile>player-dies-1_ZOOM0026_Tr1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="43950190"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="player-dies-1_ZOOM0026_Tr1" ID="{7A452F64-B687-4D76-B287-51438480A209}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="player-dies-2_ZOOM0026_Tr1" ID="{99AB0210-1AFF-44EB-B616-6A20ACFEEBB3}" ShortID="270879789">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="player-dies-2_ZOOM0026_Tr1" ID="{58DA5B4F-6661-460D-B79D-8B62237ACCD6}">
+							<Language>SFX</Language>
+							<AudioFile>player-dies-2_ZOOM0026_Tr1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="963456079"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="player-dies-2_ZOOM0026_Tr1" ID="{58DA5B4F-6661-460D-B79D-8B62237ACCD6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="player-dies-full_ZOOM0026_Tr1" ID="{1F1F8FDD-8299-45EC-9EFB-6D965BDF636E}" ShortID="369949535">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="player-dies-full_ZOOM0026_Tr1" ID="{237D24D0-08FD-4A4B-AA9C-A294DF30E1E2}">
+							<Language>SFX</Language>
+							<AudioFile>player-dies-full_ZOOM0026_Tr1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="878616986"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="player-dies-full_ZOOM0026_Tr1" ID="{237D24D0-08FD-4A4B-AA9C-A294DF30E1E2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="player-enters-level_ZOOM0022_Tr1" ID="{BC84E7DF-260A-46AC-B420-F01A1C9F8481}" ShortID="611994817">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="player-enters-level_ZOOM0022_Tr1" ID="{22781881-BD6B-4782-A47F-94FAAB685624}">
+							<Language>SFX</Language>
+							<AudioFile>player-enters-level_ZOOM0022_Tr1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="148631401"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="player-enters-level_ZOOM0022_Tr1" ID="{22781881-BD6B-4782-A47F-94FAAB685624}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="player-exits-level_ZOOM0022_Tr1" ID="{14ABB842-BD29-4B04-8EEA-EDCA66088817}" ShortID="522572934">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="player-exits-level_ZOOM0022_Tr1" ID="{40CF4DE0-811C-4398-929C-9709A72CE6BB}">
+							<Language>SFX</Language>
+							<AudioFile>player-exits-level_ZOOM0022_Tr1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1010198537"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="player-exits-level_ZOOM0022_Tr1" ID="{40CF4DE0-811C-4398-929C-9709A72CE6BB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="player-jumps_ZOOM0018_Tr1" ID="{D77562AD-73ED-4D58-9428-E3AE54164CC4}" ShortID="171940255">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="player-jumps_ZOOM0018_Tr1" ID="{988FE503-DDB5-4DC1-A095-F5DAA5DB1CD8}">
+							<Language>SFX</Language>
+							<AudioFile>player-jumps_ZOOM0018_Tr1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="210811848"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="player-jumps_ZOOM0018_Tr1" ID="{988FE503-DDB5-4DC1-A095-F5DAA5DB1CD8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="PlayerLandsVoice" ID="{9EE82CFC-B685-453D-AF20-C7BE0602ADB3}" ShortID="159932784">
+					<PropertyList>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="player-lands-voice-1_ZOOM0025_Tr1" ID="{0931B7CB-D91A-4B1F-B75C-757D5B30F367}" ShortID="169608648">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-1_ZOOM0025_Tr1" ID="{9BD36C3A-1806-4273-8A80-20F084CC2157}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-1_ZOOM0025_Tr1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="588297075"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-1_ZOOM0025_Tr1" ID="{9BD36C3A-1806-4273-8A80-20F084CC2157}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-2_ZOOM0025_Tr1" ID="{F174576B-5C2D-4C8B-B11F-BC316D9BBC79}" ShortID="170434920">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-2_ZOOM0025_Tr1" ID="{F0400F4D-DC95-4D34-A4AC-0BC707FD9A2E}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-2_ZOOM0025_Tr1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="179593651"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-2_ZOOM0025_Tr1" ID="{F0400F4D-DC95-4D34-A4AC-0BC707FD9A2E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-6" ID="{F24268CF-17C5-4EA9-9FE4-91F32202A41F}" ShortID="637262342">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-6" ID="{7B378338-53C7-4A0E-895D-C0406CB6B6E9}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="657599322"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-6" ID="{7B378338-53C7-4A0E-895D-C0406CB6B6E9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-7" ID="{0889E2DC-CF07-4721-A9C5-D190C0E6E141}" ShortID="900208067">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-7" ID="{B5A75BC7-A46B-4D32-8182-BF2CF4E3B7F7}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="140287771"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-7" ID="{B5A75BC7-A46B-4D32-8182-BF2CF4E3B7F7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-8" ID="{C792F60F-794B-476C-8C20-A110C2CEC553}" ShortID="990257286">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-8" ID="{793C20B7-9186-4848-A963-531159CB276A}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-8.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="981294644"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-8" ID="{793C20B7-9186-4848-A963-531159CB276A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-9" ID="{68D307B0-3243-4220-82A7-0BA3C406601C}" ShortID="395621539">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-9" ID="{F445D479-362C-4DF5-BB29-047399FFA01E}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-9.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="363213536"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-9" ID="{F445D479-362C-4DF5-BB29-047399FFA01E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-10" ID="{5B311EDF-6DF8-42D8-ACC1-18A16CE0DF03}" ShortID="248728768">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-10" ID="{22231CD2-AFF6-4D6E-9EDD-018EA6B8CE89}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-10.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1046704695"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-10" ID="{22231CD2-AFF6-4D6E-9EDD-018EA6B8CE89}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-11" ID="{6FBF7720-A0C8-459C-8199-35E4C9680EAD}" ShortID="937015179">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-11" ID="{2B429C08-60C5-4B84-BBC0-13E81020CC28}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-11.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="569575878"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-11" ID="{2B429C08-60C5-4B84-BBC0-13E81020CC28}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-12" ID="{76E5C2D5-8E8E-4BD4-9F19-A3D167EBE35D}" ShortID="509327275">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-12" ID="{5DFE128D-998E-4806-84B9-AE45A55DC5CF}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-12.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="819739533"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-12" ID="{5DFE128D-998E-4806-84B9-AE45A55DC5CF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-15" ID="{0A65F7D8-FACD-49A9-B7A1-9507BC39DCF1}" ShortID="359349012">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-15" ID="{FEAD386C-48B4-4255-8DE9-3C0103A888AB}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-15.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="87376263"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-15" ID="{FEAD386C-48B4-4255-8DE9-3C0103A888AB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-18" ID="{49DD6AEA-5878-4255-8296-EEDBD47CB6CA}" ShortID="951514390">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-18" ID="{1184E0D5-DA75-492E-9272-308C4747A31F}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-18.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1030741682"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-18" ID="{1184E0D5-DA75-492E-9272-308C4747A31F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-20" ID="{C2543D1D-4217-4F3F-B0AC-170E881E88A2}" ShortID="865868943">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-20" ID="{9CE2DC63-BA73-4460-BAB2-4CE70B6D24D9}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-20.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="435811951"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-20" ID="{9CE2DC63-BA73-4460-BAB2-4CE70B6D24D9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-21" ID="{E55E9D10-9E22-41FA-9B3C-9BAF62E7A24D}" ShortID="561856365">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-21" ID="{82C56A3D-D99E-47D7-9D38-6854554A245D}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-21.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="463999406"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-21" ID="{82C56A3D-D99E-47D7-9D38-6854554A245D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-23" ID="{2119842F-7B6E-41D5-BB41-C844CEA77C5B}" ShortID="312142641">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-23" ID="{BEE1C963-2E0A-48F3-9C82-DDF5119FE780}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-23.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="860358613"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-23" ID="{BEE1C963-2E0A-48F3-9C82-DDF5119FE780}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-24" ID="{2FB3629D-BCF3-4F25-B74F-7A3ECB3E9A6E}" ShortID="373364060">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-24" ID="{C338E1B7-97DD-4E4C-94F7-3F9B04D9A469}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-24.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="178639356"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-24" ID="{C338E1B7-97DD-4E4C-94F7-3F9B04D9A469}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-25" ID="{508A754E-0257-4FBF-9322-202AB32BE027}" ShortID="98735828">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-25" ID="{3EA01DD6-6036-4EEB-8D07-05FFF6D787D5}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-25.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="164245154"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-25" ID="{3EA01DD6-6036-4EEB-8D07-05FFF6D787D5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-26" ID="{DA8C448C-EEFB-4910-9410-208054C27A21}" ShortID="797073211">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-26" ID="{D799FF13-2B52-4CE5-93BC-95B1597902F8}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-26.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="231413083"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-26" ID="{D799FF13-2B52-4CE5-93BC-95B1597902F8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-27" ID="{1EC59176-BA42-41FC-85DC-CA949026643A}" ShortID="283361779">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-27" ID="{DC382DAA-80A3-404B-B404-803FA1D8927F}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-27.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="95515676"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-27" ID="{DC382DAA-80A3-404B-B404-803FA1D8927F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-29" ID="{437A9BA7-28E9-45D0-8B07-00B04B7161BE}" ShortID="412685008">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-29" ID="{1F3C354E-B6DF-483D-AC28-636E68747741}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-29.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="819038912"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-29" ID="{1F3C354E-B6DF-483D-AC28-636E68747741}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-31" ID="{A6009D27-D004-40BD-B47E-62F3F1BD5C50}" ShortID="838398054">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-31" ID="{E15B1A89-07B7-4A1C-BE32-DA1E1F096A77}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-31.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="209218441"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-31" ID="{E15B1A89-07B7-4A1C-BE32-DA1E1F096A77}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-35" ID="{29555BA6-0FAA-48CB-A0E8-377DA2A554F5}" ShortID="744339604">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-35" ID="{87A3957F-9EA8-48FA-B3BC-57A535C0B16A}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-35.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="207757407"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-35" ID="{87A3957F-9EA8-48FA-B3BC-57A535C0B16A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-36" ID="{1A6A8CA3-B541-4B3A-9ED5-00627290907B}" ShortID="150301145">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-36" ID="{07AA257E-6376-406B-9029-59E4E59ECDD2}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-36.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="80310197"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-36" ID="{07AA257E-6376-406B-9029-59E4E59ECDD2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-37" ID="{E5F434DD-7A88-4A34-A86D-D8AFD0ED91B2}" ShortID="777217579">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-37" ID="{09A99CD9-2449-4302-800B-D2163104885A}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-37.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="812174385"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-37" ID="{09A99CD9-2449-4302-800B-D2163104885A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-38" ID="{A9A6DBD0-01C4-4EC8-8CAE-4361DF81EFCF}" ShortID="731441171">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-38" ID="{41315541-832E-40F6-BBCD-DB0D9451A78E}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-38.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="97547257"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-38" ID="{41315541-832E-40F6-BBCD-DB0D9451A78E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-39" ID="{74FA5A27-322F-4D66-BA13-0D648FC5FCB7}" ShortID="1022871865">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-39" ID="{FF39E6FD-1B8F-4CDC-9D11-53C0840ADA23}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-39.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="847140302"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-39" ID="{FF39E6FD-1B8F-4CDC-9D11-53C0840ADA23}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-40" ID="{C9C0342A-C2F0-40F3-A6E2-288871BF7614}" ShortID="724569004">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-40" ID="{81FF637C-DD07-4349-8EFD-F8CF871FE29B}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-40.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="640962474"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-40" ID="{81FF637C-DD07-4349-8EFD-F8CF871FE29B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-41" ID="{6022C14D-4610-4336-834F-E0B7D8B9AC08}" ShortID="917985780">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-41" ID="{CBF4EEBC-8C0B-482D-BF42-CD25FB6D1C94}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-41.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1017646361"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-41" ID="{CBF4EEBC-8C0B-482D-BF42-CD25FB6D1C94}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-42" ID="{A320B50F-D40C-460B-BC7D-2B1251CE6312}" ShortID="284679142">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-42" ID="{45CFEE6B-349B-4C17-8B00-503262869FD6}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-42.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="152115907"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-42" ID="{45CFEE6B-349B-4C17-8B00-503262869FD6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-43" ID="{B1FF113C-A477-4131-9D22-6E6189550C5B}" ShortID="412921602">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-43" ID="{118D6C6E-DEDA-4E0B-833C-FBD69AEBD8EC}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-43.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="496262937"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-43" ID="{118D6C6E-DEDA-4E0B-833C-FBD69AEBD8EC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-44" ID="{DEC659A5-8DD6-496A-9922-1425B5D199A3}" ShortID="561821627">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-44" ID="{2E69EBE6-BA7C-4B8D-8002-9249AB5452FF}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-44.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="330865697"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-44" ID="{2E69EBE6-BA7C-4B8D-8002-9249AB5452FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-45" ID="{B5EFBD15-CB78-477F-AA2F-89130DF478FD}" ShortID="709230795">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-45" ID="{5EF8D0E1-B650-4667-A059-6ABB3121C40E}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-45.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="394661085"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-45" ID="{5EF8D0E1-B650-4667-A059-6ABB3121C40E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-46" ID="{A5A99211-3E55-4541-AD56-A9F9C48A2F27}" ShortID="1073602327">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-46" ID="{FE66BEDF-C86C-4453-B6E9-3AC27A639C44}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-46.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="209000171"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-46" ID="{FE66BEDF-C86C-4453-B6E9-3AC27A639C44}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-47" ID="{201B8A35-183B-4B1C-A874-7E9910A6F77C}" ShortID="30210099">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-47" ID="{5F5DB99E-7414-4B7D-BB01-004C292411FA}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-47.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="646085168"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-47" ID="{5F5DB99E-7414-4B7D-BB01-004C292411FA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-48" ID="{787853E9-27FE-441E-9B4F-D24554F553B0}" ShortID="993492360">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-48" ID="{4BE5C220-A76F-40BE-A1A0-F868C9FEAAF6}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-48.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="511408978"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-48" ID="{4BE5C220-A76F-40BE-A1A0-F868C9FEAAF6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-49" ID="{D5E45932-6280-47B1-9E5D-49634C494F60}" ShortID="403554095">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-49" ID="{17ADC141-2273-4426-970F-B90429FB3D28}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-49.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="455002223"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-49" ID="{17ADC141-2273-4426-970F-B90429FB3D28}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-50" ID="{5917CA85-2AB9-428A-9C00-E56329658910}" ShortID="220397606">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-50" ID="{1144A6E5-CB6E-4DF2-B872-E1D48A83B767}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-50.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="338870114"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-50" ID="{1144A6E5-CB6E-4DF2-B872-E1D48A83B767}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-51" ID="{C09D2E7C-02B1-4D10-BBC1-B246C60FBDDE}" ShortID="345452405">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-51" ID="{AC9165B6-8C29-4A6E-A493-64C1F360934E}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-51.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="871759193"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-51" ID="{AC9165B6-8C29-4A6E-A493-64C1F360934E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-52" ID="{713F16EE-7024-4F01-A4B7-BD96C843B888}" ShortID="1052683480">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-52" ID="{94A44F31-DFB3-4EC5-9F92-CBFCAF12B77A}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-52.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="679276883"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-52" ID="{94A44F31-DFB3-4EC5-9F92-CBFCAF12B77A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-53" ID="{C1A2F6A4-5CFE-46A4-95CF-3F8B03CD78C0}" ShortID="732059388">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-53" ID="{7FF6A50C-26F1-4E2F-8CB2-3346384C2594}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-53.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="557193747"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-53" ID="{7FF6A50C-26F1-4E2F-8CB2-3346384C2594}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-54" ID="{9B3403EB-0416-4FB7-893C-BBB515EA8268}" ShortID="799135957">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-54" ID="{A69DC32D-58A4-42CF-8CA2-9E4E9B9DEA7B}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-54.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="936193947"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-54" ID="{A69DC32D-58A4-42CF-8CA2-9E4E9B9DEA7B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-voice-55" ID="{7677B833-44E6-4B69-A51B-BDADDEDD46BE}" ShortID="180957465">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-voice-55" ID="{FFF5C59F-9146-426B-972F-1A62D65C34C4}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-voice-55.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="722972426"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-voice-55" ID="{FFF5C59F-9146-426B-972F-1A62D65C34C4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="PlayerLandsWood" ID="{D5793ADD-AF76-4EE7-B52B-B5658389DA49}" ShortID="657931772">
+					<PropertyList>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom CreatedFrom="{F9627628-0B10-4272-BC30-D4C20423CB38}">
+								<Effect Name="High_Pass_60Hz (Custom)" ID="{84173019-CC53-43EB-A900-2C43F5E7F8E5}" ShortID="75127251" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="200"/>
+										<Property Name="OnOffBand2" Type="bool" Value="False"/>
+										<Property Name="OnOffBand3" Type="bool" Value="False"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="player-lands-wood-1_ZOOM0022_Tr1" ID="{EFDCB255-FF25-4774-913B-8AA89DDC32A1}" ShortID="34047718">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-wood-1_ZOOM0022_Tr1" ID="{88A8D0C6-A698-481D-8367-673C4DA48E29}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-wood-1_ZOOM0022_Tr1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="502625090"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-wood-1_ZOOM0022_Tr1" ID="{88A8D0C6-A698-481D-8367-673C4DA48E29}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-wood-2_ZOOM0022_Tr1" ID="{5B3D915F-CE82-4B8F-9FCF-434FC8017E3D}" ShortID="439542420">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-wood-2_ZOOM0022_Tr1" ID="{8E94A6A7-C478-407A-A865-1A62A62D28A1}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-wood-2_ZOOM0022_Tr1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="184444105"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-wood-2_ZOOM0022_Tr1" ID="{8E94A6A7-C478-407A-A865-1A62A62D28A1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-wood-3_ZOOM0022_Tr1" ID="{5B0AFAB9-98BF-4FB2-A4F4-835F7DAB757D}" ShortID="892904779">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-wood-3_ZOOM0022_Tr1" ID="{EC469C42-E6FD-4BF5-811E-52A1F13DC815}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-wood-3_ZOOM0022_Tr1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="644787074"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-wood-3_ZOOM0022_Tr1" ID="{EC469C42-E6FD-4BF5-811E-52A1F13DC815}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-wood-4_ZOOM0022_Tr1" ID="{7C8193AC-4E84-4729-A8B7-9635DD7C6901}" ShortID="332665175">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-wood-4_ZOOM0022_Tr1" ID="{8E49A6A7-0690-4A93-8054-DC1E818FEA67}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-wood-4_ZOOM0022_Tr1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="560600803"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-wood-4_ZOOM0022_Tr1" ID="{8E49A6A7-0690-4A93-8054-DC1E818FEA67}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-lands-wood-5_ZOOM0022_Tr1" ID="{8F06610A-28C2-4C9E-A954-880C4A6CE538}" ShortID="28780747">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-lands-wood-5_ZOOM0022_Tr1" ID="{3C1B56BD-2C57-4C88-A46F-A57FF14B9714}">
+									<Language>SFX</Language>
+									<AudioFile>player-lands-wood-5_ZOOM0022_Tr1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="8277886"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-lands-wood-5_ZOOM0022_Tr1" ID="{3C1B56BD-2C57-4C88-A46F-A57FF14B9714}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="PlayerWalksWood" ID="{CC7756A7-F27E-4A53-A2F2-86B09C9700A2}" ShortID="69514332">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{8E7BCCFD-8DB5-458A-9C94-F358E84804A9}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.075"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom CreatedFrom="{F9627628-0B10-4272-BC30-D4C20423CB38}">
+								<Effect Name="High_Pass_60Hz (Custom)" ID="{C231310C-EACB-43BD-867F-B971BDB02AA1}" ShortID="240519016" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="200"/>
+										<Property Name="OnOffBand2" Type="bool" Value="False"/>
+										<Property Name="OnOffBand3" Type="bool" Value="False"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="player-walks-wood-1" ID="{17BDC9A6-A1FE-4504-8CB1-6CD205DB7626}" ShortID="427383786">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-1" ID="{7A7F6FD9-0FCF-47A2-B385-1D7945581C1F}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1023741356"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-1" ID="{7A7F6FD9-0FCF-47A2-B385-1D7945581C1F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-walks-wood-2" ID="{FC7F2B65-FA05-4843-8B42-B2E7E774FC9C}" ShortID="1055784408">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-2" ID="{B6095867-2556-467F-AB90-773CFBD882F3}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="666016965"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-2" ID="{B6095867-2556-467F-AB90-773CFBD882F3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-walks-wood-3" ID="{9F621D05-0DAB-4A8F-9725-90A0F3E5FE55}" ShortID="336831923">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-3" ID="{D1EFBB11-C098-48B3-8862-8AF46E6A42D2}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="668180104"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-3" ID="{D1EFBB11-C098-48B3-8862-8AF46E6A42D2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-walks-wood-4" ID="{27149C25-369B-4812-830B-39206D85041D}" ShortID="56784224">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-4" ID="{DC570D46-DB7F-4447-A0C8-B3531C00F0FF}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="878517920"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-4" ID="{DC570D46-DB7F-4447-A0C8-B3531C00F0FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-walks-wood-5" ID="{0548FBD6-3583-489D-8332-2DF76A6B8E0C}" ShortID="638255972">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-5" ID="{84F94C71-BA14-41D5-9727-C58A61F46FF4}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="513335707"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-5" ID="{84F94C71-BA14-41D5-9727-C58A61F46FF4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-walks-wood-6" ID="{9F4FCCC4-5B93-4E59-B28E-6501D2B4C220}" ShortID="314248208">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-6" ID="{954731DF-CBD9-4A11-BE24-1A0366E61D61}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="346775758"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-6" ID="{954731DF-CBD9-4A11-BE24-1A0366E61D61}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-walks-wood-7" ID="{1B93418E-2CEB-4854-8C58-63194C4D69C7}" ShortID="463689095">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-7" ID="{49C00074-47DA-43E5-B5C5-1C2ED0B1B85E}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="905898784"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-7" ID="{49C00074-47DA-43E5-B5C5-1C2ED0B1B85E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-walks-wood-8" ID="{944D5CB6-1AC9-4446-A9B0-FC6EE95DB4CC}" ShortID="753808660">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-8" ID="{9D98D050-7B4B-4281-9D6F-BD6E1CAFD1CF}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-8.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="969968094"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-8" ID="{9D98D050-7B4B-4281-9D6F-BD6E1CAFD1CF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-walks-wood-9" ID="{4C40FEC7-0A92-4394-8BB1-1B3D632BA606}" ShortID="80815061">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-walks-wood-9" ID="{E532E05A-CFA3-4C19-9B55-599F34BA728E}">
+									<Language>SFX</Language>
+									<AudioFile>player-walks-wood-9.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="470058010"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-walks-wood-9" ID="{E532E05A-CFA3-4C19-9B55-599F34BA728E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="PlayerClimbs" ID="{9A1174BF-BB10-48D3-92B8-48B4B243A9F2}" ShortID="752650325">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{BD37B052-530B-42D7-B5E6-7985644C5131}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.05"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{A25F3118-7694-4193-8D26-322949DE61F3}"/>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="player-climbs-1" ID="{EFE6DBE3-391A-414C-B932-2AD1644A0B6D}" ShortID="279618182">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-climbs-1" ID="{E7E44379-13CC-4B2B-8C8C-6CF1081DFFD1}">
+									<Language>SFX</Language>
+									<AudioFile>player-climbs-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="558759438"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-climbs-1" ID="{E7E44379-13CC-4B2B-8C8C-6CF1081DFFD1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-climbs-2" ID="{95E2239C-2F72-4586-9965-272F1B4CD28D}" ShortID="165609117">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-climbs-2" ID="{6DB1551B-0FD3-40D3-86F9-40111B71037B}">
+									<Language>SFX</Language>
+									<AudioFile>player-climbs-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="792969787"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-climbs-2" ID="{6DB1551B-0FD3-40D3-86F9-40111B71037B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-climbs-3" ID="{6F7EBF03-9DAB-4A23-B1C9-0B8D2D2D5255}" ShortID="14038167">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-climbs-3" ID="{E86A6D7E-6A41-4E40-87E5-C7D73A1CED28}">
+									<Language>SFX</Language>
+									<AudioFile>player-climbs-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="795839262"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-climbs-3" ID="{E86A6D7E-6A41-4E40-87E5-C7D73A1CED28}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-climbs-4" ID="{3EEF9F18-67F6-4B0F-868F-FDFCCEBD4C63}" ShortID="1037995068">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-climbs-4" ID="{BC05B912-B10A-4D2D-80DF-F17BA79BBBEC}">
+									<Language>SFX</Language>
+									<AudioFile>player-climbs-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="822185327"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-climbs-4" ID="{BC05B912-B10A-4D2D-80DF-F17BA79BBBEC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="PlayerClimbsFeet" ID="{1E184D71-46F3-4D32-B9DC-231C1E21F345}" ShortID="498891084">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{BA49A501-D659-4E89-A669-63157CB5A20D}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.05"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="player-climbs-feet-1" ID="{294886EC-C6BC-4884-8353-A5F47B620BAC}" ShortID="399085287">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-climbs-feet-1" ID="{E029C1F4-5137-4CD3-A764-EE56756B032E}">
+									<Language>SFX</Language>
+									<AudioFile>player-climbs-feet-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="236794105"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-climbs-feet-1" ID="{E029C1F4-5137-4CD3-A764-EE56756B032E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-climbs-feet-2" ID="{78439204-496C-426E-989D-E49D8A7EACE0}" ShortID="548059931">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-climbs-feet-2" ID="{CABBE0B3-C25C-4F7F-BBA5-9E363F101686}">
+									<Language>SFX</Language>
+									<AudioFile>player-climbs-feet-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="765927644"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-climbs-feet-2" ID="{CABBE0B3-C25C-4F7F-BBA5-9E363F101686}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-climbs-feet-3" ID="{531B4F2D-1420-45A2-B8BB-DE3DD280DE49}" ShortID="850734684">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-climbs-feet-3" ID="{0AD2651A-F27B-4559-95FD-776E0324FB1C}">
+									<Language>SFX</Language>
+									<AudioFile>player-climbs-feet-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="857885265"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-climbs-feet-3" ID="{0AD2651A-F27B-4559-95FD-776E0324FB1C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-climbs-feet-4" ID="{37E6AF78-B119-431C-A577-DF301320D092}" ShortID="429657851">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-climbs-feet-4" ID="{7962AA74-E8F9-4B74-AEBD-8D43DC09C902}">
+									<Language>SFX</Language>
+									<AudioFile>player-climbs-feet-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="948516692"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-climbs-feet-4" ID="{7962AA74-E8F9-4B74-AEBD-8D43DC09C902}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="player-bounce_ZOOM0016_Tr1" ID="{7CA6B8C3-27EE-4622-B2E5-9BCCC183B661}" ShortID="98225536">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="player-bounce_louder-more-bass_ZOOM0016_Tr1" ID="{38A8F20B-C3F4-40AE-889F-E604E973F22D}">
+							<Language>SFX</Language>
+							<AudioFile>player-bounce_louder-more-bass_ZOOM0016_Tr1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="428317779"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="player-bounce_louder-more-bass_ZOOM0016_Tr1" ID="{38A8F20B-C3F4-40AE-889F-E604E973F22D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="PlayerHit" ID="{9A86404C-FF90-45CF-B522-46117C57D130}" ShortID="591580785">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{FCA858C6-F80F-4E89-A7C6-8D9A668D7B5D}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom CreatedFrom="{F9627628-0B10-4272-BC30-D4C20423CB38}">
+								<Effect Name="High_Pass_60Hz (Custom)" ID="{68BD8EFE-6B7B-45FA-AF81-B14DFBFFD62A}" ShortID="168048301" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="OnOffBand2" Type="bool" Value="False"/>
+										<Property Name="OnOffBand3" Type="bool" Value="False"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player SFX Bus" ID="{D58DDB5B-AABB-4BF2-A8CB-0D5DAFE4117E}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="player-hit-1" ID="{D973C7F8-613C-4EA1-837B-86078C359B7A}" ShortID="760095716">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-1" ID="{E1D5C979-A238-4B7B-8399-9FE7272DFBD4}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="978607854"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-1" ID="{E1D5C979-A238-4B7B-8399-9FE7272DFBD4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-2" ID="{61065DB6-72D8-481C-A432-739252A8FA05}" ShortID="45173883">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-2" ID="{544F6436-897B-48F6-8D7E-194FE4F00D0C}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1042923582"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-2" ID="{544F6436-897B-48F6-8D7E-194FE4F00D0C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-3" ID="{44D08451-334F-4DB3-AFF1-86BF9E0C8BF0}" ShortID="955494704">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-3" ID="{17073D58-488D-4D96-B30A-7B745F1B96E6}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="758061761"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-3" ID="{17073D58-488D-4D96-B30A-7B745F1B96E6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-4" ID="{9BF9B1D9-1644-49A3-9259-2B19A6AD0D4F}" ShortID="390910918">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-4" ID="{D77522A9-F070-48F5-87CA-73C0E51A65FF}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="823867311"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-4" ID="{D77522A9-F070-48F5-87CA-73C0E51A65FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-5" ID="{018AE34F-B4D5-4AF6-894B-44DB9EE937B8}" ShortID="11006178">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-5" ID="{FD74D9C9-3E18-491C-AC1D-D6851BE6B4B9}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="372556561"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-5" ID="{FD74D9C9-3E18-491C-AC1D-D6851BE6B4B9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-6" ID="{C03AA97A-E865-4B42-92E2-3F499CC60AEE}" ShortID="264203145">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-6" ID="{B35743D1-87C1-4E3F-A76B-1DA17796D54F}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="821390946"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-6" ID="{B35743D1-87C1-4E3F-A76B-1DA17796D54F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-7" ID="{F0090755-94A8-4198-9A84-140318F9DF35}" ShortID="753767166">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-7" ID="{7178F65B-2A4A-4A79-B112-02FFD3F731FF}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="563021380"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-7" ID="{7178F65B-2A4A-4A79-B112-02FFD3F731FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-8" ID="{A4B01BEA-9838-42F5-BFE5-A97F12FFD5D0}" ShortID="587101382">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-8" ID="{9DE9DD44-84EE-4C61-8E8A-FCB4FFD72F6E}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-8.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="512902393"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-8" ID="{9DE9DD44-84EE-4C61-8E8A-FCB4FFD72F6E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-9" ID="{B6B9F8C6-730B-451D-8821-8BBAA64F9766}" ShortID="816823090">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-9" ID="{1805B5B3-7379-4034-B6D1-AACD9A99ECFD}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-9.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="306516321"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-9" ID="{1805B5B3-7379-4034-B6D1-AACD9A99ECFD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-10" ID="{C53EFE54-2FCC-439E-9A0E-0DCB9236BA03}" ShortID="625556604">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-10" ID="{955B2A1D-E58B-4043-A7C5-C6DC6C4E5FAF}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-10.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="957291573"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-10" ID="{955B2A1D-E58B-4043-A7C5-C6DC6C4E5FAF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="player-hit-11" ID="{C68B37A9-E8DB-4DAF-8048-C46C7AA0A3A3}" ShortID="441000240">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="player-hit-11" ID="{ADD778BB-6DB9-43DB-A497-D3D8C8574381}">
+									<Language>SFX</Language>
+									<AudioFile>player-hit-11.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="209831460"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="player-hit-11" ID="{ADD778BB-6DB9-43DB-A497-D3D8C8574381}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

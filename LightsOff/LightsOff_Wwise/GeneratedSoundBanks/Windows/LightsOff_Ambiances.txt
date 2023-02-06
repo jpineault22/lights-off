@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	310753704	FadeInCreditsAmbiance			\Transitions\FadeInCreditsAmbiance	
+	739742841	FadeOutCreditsAmbiance			\Transitions\FadeOutCreditsAmbiance	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	255392234	credits_amb	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\credits_amb_D6504AE3.wem		\Actor-Mixer Hierarchy\Ambiances\credits_amb		9321080
+

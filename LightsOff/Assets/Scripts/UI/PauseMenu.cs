@@ -25,10 +25,12 @@ public class PauseMenu : Singleton<PauseMenu>
 
 	public void Pause()
 	{
-		if (GameManager.Instance.CurrentGameState == GameState.Playing)
+		if (GameManager.Instance.CurrentGameState == GameState.Playing && PlayerController.Instance.CurrentCharacterState != CharacterState.Dying)
 		{
 			pauseMenuPanel.SetActive(true);
 			GameManager.Instance.PauseGame();
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeOutForPauseMenu);
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPauseMenuOpen, gameObject);
 		}
 	}
 
@@ -38,6 +40,12 @@ public class PauseMenu : Singleton<PauseMenu>
 		retryButton.interactable = true;
 		quitToMenuButton.interactable = true;
 		GameManager.Instance.UnpauseGame();
+
+		if (GameManager.Instance.CurrentGameState == GameState.Playing)
+		{
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeInForPauseMenu);
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPauseMenuClose, gameObject);
+		}
 	}
 
 	public void Retry()

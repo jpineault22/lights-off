@@ -11,6 +11,7 @@ public class PlayerController : Singleton<PlayerController>
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    public AkAudioListener PlayerAkAudioListener { get; private set; }
 
     // Game objects assignable in inspector
     [Header("Game objects/Layer masks")]
@@ -48,21 +49,28 @@ public class PlayerController : Singleton<PlayerController>
     private float horizontalMoveInput;
     private float verticalMoveInput;
     private bool facingRight;
+
     private bool isGrounded;
     private float jumpTimeCounter;
     private float coyoteTimeCounter;
+
     private float pivotingGateTimeCounter;
     private bool inFanArea;
+
     private float climbCooldownCounter;
     private bool readyToLeaveClimbingState;                                     // This variable is set to true once the player has started climbing and has moved passed the corresponding ladder's end if applicable.It is reset when climbing ends.
     private bool reachedLadderTop;
     private float highestLadderEnd;
     private float lowestLadderEnd;
-    private int nbKeys;
+
     private float lastFallingStartHeight;                                       // Stores the height at which the player last started falling. Used by ProcessBounce() to reach just above that same height, and by the collision detection, to determine if the player is high enough to trigger a bounce.
     private bool justBounced;
+
     private float conveyorMomentumBonus;
     private Vector2 velocityBeforePhysicsUpdate;
+
+    private int nbKeys;
+
 
     #region MonoBehaviour methods
 
@@ -76,6 +84,7 @@ public class PlayerController : Singleton<PlayerController>
         boxCollider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        PlayerAkAudioListener = GetComponent<AkAudioListener>();
 
         pivotingGateList = new List<PivotingGate>();
         ladderList = new List<GameObject>();
@@ -84,6 +93,14 @@ public class PlayerController : Singleton<PlayerController>
         nbKeys = 0;
         conveyorMomentumBonus = 1f;
     }
+
+	protected override void OnDestroy()
+	{
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerClimb, gameObject);
+
+        base.OnDestroy();
+	}
 
 	private void OnEnable()
 	{
@@ -144,10 +161,10 @@ public class PlayerController : Singleton<PlayerController>
 		{
             velocityBeforePhysicsUpdate = rb.velocity;
 
+            SetIsGrounded();
             CheckIfFalling();
             ManageConveyorMomentum();
             Move();
-            SetIsGrounded();
 
             if (CurrentCharacterState == CharacterState.Jumping)
             {
@@ -191,7 +208,9 @@ public class PlayerController : Singleton<PlayerController>
 
             CurrentCharacterState = CharacterState.Jumping;
             animator.SetBool(Constants.AnimatorCharacterIsJumping, true);
-            AudioManager.Instance.PlayPlayerJump(gameObject);
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerClimb, gameObject);
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerJump, gameObject);
             jumpTimeCounter = inFanArea ? jumpTimeFanArea : jumpTime;
         }
     }
@@ -244,6 +263,12 @@ public class PlayerController : Singleton<PlayerController>
 
         if (ladderList.Count > 0 && climbCooldownCounter <= 0 && (CurrentCharacterState == CharacterState.Climbing || (Mathf.Abs(verticalMoveInput) > Mathf.Abs(horizontalMoveInput) && climbingInValidDirection)))
         {
+            if (CurrentCharacterState != CharacterState.Climbing)
+            {
+                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
+                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerClimb, gameObject);
+            }
+
             CurrentCharacterState = CharacterState.Climbing;
             animator.SetBool(Constants.AnimatorCharacterIsJumping, false);
             animator.SetBool(Constants.AnimatorCharacterIsClimbing, true);
@@ -252,6 +277,9 @@ public class PlayerController : Singleton<PlayerController>
             // Process vertical movement (climbing)
             if (Mathf.Abs(verticalMoveInput) >= moveInputThreshold && (!reachedLadderTop || verticalMoveInput < 0))
             {
+                if (!animator.enabled)
+                    AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerClimb, gameObject);
+                
                 int direction = verticalMoveInput > 0 ? 1 : -1;
                 rb.velocity = new Vector2(0, direction * climbingSpeed);
                 animator.enabled = true;
@@ -263,6 +291,7 @@ public class PlayerController : Singleton<PlayerController>
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName(Constants.AnimationCharacterClimb))
 				{
                     animator.enabled = false;
+                    AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerClimb, gameObject);
                 }
             }
 
@@ -302,8 +331,10 @@ public class PlayerController : Singleton<PlayerController>
 
                 if (isGrounded && CurrentCharacterState != CharacterState.Jumping && CurrentCharacterState != CharacterState.Bouncing)
                 {
+                    if (CurrentCharacterState != CharacterState.Walking)
+                        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerWalk, gameObject);
+                    
                     CurrentCharacterState = CharacterState.Walking;
-                    AudioManager.Instance.PlayPlayerWalk(gameObject);
                 }
             }
             else
@@ -436,6 +467,7 @@ public class PlayerController : Singleton<PlayerController>
                 animator.SetTrigger(Constants.AnimatorCharacterIsJumping);
                 rb.velocity = new Vector2(velocityBeforePhysicsUpdate.x, -velocityBeforePhysicsUpdate.y);
                 justBounced = true;
+                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerBounce, gameObject);
             }
         }
     }
@@ -463,10 +495,17 @@ public class PlayerController : Singleton<PlayerController>
 
     private void SetIsGrounded()
     {
+        bool previouslyNotGrounded = !isGrounded;
+        
         Vector3 originLeft = new Vector3(boxCollider.bounds.center.x - boxCollider.bounds.extents.x, boxCollider.bounds.center.y, boxCollider.bounds.center.z);
         Vector3 originRight = new Vector3(boxCollider.bounds.center.x + boxCollider.bounds.extents.x, boxCollider.bounds.center.y, boxCollider.bounds.center.z);
-        isGrounded = Physics2D.Raycast(originLeft, Vector2.down, boxCollider.bounds.extents.y + groundedRadius, groundLayerMask)
-            || Physics2D.Raycast(originRight, Vector2.down, boxCollider.bounds.extents.y + groundedRadius, groundLayerMask);
+        RaycastHit2D raycastLeft = Physics2D.Raycast(originLeft, Vector2.down, boxCollider.bounds.extents.y + groundedRadius, groundLayerMask);
+        RaycastHit2D raycastRight = Physics2D.Raycast(originRight, Vector2.down, boxCollider.bounds.extents.y + groundedRadius, groundLayerMask);
+
+        isGrounded = (raycastLeft && !raycastLeft.collider.isTrigger) || (raycastRight && !raycastRight.collider.isTrigger);
+
+        if (previouslyNotGrounded && isGrounded)
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerLand, gameObject);
     }
 
     private void CheckFlipX()
@@ -512,6 +551,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             SetStateToFalling();
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerBunk, gameObject);
             return true;
         }
 
@@ -579,12 +619,18 @@ public class PlayerController : Singleton<PlayerController>
 
         if (isGrounded && CurrentCharacterState != CharacterState.Jumping)
         {
+            if (CurrentCharacterState == CharacterState.Walking)
+                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
+
             CurrentCharacterState = CharacterState.Idle;
         }
     }
 
     private void SetStateToFalling()
 	{
+        if (CurrentCharacterState == CharacterState.Walking)
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
+
         CurrentCharacterState = CharacterState.Falling;
         animator.SetBool(Constants.AnimatorCharacterIsJumping, false);
         animator.SetBool(Constants.AnimatorCharacterIsFalling, true);
@@ -595,6 +641,7 @@ public class PlayerController : Singleton<PlayerController>
 	{
         animator.enabled = true;
         animator.SetBool(Constants.AnimatorCharacterIsClimbing, false);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerClimb, gameObject);
         rb.gravityScale = gravityScale;
         climbCooldownCounter = climbCooldownTime;
         readyToLeaveClimbingState = false;
@@ -614,6 +661,8 @@ public class PlayerController : Singleton<PlayerController>
         rb.velocity = Vector2.zero;
         rb.gravityScale = 0;
         boxCollider.enabled = false;
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerDeath, gameObject);
     }
 
     // Called by GameManager at Level Transition, Death, or Level Retry
@@ -622,13 +671,16 @@ public class PlayerController : Singleton<PlayerController>
         transform.position = new Vector2(pDoorHorizontalPosition, transform.position.y);
         ResetCharacterForReload();
         animator.SetBool(Constants.AnimatorCharacterIsExitingLevel, true);
-	}
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerExitLevel, gameObject);
+    }
 
     public void SetCharacterAnimationToEnterLevel()
 	{
         spriteRenderer.enabled = true;
         animator.SetBool(Constants.AnimatorCharacterIsExitingLevel, false);
         animator.SetBool(Constants.AnimatorCharacterIsEnteringLevel, true);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerEnterLevel, gameObject);
     }
 
     public void ResetCharacterForReload()
@@ -668,6 +720,7 @@ public class PlayerController : Singleton<PlayerController>
 	{
         nbKeys++;
         UIManager.Instance.UpdateKeyNumberText(nbKeys);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayKeyCollect, gameObject);
         Destroy(pKey);
     }
 

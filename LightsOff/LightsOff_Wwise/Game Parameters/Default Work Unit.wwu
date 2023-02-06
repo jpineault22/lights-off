@@ -8,6 +8,41 @@
 						<Property Name="InitialValue" Type="Real64" Value="100"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="SFXVolume" ID="{94339502-1346-4FC4-97A1-C63D3F1DC065}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="MusicVolume" ID="{56099CAC-0666-48D1-8333-6B656AA97225}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="UIVolume" ID="{8DE8807A-6D25-4705-BF01-BD46638C4C81}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="AmbianceVolume" ID="{A4862BB0-C20E-418A-A800-C99776A45AF8}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="TransitionUIVolume" ID="{2FF12EAE-A3D6-4E36-8859-363B1764639E}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

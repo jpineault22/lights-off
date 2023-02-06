@@ -55,12 +55,14 @@ public class InputManager : Singleton<InputManager>
         creditsEndMap.Disable();
     }
 
-    private void ChangeControlScheme(InputUser pUser, InputUserChange pChange, InputDevice pDevice)
+	private void ChangeControlScheme(InputUser pUser, InputUserChange pChange, InputDevice pDevice)
     {
         if (pChange == InputUserChange.ControlSchemeChanged)
 		{
             CurrentControlScheme = playerInput.currentControlScheme;
             ControlSchemeChanged?.Invoke(playerInput.currentControlScheme);
+
+            Cursor.visible = CurrentControlScheme != Constants.InputControlSchemeGamepad;
 		}
     }
 
@@ -92,12 +94,12 @@ public class InputManager : Singleton<InputManager>
 
     public void Pause(InputAction.CallbackContext ctx)
     {
-        Paused?.Invoke(ctx);
+        if (ctx.phase == InputActionPhase.Performed) Paused?.Invoke(ctx);
     }
 
     public void Back(InputAction.CallbackContext ctx)
     {
-        Backed?.Invoke(ctx);
+        if (ctx.phase == InputActionPhase.Performed) Backed?.Invoke(ctx);
     }
 
     // Credits End Control Scheme

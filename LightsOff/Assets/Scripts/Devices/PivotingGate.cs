@@ -51,7 +51,11 @@ public class PivotingGate : CycleDevice
 
 	public override void ApplyBehavior()
 	{
-		rotating = true;
+		if (isConnected)
+		{
+			rotating = true;
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPivotingGateRotates, gameObject);
+		}
 	}
 
 	public override void FailToSwitch(bool pNextState)
@@ -59,6 +63,7 @@ public class PivotingGate : CycleDevice
 		rotating = firstPartOfAttempt = true;
 		attemptingSwitchToNext = pNextState;
 		failToSwitchTimer = failToSwitchTime;
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPivotingGateBlocks, gameObject);
 	}
 
 	private void OnTriggerStay2D(Collider2D pCollision)

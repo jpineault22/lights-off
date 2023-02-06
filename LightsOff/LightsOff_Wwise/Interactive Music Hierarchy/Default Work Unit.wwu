@@ -3,202 +3,6 @@
 	<InteractiveMusic>
 		<WorkUnit Name="Default Work Unit" ID="{A6352788-CA52-41F6-A36B-E4183518306A}" PersistMode="Standalone">
 			<ChildrenList>
-				<MusicPlaylistContainer Name="FullMusic" ID="{38B7E84C-625B-456C-A78B-96204FE5A135}" ShortID="934219539">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<MusicSegment Name="Lights Off-test-wav" ID="{EE63AE8B-767E-46D9-B065-7903D8A7392E}" ShortID="838919879">
-							<PropertyList>
-								<Property Name="EndPosition" Type="Real64" Value="160798.909663865"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<MusicTrack Name="Lights Off-test-wav" ID="{4F69661A-5D60-41B1-97E1-5FDA1386F0D0}" ShortID="751466760">
-									<ReferenceList>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Lights Off-test-wav" ID="{8121F4E9-11F8-45F9-B710-9B462CA7D819}">
-											<Language>SFX</Language>
-											<AudioFile>Lights Off-test-wav.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="902403963"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<TransitionList>
-										<MusicTransition Name="Root" ID="{86616841-378C-4688-8491-F9AA35FF414E}">
-											<PropertyList>
-												<Property Name="IsFolder" Type="bool" Value="True"/>
-											</PropertyList>
-											<TransitionInfo/>
-										</MusicTransition>
-									</TransitionList>
-									<ObjectLists>
-										<ObjectList Name="Sequences">
-											<Reference>
-												<Local>
-													<MusicTrackSequence Name="" ID="{1AEB9985-D95B-4E6F-8AB7-4284DF023F7C}">
-														<ObjectLists>
-															<ObjectList Name="Clips">
-																<Reference>
-																	<Local>
-																		<MusicClip Name="Lights Off-test-wav" ID="{F79E8600-D08B-400E-87F1-8C5812227D10}">
-																			<PropertyList>
-																				<Property Name="BeginTrimOffset" Type="Real64" Value="6.82121026329696E-13"/>
-																				<Property Name="EndTrimOffset" Type="Real64" Value="145379.836134454"/>
-																				<Property Name="FadeInMode" Type="int16" Value="0"/>
-																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																				<Property Name="PlayAt" Type="Real64" Value="2569.84558823529"/>
-																			</PropertyList>
-																			<AudioSourceRef Name="Lights Off-test-wav" ID="{8121F4E9-11F8-45F9-B710-9B462CA7D819}"/>
-																			<PropertyCurveList>
-																				<PropertyCurve PropertyName="Highpass">
-																					<Curve Name="" ID="{16A61A40-E8B9-4E44-A95A-02C4473D8F43}">
-																						<PropertyList>
-																							<Property Name="Flags" Type="int32" Value="1"/>
-																						</PropertyList>
-																						<PointList>
-																							<Point>
-																								<XPos>0</XPos>
-																								<YPos>0</YPos>
-																								<Flags>5</Flags>
-																							</Point>
-																							<Point>
-																								<XPos>145.37984</XPos>
-																								<YPos>0</YPos>
-																								<Flags>37</Flags>
-																							</Point>
-																						</PointList>
-																					</Curve>
-																				</PropertyCurve>
-																				<PropertyCurve PropertyName="Lowpass">
-																					<Curve Name="" ID="{C2B8B425-5284-4046-939D-BDC89B74DDA7}">
-																						<PropertyList>
-																							<Property Name="Flags" Type="int32" Value="1"/>
-																						</PropertyList>
-																						<PointList>
-																							<Point>
-																								<XPos>0</XPos>
-																								<YPos>0</YPos>
-																								<Flags>5</Flags>
-																							</Point>
-																							<Point>
-																								<XPos>145.37984</XPos>
-																								<YPos>0</YPos>
-																								<Flags>37</Flags>
-																							</Point>
-																						</PointList>
-																					</Curve>
-																				</PropertyCurve>
-																				<PropertyCurve PropertyName="Volume">
-																					<Curve Name="" ID="{2CE87FEC-5948-49D5-990E-CE6D8AE53D3B}">
-																						<PropertyList>
-																							<Property Name="Flags" Type="int32" Value="3"/>
-																						</PropertyList>
-																						<PointList>
-																							<Point>
-																								<XPos>0</XPos>
-																								<YPos>0</YPos>
-																								<Flags>5</Flags>
-																							</Point>
-																							<Point>
-																								<XPos>145.37984</XPos>
-																								<YPos>0</YPos>
-																								<Flags>37</Flags>
-																							</Point>
-																						</PointList>
-																					</Curve>
-																				</PropertyCurve>
-																			</PropertyCurveList>
-																		</MusicClip>
-																	</Local>
-																</Reference>
-															</ObjectList>
-														</ObjectLists>
-													</MusicTrackSequence>
-												</Local>
-											</Reference>
-										</ObjectList>
-									</ObjectLists>
-								</MusicTrack>
-							</ChildrenList>
-							<ObjectLists>
-								<ObjectList Name="Cues">
-									<Reference>
-										<Local>
-											<MusicCue Name="Entry Cue" ID="{2C8F25B2-BC4A-4A74-A33B-980C4721E319}">
-												<PropertyList>
-													<Property Name="TimeMs" Type="Real64" Value="11870.2391456582"/>
-												</PropertyList>
-											</MusicCue>
-										</Local>
-									</Reference>
-									<Reference>
-										<Local>
-											<MusicCue Name="Exit Cue" ID="{E82A1A1E-CA80-4E16-BBBB-281DCA29FB9C}">
-												<PropertyList>
-													<Property Name="CueType" Type="int16" Value="1"/>
-													<Property Name="TimeMs" Type="Real64" Value="137180.804971988"/>
-												</PropertyList>
-											</MusicCue>
-										</Local>
-									</Reference>
-								</ObjectList>
-							</ObjectLists>
-						</MusicSegment>
-					</ChildrenList>
-					<TransitionList>
-						<MusicTransition Name="Root" ID="{DE4A6B8D-EDAD-4240-9616-310D9642A6A8}">
-							<PropertyList>
-								<Property Name="IsFolder" Type="bool" Value="True"/>
-							</PropertyList>
-							<ChildrenList>
-								<MusicTransition Name="Transition" ID="{6C11C86E-E6B4-4AD6-9033-4C0450AC79AA}">
-									<TransitionInfo/>
-								</MusicTransition>
-							</ChildrenList>
-							<TransitionInfo/>
-						</MusicTransition>
-					</TransitionList>
-					<Playlist>
-						<MusicPlaylistItem Name="" ID="{826189E9-EF26-4900-A53C-C395A4CC7526}" ShortID="589922291">
-							<PropertyList>
-								<Property Name="LoopCount" Type="int16">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{8B3F3CEC-217E-4847-8E1E-357B2678FF20}"/>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ChildrenList>
-								<MusicPlaylistItem Name="" ID="{52F67180-8D1F-42EE-89A2-4F2E28E04D8D}" ShortID="44464363">
-									<PropertyList>
-										<Property Name="LoopCount" Type="int16" Value="0"/>
-										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-									</PropertyList>
-									<SegmentRef Name="Lights Off-test-wav" ID="{EE63AE8B-767E-46D9-B065-7903D8A7392E}"/>
-								</MusicPlaylistItem>
-							</ChildrenList>
-						</MusicPlaylistItem>
-					</Playlist>
-				</MusicPlaylistContainer>
 				<MusicSwitchContainer Name="GameMusic" ID="{A998E392-3201-433A-8958-0ABF7FF1F7D3}" ShortID="148815690">
 					<PropertyList>
 						<Property Name="Tempo" Type="Real64" Value="108"/>
@@ -208,7 +12,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+							<ObjectRef Name="Music Bus" ID="{E3E0DD8A-2595-4545-AEC5-439216B04B49}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -235,23 +39,23 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="Lights Off-PIANO-PARTIE-1" ID="{DDC0B5E2-CA9B-4927-B2FF-5EEB00F1265A}" ShortID="700962511">
+										<MusicTrack Name="Lights Off-Piano2-Partie1" ID="{C38BB488-D7D4-4612-B30A-B077A03B7764}" ShortID="377802952">
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Lights Off-PIANO-PARTIE-1" ID="{064506EF-ECB5-4CEB-BE60-F5EEB8E31036}">
+												<AudioFileSource Name="Lights Off-Piano2-Partie1" ID="{2E14E3A8-4EC9-4AF9-B463-964560386DEC}">
 													<Language>SFX</Language>
-													<AudioFile>Lights Off-PIANO-PARTIE-1.wav</AudioFile>
+													<AudioFile>Lights Off-Piano2-Partie1.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="682197516"/>
+														<MediaID ID="163572459"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
-												<MusicTransition Name="Root" ID="{B839D136-E8DE-4595-A4F1-C605B0B22793}">
+												<MusicTransition Name="Root" ID="{CB8F37FC-475B-448E-97DF-72DC3777DD14}">
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
@@ -262,40 +66,18 @@
 												<ObjectList Name="Sequences">
 													<Reference>
 														<Local>
-															<MusicTrackSequence Name="" ID="{7E362E1E-8C76-49F1-A64D-AE71166F0EDA}">
+															<MusicTrackSequence Name="" ID="{2A17892D-AF60-4333-A52A-B6C4398A6763}">
 																<ObjectLists>
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Lights Off-PIANO-PARTIE-1" ID="{7DB1E559-A26D-490D-BD1E-3E59BDA59C4D}">
+																				<MusicClip Name="Lights Off-Piano2-Partie1" ID="{E6ECDCBA-9015-40CA-913B-C142D333C2A9}">
 																					<PropertyList>
 																						<Property Name="EndTrimOffset" Type="Real64" Value="31111.125"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
-																						<Property Name="FadeOutDuration" Type="Real64" Value="1139.24909558112"/>
-																						<Property Name="FadeOutShape" Type="int16" Value="1"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Lights Off-PIANO-PARTIE-1" ID="{064506EF-ECB5-4CEB-BE60-F5EEB8E31036}"/>
-																					<PropertyCurveList>
-																						<PropertyCurve PropertyName="Volume">
-																							<Curve Name="" ID="{26F56E1D-044C-4AAE-95EC-0D8932F6EC2C}">
-																								<PropertyList>
-																									<Property Name="Flags" Type="int32" Value="3"/>
-																								</PropertyList>
-																								<PointList>
-																									<Point>
-																										<XPos>0</XPos>
-																										<YPos>-0</YPos>
-																										<Flags>5</Flags>
-																									</Point>
-																									<Point>
-																										<XPos>31.111125</XPos>
-																										<YPos>0</YPos>
-																										<Flags>37</Flags>
-																									</Point>
-																								</PointList>
-																							</Curve>
-																						</PropertyCurve>
-																					</PropertyCurveList>
+																					<AudioSourceRef Name="Lights Off-Piano2-Partie1" ID="{2E14E3A8-4EC9-4AF9-B463-964560386DEC}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -307,7 +89,7 @@
 												</ObjectList>
 											</ObjectLists>
 										</MusicTrack>
-										<MusicTrack Name="Lights Off-VLC-PARTIE-1" ID="{CA329460-599B-4CA1-8D86-860C1E533F65}" ShortID="887458467">
+										<MusicTrack Name="Lights Off-VLC2-Partie-1" ID="{B7939809-9269-4928-AFC5-C31CBA0876B6}" ShortID="898710087">
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -316,24 +98,21 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
-												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Lights Off-VLC-PARTIE-1" ID="{4B5AEB59-1B16-4011-8E16-8759909226DB}">
+												<AudioFileSource Name="Lights Off-VLC2-Partie-1" ID="{9C462059-C741-480C-84CB-BAEF4812FD9D}">
 													<Language>SFX</Language>
-													<AudioFile>Lights Off-VLC-PARTIE-1.wav</AudioFile>
+													<AudioFile>Lights Off-VLC2-Partie-1.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="15999634"/>
+														<MediaID ID="926978453"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
-												<MusicTransition Name="Root" ID="{611F20DD-D3A8-448E-8479-2384403393F3}">
+												<MusicTransition Name="Root" ID="{55E0A436-530A-4ECC-B811-74D3470E5BF3}">
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
@@ -344,77 +123,18 @@
 												<ObjectList Name="Sequences">
 													<Reference>
 														<Local>
-															<MusicTrackSequence Name="" ID="{F9F59E21-F1F6-4FA9-9AEC-4D73939F19E7}">
+															<MusicTrackSequence Name="" ID="{4E2C28FF-50E2-47F3-AE4A-9B651BB72A60}">
 																<ObjectLists>
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Lights Off-VLC-PARTIE-1" ID="{F5A1E433-AF82-4E97-BB1D-048AF6149F49}">
+																				<MusicClip Name="Lights Off-VLC2-Partie-1" ID="{0A34931C-3322-4A1A-82B7-7FA59C3A3106}">
 																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="28333.3333333333"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="31111.1041666667"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Lights Off-VLC-PARTIE-1" ID="{4B5AEB59-1B16-4011-8E16-8759909226DB}"/>
-																					<PropertyCurveList>
-																						<PropertyCurve PropertyName="Highpass">
-																							<Curve Name="" ID="{7566D6CC-47C7-403A-999B-0D64DFEC2AD0}">
-																								<PropertyList>
-																									<Property Name="Flags" Type="int32" Value="1"/>
-																								</PropertyList>
-																								<PointList>
-																									<Point>
-																										<XPos>0</XPos>
-																										<YPos>0</YPos>
-																										<Flags>5</Flags>
-																									</Point>
-																									<Point>
-																										<XPos>28.33333</XPos>
-																										<YPos>0</YPos>
-																										<Flags>37</Flags>
-																									</Point>
-																								</PointList>
-																							</Curve>
-																						</PropertyCurve>
-																						<PropertyCurve PropertyName="Lowpass">
-																							<Curve Name="" ID="{064D455F-1CE5-4AA6-85CC-D38AFD0283F0}">
-																								<PropertyList>
-																									<Property Name="Flags" Type="int32" Value="1"/>
-																								</PropertyList>
-																								<PointList>
-																									<Point>
-																										<XPos>0</XPos>
-																										<YPos>0</YPos>
-																										<Flags>5</Flags>
-																									</Point>
-																									<Point>
-																										<XPos>28.33333</XPos>
-																										<YPos>0</YPos>
-																										<Flags>37</Flags>
-																									</Point>
-																								</PointList>
-																							</Curve>
-																						</PropertyCurve>
-																						<PropertyCurve PropertyName="Volume">
-																							<Curve Name="" ID="{8CD528B6-D06D-48C8-87AA-BDB4D4E6088F}">
-																								<PropertyList>
-																									<Property Name="Flags" Type="int32" Value="3"/>
-																								</PropertyList>
-																								<PointList>
-																									<Point>
-																										<XPos>0</XPos>
-																										<YPos>-0</YPos>
-																										<Flags>5</Flags>
-																									</Point>
-																									<Point>
-																										<XPos>28.33333</XPos>
-																										<YPos>-0</YPos>
-																										<Flags>37</Flags>
-																									</Point>
-																								</PointList>
-																							</Curve>
-																						</PropertyCurve>
-																					</PropertyCurveList>
+																					<AudioSourceRef Name="Lights Off-VLC2-Partie-1" ID="{9C462059-C741-480C-84CB-BAEF4812FD9D}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -552,7 +272,7 @@
 																									</Point>
 																									<Point>
 																										<XPos>123.402354166667</XPos>
-																										<YPos>-0</YPos>
+																										<YPos>0</YPos>
 																										<Flags>37</Flags>
 																									</Point>
 																								</PointList>
@@ -729,7 +449,7 @@
 						</Entry>
 						<Entry>
 							<Path>
-								<PathElementRef Name="Ending" ID="{4F0D1CB9-AFCB-4EFE-9EDE-922E671F47DB}"/>
+								<PathElementRef Name="Ending" ID="{79B95C0B-99E7-486F-B985-8B2E75DD579C}"/>
 							</Path>
 							<AudioNodeInfo>
 								<NoObject Platform="Linked"/>

@@ -14731,6 +14731,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7305366071737340711, guid: fd3f57c1840752548ba6081934edb147,
+        type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2881135434741204378, guid: fd3f57c1840752548ba6081934edb147,
         type: 3}
       propertyPath: devices.Array.size

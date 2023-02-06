@@ -1,0 +1,2138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="Enemies" ID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="enemy-bounced-on" ID="{F1D9674F-86D9-4D6D-A5D3-1922ED9CA540}" ShortID="106862932">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="enemy-bounced-on" ID="{3DDEE1AB-CDC8-4C02-B0B7-332BAF498E50}">
+							<Language>SFX</Language>
+							<AudioFile>enemy-bounced-on.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="720630617"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="enemy-bounced-on" ID="{3DDEE1AB-CDC8-4C02-B0B7-332BAF498E50}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle" ID="{565D5026-F88F-404A-9FD2-77AF579E0669}" ShortID="154570373">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle" ID="{50D16054-FF8B-4F0A-99D0-923D0E6782DD}">
+							<Language>SFX</Language>
+							<AudioFile>enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="787255345"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle" ID="{50D16054-FF8B-4F0A-99D0-923D0E6782DD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" ShortID="123484049">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{B1B36AF8-8B22-47BB-A8FD-4FAF77767A89}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.1"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom CreatedFrom="{F9627628-0B10-4272-BC30-D4C20423CB38}">
+								<Effect Name="High_Pass_60Hz (Custom)" ID="{C437E1D2-C483-4A20-989A-6E2F0D1AFE65}" ShortID="407039525" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="150"/>
+										<Property Name="OnOffBand2" Type="bool" Value="False"/>
+										<Property Name="OnOffBand3" Type="bool" Value="False"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemy-walks-wood-1" ID="{81A49BE4-6EA2-43E0-BC9F-FCF084BEDA34}" ShortID="52132696">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-1" ID="{22F1AA67-ACFF-42D4-A94B-53F39A946E68}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="26783373"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-1" ID="{22F1AA67-ACFF-42D4-A94B-53F39A946E68}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-walks-wood-2" ID="{F3990FB4-041B-4B49-B274-958CA9179729}" ShortID="105732224">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-2" ID="{1FF2650A-868D-4726-A982-BC5C4B3A9A3C}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="513622564"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-2" ID="{1FF2650A-868D-4726-A982-BC5C4B3A9A3C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-walks-wood-3" ID="{EA33623F-5135-410B-8DE2-DDA74095E825}" ShortID="854267155">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-3" ID="{4B2ED791-4902-49DE-A2A4-29121A77D7A8}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="665546155"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-3" ID="{4B2ED791-4902-49DE-A2A4-29121A77D7A8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-walks-wood-4" ID="{E072CF08-7109-4CAE-9B86-50DF9C9B9AAD}" ShortID="318703049">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-4" ID="{8B63770D-CBA5-46F6-893F-8F51E95F6416}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="800195420"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-4" ID="{8B63770D-CBA5-46F6-893F-8F51E95F6416}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-walks-wood-5" ID="{D66D4A8E-8539-4244-B1EE-9DA58900D258}" ShortID="441331274">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-5" ID="{7B652389-2E7C-4E7D-8A56-ADE168275768}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="542131375"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-5" ID="{7B652389-2E7C-4E7D-8A56-ADE168275768}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-walks-wood-6" ID="{42D80F24-D8C7-496C-95B8-CC4F540A477A}" ShortID="677034924">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-6" ID="{C472A4C2-9A0D-4A08-AEE2-2E8FC7DCEEB0}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="218848308"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-6" ID="{C472A4C2-9A0D-4A08-AEE2-2E8FC7DCEEB0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-walks-wood-7" ID="{1A76E054-F916-4130-A4CF-40ADA55A4F20}" ShortID="606851627">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-7" ID="{CC445468-BFE2-4A51-89FF-2A10F73E643D}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="64180705"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-7" ID="{CC445468-BFE2-4A51-89FF-2A10F73E643D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-walks-wood-8" ID="{1E61718B-1164-4351-BB16-CB2C58F72273}" ShortID="898337000">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-8" ID="{28241516-591A-43F4-AFC9-E58967E38530}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-8.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="504629262"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-8" ID="{28241516-591A-43F4-AFC9-E58967E38530}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-walks-wood-9" ID="{BCFFAE6B-50E7-4A26-8F2D-93AE9DFD7920}" ShortID="211359357">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-walks-wood-9" ID="{47F5F06D-BD3D-433E-9221-11D4E48E6ED2}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-walks-wood-9.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="272034696"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-walks-wood-9" ID="{47F5F06D-BD3D-433E-9221-11D4E48E6ED2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="EnemyLandsVoice" ID="{07AF64BD-5159-47AA-BFA6-8FF74B9BAB1B}" ShortID="839245791">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{DB6DFA19-359D-4492-AD76-D1D6F282661D}">
+										<PropertyList>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemy-lands-voice-1" ID="{4FD90F16-D68C-455B-8FE3-BE4A46357464}" ShortID="931177390">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-voice-1" ID="{C4F5524A-A525-431D-AC4D-07CF65F1F989}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-voice-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="898801930"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-voice-1" ID="{C4F5524A-A525-431D-AC4D-07CF65F1F989}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-voice-2" ID="{B9979E4F-1BDB-4F6A-A022-3CAA0FA23BB7}" ShortID="1046429299">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-voice-2" ID="{4554B848-9285-4C08-9234-D70C450E0CB7}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-voice-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="442184811"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-voice-2" ID="{4554B848-9285-4C08-9234-D70C450E0CB7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-voice-3" ID="{6C5B840D-DA61-41F1-9115-DDE3DBD2FBB9}" ShortID="754882206">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-voice-3" ID="{154370F6-0EF0-4EDD-BDB0-CDCA34164012}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-voice-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="32110842"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-voice-3" ID="{154370F6-0EF0-4EDD-BDB0-CDCA34164012}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-voice-4" ID="{45C634CA-A1A7-48A9-8CD8-C37FBAABD1F8}" ShortID="455170314">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-voice-4" ID="{6E5263AC-FEC8-48DB-B060-F165A1577B60}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-voice-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="596890748"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-voice-4" ID="{6E5263AC-FEC8-48DB-B060-F165A1577B60}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-voice-5" ID="{8CA30FF8-BC53-4479-9FF5-F8E3B615AE74}" ShortID="266381669">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-voice-5" ID="{019AAD0B-3C67-424B-9E09-2FB902BDBD86}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-voice-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="282312269"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-voice-5" ID="{019AAD0B-3C67-424B-9E09-2FB902BDBD86}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-voice-6" ID="{8640874E-CFC4-435D-93DF-FCB38909E3A8}" ShortID="170134919">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-voice-6" ID="{F8612509-3310-4EBD-A6A1-ADE9C9F1020E}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-voice-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="933315066"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-voice-6" ID="{F8612509-3310-4EBD-A6A1-ADE9C9F1020E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-voice-7" ID="{5F303363-DD17-4CFE-B5F9-1186CD39CDEE}" ShortID="675083104">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-voice-7" ID="{F2EC29D4-78CC-42E3-81A9-EA9BB95CEE8E}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-voice-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="244737482"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-voice-7" ID="{F2EC29D4-78CC-42E3-81A9-EA9BB95CEE8E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-voice-8" ID="{3985BD38-B76A-42FE-B242-AD091C7E9EAB}" ShortID="100374648">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-voice-8" ID="{454337E0-3E88-494A-A8F4-CD9176612715}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-voice-8.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="151974467"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-voice-8" ID="{454337E0-3E88-494A-A8F4-CD9176612715}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="EnemyLandsWood" ID="{8EF85624-8C9A-4364-BD48-C3ED2D983C8D}" ShortID="75025378">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{EC3B0A73-89D6-435F-B469-C92B36901EBC}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom CreatedFrom="{F9627628-0B10-4272-BC30-D4C20423CB38}">
+								<Effect Name="High_Pass_60Hz (Custom)" ID="{93854CE1-02FF-4678-BC4A-E74E468691D6}" ShortID="187455498" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="120"/>
+										<Property Name="OnOffBand2" Type="bool" Value="False"/>
+										<Property Name="OnOffBand3" Type="bool" Value="False"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemy-lands-wood-1" ID="{4674C775-28D2-4C3D-8388-7A4E40E42933}" ShortID="1045742640">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-wood-1" ID="{BA3733DA-848B-4E54-99DE-0AAA125F94E1}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-wood-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="917795215"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-wood-1" ID="{BA3733DA-848B-4E54-99DE-0AAA125F94E1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-wood-2" ID="{34FC6AAA-47B7-4A38-8698-43D9628E0A53}" ShortID="25747211">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-wood-2" ID="{601718F5-83E2-4A1A-85BA-6E4388DCDF59}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-wood-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="205010729"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-wood-2" ID="{601718F5-83E2-4A1A-85BA-6E4388DCDF59}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-wood-3" ID="{1219FF1F-2E9C-4579-9817-EBE878215340}" ShortID="776069637">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-wood-3" ID="{AB616ED8-BAC1-4E9D-8F77-DE2C718490FF}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-wood-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="223289746"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-wood-3" ID="{AB616ED8-BAC1-4E9D-8F77-DE2C718490FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-wood-4" ID="{D4F5ED03-5411-4907-9EB2-48DA68B4F271}" ShortID="246084792">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-wood-4" ID="{913C85B3-E530-43B2-9F3D-E48F51B4E131}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-wood-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="347521397"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-wood-4" ID="{913C85B3-E530-43B2-9F3D-E48F51B4E131}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-lands-wood-5" ID="{1635A359-716A-474E-BB97-AEB5B0E688EA}" ShortID="361938779">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-lands-wood-5" ID="{25D7723F-6DF3-449C-A41E-3AB97802A940}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-lands-wood-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="92828044"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-lands-wood-5" ID="{25D7723F-6DF3-449C-A41E-3AB97802A940}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="EnemyStopsChasingVoice" ID="{BF920CD5-1EF4-4ED2-8DFC-0458221F539A}" ShortID="967630594">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{8D084EC9-75F6-4C8F-AC21-9CDB8F64EDEA}">
+										<PropertyList>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemy-stops-chasing-1" ID="{50E5F4DD-8842-427F-9ED1-78B51BA8689F}" ShortID="609799351">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-stops-chasing-1" ID="{DF681E76-C1CC-4934-BFCB-D6EE6C2C14D1}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-stops-chasing-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="717821777"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-stops-chasing-1" ID="{DF681E76-C1CC-4934-BFCB-D6EE6C2C14D1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-stops-chasing-2" ID="{126691E5-BE39-41B8-BBF2-237C68F90FAF}" ShortID="74484917">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-stops-chasing-2" ID="{EF88BB12-C7D7-48A6-A324-FD7CE5A5D13E}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-stops-chasing-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="444209950"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-stops-chasing-2" ID="{EF88BB12-C7D7-48A6-A324-FD7CE5A5D13E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-stops-chasing-3" ID="{4D881431-2413-47AD-9363-E2AABE347521}" ShortID="566314482">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-stops-chasing-3" ID="{AE57E86C-32DB-4D40-94F5-5AFD183B091C}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-stops-chasing-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="238411238"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-stops-chasing-3" ID="{AE57E86C-32DB-4D40-94F5-5AFD183B091C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-stops-chasing-4" ID="{D8930888-D3A9-4980-8A7F-77F23557E6B9}" ShortID="439418928">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-stops-chasing-4" ID="{527ABD39-70B9-4024-A098-2C8F992AEBE0}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-stops-chasing-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1022857879"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-stops-chasing-4" ID="{527ABD39-70B9-4024-A098-2C8F992AEBE0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-stops-chasing-5" ID="{B42D8162-6E90-4EB4-9360-BCC268D18E1E}" ShortID="552177602">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-stops-chasing-5" ID="{B367ED11-28EA-40EE-88B3-3E64628E3CEC}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-stops-chasing-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="516234311"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-stops-chasing-5" ID="{B367ED11-28EA-40EE-88B3-3E64628E3CEC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-stops-chasing-6" ID="{C2794405-EB95-4542-9816-242DD43E6782}" ShortID="74420207">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-stops-chasing-6" ID="{5EC97514-48F1-4987-A9FD-E969EB175A4E}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-stops-chasing-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="874063927"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-stops-chasing-6" ID="{5EC97514-48F1-4987-A9FD-E969EB175A4E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-stops-chasing-7" ID="{80DB1642-4182-4ECB-8F56-B9E3DF7609BC}" ShortID="505133533">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-stops-chasing-7" ID="{97E5B8C1-0712-4B58-9482-5320A39FF153}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-stops-chasing-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="758458434"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-stops-chasing-7" ID="{97E5B8C1-0712-4B58-9482-5320A39FF153}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="EnemyWanderHum" ID="{FC2A7496-5BE8-428B-8FE3-62826E919F8B}" ShortID="154389488">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{B010542A-5C5F-488D-B3B2-54DDF250E39A}">
+										<PropertyList>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{47E34E72-0C1B-432D-BE31-494E966E7C71}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="2"/>
+											<Property Name="Min" Type="Real64" Value="-0.8"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemy-wander-1" ID="{08F7C46A-C0FB-4E79-9095-00FD637814A2}" ShortID="886948627">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-1" ID="{83CB4269-D505-4C86-9561-3B5FE63604AE}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="213622537"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-1" ID="{83CB4269-D505-4C86-9561-3B5FE63604AE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-2" ID="{0D4A771B-4ED3-4442-8130-8A4D6110385E}" ShortID="921112283">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-2" ID="{285EEBB5-4582-495F-B5F9-5540FD515D67}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="104883812"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-2" ID="{285EEBB5-4582-495F-B5F9-5540FD515D67}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-3" ID="{AFCA2CE4-D330-4E56-A21E-E73CC42307CE}" ShortID="25935711">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-3" ID="{900C9ED3-0EB1-48DA-9BFD-11A5C7CBACB4}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="340189371"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-3" ID="{900C9ED3-0EB1-48DA-9BFD-11A5C7CBACB4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-4" ID="{4E995CE2-3B4F-4539-85F8-6797A1A0081C}" ShortID="526659076">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-4" ID="{86267E43-74D7-4AE7-8E72-3640D79F2404}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="755884316"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-4" ID="{86267E43-74D7-4AE7-8E72-3640D79F2404}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-5" ID="{27879D3D-EBAC-49D3-AA08-BE4C4C60716B}" ShortID="493698087">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-5" ID="{6A2B7850-C463-410C-AD20-C695B0F30932}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1022102076"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-5" ID="{6A2B7850-C463-410C-AD20-C695B0F30932}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-6" ID="{46140E1B-E2E6-44A2-BB32-F2E44872AC45}" ShortID="74966459">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-6" ID="{D284C82B-70BA-4874-9444-0FAE44F6D468}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="432145853"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-6" ID="{D284C82B-70BA-4874-9444-0FAE44F6D468}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-7" ID="{68648C95-91F8-4678-BDD9-5D169798A4DB}" ShortID="1061877533">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-7" ID="{778DCA74-1B50-4C20-8F06-94D3B37C1577}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="136968152"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-7" ID="{778DCA74-1B50-4C20-8F06-94D3B37C1577}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-8" ID="{F63855F7-A3FC-4B7A-A434-DF79F2A2F498}" ShortID="156642986">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-8" ID="{74AEFFCA-B64F-464D-A26B-B31A5CE85C13}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-8.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="537131472"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-8" ID="{74AEFFCA-B64F-464D-A26B-B31A5CE85C13}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-9" ID="{3987C098-F776-431C-AE40-84FF0C232F02}" ShortID="237457195">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-9" ID="{3F4887A2-AC3C-4DDA-BF7D-60463755B4EE}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-9.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="844091219"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-9" ID="{3F4887A2-AC3C-4DDA-BF7D-60463755B4EE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-10" ID="{8DCCB469-D104-408A-961D-C27584E78EDE}" ShortID="284490213">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-10" ID="{251CC6E6-64A1-4601-AC9E-9C5317243251}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-10.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="271655904"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-10" ID="{251CC6E6-64A1-4601-AC9E-9C5317243251}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-11" ID="{3214F84D-25DD-4A1D-AC4B-90B0CEA70E73}" ShortID="740159669">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-11" ID="{B6091088-80A0-4CAB-A5DB-DE9FB6D04776}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-11.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="739743102"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-11" ID="{B6091088-80A0-4CAB-A5DB-DE9FB6D04776}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wander-12" ID="{5794DC4C-4139-449C-B959-95FF5873ECD3}" ShortID="735924209">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wander-12" ID="{39BE66B8-470B-4F74-940D-6714A26231D4}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wander-12.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="877580922"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wander-12" ID="{39BE66B8-470B-4F74-940D-6714A26231D4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="EnemyPassesOut" ID="{550EBEF0-5388-49A0-9105-568B97BB52F5}" ShortID="719104675">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="EnemyStartsVomitting" ID="{87C7CBA6-58E7-4EFD-8EB2-D6352A7C3BBC}" ShortID="8297114">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C30FBEB3-1637-445C-B422-81B49D9F2E2F}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="250"/>
+													<Property Name="Min" Type="Real64" Value="-250"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="enemy-starts-vomitting-1" ID="{A7116063-5DC5-4D76-9886-DBE07585F879}" ShortID="919277560">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="enemy-starts-vomitting-1" ID="{96323539-EDA8-44FF-86E4-DD5FDC2F2FF3}">
+											<Language>SFX</Language>
+											<AudioFile>enemy-starts-vomitting-1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="201782597"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="enemy-starts-vomitting-1" ID="{96323539-EDA8-44FF-86E4-DD5FDC2F2FF3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="enemy-starts-vomitting-2" ID="{8361DFE2-150E-4699-83A2-A6431F02590C}" ShortID="188375217">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="enemy-starts-vomitting-2" ID="{01BD16B0-71D6-4412-84AB-F1B73217D107}">
+											<Language>SFX</Language>
+											<AudioFile>enemy-starts-vomitting-2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1069924916"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="enemy-starts-vomitting-2" ID="{01BD16B0-71D6-4412-84AB-F1B73217D107}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="EnemyVomits" ID="{86F491EC-2B0F-43F7-824B-8EBCEE4F7366}" ShortID="415042614">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{84CC61BC-A549-4A96-9D4C-951BEA7DDABE}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="250"/>
+													<Property Name="Min" Type="Real64" Value="-250"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="4"/>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.3"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="enemy-vomits-1" ID="{9181B7AD-444D-45C6-B193-8A9E06E64222}" ShortID="267013958">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="enemy-vomits-1" ID="{66D6FA38-F15A-4C2A-8F66-AD868DDDD0FA}">
+											<Language>SFX</Language>
+											<AudioFile>enemy-vomits-1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="306199374"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="enemy-vomits-1" ID="{66D6FA38-F15A-4C2A-8F66-AD868DDDD0FA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="enemy-vomits-2" ID="{A93F6702-0865-4AE0-BFA5-2A3374453FAD}" ShortID="292908120">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="enemy-vomits-2" ID="{81BA8CDC-C0EF-4E88-B611-2AD55D30AFC2}">
+											<Language>SFX</Language>
+											<AudioFile>enemy-vomits-2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="685610327"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="enemy-vomits-2" ID="{81BA8CDC-C0EF-4E88-B611-2AD55D30AFC2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="enemy-vomits-3" ID="{60915998-372E-4B87-8A53-7F3FC5687B08}" ShortID="555707700">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="enemy-vomits-3" ID="{4CBCB6B2-3656-48C9-979D-1AB99219C48B}">
+											<Language>SFX</Language>
+											<AudioFile>enemy-vomits-3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="777935697"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="enemy-vomits-3" ID="{4CBCB6B2-3656-48C9-979D-1AB99219C48B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="enemy-vomits-4" ID="{F7D10764-0F27-445D-8FA3-F613DCEF6878}" ShortID="506659142">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="enemy-vomits-4" ID="{E9AE527C-4D14-406F-BBBD-62FE9BCD2D8F}">
+											<Language>SFX</Language>
+											<AudioFile>enemy-vomits-4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="670458841"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="enemy-vomits-4" ID="{E9AE527C-4D14-406F-BBBD-62FE9BCD2D8F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<Playlist>
+						<ItemRef Name="EnemyStartsVomitting" ID="{87C7CBA6-58E7-4EFD-8EB2-D6352A7C3BBC}"/>
+						<ItemRef Name="EnemyVomits" ID="{86F491EC-2B0F-43F7-824B-8EBCEE4F7366}"/>
+					</Playlist>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="EnemyWakesUp" ID="{A34AF05F-087A-46D3-B240-70C711AB9700}" ShortID="27099518">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{705A830E-20BC-47A5-AB29-12650CA716CE}">
+										<PropertyList>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemy-wakes-up-1" ID="{4A68D0B1-1547-4AC5-8946-C4C2757B07F6}" ShortID="268615396">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-1" ID="{8D4625B9-C3FA-4FB0-9640-D1EBD55F83E9}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="412251079"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-1" ID="{8D4625B9-C3FA-4FB0-9640-D1EBD55F83E9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-2" ID="{EA07CDAC-E764-4A19-92A4-FF88453572FA}" ShortID="429254837">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-2" ID="{7A0BC0BF-FA7B-4C3B-BCD2-2C6C6992BE1A}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="753638620"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-2" ID="{7A0BC0BF-FA7B-4C3B-BCD2-2C6C6992BE1A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-3" ID="{74FA5175-DC2C-4ECD-A3D2-F9220C2A5FDD}" ShortID="702691416">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-3" ID="{180E5F1D-86AB-4BCA-BAAE-1BF80066431D}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="198778753"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-3" ID="{180E5F1D-86AB-4BCA-BAAE-1BF80066431D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-4" ID="{F472DDE9-8135-4996-99B6-D5519D5851DE}" ShortID="281807769">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-4" ID="{53EB8B23-5D76-4E0C-A051-E9F6B04E90F9}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1043677084"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-4" ID="{53EB8B23-5D76-4E0C-A051-E9F6B04E90F9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-5" ID="{68F85EC1-C5B9-4D08-996D-72F001FD58CE}" ShortID="271944777">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-5" ID="{7391CC1A-B70C-40AB-94F8-F5F7B8E1DF21}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="284836172"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-5" ID="{7391CC1A-B70C-40AB-94F8-F5F7B8E1DF21}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-6" ID="{8150A721-E1FB-4D9B-83E4-92A3BA7984AC}" ShortID="1073470034">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-6" ID="{22A0D3BD-3BE3-448F-988E-776F6F0DA103}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="765591026"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-6" ID="{22A0D3BD-3BE3-448F-988E-776F6F0DA103}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-7" ID="{AD4847B6-1ECD-47CB-8F3B-A35FF0318312}" ShortID="575926344">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-7" ID="{D5FED2D4-31CB-41D6-A16F-12A2751CA2F4}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="374997479"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-7" ID="{D5FED2D4-31CB-41D6-A16F-12A2751CA2F4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-8" ID="{4C9F5609-6D2A-4881-A7A6-D26E39777CA2}" ShortID="150956242">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-8" ID="{F5B6C3DB-F9C9-405F-918F-E28B570E333A}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-8.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="258062463"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-8" ID="{F5B6C3DB-F9C9-405F-918F-E28B570E333A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-9" ID="{DA5B03CA-100E-43EF-A855-85CF5B3FE91D}" ShortID="615062945">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-9" ID="{0F63E7C3-5EA0-4C3C-8565-29760732E56D}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-9.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="455200698"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-9" ID="{0F63E7C3-5EA0-4C3C-8565-29760732E56D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-10" ID="{29532BAF-8215-442E-876E-C819AE1BCBAC}" ShortID="131520924">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-10" ID="{CA1A1587-146E-4774-B421-00ABA99EE206}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-10.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="106768567"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-10" ID="{CA1A1587-146E-4774-B421-00ABA99EE206}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-11" ID="{CADD7586-50F2-4CD7-9DD6-86EC3511DF6A}" ShortID="131865031">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-11" ID="{4C2EAEF4-86A4-46FC-A9C0-8131D3A5B3FB}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-11.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="764486082"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-11" ID="{4C2EAEF4-86A4-46FC-A9C0-8131D3A5B3FB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-wakes-up-12" ID="{748BDA90-C0E9-432B-A02F-256F7E41AF42}" ShortID="555685566">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-wakes-up-12" ID="{6F2EC26E-5ABA-4D7B-846C-DE6C3F7779EC}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-wakes-up-12.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="880708887"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-wakes-up-12" ID="{6F2EC26E-5ABA-4D7B-846C-DE6C3F7779EC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="EnemyChasing" ID="{D3A330B7-E038-41AB-ABE7-1AB542CF1B2A}" ShortID="179391125">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{81EA3A27-C1CC-4766-88A0-BDE1D5DA9A98}">
+										<PropertyList>
+											<Property Name="Max" Type="Real64" Value="250"/>
+											<Property Name="Min" Type="Real64" Value="-250"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="4"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.3"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="SFXAttenuation" ID="{967DC361-5BED-425E-B1C4-BE8935BD7A09}" WorkUnitID="{7DC3F5A7-636A-47FC-816A-4758A67D8D06}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Enemies SFX Bus" ID="{4163CAB9-99A0-4B1E-A3E2-5B2122576E03}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="enemy-chasing-1" ID="{4252B13E-9F06-4573-980D-89C8DC1912AC}" ShortID="63680343">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-1" ID="{3397C085-7870-4DCB-81AE-C47715BD0068}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="610989497"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-1" ID="{3397C085-7870-4DCB-81AE-C47715BD0068}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-2" ID="{F74E2A8D-BE66-4319-8DA0-0098B69782DD}" ShortID="767920911">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-2" ID="{21AF05D5-ADF6-4985-9D34-37FCB542664C}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="16023837"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-2" ID="{21AF05D5-ADF6-4985-9D34-37FCB542664C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-3" ID="{856490D1-26B0-4329-B9AD-C7AFF20711AF}" ShortID="446221981">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-3" ID="{F70E7E36-9507-4B83-9AD4-213DB7DFC5C9}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="428104059"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-3" ID="{F70E7E36-9507-4B83-9AD4-213DB7DFC5C9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-4" ID="{B53D4F7A-6BCF-4134-AB7B-7FFDE23CEE59}" ShortID="715885706">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-4" ID="{CEEFE188-21C9-428D-8559-42AAD6C12D1E}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="99741202"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-4" ID="{CEEFE188-21C9-428D-8559-42AAD6C12D1E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-5" ID="{EBC89480-CB7E-480B-8A57-EF0A16941A98}" ShortID="956225942">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-5" ID="{08A4621D-4065-48B4-B343-EC5BF44E658D}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="469286048"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-5" ID="{08A4621D-4065-48B4-B343-EC5BF44E658D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-6" ID="{38B98270-0E0D-4C1B-B34F-8EA902E90F8E}" ShortID="1045934896">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-6" ID="{45492D14-54D1-4219-B9E3-0270EF3E6E59}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-6.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="135577203"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-6" ID="{45492D14-54D1-4219-B9E3-0270EF3E6E59}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-7" ID="{DCEB19E1-0419-4222-957E-AE2446305B94}" ShortID="985578607">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-7" ID="{CA828CB1-6E39-479F-80F5-13273F0F6469}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-7.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="775541173"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-7" ID="{CA828CB1-6E39-479F-80F5-13273F0F6469}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-8" ID="{86EFBAC3-B998-4B4E-9701-AC22F0D9C556}" ShortID="412094204">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-8" ID="{0AEF0BA6-984C-47FA-8C7D-44C1727C7C59}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-8.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="224403191"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-8" ID="{0AEF0BA6-984C-47FA-8C7D-44C1727C7C59}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-9" ID="{BE9DB698-C264-4136-B0CE-097D655CD51E}" ShortID="384532307">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-9" ID="{C6E36FFF-3266-4EE0-B1B2-200EC6A2F45F}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-9.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1070822844"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-9" ID="{C6E36FFF-3266-4EE0-B1B2-200EC6A2F45F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-10" ID="{9BFB043F-54A5-4800-AFDD-253F843026D4}" ShortID="241417601">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-10" ID="{FC4869C2-DFF4-4E50-BA47-3A51F69EBBAD}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-10.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="707979610"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-10" ID="{FC4869C2-DFF4-4E50-BA47-3A51F69EBBAD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-11" ID="{35262C50-2B49-496B-A51F-DC4EFFE7F07F}" ShortID="250623659">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-11" ID="{A7663751-2E8F-41F7-B4C9-14CBE6E52E2D}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-11.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="249288272"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-11" ID="{A7663751-2E8F-41F7-B4C9-14CBE6E52E2D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-12" ID="{990083D1-428C-4D77-81BA-2450E5D1041B}" ShortID="57485145">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-12" ID="{AEFF9767-15AA-4FFE-911C-E20BE8374506}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-12.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="257496725"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-12" ID="{AEFF9767-15AA-4FFE-911C-E20BE8374506}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-13" ID="{E163986E-6B0C-461A-80D8-86DE69050538}" ShortID="340223618">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-13" ID="{100064E4-26C8-40B3-9B59-07B787C5C1A2}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-13.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="291072036"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-13" ID="{100064E4-26C8-40B3-9B59-07B787C5C1A2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-14" ID="{9D41A4A5-69E1-43CA-BB3F-2FAFE57290EC}" ShortID="623275279">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-14" ID="{94B548E0-4EB4-4FFD-9487-421B20DE02F7}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-14.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="954233564"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-14" ID="{94B548E0-4EB4-4FFD-9487-421B20DE02F7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-15" ID="{9C7189A3-D168-478F-9E50-C559D0C6CE1C}" ShortID="670281845">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-15" ID="{689D635E-B062-4208-A181-841B7876BD24}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-15.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="39962822"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-15" ID="{689D635E-B062-4208-A181-841B7876BD24}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-16" ID="{A0A33B50-D549-403F-89CA-C5FD194E8191}" ShortID="349698438">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-16" ID="{152B7AA6-1F5C-49B6-A535-9625C2705A3B}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-16.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="878337161"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-16" ID="{152B7AA6-1F5C-49B6-A535-9625C2705A3B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="enemy-chasing-17" ID="{71319775-1B7C-40AA-8C9C-0821549FFAB8}" ShortID="612531562">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="enemy-chasing-17" ID="{F12128B2-477F-42BF-8F3E-38CDFCDA50D2}">
+									<Language>SFX</Language>
+									<AudioFile>enemy-chasing-17.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="467736086"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="enemy-chasing-17" ID="{F12128B2-477F-42BF-8F3E-38CDFCDA50D2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

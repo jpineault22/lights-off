@@ -72,6 +72,7 @@ public class CycleSwitch : InteractibleObject
 
 		switchDevice.SwitchOnOff();
 		pressedCounter = pressedTime;
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayCycleSwitch, gameObject);
 
 		foreach (CycleDevice device in devices)
 		{

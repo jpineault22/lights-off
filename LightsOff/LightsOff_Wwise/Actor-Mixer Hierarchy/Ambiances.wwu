@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{284A2F9D-F13D-4AFD-9E7F-5962E422DFAC}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="Ambiances" ID="{284A2F9D-F13D-4AFD-9E7F-5962E422DFAC}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="credits_amb" ID="{2E52F35A-2438-46B7-8C77-8E4FB8B657A4}" ShortID="22127654">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="RenderEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DF6E9175-D629-45F7-818E-68D4F0B9D230}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Parametric EQ (Custom)" ID="{5329289F-E594-46A5-A76A-444725B5BA5C}" ShortID="371460483" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="6"/>
+										<Property Name="FilterTypeBand2" Type="int32" Value="2"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="6000"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="4500"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="4500"/>
+										<Property Name="GainBand1" Type="Real32" Value="-9"/>
+										<Property Name="GainBand2" Type="Real32" Value="-24"/>
+										<Property Name="GainBand3" Type="Real32" Value="-24"/>
+										<Property Name="QFactorBand1" Type="Real32" Value="0.5"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Ambiances Bus" ID="{AB3D5B58-B8C2-4324-90D7-94BC30DA1A46}" WorkUnitID="{39994EC3-1AB6-4E83-B044-D08C7C204DE5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="credits_amb" ID="{B72C3289-7D0E-4461-9660-B1AC45C6649B}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="2427.326"/>
+								<Property Name="LoopBegin" Type="Real64" Value="2.29087735823077"/>
+								<Property Name="LoopEnd" Type="Real64" Value="47.0199329571927"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>credits_amb.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="255392234"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="credits_amb" ID="{B72C3289-7D0E-4461-9660-B1AC45C6649B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

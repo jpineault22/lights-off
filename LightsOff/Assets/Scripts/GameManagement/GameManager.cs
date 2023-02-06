@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -11,6 +12,8 @@ public class GameManager : Singleton<GameManager>
 	private Door door;
 
 	public bool EndingGame { get; set; }
+
+	public event Action PlayerSpawned;
 
 	private void Start()
 	{
@@ -58,11 +61,15 @@ public class GameManager : Singleton<GameManager>
 		SaveSystem.DeleteSaveFile();
 
 		if (LevelLoader.Instance.CurrentLevelNumber == Constants.StartingLevelNumber)
+		{
+			MainMenu.Instance.DisplayNoSaveFileFoundMessage();
 			return;
+		}
 
 		CurrentGameState = GameState.DeletingSaveFile;
 		EventSystemManager.Instance.DeactivateModule();
 		LevelLoader.Instance.RefreshMenuLevelAfterFileDeletion();
+		MainMenu.Instance.DisplaySaveFileDeletedMessage();
 	}
 
 	private void DisplayPresentationScreen()
@@ -83,7 +90,7 @@ public class GameManager : Singleton<GameManager>
 		Time.timeScale = 1f;
 		CurrentGameState = GameState.Menu;
 		EventSystemManager.Instance.DeactivateModule();
-		AudioManager.Instance.TransitionBackToMenuMusic();
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventMusicBackToMenu);
 		LevelLoader.Instance.QuitToMenu();
 	}
 
@@ -91,15 +98,16 @@ public class GameManager : Singleton<GameManager>
 	{
 		CurrentGameState = GameState.Menu;
 		EndingGame = true;
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeOutCreditsAmbiance);
 		SaveSystem.DeleteSaveFile();
 		QuitToMenu();
 	}
 
 	public void StartGame()
 	{
-		CurrentGameState = GameState.LoadingGame;
+		CurrentGameState = GameState.StartingGame;
 		InstantiatePlayer();
-		AudioManager.Instance.TransitionInGameMusic();
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventMusicPlayGame);
 		LevelLoader.Instance.FadeOutMenu();
 	}
 
@@ -200,6 +208,7 @@ public class GameManager : Singleton<GameManager>
 	private void InstantiatePlayer()
 	{
 		player = Spawner.Instance.SpawnPlayer();
+		PlayerSpawned?.Invoke();
 	}
 
 	public void DestroyPlayer()
@@ -234,12 +243,16 @@ public class GameManager : Singleton<GameManager>
 		{
 			if (light.IsOnAndConnected())
 			{
-				door.CloseDoor();
+				if (door != null)
+					door.CloseDoor();
+
 				return false;
 			}
 		}
 
-		door.OpenDoor();
+		if (door != null)
+			door.OpenDoor();
+
 		return true;
 	}
 
@@ -256,7 +269,7 @@ public enum GameState
 {
 	PresentationScreen,
 	Menu,
-	LoadingGame,
+	StartingGame,
 	Playing,
 	Paused,
 	Reloading,

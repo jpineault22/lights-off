@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F90F7ED6-FEBA-4D27-A934-9512F0C5A4E2}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Transitions" ID="{F90F7ED6-FEBA-4D27-A934-9512F0C5A4E2}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="FadeOutForPauseMenu" ID="{917AEB65-01AF-46DC-B786-DA3B06A67C6A}">
+					<ChildrenList>
+						<Action Name="" ID="{AF99D88F-184A-4F5C-9EBA-01E741521280}" ShortID="869935582">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="40"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-8.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9DFB8364-27AC-4878-9019-5FB16019B745}" ShortID="1030631751">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FadeOutForLevelTransition" ID="{BA1089D3-9465-4F1E-81E8-3CEBEC877715}">
+					<ChildrenList>
+						<Action Name="" ID="{52507EBD-8067-4442-A6C0-777CB16B47EF}" ShortID="453616476">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="50"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-6"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2EFB4B26-F572-44C5-BB72-65C2B202E263}" ShortID="804240920">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FadeInForLevelTransition" ID="{45050B5D-68A3-42E2-963E-EB04D9904F93}">
+					<ChildrenList>
+						<Action Name="" ID="{581EA422-D740-4D33-9EA8-982F0BCA0EE7}" ShortID="773117149">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{64382E8E-2CC9-4466-970A-E2C57703822F}" ShortID="581481170">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FadeInForPauseMenu" ID="{B262F975-760E-4AC0-A7A1-2F14BE4B24DB}">
+					<ChildrenList>
+						<Action Name="" ID="{50CD9EA6-BFC7-4D3D-9DDE-7F6043C944D3}" ShortID="750893799">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{12B4CDEC-E666-450A-AE64-0042649EEEFF}" ShortID="811759678">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FadeOutForQuitTransition" ID="{57639986-C205-444A-BDC0-A67BB738E191}">
+					<ChildrenList>
+						<Action Name="" ID="{F36CA631-C1F7-4D18-AF38-81511E247B9E}" ShortID="138203804">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="40"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-6"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{00F17256-7DD6-4834-B245-7421CB4661B9}" ShortID="405571188">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2662678A-70EC-46F4-9ECD-0AC250C20A5B}" ShortID="232123403">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionUIVolume" ID="{2FF12EAE-A3D6-4E36-8859-363B1764639E}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FadeInToMenu" ID="{EE75DBEE-8214-4D8C-A84F-07622617F8A5}">
+					<ChildrenList>
+						<Action Name="" ID="{37DC72B7-0880-4FC5-BA61-2A8B2ACA2578}" ShortID="742654252">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0FB538D3-5799-4D78-A510-BB0A3240E856}" ShortID="927607692">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionUIVolume" ID="{2FF12EAE-A3D6-4E36-8859-363B1764639E}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FadeOutForCredits" ID="{F8D2C4BB-F99F-4218-8C7F-DC62A76EC3BC}">
+					<ChildrenList>
+						<Action Name="" ID="{EC4542C8-9C23-4EEB-A8F9-A9EAE92A515B}" ShortID="814473304">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F68C638C-4025-4F77-A2A8-AC46FBE23B48}" ShortID="495010342">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{16C07B25-78F4-4335-A00C-A9781FE1D2F1}" ShortID="52523637">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionUIVolume" ID="{2FF12EAE-A3D6-4E36-8859-363B1764639E}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FadeOutCreditsAmbiance" ID="{46CAF09F-0C83-4D35-9BF0-BE6E03DB5406}">
+					<ChildrenList>
+						<Action Name="" ID="{A442DE47-92B1-4A54-B1AF-A5A2F9EEB616}" ShortID="201245458">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AmbianceVolume" ID="{A4862BB0-C20E-418A-A800-C99776A45AF8}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1A88E299-693C-4611-B428-9FA164C321EA}" ShortID="25325886">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="credits_amb" ID="{2E52F35A-2438-46B7-8C77-8E4FB8B657A4}" WorkUnitID="{284A2F9D-F13D-4AFD-9E7F-5962E422DFAC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FadeInCreditsAmbiance" ID="{6B1CC50C-512D-44FD-BDEA-1F1F1B9247DA}">
+					<ChildrenList>
+						<Action Name="" ID="{BC36618C-A0B6-42AD-B63B-FA0113A94C32}" ShortID="909653089">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="credits_amb" ID="{2E52F35A-2438-46B7-8C77-8E4FB8B657A4}" WorkUnitID="{284A2F9D-F13D-4AFD-9E7F-5962E422DFAC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F759EE56-7AAE-470A-B926-4E281248DBC8}" ShortID="213810990">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeInCurve" Type="int16" Value="7"/>
+								<Property Name="FadeTime" Type="Real64" Value="10"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AmbianceVolume" ID="{A4862BB0-C20E-418A-A800-C99776A45AF8}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SetTransitionSFXVolumeToMax" ID="{253A32FC-E53E-4330-95A0-F83A971F4D53}">
+					<ChildrenList>
+						<Action Name="" ID="{738C2D77-1C1F-492A-AF70-3E393C72D5A2}" ShortID="576944879">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}" WorkUnitID="{D721F01F-2C00-4672-83FA-6B2967209934}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

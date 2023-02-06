@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="110">
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Virtual Acoustics\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Triggers\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Switches\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\States\Default Work Unit.wwu" DateLow="1675052718" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1675094203" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\SoundBanks\Default Work Unit.wwu" DateLow="1675094265" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Queries\Factory Queries.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Queries\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Presets\Factory Spatial Audio.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Presets\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Modulators\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Mixing Sessions\Default Work Unit.wwu" DateLow="1675094203" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Metadata\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1675094203" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\LightsOff_Wwise.wproj" DateLow="1674531634" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\LightsOff_Wwise.client.wsettings" DateLow="1675092127" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1675058572" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Game Parameters\Default Work Unit.wwu" DateLow="1675094203" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Events\Default Work Unit.wwu" DateLow="1675057690" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Effects\Factory Effects.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Effects\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Conversion Settings\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Control Surface Sessions\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Audio Devices\Default Work Unit.wwu" DateLow="1674431520" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Attenuations\Default Work Unit.wwu" DateLow="1675055686" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Virtual Acoustics\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Triggers\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Switches\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\States\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\SoundBanks\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Queries\Factory Queries.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Queries\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Presets\Factory Spatial Audio.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Presets\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Modulators\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Mixing Sessions\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Metadata\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\LightsOff_Wwise.wproj" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\LightsOff_Wwise.client.wsettings" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Game Parameters\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Events\UI.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Events\Transitions.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Events\Player.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Events\Music.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Events\Enemies.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Events\Devices.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Events\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Effects\Factory Effects.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Effects\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Conversion Settings\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Control Surface Sessions\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Audio Devices\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Attenuations\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Actor-Mixer Hierarchy\UI.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Actor-Mixer Hierarchy\Player.wwu" DateLow="1675662270" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Actor-Mixer Hierarchy\Factory Synth One.wwu" DateLow="1674431519" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1674522489" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Actor-Mixer Hierarchy\Enemies.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Actor-Mixer Hierarchy\Devices.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1675662270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\Actor-Mixer Hierarchy\Ambiances.wwu" DateLow="1675662270" DateHigh="0"/>
 </ValidationCache>

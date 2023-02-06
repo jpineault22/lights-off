@@ -18,11 +18,17 @@ public class DisappearingDevice : Device
 		{
 			spriteRenderer.sprite = spriteOn;
 			deviceCollider.enabled = true;
+
+			if (gameObject.CompareTag(Constants.TagOneWayPlatformTypeB))
+				AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayOWBOn, gameObject);
 		}
 		else
 		{
 			spriteRenderer.sprite = spriteOff;
 			deviceCollider.enabled = false;
+
+			if (gameObject.CompareTag(Constants.TagOneWayPlatformTypeB))
+				AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayOWBOff, gameObject);
 		}
 	}
 }

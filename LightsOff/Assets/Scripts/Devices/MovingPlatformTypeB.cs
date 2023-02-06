@@ -9,13 +9,19 @@ public class MovingPlatformTypeB : MovingPlatform
 	
 	[HideInInspector] public bool readyToSwitch;
 	private bool otherDirection;
-	public bool Moving { get; set; }
+	public bool Moving { get; private set; }
 
 	protected override void Awake()
 	{
 		base.Awake();
 
 		readyToSwitch = true;
+	}
+
+	private void OnDestroy()
+	{
+		if (IsOnAndConnected())
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopMovingPlatformTypeB, gameObject);
 	}
 
 	private void FixedUpdate()
@@ -38,6 +44,7 @@ public class MovingPlatformTypeB : MovingPlatform
 					Moving = false;
 					otherDirection = !otherDirection;
 					SwitchOnOff();
+					AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopMovingPlatformTypeB, gameObject);
 				}
 			}
 		}
@@ -56,5 +63,11 @@ public class MovingPlatformTypeB : MovingPlatform
 		{
 			spriteRenderer.sprite = otherDirection ? spriteOtherDirectionInactive : spriteInactive;
 		}
+	}
+
+	public void StartMoving()
+	{
+		Moving = true;
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayMovingPlatformTypeB, gameObject);
 	}
 }

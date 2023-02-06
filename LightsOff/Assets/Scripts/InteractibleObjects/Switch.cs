@@ -78,6 +78,9 @@ public class Switch : InteractibleObject
 		}
 
 		switchDevice.SwitchOnOff();
+
+		string wwiseEventName = switchDevice.IsOnAndConnected() ? Constants.WwiseEventPlaySwitchOn : Constants.WwiseEventPlaySwitchOff;
+		AudioManager.Instance.TriggerWwiseEvent(wwiseEventName, gameObject);
 		
 		foreach (Device device in devices)
 		{
@@ -86,7 +89,7 @@ public class Switch : InteractibleObject
 			if (device is MovingPlatformTypeB)
 			{
 				MovingPlatformTypeB platform = device as MovingPlatformTypeB;
-				platform.Moving = true;
+				platform.StartMoving();
 			}
 		}
 

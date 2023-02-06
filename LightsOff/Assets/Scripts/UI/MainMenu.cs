@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using TMPro;
 
 public class MainMenu : Singleton<MainMenu>
 {
@@ -20,12 +21,20 @@ public class MainMenu : Singleton<MainMenu>
 	[SerializeField] private GameObject quitButtonObject = default;
 
 	[SerializeField] private CanvasGroup startMenuCanvasGroup;
+	[SerializeField] private CanvasGroup saveFileDeletedCanvasGroup = default;
+	[SerializeField] private TMP_Text saveFileDeletedText = default;
 	[SerializeField] private GameObject startMenuGlobalVolume;
+
+	[SerializeField] private float saveFileDeletedMessageFadeTime = 0.5f;
+	[SerializeField] private float saveFileDeletedMessageWaitTime = 4f;
 
 	private DepthOfField backgroundBlur;
 
 	private Button playButton;
 	private Button quitButton;
+
+	private SaveFileDeletedMessageState messageState;
+	private float saveFileDeletedMessageFadeCounter;
 
 	protected override void Awake()
 	{
@@ -37,12 +46,47 @@ public class MainMenu : Singleton<MainMenu>
 		startMenuGlobalVolume.GetComponent<Volume>().profile.TryGet(out backgroundBlur);
 
 		playButton.interactable = false;
+
+		messageState = SaveFileDeletedMessageState.Hidden;
 	}
 
 	private void Start()
 	{
+		settingsMenuPanel.SetActive(false);
+		controlsMenuPanel.SetActive(false);
 		EventSystem.current.SetSelectedGameObject(null);
 		EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
+	}
+
+	private void Update()
+	{
+		if (messageState != SaveFileDeletedMessageState.Hidden)
+		{
+			if (messageState == SaveFileDeletedMessageState.FadingIn)
+				saveFileDeletedCanvasGroup.alpha += Time.deltaTime / saveFileDeletedMessageFadeTime;
+			else if (messageState == SaveFileDeletedMessageState.FadingOut)
+				saveFileDeletedCanvasGroup.alpha -= Time.deltaTime / saveFileDeletedMessageFadeTime;
+
+			saveFileDeletedMessageFadeCounter -= Time.deltaTime;
+
+			if (saveFileDeletedMessageFadeCounter <= 0 && (saveFileDeletedCanvasGroup.alpha >= 1 || saveFileDeletedCanvasGroup.alpha <= 0))
+			{
+				if (messageState == SaveFileDeletedMessageState.FadingIn)
+				{
+					messageState = SaveFileDeletedMessageState.Waiting;
+					saveFileDeletedMessageFadeCounter = saveFileDeletedMessageWaitTime;
+				}
+				else if (messageState == SaveFileDeletedMessageState.Waiting)
+				{
+					messageState = SaveFileDeletedMessageState.FadingOut;
+					saveFileDeletedMessageFadeCounter = saveFileDeletedMessageFadeTime;
+				}
+				else if (messageState == SaveFileDeletedMessageState.FadingOut)
+				{
+					messageState = SaveFileDeletedMessageState.Hidden;
+				}
+			}
+		}
 	}
 
 	private void OnEnable()
@@ -134,6 +178,26 @@ public class MainMenu : Singleton<MainMenu>
 		GameManager.Instance.DeleteSaveFile();
 	}
 
+	public void DisplaySaveFileDeletedMessage()
+	{
+		if (messageState == SaveFileDeletedMessageState.Hidden)
+		{
+			saveFileDeletedText.text = Constants.UISaveFileDeletedMessage;
+			messageState = SaveFileDeletedMessageState.FadingIn;
+			saveFileDeletedMessageFadeCounter = saveFileDeletedMessageFadeTime;
+		}
+	}
+
+	public void DisplayNoSaveFileFoundMessage()
+	{
+		if (messageState == SaveFileDeletedMessageState.Hidden)
+		{
+			saveFileDeletedText.text = Constants.UINoSaveFileFoundMessage;
+			messageState = SaveFileDeletedMessageState.FadingIn;
+			saveFileDeletedMessageFadeCounter = saveFileDeletedMessageFadeTime;
+		}
+	}
+
 	public void AddToCanvasGroupAlpha(float pDifference)
 	{
 		startMenuCanvasGroup.alpha += pDifference;
@@ -152,4 +216,12 @@ public enum Menu
 	Controls,
 	Settings,
 	None
+}
+
+public enum SaveFileDeletedMessageState
+{
+	Hidden,
+	FadingIn,
+	Waiting,
+	FadingOut
 }

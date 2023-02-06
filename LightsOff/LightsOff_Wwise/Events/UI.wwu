@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{16A7549C-187A-42D1-83B4-752C82B34C39}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="UI" ID="{16A7549C-187A-42D1-83B4-752C82B34C39}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_MenuPlay" ID="{49DC1493-2C68-4324-B734-8F490489034F}">
+					<ChildrenList>
+						<Action Name="" ID="{8B3EA194-9235-4C49-9B9C-CA03CC3C54F4}" ShortID="72924218">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu-play" ID="{37599B62-A274-411D-AC98-0A1471D8E7B6}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MenuQuit" ID="{10F1F80C-DE73-4426-B413-E0F541474390}">
+					<ChildrenList>
+						<Action Name="" ID="{E487ACCA-3E1D-45C6-B751-860137E431EA}" ShortID="525019572">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu-quit" ID="{111ECA27-7FC8-425D-B70E-12A2A1235542}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PauseMenuRetry" ID="{06F0E08A-2D5A-4DBC-8D69-214293986B75}">
+					<ChildrenList>
+						<Action Name="" ID="{596CDD5F-D35F-4516-9298-C5CE6341541A}" ShortID="1023565131">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu-retry" ID="{E88A8498-F9DD-4602-B473-25D0BE160637}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PauseMenuOpen" ID="{A9B5F027-14EE-412A-954F-5ED426E2243E}">
+					<ChildrenList>
+						<Action Name="" ID="{54957E39-8583-4750-9F62-0EA9A1DCD533}" ShortID="702212817">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="pause-menu-open" ID="{490F124A-64FD-423E-86E5-615C8656D258}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PauseMenuClose" ID="{22891F0B-4617-4939-8D5A-82521CC5D178}">
+					<ChildrenList>
+						<Action Name="" ID="{8722A634-C709-4259-A5F3-455F1C610FDB}" ShortID="585416733">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="pause-menu-close" ID="{E73B8382-18BE-4D91-A5A8-2CB2B9E9FE4F}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MenuChangeSetting" ID="{0E6A980D-BADB-4086-9D51-109E18D0DE41}">
+					<ChildrenList>
+						<Action Name="" ID="{5282781B-F3FD-4C67-9F2A-03693DA7A1E5}" ShortID="15713826">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu-change-setting" ID="{E93D30AA-1212-41AB-9F62-4663BF082F7E}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MenuDeleteSaveFileButtonPress" ID="{E56FC49D-8F8D-418C-B3D4-E1B855DC5745}">
+					<ChildrenList>
+						<Action Name="" ID="{7A9E2CD4-6675-4C26-9F60-C76D71075B47}" ShortID="836926962">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu-select-button" ID="{68F4D09D-8E8A-41A9-828D-938B216CBE22}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MenuButtonBackPress" ID="{DEF8EB7F-4FF3-4F76-9DEF-36074C4BC789}">
+					<ChildrenList>
+						<Action Name="" ID="{42301CC4-6F0C-4786-A9A0-3D6BBE7432B9}" ShortID="347180270">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu-select-setting" ID="{F792BF3F-A864-46EA-8348-E1110EA18558}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MenuSelectionMove" ID="{1DE071BA-D114-4344-9C33-4B6233ABA0CC}">
+					<ChildrenList>
+						<Action Name="" ID="{3AFC3A49-42CC-451B-A17E-BE1DA664DFEB}" ShortID="414483530">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu-selection-move" ID="{B9CF02AD-9BA6-4B40-8C64-4651DF5EB1C0}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MenuButtonPress" ID="{213D1952-DF9B-4DD7-8FD6-B08A5424D7AC}">
+					<ChildrenList>
+						<Action Name="" ID="{E931A5C5-F7C9-41E9-A322-9296AD61B568}" ShortID="168864071">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="menu_confirm_setting" ID="{941F8E48-1915-48E6-AA60-7FF9858E1056}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

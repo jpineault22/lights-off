@@ -35,6 +35,12 @@ public class Fan : Device
 		functionalFanAreaEffector.forceMagnitude = objectRotation == ObjectRotation.West ? forceMagnitudeUpwards : forceMagnitude;
 	}
 
+	private void OnDestroy()
+	{
+		if (IsOnAndConnected())
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopFan, gameObject);
+	}
+
 	public override void ApplyOnOffBehavior()
 	{
 		if (IsOnAndConnected())
@@ -45,6 +51,8 @@ public class Fan : Device
 			functionalFanParticleSystem.Play();
 			//functionalFanAreaEffector.forceMagnitude = forceMagnitude;
 			functionalFanCollider.enabled = true;
+
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayFan, gameObject);
 		}
 		else
 		{
@@ -54,6 +62,8 @@ public class Fan : Device
 			functionalFanParticleSystem.Stop();
 			//functionalFanAreaEffector.forceMagnitude = 0;
 			functionalFanCollider.enabled = false;
+
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopFan, gameObject);
 		}
 	}
 }

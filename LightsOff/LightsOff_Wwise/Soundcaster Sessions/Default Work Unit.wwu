@@ -6,28 +6,298 @@
 				<SoundcasterSession Name="Game_Music" ID="{30176AB4-A5B5-475D-A342-EFFBA0515396}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="Music_Start" ID="{D2BD6DBB-AD5C-4881-A04D-2D73162956D9}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}"/>
+							<ObjectRef Name="Music_Start" ID="{D2BD6DBB-AD5C-4881-A04D-2D73162956D9}" WorkUnitID="{EFD2E0CA-F8E7-4957-A2B7-D53B5FA96C66}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Music_PlayGame" ID="{B717019A-071A-4BE3-A428-A22FEBD63179}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}"/>
+							<ObjectRef Name="Music_PlayGame" ID="{B717019A-071A-4BE3-A428-A22FEBD63179}" WorkUnitID="{EFD2E0CA-F8E7-4957-A2B7-D53B5FA96C66}"/>
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Music_End" ID="{8B4947B0-54D9-4893-8B39-DFCBE1EE4DD9}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}"/>
-							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Music_BackToMenu" ID="{51EF6B4D-8154-4A2B-8A74-D56B4C6CAB31}" WorkUnitID="{EFA20544-1F88-42D8-9640-BC5C0D0D7B73}"/>
+							<ObjectRef Name="Music_BackToMenu" ID="{51EF6B4D-8154-4A2B-8A74-D56B4C6CAB31}" WorkUnitID="{EFD2E0CA-F8E7-4957-A2B7-D53B5FA96C66}"/>
 							<Position X="1" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="AmbianceVolume" ID="{A4862BB0-C20E-418A-A800-C99776A45AF8}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="MasterVolume" ID="{DF62500C-5E07-427A-915C-51D6A35E5D2A}"/>
 							<Value>100</Value>
 						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="TransitionSFXVolume" ID="{93608408-FD61-457B-A1C4-5537F5DFE9CA}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="UIVolume" ID="{8DE8807A-6D25-4705-BF01-BD46638C4C81}"/>
+							<Value>80</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MusicVolume" ID="{56099CAC-0666-48D1-8333-6B656AA97225}"/>
+							<Value>80</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="TransitionUIVolume" ID="{2FF12EAE-A3D6-4E36-8859-363B1764639E}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFXVolume" ID="{94339502-1346-4FC4-97A1-C63D3F1DC065}"/>
+							<Value>80</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="TransitionMusicVolume" ID="{1AD40DA8-9462-4FCB-97EC-369AE92871AC}"/>
+							<Value>0</Value>
+						</RTPCValue>
 					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Menu" ID="{6C2617E6-23B2-4FAD-9E1B-DBF7878BC623}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="SFX_Devices" ID="{958F2311-1240-4069-8766-0A50087423C4}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="switch-off" ID="{AF26E6C2-CE70-46E9-B98D-D39A1970212D}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="door-closes" ID="{9E654F03-F74D-4BA9-8D9B-0E450368776A}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="conveyor" ID="{B11829DD-1B9B-4CDB-9595-0AB0D765E71F}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="owb-appears" ID="{E5376B0D-50E3-4F1A-9BD7-BC24FAC32636}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="switch-on" ID="{06D3AB93-B249-4DD8-A000-73ED0A9D95C4}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="door-opens-full" ID="{1BE637A1-7C5A-40AF-B4B1-0F4362358ADE}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="fan" ID="{1B8255EC-5D0A-453C-948C-D398E9BBA8EB}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="owb-disappears" ID="{B927935C-7D82-4F72-9617-8DA8357441A8}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="breaker-off" ID="{4AFB18A9-5F8D-4677-8C85-F03FC93FEC8E}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="ladder-moves" ID="{1250DA04-4274-4923-9E64-D56710E3B237}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="moving-platform-type-a" ID="{8FCBB4AF-FC16-43B1-8267-EACCC4999B9A}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="pivoting-gate-blocks" ID="{EBA97C56-7030-436B-8A2A-006C16ACDCBF}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="breaker-on" ID="{E3C9F7CF-A062-4413-A6EC-42489583958F}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="gate-moves" ID="{EC81FE3C-8C82-46F8-B8AD-B775B84DD348}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="moving-platform-type-b" ID="{C0E7B4FA-9D25-453A-AC87-E33AFC36FE1D}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="pivoting-gate-rotates" ID="{F601EC57-53F0-4F82-88A6-1E4AB8449D18}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="switch-timer-on" ID="{0B37DD33-8BE8-49C9-93CE-A1CCB38D58C5}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="keygate-opens" ID="{862A51F4-6EB9-41BA-B505-E56C549FC5A6}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="key-collect" ID="{50F46422-E750-4FFC-932F-DDA88EC6EF55}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="switch-timer-ends" ID="{2D4B5DAB-EB9C-4E44-89BA-6CAC88396179}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="5" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="key-lands" ID="{CC25ED56-F5CF-4EDA-BB34-037A123E0E3E}" WorkUnitID="{EF8EF0B1-CA2F-4815-AACC-8E541638BA1B}"/>
+							<Position X="5" Y="2"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Menu" ID="{6C2617E6-23B2-4FAD-9E1B-DBF7878BC623}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="SFX_Enemies" ID="{F2BF04E7-FE48-4E0B-BCC5-3034C2A98253}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="enemy-bounced-on" ID="{F1D9674F-86D9-4D6D-A5D3-1922ED9CA540}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyPassesOut" ID="{550EBEF0-5388-49A0-9105-568B97BB52F5}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle" ID="{565D5026-F88F-404A-9FD2-77AF579E0669}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyWanderHum" ID="{FC2A7496-5BE8-428B-8FE3-62826E919F8B}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyWakesUp" ID="{A34AF05F-087A-46D3-B240-70C711AB9700}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyLandsVoice" ID="{07AF64BD-5159-47AA-BFA6-8FF74B9BAB1B}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyChasing" ID="{D3A330B7-E038-41AB-ABE7-1AB542CF1B2A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyLandsWood" ID="{8EF85624-8C9A-4364-BD48-C3ED2D983C8D}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnemyStopsChasingVoice" ID="{BF920CD5-1EF4-4ED2-8DFC-0458221F539A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="SFX_Player" ID="{8F399A42-ACDB-44AE-AD26-160594ED13A0}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="PlayerWalksWood" ID="{CC7756A7-F27E-4A53-A2F2-86B09C9700A2}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerClimbs" ID="{9A1174BF-BB10-48D3-92B8-48B4B243A9F2}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="player-jumps_ZOOM0018_Tr1" ID="{D77562AD-73ED-4D58-9428-E3AE54164CC4}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerClimbsFeet" ID="{1E184D71-46F3-4D32-B9DC-231C1E21F345}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerLandsWood" ID="{D5793ADD-AF76-4EE7-B52B-B5658389DA49}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerHit" ID="{9A86404C-FF90-45CF-B522-46117C57D130}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayerLandsVoice" ID="{9EE82CFC-B685-453D-AF20-C7BE0602ADB3}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="player-dies-full_ZOOM0026_Tr1" ID="{1F1F8FDD-8299-45EC-9EFB-6D965BDF636E}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="player-bunks-wood-1_ZOOM0022_Tr1" ID="{59F34CF9-EA54-4BDB-BDEB-55C7E0D55BB0}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="player-enters-level_ZOOM0022_Tr1" ID="{BC84E7DF-260A-46AC-B420-F01A1C9F8481}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="player-bounce_ZOOM0016_Tr1" ID="{7CA6B8C3-27EE-4622-B2E5-9BCCC183B661}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="5" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="player-exits-level_ZOOM0022_Tr1" ID="{14ABB842-BD29-4B04-8EEA-EDCA66088817}" WorkUnitID="{CA2ECAF1-B1A2-430A-A043-2D8912EEE371}"/>
+							<Position X="5" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Menu" ID="{6C2617E6-23B2-4FAD-9E1B-DBF7878BC623}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="UI" ID="{8D70C8C1-23C4-44A1-B2B1-0AD22E2F0B8C}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="menu-play" ID="{37599B62-A274-411D-AC98-0A1471D8E7B6}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu-selection-move" ID="{B9CF02AD-9BA6-4B40-8C64-4651DF5EB1C0}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu-quit" ID="{111ECA27-7FC8-425D-B70E-12A2A1235542}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu-select-button" ID="{68F4D09D-8E8A-41A9-828D-938B216CBE22}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu-retry" ID="{E88A8498-F9DD-4602-B473-25D0BE160637}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu-select-setting" ID="{F792BF3F-A864-46EA-8348-E1110EA18558}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="pause-menu-open" ID="{490F124A-64FD-423E-86E5-615C8656D258}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu-change-setting" ID="{E93D30AA-1212-41AB-9F62-4663BF082F7E}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="pause-menu-close" ID="{E73B8382-18BE-4D91-A5A8-2CB2B9E9FE4F}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu_confirm_setting" ID="{941F8E48-1915-48E6-AA60-7FF9858E1056}" WorkUnitID="{F92DB286-1937-4934-A900-B0E731CCE806}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Menu" ID="{6C2617E6-23B2-4FAD-9E1B-DBF7878BC623}"/>
 					</CurrentStateList>

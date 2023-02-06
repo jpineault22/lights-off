@@ -4,8 +4,10 @@ public abstract class CycleDevice : RotatableObject
 {
     [SerializeField] protected bool isConnected = true;
 	[SerializeField] protected int numberOfStates = 4;
-	[SerializeField] protected Device blockingDevice = default;		// If the CycleDevice has a blocking device, when the latter is on, it prevents the object from switching to the next or previous state at a certain threshold.
+	[SerializeField] protected Device blockingDevice = default;     // If the CycleDevice has a blocking device, when the latter is on, it prevents the object from switching to the next or previous state at a certain threshold.
 																	// Ex.: A Gate Type-B moves in a position where it blocks a pivoting gate and prevents it from rotating.
+	protected SpriteRenderer outlineSpriteRenderer;
+
 	public bool hasLimits;
 	public int stateLowerLimit;
 	public int stateUpperLimit;
@@ -19,8 +21,6 @@ public abstract class CycleDevice : RotatableObject
 	private int numberOfStatesChangeCheck = -1000;
 	private int stateLowerLimitChangeCheck = -1000;
 	private int stateUpperLimitChangeCheck = -1000;
-
-	protected SpriteRenderer outlineSpriteRenderer;
 
 	private void OnValidate()
 	{
@@ -102,6 +102,18 @@ public abstract class CycleDevice : RotatableObject
 				ShowOutline(false);
 			}
 		}
+
+		AssignAudioEmitterToPlayerListener();
+	}
+
+	protected virtual void OnEnable()
+	{
+		GameManager.Instance.PlayerSpawned += AssignAudioEmitterToPlayerListener;
+	}
+
+	protected virtual void OnDisable()
+	{
+		GameManager.Instance.PlayerSpawned -= AssignAudioEmitterToPlayerListener;
 	}
 
 	public void SwitchToNextState(bool pByFan)
@@ -172,5 +184,10 @@ public abstract class CycleDevice : RotatableObject
 	public bool IsConnected()
 	{
 		return isConnected;
+	}
+
+	private void AssignAudioEmitterToPlayerListener()
+	{
+		AudioManager.Instance.AssignEmitterToPlayerListener(gameObject);
 	}
 }

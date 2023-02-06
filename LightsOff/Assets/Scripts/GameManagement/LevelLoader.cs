@@ -41,6 +41,7 @@ public class LevelLoader : Singleton<LevelLoader>
 	{
         CurrentMenuLevelState = MenuLevelState.FadingOutMenu;
         TransitionManager.Instance.SetTransitionCounter(TransitionManager.Instance.menuFadeOutTime);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventSetTransitionSFXVolumeToMax);
     }
 
     public void UnloadMenu()
@@ -83,23 +84,33 @@ public class LevelLoader : Singleton<LevelLoader>
 		}
 
         if (GameManager.Instance.CurrentGameState != GameState.Menu && GameManager.Instance.CurrentGameState != GameState.PresentationScreen)
+		{
             TransitionManager.Instance.TriggerCrossfadeStart();
+            
+            if (GameManager.Instance.CurrentGameState != GameState.DeletingSaveFile)
+                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeOutForLevelTransition);
+        }
     }
 
     public void ReloadLevel()
 	{
         TransitionManager.Instance.TriggerCrossfadeStart();
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeOutForLevelTransition);
     }
 
     public void QuitToMenu()
 	{
         CurrentMenuLevelState = MenuLevelState.LoadMenuAndCrossfadeStart;
         TransitionManager.Instance.TriggerCrossfadeStart();
+
+        if (!GameManager.Instance.EndingGame)
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeOutForQuitTransition);
     }
 
     public void StartQuitTransition()
 	{
         TransitionManager.Instance.TriggerCrossfadeStart();
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeOutForQuitTransition);
     }
 
     public void RefreshMenuLevelAfterFileDeletion()
@@ -169,12 +180,16 @@ public class LevelLoader : Singleton<LevelLoader>
             CreditsManager.Instance.DisableLastScreen();
 
             if (TransitionManager.Instance.CrossfadeState == CrossfadeState.NotFading)
+			{
                 TransitionManager.Instance.TriggerCrossfadeEnd();
+                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeInToMenu);
+            }
         }
         else if (GameManager.Instance.CurrentGameState == GameState.Reloading)
 		{
             SetLevel();
             TransitionManager.Instance.TriggerCrossfadeEnd();
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeInForLevelTransition);
         }
         else if (GameManager.Instance.CurrentGameState == GameState.DeletingSaveFile)
 		{
@@ -230,7 +245,7 @@ public class LevelLoader : Singleton<LevelLoader>
 
         SetLevel();
 
-        if (GameManager.Instance.CurrentGameState == GameState.LoadingGame)
+        if (GameManager.Instance.CurrentGameState == GameState.StartingGame)
 		{
             CurrentMenuLevelState = MenuLevelState.StartGameMenuUnloaded;
             TransitionManager.Instance.SetTransitionCounter(TransitionManager.Instance.defaultFadeTime);
@@ -238,6 +253,7 @@ public class LevelLoader : Singleton<LevelLoader>
         }
 
         TransitionManager.Instance.TriggerCrossfadeEnd();
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeInForLevelTransition);
     }
 
     private void SetLevel()

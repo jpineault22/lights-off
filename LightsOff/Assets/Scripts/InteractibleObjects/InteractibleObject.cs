@@ -17,6 +17,8 @@ public abstract class InteractibleObject : MonoBehaviour
 
 	protected virtual void Awake()
 	{
+		AssignAudioEmitterToPlayerListener();
+
 		if (interactMessage == InteractMessage.Press) interactMessageText.text = Constants.UIInteractMessagePress;
 		else if (interactMessage == InteractMessage.Enter) interactMessageText.text = Constants.UIInteractMessageEnter;
 		else if (interactMessage == InteractMessage.Sleep) interactMessageText.text = Constants.UIInteractMessageSleep;
@@ -31,6 +33,16 @@ public abstract class InteractibleObject : MonoBehaviour
 		InputManager.Instance.ControlSchemeChanged += ctx => UpdateInteractMessage(ctx);
 
 		UpdateInteractMessage(InputManager.Instance.CurrentControlScheme);
+	}
+
+	protected virtual void OnEnable()
+	{
+		GameManager.Instance.PlayerSpawned += AssignAudioEmitterToPlayerListener;
+	}
+
+	protected virtual void OnDisable()
+	{
+		GameManager.Instance.PlayerSpawned -= AssignAudioEmitterToPlayerListener;
 	}
 
 	protected virtual void Update()
@@ -89,6 +101,11 @@ public abstract class InteractibleObject : MonoBehaviour
 	}
 
 	public abstract void Interact();
+
+	private void AssignAudioEmitterToPlayerListener()
+	{
+		AudioManager.Instance.AssignEmitterToPlayerListener(gameObject);
+	}
 }
 
 public enum InteractMessage

@@ -2,63 +2,74 @@
 
 public class AudioManager : Singleton<AudioManager>
 {
-	[SerializeField] private float defaultMainVolume = 100f;
-	
-	public float MainVolume { get; private set; }
+	[SerializeField] private float defaultMasterVolume = 100f;
+	[SerializeField] private float defaultMusicVolume = 80f;
+	[SerializeField] private float defaultSFXVolume = 80f;
+	[SerializeField] private float defaultUIVolume = 80f;
+	[SerializeField] public float sfxCooldown = 0.05f;
+
+	public float MasterVolume { get; private set; }
+	public float MusicVolume { get; private set; }
+	public float SFXVolume { get; private set; }
+	public float UIVolume { get; private set; }
 
 	protected override void Awake()
 	{
 		base.Awake();
 
-		MainVolume = defaultMainVolume;
+		MasterVolume = defaultMasterVolume;
+		MusicVolume = defaultMusicVolume;
+		SFXVolume = defaultSFXVolume;
+		UIVolume = defaultUIVolume;
 	}
 
-	public void UpdateMainVolume(float pVolume)
+	public void TriggerWwiseEvent(string pEventName, GameObject pGameObject)
 	{
-		MainVolume = pVolume;
-		AkSoundEngine.SetRTPCValue(Constants.WwiseRTPCMasterVolume, pVolume, AkSoundEngine.AK_INVALID_GAME_OBJECT);
+		AkSoundEngine.PostEvent(pEventName, pGameObject);
 	}
 
-	#region Music methods
-
-	public void StartGameMusic()
+	// This overload of the method should always be used when the Wwise Event Action scope is global (like transitions)
+	public void TriggerWwiseEvent(string pEventName)
 	{
-		AkSoundEngine.PostEvent(Constants.WwiseEventMusicStart, gameObject);
+		TriggerWwiseEvent(pEventName, gameObject);
 	}
 
-	public void TransitionInGameMusic()
+	private void SetWwiseRTPC(string pRTPCName, float pValue)
 	{
-		AkSoundEngine.PostEvent(Constants.WwiseEventMusicPlayGame, gameObject);
+		AkSoundEngine.SetRTPCValue(pRTPCName, pValue, AkSoundEngine.AK_INVALID_GAME_OBJECT);
 	}
 
-	public void TransitionBackToMenuMusic()
+	public void AssignEmitterToPlayerListener(GameObject pGameObject)
 	{
-		AkSoundEngine.PostEvent(Constants.WwiseEventMusicBackToMenu, gameObject);
+		if (PlayerController.IsInitialized)
+		{
+			ulong[] listenersArray = new ulong[1];
+			listenersArray[0] = PlayerController.Instance.PlayerAkAudioListener.GetAkGameObjectID();
+			AkSoundEngine.SetListeners(pGameObject, listenersArray, 1);
+		}
 	}
 
-	public void EndGameMusic()
+	public void UpdateMasterVolume(float pVolume)
 	{
-		AkSoundEngine.PostEvent(Constants.WwiseEventMusicEnd, gameObject);
+		MasterVolume = pVolume;
+		SetWwiseRTPC(Constants.WwiseRTPCMasterVolume, pVolume);
 	}
 
-	#endregion
-
-	#region Player SFX methods
-
-	public void PlayPlayerWalk(GameObject pGameObject)
+	public void UpdateMusicVolume(float pVolume)
 	{
-		//AkSoundEngine.PostEvent(Constants.WwiseEventPlayPlayerWalk, pGameObject);
+		MusicVolume = pVolume;
+		SetWwiseRTPC(Constants.WwiseRTPCMusicVolume, pVolume);
 	}
 
-	public void StopPlayerWalk(GameObject pGameObject)
+	public void UpdateSFXVolume(float pVolume)
 	{
-		//AkSoundEngine.PostEvent(Constants.WwiseEventStopPlayerWalk, pGameObject);
+		SFXVolume = pVolume;
+		SetWwiseRTPC(Constants.WwiseRTPCSFXVolume, pVolume);
 	}
 
-	public void PlayPlayerJump(GameObject pGameObject)
+	public void UpdateUIVolume(float pVolume)
 	{
-		//AkSoundEngine.PostEvent(Constants.WwiseEventPlayPlayerJump, pGameObject);
+		UIVolume = pVolume;
+		SetWwiseRTPC(Constants.WwiseRTPCUIVolume, pVolume);
 	}
-
-	#endregion
 }

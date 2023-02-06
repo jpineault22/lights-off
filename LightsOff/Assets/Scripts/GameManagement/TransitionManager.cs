@@ -86,7 +86,7 @@ public class TransitionManager : Singleton<TransitionManager>
     {
         GameManager.Instance.CurrentGameState = GameState.Cutscene;
         GameManager.Instance.DestroyPlayer();
-        AudioManager.Instance.EndGameMusic();
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeOutForCredits);
         bed = pBed;
 
         yield return new WaitForSeconds(endingCinematicWaitTime);
@@ -99,6 +99,8 @@ public class TransitionManager : Singleton<TransitionManager>
 
         readyForCredits = true;
         windowAnimator.enabled = true;
+
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeInCreditsAmbiance);
     }
 
     private void ProcessCrossfade()
@@ -178,7 +180,7 @@ public class TransitionManager : Singleton<TransitionManager>
 
     private void ProcessMenuTransition()
 	{
-        if (GameManager.Instance.CurrentGameState == GameState.LoadingGame)
+        if (GameManager.Instance.CurrentGameState == GameState.StartingGame)
         {
             if (transitionCounter <= 0)
             {
@@ -233,7 +235,9 @@ public class TransitionManager : Singleton<TransitionManager>
                 else if (PresentationScreen.Instance.CurrentPresentationScreenState == PresentationScreenState.ScreenFadeOut)
                 {
                     SetTransitionCounter(presentationScreenFadeTime);
-                    AudioManager.Instance.StartGameMusic();
+                    AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventMusicStart);
+                    AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventFadeInToMenu, gameObject);
+                    //AudioManager.Instance.UpdateUIVolume(AudioManager.Instance.defaultUIVolume);
                 }
                 else if (PresentationScreen.Instance.CurrentPresentationScreenState == PresentationScreenState.ScreenGone)
                 {

@@ -48,5 +48,8 @@ public class GateTypeA : DisappearingDevice
 				outlineAnimator.SetBool(Constants.AnimatorGateIsOpen, true);
 			}
 		}
+
+		string wwiseEventName = gameObject.CompareTag(Constants.TagKeygate) ? Constants.WwiseEventPlayKeygateOpens : Constants.WwiseEventPlayGateMoves;
+		AudioManager.Instance.TriggerWwiseEvent(wwiseEventName, gameObject);
 	}
 }

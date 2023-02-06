@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="195207693" Type="User" Language="SFX" Hash="{8CE41CD6-1D9C-CD6C-2D54-8CDA8642E264}">
+			<ShortName>LightsOff_Music</ShortName>
+			<Path>LightsOff_Music.bnk</Path>
+			<Media>
+				<File Id="163572459" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Lights Off-Piano2-Partie1.wav</ShortName>
+					<CachePath>SFX/Lights Off-Piano2-Partie1_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="812072501" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Lights Off-PARTIE-2.wav</ShortName>
+					<CachePath>SFX/Lights Off-PARTIE-2_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="926978453" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Lights Off-VLC2-Partie-1.wav</ShortName>
+					<CachePath>SFX/Lights Off-VLC2-Partie-1_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2575825050" Name="Music_BackToMenu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="258110631" Id="2607556080" Name="Menu"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2919733517" Name="Music_PlayGame" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="258110631" Id="984691642" Name="InGame"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3725903807" Name="Music_Start" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="258110631" Id="2607556080"/>
+							<MediaRefs>
+								<MediaRef Id="163572459"/>
+								<MediaRef Id="926978453"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="258110631" Id="984691642"/>
+							<MediaRefs>
+								<MediaRef Id="812072501"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="258110631" Id="2607556080"/>
+							<MediaRefs>
+								<MediaRef Id="163572459"/>
+								<MediaRef Id="926978453"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="258110631" Id="984691642"/>
+							<MediaRefs>
+								<MediaRef Id="812072501"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="258110631" Id="2607556080" Name="Menu"/>
+					</ActionSetState>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="258110631" Name="Game_Music">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="984691642" Name="InGame"/>
+						<State Id="2607556080" Name="Menu"/>
+						<State Id="3966194980" Name="Ending"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="416807801" Type="User" Language="SFX" Hash="{0D32600A-0F5A-C028-0BE1-33CDB72100E1}">
+			<ShortName>LightsOff</ShortName>
+			<Path>LightsOff.bnk</Path>
+			<Media>
+				<File Id="255392234" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>credits_amb.wav</ShortName>
+					<CachePath>SFX/credits_amb_D6504AE3.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="45716448" Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" LibName="Wwise Peak Limiter" LibId="7208963"/>
+					<Plugin Id="332853730" Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" LibName="Wwise Peak Limiter" LibId="7208963"/>
+					<Plugin Id="490705677" Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" LibName="Wwise Peak Limiter" LibId="7208963"/>
+					<Plugin Id="855840085" Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" LibName="Wwise Peak Limiter" LibId="7208963"/>
+				</Custom>
+			</Plugins>
+			<Events>
+				<Event Id="310753704" Name="FadeInCreditsAmbiance" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="255392234"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3673038698" Name="FadeInForLevelTransition" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4235771730" Name="FadeInForPauseMenu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1810143960" Name="FadeInToMenu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="739742841" Name="FadeOutCreditsAmbiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="255392234"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3904148240" Name="FadeOutForCredits" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1730431133" Name="FadeOutForLevelTransition" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3632035365" Name="FadeOutForPauseMenu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="63923110" Name="FadeOutForQuitTransition" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2216761652" Name="SetTransitionSFXVolumeToMax" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+			<Busses>
+				<Bus Id="539823707" Name="Transition SFX Bus"/>
+				<Bus Id="1502772432" Name="SFX Bus"/>
+				<Bus Id="1869333166" Name="Ambiances Bus"/>
+				<Bus Id="1944779609" Name="Devices SFX Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="45716448"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
+				<Bus Id="2827189892" Name="Enemies SFX Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="855840085"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
+				<Bus Id="3127962312" Name="Music Bus"/>
+				<Bus Id="3386330335" Name="Transition Music Bus"/>
+				<Bus Id="3600729941" Name="UI Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="332853730"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
+				<Bus Id="3651706989" Name="Player SFX Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="490705677"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3947286728" Name="Transition UI Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="116136895" Name="TransitionMusicVolume"/>
+				<GameParameter Id="365633811" Name="AmbianceVolume"/>
+				<GameParameter Id="988953028" Name="SFXVolume"/>
+				<GameParameter Id="2346531308" Name="MusicVolume"/>
+				<GameParameter Id="2918011349" Name="MasterVolume"/>
+				<GameParameter Id="3415057477" Name="UIVolume"/>
+				<GameParameter Id="3759402643" Name="TransitionSFXVolume"/>
+				<GameParameter Id="3806583020" Name="TransitionUIVolume"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6D7E918E-B41E-13FE-EB61-2076643984A2}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<Custom>
+					<Plugin Id="45716448" Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" LibName="Wwise Peak Limiter" LibId="7208963"/>
+					<Plugin Id="332853730" Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" LibName="Wwise Peak Limiter" LibId="7208963"/>
+					<Plugin Id="490705677" Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" LibName="Wwise Peak Limiter" LibId="7208963"/>
+					<Plugin Id="855840085" Name="Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)" LibName="Wwise Peak Limiter" LibId="7208963"/>
+				</Custom>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="539823707" Name="Transition SFX Bus"/>
+				<Bus Id="1502772432" Name="SFX Bus"/>
+				<Bus Id="1869333166" Name="Ambiances Bus"/>
+				<Bus Id="1944779609" Name="Devices SFX Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="45716448"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
+				<Bus Id="2827189892" Name="Enemies SFX Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="855840085"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
+				<Bus Id="3127962312" Name="Music Bus"/>
+				<Bus Id="3386330335" Name="Transition Music Bus"/>
+				<Bus Id="3600729941" Name="UI Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="332853730"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
+				<Bus Id="3651706989" Name="Player SFX Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="490705677"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3947286728" Name="Transition UI Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="116136895" Name="TransitionMusicVolume"/>
+				<GameParameter Id="365633811" Name="AmbianceVolume"/>
+				<GameParameter Id="988953028" Name="SFXVolume"/>
+				<GameParameter Id="2346531308" Name="MusicVolume"/>
+				<GameParameter Id="2918011349" Name="MasterVolume"/>
+				<GameParameter Id="3415057477" Name="UIVolume"/>
+				<GameParameter Id="3759402643" Name="TransitionSFXVolume"/>
+				<GameParameter Id="3806583020" Name="TransitionUIVolume"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="258110631" Name="Game_Music">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="984691642" Name="InGame"/>
+						<State Id="2607556080" Name="Menu"/>
+						<State Id="3966194980" Name="Ending"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="1713275401" Type="User" Language="SFX" Hash="{55FC21AF-8B99-06AC-B6B6-DDD0D9E36C0E}">
+			<ShortName>LightsOff_SFX</ShortName>
+			<Path>LightsOff_SFX.bnk</Path>
+			<Media>
+				<File Id="8277886" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-wood-5_ZOOM0022_Tr1.wav</ShortName>
+					<CachePath>SFX/player-lands-wood-5_ZOOM0022_Tr1_169007AD.wem</CachePath>
+				</File>
+				<File Id="16023837" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-2.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="26783373" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-1.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-1_14970987.wem</CachePath>
+				</File>
+				<File Id="32110842" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-voice-3.wav</ShortName>
+					<CachePath>SFX/enemy-lands-voice-3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="39962822" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-15.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-15_10C4C929.wem</CachePath>
+				</File>
+				<File Id="43950190" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-dies-1_ZOOM0026_Tr1.wav</ShortName>
+					<CachePath>SFX/player-dies-1_ZOOM0026_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="52485885" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>breaker-off.wav</ShortName>
+					<CachePath>SFX/breaker-off_10C4C929.wem</CachePath>
+				</File>
+				<File Id="64180705" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-7.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-7_14970987.wem</CachePath>
+				</File>
+				<File Id="80310197" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-36.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-36_10C4C929.wem</CachePath>
+				</File>
+				<File Id="87376263" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-15.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-15_10C4C929.wem</CachePath>
+				</File>
+				<File Id="92828044" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-wood-5.wav</ShortName>
+					<CachePath>SFX/enemy-lands-wood-5_4D8D5A7E.wem</CachePath>
+				</File>
+				<File Id="95515676" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-27.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-27_10C4C929.wem</CachePath>
+				</File>
+				<File Id="97547257" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-38.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-38_10C4C929.wem</CachePath>
+				</File>
+				<File Id="99741202" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-4.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="104883812" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-2.wav</ShortName>
+					<CachePath>SFX/enemy-wander-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="106768567" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-10.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-10_10C4C929.wem</CachePath>
+				</File>
+				<File Id="118652009" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>moving-platform-type-a.wav</ShortName>
+					<CachePath>SFX/moving-platform-type-a_33B49C2F.wem</CachePath>
+				</File>
+				<File Id="135577203" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-6.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-6_10C4C929.wem</CachePath>
+				</File>
+				<File Id="136968152" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-7.wav</ShortName>
+					<CachePath>SFX/enemy-wander-7_10C4C929.wem</CachePath>
+				</File>
+				<File Id="138006938" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>breaker-on.wav</ShortName>
+					<CachePath>SFX/breaker-on_10C4C929.wem</CachePath>
+				</File>
+				<File Id="140287771" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-7.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-7_10C4C929.wem</CachePath>
+				</File>
+				<File Id="148631401" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-enters-level_ZOOM0022_Tr1.wav</ShortName>
+					<CachePath>SFX/player-enters-level_ZOOM0022_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="151974467" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-voice-8.wav</ShortName>
+					<CachePath>SFX/enemy-lands-voice-8_10C4C929.wem</CachePath>
+				</File>
+				<File Id="152115907" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-42.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-42_10C4C929.wem</CachePath>
+				</File>
+				<File Id="164245154" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-25.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-25_10C4C929.wem</CachePath>
+				</File>
+				<File Id="168883880" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>switch-timer-ends.wav</ShortName>
+					<CachePath>SFX/switch-timer-ends_10C4C929.wem</CachePath>
+				</File>
+				<File Id="178639356" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-24.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-24_10C4C929.wem</CachePath>
+				</File>
+				<File Id="179593651" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-2_ZOOM0025_Tr1.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-2_ZOOM0025_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="184444105" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-wood-2_ZOOM0022_Tr1.wav</ShortName>
+					<CachePath>SFX/player-lands-wood-2_ZOOM0022_Tr1_169007AD.wem</CachePath>
+				</File>
+				<File Id="198778753" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-3.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="199886752" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>owb-appears.wav</ShortName>
+					<CachePath>SFX/owb-appears_10C4C929.wem</CachePath>
+				</File>
+				<File Id="201012351" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>door-opens-full.wav</ShortName>
+					<CachePath>SFX/door-opens-full_10C4C929.wem</CachePath>
+				</File>
+				<File Id="201782597" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-starts-vomitting-1.wav</ShortName>
+					<CachePath>SFX/enemy-starts-vomitting-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="205010729" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-wood-2.wav</ShortName>
+					<CachePath>SFX/enemy-lands-wood-2_4D8D5A7E.wem</CachePath>
+				</File>
+				<File Id="207757407" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-35.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-35_10C4C929.wem</CachePath>
+				</File>
+				<File Id="209000171" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-46.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-46_10C4C929.wem</CachePath>
+				</File>
+				<File Id="209218441" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-31.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-31_10C4C929.wem</CachePath>
+				</File>
+				<File Id="209831460" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-11.wav</ShortName>
+					<CachePath>SFX/player-hit-11_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="210811848" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-jumps_ZOOM0018_Tr1.wav</ShortName>
+					<CachePath>SFX/player-jumps_ZOOM0018_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="213622537" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-1.wav</ShortName>
+					<CachePath>SFX/enemy-wander-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="218848308" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-6.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-6_14970987.wem</CachePath>
+				</File>
+				<File Id="223289746" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-wood-3.wav</ShortName>
+					<CachePath>SFX/enemy-lands-wood-3_4D8D5A7E.wem</CachePath>
+				</File>
+				<File Id="224403191" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-8.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-8_10C4C929.wem</CachePath>
+				</File>
+				<File Id="231413083" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-26.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-26_10C4C929.wem</CachePath>
+				</File>
+				<File Id="236794105" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-climbs-feet-1.wav</ShortName>
+					<CachePath>SFX/player-climbs-feet-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="238411238" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-stops-chasing-3.wav</ShortName>
+					<CachePath>SFX/enemy-stops-chasing-3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="244737482" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-voice-7.wav</ShortName>
+					<CachePath>SFX/enemy-lands-voice-7_10C4C929.wem</CachePath>
+				</File>
+				<File Id="249288272" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-11.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-11_10C4C929.wem</CachePath>
+				</File>
+				<File Id="257496725" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-12.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-12_10C4C929.wem</CachePath>
+				</File>
+				<File Id="258062463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-8.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-8_10C4C929.wem</CachePath>
+				</File>
+				<File Id="271655904" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-10.wav</ShortName>
+					<CachePath>SFX/enemy-wander-10_10C4C929.wem</CachePath>
+				</File>
+				<File Id="272034696" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-9.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-9_14970987.wem</CachePath>
+				</File>
+				<File Id="274844215" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>keygate-opens.wav</ShortName>
+					<CachePath>SFX/keygate-opens_10C4C929.wem</CachePath>
+				</File>
+				<File Id="282312269" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-voice-5.wav</ShortName>
+					<CachePath>SFX/enemy-lands-voice-5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="283827296" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>moving-platform-type-b.wav</ShortName>
+					<CachePath>SFX/moving-platform-type-b_2ACEC106.wem</CachePath>
+				</File>
+				<File Id="284836172" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-5.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="287891295" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>switch-timer-on.wav</ShortName>
+					<CachePath>SFX/switch-timer-on_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="291072036" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-13.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-13_10C4C929.wem</CachePath>
+				</File>
+				<File Id="306199374" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-vomits-1.wav</ShortName>
+					<CachePath>SFX/enemy-vomits-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="306516321" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-9.wav</ShortName>
+					<CachePath>SFX/player-hit-9_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="330865697" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-44.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-44_10C4C929.wem</CachePath>
+				</File>
+				<File Id="338870114" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-50.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-50_10C4C929.wem</CachePath>
+				</File>
+				<File Id="340189371" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-3.wav</ShortName>
+					<CachePath>SFX/enemy-wander-3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="346775758" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-6.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-6_99173E45.wem</CachePath>
+				</File>
+				<File Id="347521397" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-wood-4.wav</ShortName>
+					<CachePath>SFX/enemy-lands-wood-4_4D8D5A7E.wem</CachePath>
+				</File>
+				<File Id="363213536" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-9.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-9_10C4C929.wem</CachePath>
+				</File>
+				<File Id="372556561" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-5.wav</ShortName>
+					<CachePath>SFX/player-hit-5_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="374997479" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-7.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-7_10C4C929.wem</CachePath>
+				</File>
+				<File Id="394661085" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-45.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-45_10C4C929.wem</CachePath>
+				</File>
+				<File Id="408265785" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>key-lands.wav</ShortName>
+					<CachePath>SFX/key-lands_10C4C929.wem</CachePath>
+				</File>
+				<File Id="412251079" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-1.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="428104059" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-3.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="428317779" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-bounce_louder-more-bass_ZOOM0016_Tr1.wav</ShortName>
+					<CachePath>SFX/player-bounce_louder-more-bass_ZOOM0016_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="432145853" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-6.wav</ShortName>
+					<CachePath>SFX/enemy-wander-6_10C4C929.wem</CachePath>
+				</File>
+				<File Id="435811951" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-20.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-20_10C4C929.wem</CachePath>
+				</File>
+				<File Id="442184811" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-voice-2.wav</ShortName>
+					<CachePath>SFX/enemy-lands-voice-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="444209950" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-stops-chasing-2.wav</ShortName>
+					<CachePath>SFX/enemy-stops-chasing-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="455002223" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-49.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-49_10C4C929.wem</CachePath>
+				</File>
+				<File Id="455200698" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-9.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-9_10C4C929.wem</CachePath>
+				</File>
+				<File Id="463999406" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-21.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-21_10C4C929.wem</CachePath>
+				</File>
+				<File Id="467736086" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-17.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-17_10C4C929.wem</CachePath>
+				</File>
+				<File Id="469286048" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-5.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="470058010" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-9.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-9_99173E45.wem</CachePath>
+				</File>
+				<File Id="487794462" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>door-closes.wav</ShortName>
+					<CachePath>SFX/door-closes_10C4C929.wem</CachePath>
+				</File>
+				<File Id="488856948" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>gate-moves.wav</ShortName>
+					<CachePath>SFX/gate-moves_10C4C929.wem</CachePath>
+				</File>
+				<File Id="496262937" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-43.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-43_10C4C929.wem</CachePath>
+				</File>
+				<File Id="502625090" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-wood-1_ZOOM0022_Tr1.wav</ShortName>
+					<CachePath>SFX/player-lands-wood-1_ZOOM0022_Tr1_169007AD.wem</CachePath>
+				</File>
+				<File Id="504629262" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-8.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-8_14970987.wem</CachePath>
+				</File>
+				<File Id="511408978" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-48.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-48_10C4C929.wem</CachePath>
+				</File>
+				<File Id="512902393" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-8.wav</ShortName>
+					<CachePath>SFX/player-hit-8_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="513335707" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-5.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-5_99173E45.wem</CachePath>
+				</File>
+				<File Id="513622564" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-2.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-2_14970987.wem</CachePath>
+				</File>
+				<File Id="516234311" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-stops-chasing-5.wav</ShortName>
+					<CachePath>SFX/enemy-stops-chasing-5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="518728630" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>owb-disappears.wav</ShortName>
+					<CachePath>SFX/owb-disappears_10C4C929.wem</CachePath>
+				</File>
+				<File Id="537131472" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-8.wav</ShortName>
+					<CachePath>SFX/enemy-wander-8_10C4C929.wem</CachePath>
+				</File>
+				<File Id="542131375" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-5.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-5_14970987.wem</CachePath>
+				</File>
+				<File Id="557193747" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-53.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-53_10C4C929.wem</CachePath>
+				</File>
+				<File Id="558759438" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-climbs-1.wav</ShortName>
+					<CachePath>SFX/player-climbs-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="560600803" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-wood-4_ZOOM0022_Tr1.wav</ShortName>
+					<CachePath>SFX/player-lands-wood-4_ZOOM0022_Tr1_169007AD.wem</CachePath>
+				</File>
+				<File Id="563021380" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-7.wav</ShortName>
+					<CachePath>SFX/player-hit-7_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="569575878" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-11.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-11_10C4C929.wem</CachePath>
+				</File>
+				<File Id="588297075" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-1_ZOOM0025_Tr1.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-1_ZOOM0025_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="591881644" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>key-collect.wav</ShortName>
+					<CachePath>SFX/key-collect_10C4C929.wem</CachePath>
+				</File>
+				<File Id="596890748" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-voice-4.wav</ShortName>
+					<CachePath>SFX/enemy-lands-voice-4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="609840789" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>pivoting-gate-rotates_louder.wav</ShortName>
+					<CachePath>SFX/pivoting-gate-rotates_louder_10C4C929.wem</CachePath>
+				</File>
+				<File Id="610436761" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-bunks-wood-1_ZOOM0022_Tr1.wav</ShortName>
+					<CachePath>SFX/player-bunks-wood-1_ZOOM0022_Tr1_9E8B789E.wem</CachePath>
+				</File>
+				<File Id="610989497" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-1.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="640962474" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-40.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-40_10C4C929.wem</CachePath>
+				</File>
+				<File Id="643338500" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>switch-on.wav</ShortName>
+					<CachePath>SFX/switch-on_10C4C929.wem</CachePath>
+				</File>
+				<File Id="644787074" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-wood-3_ZOOM0022_Tr1.wav</ShortName>
+					<CachePath>SFX/player-lands-wood-3_ZOOM0022_Tr1_169007AD.wem</CachePath>
+				</File>
+				<File Id="646085168" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-47.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-47_10C4C929.wem</CachePath>
+				</File>
+				<File Id="657599322" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-6.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-6_10C4C929.wem</CachePath>
+				</File>
+				<File Id="665546155" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-3.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-3_14970987.wem</CachePath>
+				</File>
+				<File Id="666016965" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-2.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-2_99173E45.wem</CachePath>
+				</File>
+				<File Id="666901976" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>switch-off.wav</ShortName>
+					<CachePath>SFX/switch-off_10C4C929.wem</CachePath>
+				</File>
+				<File Id="668180104" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-3.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-3_99173E45.wem</CachePath>
+				</File>
+				<File Id="670458841" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-vomits-4.wav</ShortName>
+					<CachePath>SFX/enemy-vomits-4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="679276883" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-52.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-52_10C4C929.wem</CachePath>
+				</File>
+				<File Id="685610327" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-vomits-2.wav</ShortName>
+					<CachePath>SFX/enemy-vomits-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="707979610" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-10.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-10_10C4C929.wem</CachePath>
+				</File>
+				<File Id="717821777" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-stops-chasing-1.wav</ShortName>
+					<CachePath>SFX/enemy-stops-chasing-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="720630617" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-bounced-on.wav</ShortName>
+					<CachePath>SFX/enemy-bounced-on_10C4C929.wem</CachePath>
+				</File>
+				<File Id="722972426" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-55.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-55_10C4C929.wem</CachePath>
+				</File>
+				<File Id="739743102" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-11.wav</ShortName>
+					<CachePath>SFX/enemy-wander-11_10C4C929.wem</CachePath>
+				</File>
+				<File Id="753638620" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-2.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="755884316" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-4.wav</ShortName>
+					<CachePath>SFX/enemy-wander-4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="758061761" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-3.wav</ShortName>
+					<CachePath>SFX/player-hit-3_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="758458434" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-stops-chasing-7.wav</ShortName>
+					<CachePath>SFX/enemy-stops-chasing-7_10C4C929.wem</CachePath>
+				</File>
+				<File Id="764486082" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-11.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-11_10C4C929.wem</CachePath>
+				</File>
+				<File Id="765591026" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-6.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-6_10C4C929.wem</CachePath>
+				</File>
+				<File Id="765927644" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-climbs-feet-2.wav</ShortName>
+					<CachePath>SFX/player-climbs-feet-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="775541173" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-7.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-7_10C4C929.wem</CachePath>
+				</File>
+				<File Id="777935697" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-vomits-3.wav</ShortName>
+					<CachePath>SFX/enemy-vomits-3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="787255345" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle.wav</ShortName>
+					<CachePath>SFX/enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle_10C4C929.wem</CachePath>
+				</File>
+				<File Id="792969787" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-climbs-2.wav</ShortName>
+					<CachePath>SFX/player-climbs-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="795839262" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-climbs-3.wav</ShortName>
+					<CachePath>SFX/player-climbs-3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="800195420" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-walks-wood-4.wav</ShortName>
+					<CachePath>SFX/enemy-walks-wood-4_14970987.wem</CachePath>
+				</File>
+				<File Id="812174385" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-37.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-37_10C4C929.wem</CachePath>
+				</File>
+				<File Id="819038912" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-29.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-29_10C4C929.wem</CachePath>
+				</File>
+				<File Id="819739533" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-12.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-12_10C4C929.wem</CachePath>
+				</File>
+				<File Id="821390946" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-6.wav</ShortName>
+					<CachePath>SFX/player-hit-6_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="822185327" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-climbs-4.wav</ShortName>
+					<CachePath>SFX/player-climbs-4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="823867311" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-4.wav</ShortName>
+					<CachePath>SFX/player-hit-4_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="844091219" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-9.wav</ShortName>
+					<CachePath>SFX/enemy-wander-9_10C4C929.wem</CachePath>
+				</File>
+				<File Id="847140302" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-39.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-39_10C4C929.wem</CachePath>
+				</File>
+				<File Id="857885265" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-climbs-feet-3.wav</ShortName>
+					<CachePath>SFX/player-climbs-feet-3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="860358613" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-23.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-23_10C4C929.wem</CachePath>
+				</File>
+				<File Id="871759193" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-51.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-51_10C4C929.wem</CachePath>
+				</File>
+				<File Id="874063927" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-stops-chasing-6.wav</ShortName>
+					<CachePath>SFX/enemy-stops-chasing-6_10C4C929.wem</CachePath>
+				</File>
+				<File Id="877580922" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-12.wav</ShortName>
+					<CachePath>SFX/enemy-wander-12_10C4C929.wem</CachePath>
+				</File>
+				<File Id="878337161" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-16.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-16_10C4C929.wem</CachePath>
+				</File>
+				<File Id="878517920" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-4.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-4_99173E45.wem</CachePath>
+				</File>
+				<File Id="878616986" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-dies-full_ZOOM0026_Tr1.wav</ShortName>
+					<CachePath>SFX/player-dies-full_ZOOM0026_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="880708887" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-12.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-12_10C4C929.wem</CachePath>
+				</File>
+				<File Id="898801930" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-voice-1.wav</ShortName>
+					<CachePath>SFX/enemy-lands-voice-1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="905898784" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-7.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-7_99173E45.wem</CachePath>
+				</File>
+				<File Id="913261334" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ladder-moves.wav</ShortName>
+					<CachePath>SFX/ladder-moves_10C4C929.wem</CachePath>
+				</File>
+				<File Id="917795215" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-wood-1.wav</ShortName>
+					<CachePath>SFX/enemy-lands-wood-1_4D8D5A7E.wem</CachePath>
+				</File>
+				<File Id="933315066" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-lands-voice-6.wav</ShortName>
+					<CachePath>SFX/enemy-lands-voice-6_10C4C929.wem</CachePath>
+				</File>
+				<File Id="936193947" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-54.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-54_10C4C929.wem</CachePath>
+				</File>
+				<File Id="948516692" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-climbs-feet-4.wav</ShortName>
+					<CachePath>SFX/player-climbs-feet-4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="954233564" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-14.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-14_10C4C929.wem</CachePath>
+				</File>
+				<File Id="955218869" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>pivoting-gate-blocks_louder.wav</ShortName>
+					<CachePath>SFX/pivoting-gate-blocks_louder_10C4C929.wem</CachePath>
+				</File>
+				<File Id="957291573" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-10.wav</ShortName>
+					<CachePath>SFX/player-hit-10_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="963456079" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-dies-2_ZOOM0026_Tr1.wav</ShortName>
+					<CachePath>SFX/player-dies-2_ZOOM0026_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="963634068" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>conveyor.wav</ShortName>
+					<CachePath>SFX/conveyor_76DF60E8.wem</CachePath>
+				</File>
+				<File Id="969968094" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-8.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-8_99173E45.wem</CachePath>
+				</File>
+				<File Id="978607854" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-1.wav</ShortName>
+					<CachePath>SFX/player-hit-1_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="981294644" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-8.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-8_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1010198537" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-exits-level_ZOOM0022_Tr1.wav</ShortName>
+					<CachePath>SFX/player-exits-level_ZOOM0022_Tr1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1017646361" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-41.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-41_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1022102076" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wander-5.wav</ShortName>
+					<CachePath>SFX/enemy-wander-5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1022857879" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-stops-chasing-4.wav</ShortName>
+					<CachePath>SFX/enemy-stops-chasing-4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1023741356" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-walks-wood-1.wav</ShortName>
+					<CachePath>SFX/player-walks-wood-1_99173E45.wem</CachePath>
+				</File>
+				<File Id="1030741682" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-18.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-18_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1039224084" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>fan-2.wav</ShortName>
+					<CachePath>SFX/fan-2_D74CF663.wem</CachePath>
+				</File>
+				<File Id="1042923582" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-hit-2.wav</ShortName>
+					<CachePath>SFX/player-hit-2_9CDAB852.wem</CachePath>
+				</File>
+				<File Id="1043677084" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-wakes-up-4.wav</ShortName>
+					<CachePath>SFX/enemy-wakes-up-4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1046704695" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>player-lands-voice-10.wav</ShortName>
+					<CachePath>SFX/player-lands-voice-10_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1069924916" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-starts-vomitting-2.wav</ShortName>
+					<CachePath>SFX/enemy-starts-vomitting-2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1070822844" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>enemy-chasing-9.wav</ShortName>
+					<CachePath>SFX/enemy-chasing-9_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2894801721" Name="Play_BreakerOff" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.3210625" DurationMax="0.3210625">
+					<MediaRefs>
+						<MediaRef Id="52485885"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2293005965" Name="Play_BreakerOn" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.38304168" DurationMax="0.38304168">
+					<MediaRefs>
+						<MediaRef Id="138006938"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2492934017" Name="Play_Conveyor" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="963634068"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1153633900" Name="Play_CycleSwitch" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.43004167" DurationMax="0.43004167">
+					<MediaRefs>
+						<MediaRef Id="643338500"/>
+						<MediaRef Id="666901976"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3948844197" Name="Play_DoorCloses" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.8838125" DurationMax="0.8838125">
+					<MediaRefs>
+						<MediaRef Id="487794462"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1196441153" Name="Play_DoorOpens" MaxAttenuation="20" DurationType="OneShot" DurationMin="1.3754792" DurationMax="1.3754792">
+					<MediaRefs>
+						<MediaRef Id="201012351"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3004097409" Name="Play_EnemyLand" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.38597918" DurationMax="0.6126875">
+					<MediaRefs>
+						<MediaRef Id="32110842"/>
+						<MediaRef Id="92828044"/>
+						<MediaRef Id="151974467"/>
+						<MediaRef Id="205010729"/>
+						<MediaRef Id="223289746"/>
+						<MediaRef Id="244737482"/>
+						<MediaRef Id="282312269"/>
+						<MediaRef Id="347521397"/>
+						<MediaRef Id="442184811"/>
+						<MediaRef Id="596890748"/>
+						<MediaRef Id="898801930"/>
+						<MediaRef Id="917795215"/>
+						<MediaRef Id="933315066"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="904139487" Name="Play_EnemyPassOut" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="201782597"/>
+						<MediaRef Id="306199374"/>
+						<MediaRef Id="670458841"/>
+						<MediaRef Id="685610327"/>
+						<MediaRef Id="777935697"/>
+						<MediaRef Id="1069924916"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2666922589" Name="Play_EnemyStartChasing" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="16023837"/>
+						<MediaRef Id="26783373"/>
+						<MediaRef Id="39962822"/>
+						<MediaRef Id="64180705"/>
+						<MediaRef Id="99741202"/>
+						<MediaRef Id="135577203"/>
+						<MediaRef Id="218848308"/>
+						<MediaRef Id="224403191"/>
+						<MediaRef Id="249288272"/>
+						<MediaRef Id="257496725"/>
+						<MediaRef Id="272034696"/>
+						<MediaRef Id="291072036"/>
+						<MediaRef Id="428104059"/>
+						<MediaRef Id="467736086"/>
+						<MediaRef Id="469286048"/>
+						<MediaRef Id="504629262"/>
+						<MediaRef Id="513622564"/>
+						<MediaRef Id="542131375"/>
+						<MediaRef Id="610989497"/>
+						<MediaRef Id="665546155"/>
+						<MediaRef Id="707979610"/>
+						<MediaRef Id="775541173"/>
+						<MediaRef Id="800195420"/>
+						<MediaRef Id="878337161"/>
+						<MediaRef Id="954233564"/>
+						<MediaRef Id="1070822844"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1824093213" Name="Play_EnemyStopChasing" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.37552083" DurationMax="93.137184">
+					<MediaRefs>
+						<MediaRef Id="16023837"/>
+						<MediaRef Id="26783373"/>
+						<MediaRef Id="39962822"/>
+						<MediaRef Id="64180705"/>
+						<MediaRef Id="99741202"/>
+						<MediaRef Id="135577203"/>
+						<MediaRef Id="218848308"/>
+						<MediaRef Id="224403191"/>
+						<MediaRef Id="238411238"/>
+						<MediaRef Id="249288272"/>
+						<MediaRef Id="257496725"/>
+						<MediaRef Id="272034696"/>
+						<MediaRef Id="291072036"/>
+						<MediaRef Id="428104059"/>
+						<MediaRef Id="444209950"/>
+						<MediaRef Id="467736086"/>
+						<MediaRef Id="469286048"/>
+						<MediaRef Id="504629262"/>
+						<MediaRef Id="513622564"/>
+						<MediaRef Id="516234311"/>
+						<MediaRef Id="542131375"/>
+						<MediaRef Id="610989497"/>
+						<MediaRef Id="665546155"/>
+						<MediaRef Id="707979610"/>
+						<MediaRef Id="717821777"/>
+						<MediaRef Id="758458434"/>
+						<MediaRef Id="775541173"/>
+						<MediaRef Id="800195420"/>
+						<MediaRef Id="874063927"/>
+						<MediaRef Id="878337161"/>
+						<MediaRef Id="954233564"/>
+						<MediaRef Id="1022857879"/>
+						<MediaRef Id="1070822844"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="871860279" Name="Play_EnemyStunned" MaxAttenuation="20" DurationType="OneShot" DurationMin="1.5833334" DurationMax="1.5833334">
+					<MediaRefs>
+						<MediaRef Id="720630617"/>
+						<MediaRef Id="787255345"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="1824093213" Name="Play_EnemyStopChasing"/>
+						<ActionPostEventEntry Id="1832694765" Name="Stop_EnemyPassOut"/>
+						<ActionPostEventEntry Id="2590346567" Name="Stop_EnemyWander"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="232698797" Name="Play_EnemyWakeUp" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.1703125" DurationMax="0.51154166">
+					<MediaRefs>
+						<MediaRef Id="106768567"/>
+						<MediaRef Id="198778753"/>
+						<MediaRef Id="258062463"/>
+						<MediaRef Id="284836172"/>
+						<MediaRef Id="374997479"/>
+						<MediaRef Id="412251079"/>
+						<MediaRef Id="455200698"/>
+						<MediaRef Id="753638620"/>
+						<MediaRef Id="764486082"/>
+						<MediaRef Id="765591026"/>
+						<MediaRef Id="880708887"/>
+						<MediaRef Id="1043677084"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="1832694765" Name="Stop_EnemyPassOut"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="1371404669" Name="Play_EnemyWander" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="26783373"/>
+						<MediaRef Id="64180705"/>
+						<MediaRef Id="104883812"/>
+						<MediaRef Id="136968152"/>
+						<MediaRef Id="213622537"/>
+						<MediaRef Id="218848308"/>
+						<MediaRef Id="271655904"/>
+						<MediaRef Id="272034696"/>
+						<MediaRef Id="340189371"/>
+						<MediaRef Id="432145853"/>
+						<MediaRef Id="504629262"/>
+						<MediaRef Id="513622564"/>
+						<MediaRef Id="537131472"/>
+						<MediaRef Id="542131375"/>
+						<MediaRef Id="665546155"/>
+						<MediaRef Id="739743102"/>
+						<MediaRef Id="755884316"/>
+						<MediaRef Id="800195420"/>
+						<MediaRef Id="844091219"/>
+						<MediaRef Id="877580922"/>
+						<MediaRef Id="1022102076"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2757069037" Name="Play_Fan" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1039224084"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3519553787" Name="Play_GateMoves" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.24649762" DurationMax="0.32903484">
+					<MediaRefs>
+						<MediaRef Id="488856948"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3690359235" Name="Play_KeyCollect" DurationType="OneShot" DurationMin="2.1204584" DurationMax="2.1204584">
+					<MediaRefs>
+						<MediaRef Id="591881644"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="46699921" Name="Play_KeygateOpens" MaxAttenuation="20" DurationType="OneShot" DurationMin="1.0824375" DurationMax="1.0824375">
+					<MediaRefs>
+						<MediaRef Id="274844215"/>
+						<MediaRef Id="488856948"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4262882519" Name="Play_KeyLands" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.46708333" DurationMax="0.46708333">
+					<MediaRefs>
+						<MediaRef Id="408265785"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3073568824" Name="Play_LadderMoves" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.19593585" DurationMax="0.26154298">
+					<MediaRefs>
+						<MediaRef Id="913261334"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="904873966" Name="Play_MovingPlatformTypeA" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="118652009"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="904873965" Name="Play_MovingPlatformTypeB" MaxAttenuation="20" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="283827296"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2651187285" Name="Play_OWBOff" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.26964584" DurationMax="0.26964584">
+					<MediaRefs>
+						<MediaRef Id="518728630"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1297425129" Name="Play_OWBOn" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.30435416" DurationMax="0.30435416">
+					<MediaRefs>
+						<MediaRef Id="199886752"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4143950057" Name="Play_PivotingGateBlocks" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.39660418" DurationMax="0.39660418">
+					<MediaRefs>
+						<MediaRef Id="955218869"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2347523137" Name="Play_PivotingGateRotates" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.5360208" DurationMax="0.5360208">
+					<MediaRefs>
+						<MediaRef Id="609840789"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="724595405" Name="Play_PlayerBounce" DurationType="OneShot" DurationMin="0.23489584" DurationMax="0.23489584">
+					<MediaRefs>
+						<MediaRef Id="428317779"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1730740323" Name="Play_PlayerBunk" DurationType="OneShot" DurationMin="0.14964584" DurationMax="0.14964584">
+					<MediaRefs>
+						<MediaRef Id="610436761"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1950697752" Name="Play_PlayerClimb" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="236794105"/>
+						<MediaRef Id="558759438"/>
+						<MediaRef Id="765927644"/>
+						<MediaRef Id="792969787"/>
+						<MediaRef Id="795839262"/>
+						<MediaRef Id="822185327"/>
+						<MediaRef Id="857885265"/>
+						<MediaRef Id="948516692"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="910581297" Name="Play_PlayerDeath" DurationType="OneShot" DurationMin="1.2473334" DurationMax="1.2473334">
+					<MediaRefs>
+						<MediaRef Id="209831460"/>
+						<MediaRef Id="306516321"/>
+						<MediaRef Id="372556561"/>
+						<MediaRef Id="512902393"/>
+						<MediaRef Id="563021380"/>
+						<MediaRef Id="758061761"/>
+						<MediaRef Id="821390946"/>
+						<MediaRef Id="823867311"/>
+						<MediaRef Id="878616986"/>
+						<MediaRef Id="957291573"/>
+						<MediaRef Id="978607854"/>
+						<MediaRef Id="1042923582"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="343926793" Name="Play_PlayerEnterLevel" DurationType="OneShot" DurationMin="1.2587084" DurationMax="1.2587084">
+					<MediaRefs>
+						<MediaRef Id="148631401"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2277044357" Name="Play_PlayerExitLevel" DurationType="OneShot" DurationMin="1.2587084" DurationMax="1.2587084">
+					<MediaRefs>
+						<MediaRef Id="1010198537"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3817990921" Name="Play_PlayerJump" DurationType="OneShot" DurationMin="0.09004167" DurationMax="0.09004167">
+					<MediaRefs>
+						<MediaRef Id="210811848"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="658862086" Name="Play_PlayerLand" DurationType="OneShot" DurationMin="0.255625" DurationMax="0.524625">
+					<MediaRefs>
+						<MediaRef Id="8277886"/>
+						<MediaRef Id="80310197"/>
+						<MediaRef Id="87376263"/>
+						<MediaRef Id="95515676"/>
+						<MediaRef Id="97547257"/>
+						<MediaRef Id="140287771"/>
+						<MediaRef Id="152115907"/>
+						<MediaRef Id="164245154"/>
+						<MediaRef Id="178639356"/>
+						<MediaRef Id="179593651"/>
+						<MediaRef Id="184444105"/>
+						<MediaRef Id="207757407"/>
+						<MediaRef Id="209000171"/>
+						<MediaRef Id="209218441"/>
+						<MediaRef Id="231413083"/>
+						<MediaRef Id="330865697"/>
+						<MediaRef Id="338870114"/>
+						<MediaRef Id="363213536"/>
+						<MediaRef Id="394661085"/>
+						<MediaRef Id="435811951"/>
+						<MediaRef Id="455002223"/>
+						<MediaRef Id="463999406"/>
+						<MediaRef Id="496262937"/>
+						<MediaRef Id="502625090"/>
+						<MediaRef Id="511408978"/>
+						<MediaRef Id="557193747"/>
+						<MediaRef Id="560600803"/>
+						<MediaRef Id="569575878"/>
+						<MediaRef Id="588297075"/>
+						<MediaRef Id="640962474"/>
+						<MediaRef Id="644787074"/>
+						<MediaRef Id="646085168"/>
+						<MediaRef Id="657599322"/>
+						<MediaRef Id="679276883"/>
+						<MediaRef Id="722972426"/>
+						<MediaRef Id="812174385"/>
+						<MediaRef Id="819038912"/>
+						<MediaRef Id="819739533"/>
+						<MediaRef Id="847140302"/>
+						<MediaRef Id="860358613"/>
+						<MediaRef Id="871759193"/>
+						<MediaRef Id="936193947"/>
+						<MediaRef Id="981294644"/>
+						<MediaRef Id="1017646361"/>
+						<MediaRef Id="1030741682"/>
+						<MediaRef Id="1046704695"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2093119550" Name="Play_PlayerWalk" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="346775758"/>
+						<MediaRef Id="470058010"/>
+						<MediaRef Id="513335707"/>
+						<MediaRef Id="666016965"/>
+						<MediaRef Id="668180104"/>
+						<MediaRef Id="878517920"/>
+						<MediaRef Id="905898784"/>
+						<MediaRef Id="969968094"/>
+						<MediaRef Id="1023741356"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1046622137" Name="Play_SwitchOff" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.21604167" DurationMax="0.21604167">
+					<MediaRefs>
+						<MediaRef Id="666901976"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="823015437" Name="Play_SwitchOn" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.214" DurationMax="0.214">
+					<MediaRefs>
+						<MediaRef Id="643338500"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="778267133" Name="Play_TimerSwitch" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="287891295"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1824946087" Name="Play_TimerSwitchEnds" MaxAttenuation="20" DurationType="OneShot" DurationMin="2.4445834" DurationMax="2.4445834">
+					<MediaRefs>
+						<MediaRef Id="168883880"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3688398039" Name="Stop_Conveyor" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="963634068"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1832694765" Name="Stop_EnemyPassOut" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="201782597"/>
+						<MediaRef Id="306199374"/>
+						<MediaRef Id="670458841"/>
+						<MediaRef Id="685610327"/>
+						<MediaRef Id="777935697"/>
+						<MediaRef Id="1069924916"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2590346567" Name="Stop_EnemyWander" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="26783373"/>
+						<MediaRef Id="64180705"/>
+						<MediaRef Id="104883812"/>
+						<MediaRef Id="136968152"/>
+						<MediaRef Id="213622537"/>
+						<MediaRef Id="218848308"/>
+						<MediaRef Id="271655904"/>
+						<MediaRef Id="272034696"/>
+						<MediaRef Id="340189371"/>
+						<MediaRef Id="432145853"/>
+						<MediaRef Id="504629262"/>
+						<MediaRef Id="513622564"/>
+						<MediaRef Id="537131472"/>
+						<MediaRef Id="542131375"/>
+						<MediaRef Id="665546155"/>
+						<MediaRef Id="739743102"/>
+						<MediaRef Id="755884316"/>
+						<MediaRef Id="800195420"/>
+						<MediaRef Id="844091219"/>
+						<MediaRef Id="877580922"/>
+						<MediaRef Id="1022102076"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="503719263" Name="Stop_Fan" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="1039224084"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2976372756" Name="Stop_MovingPlatformTypeA" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="118652009"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2976372759" Name="Stop_MovingPlatformTypeB" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="283827296"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2353504566" Name="Stop_PlayerClimb" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="236794105"/>
+						<MediaRef Id="558759438"/>
+						<MediaRef Id="765927644"/>
+						<MediaRef Id="792969787"/>
+						<MediaRef Id="795839262"/>
+						<MediaRef Id="822185327"/>
+						<MediaRef Id="857885265"/>
+						<MediaRef Id="948516692"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="678353528" Name="Stop_PlayerWalk" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="346775758"/>
+						<MediaRef Id="470058010"/>
+						<MediaRef Id="513335707"/>
+						<MediaRef Id="666016965"/>
+						<MediaRef Id="668180104"/>
+						<MediaRef Id="878517920"/>
+						<MediaRef Id="905898784"/>
+						<MediaRef Id="969968094"/>
+						<MediaRef Id="1023741356"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3883944503" Name="Stop_TimerSwitch" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="287891295"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3405444338" Type="User" Language="SFX" Hash="{B5BA3323-E21A-341A-5AE6-95F8E658B97D}">
+			<ShortName>LightsOff_UI</ShortName>
+			<Path>LightsOff_UI.bnk</Path>
+			<Media>
+				<File Id="93086034" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>menu-quit.wav</ShortName>
+					<CachePath>SFX/menu-quit_10C4C929.wem</CachePath>
+				</File>
+				<File Id="110537044" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>menu-selection-move.wav</ShortName>
+					<CachePath>SFX/menu-selection-move_10C4C929.wem</CachePath>
+				</File>
+				<File Id="132037434" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>pause-menu-open.wav</ShortName>
+					<CachePath>SFX/pause-menu-open_10C4C929.wem</CachePath>
+				</File>
+				<File Id="174329229" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>menu-play.wav</ShortName>
+					<CachePath>SFX/menu-play_10C4C929.wem</CachePath>
+				</File>
+				<File Id="227690843" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>menu-select-button.wav</ShortName>
+					<CachePath>SFX/menu-select-button_10C4C929.wem</CachePath>
+				</File>
+				<File Id="251070764" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>pause-menu-close.wav</ShortName>
+					<CachePath>SFX/pause-menu-close_10C4C929.wem</CachePath>
+				</File>
+				<File Id="463881881" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>menu-retry.wav</ShortName>
+					<CachePath>SFX/menu-retry_10C4C929.wem</CachePath>
+				</File>
+				<File Id="775318270" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>menu_confirm_setting.wav</ShortName>
+					<CachePath>SFX/menu_confirm_setting_10C4C929.wem</CachePath>
+				</File>
+				<File Id="879937095" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>menu-select-setting.wav</ShortName>
+					<CachePath>SFX/menu-select-setting_10C4C929.wem</CachePath>
+				</File>
+				<File Id="962681339" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>menu-change-setting.wav</ShortName>
+					<CachePath>SFX/menu-change-setting_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2694787811" Name="Play_MenuButtonBackPress" DurationType="OneShot" DurationMin="0.1719728" DurationMax="0.1719728">
+					<MediaRefs>
+						<MediaRef Id="879937095"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1910628788" Name="Play_MenuButtonPress" DurationType="OneShot" DurationMin="0.17791383" DurationMax="0.17791383">
+					<MediaRefs>
+						<MediaRef Id="775318270"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1578733045" Name="Play_MenuChangeSetting" DurationType="OneShot" DurationMin="0.031814057" DurationMax="0.031814057">
+					<MediaRefs>
+						<MediaRef Id="962681339"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1030696368" Name="Play_MenuDeleteSaveFileButtonPress" DurationType="OneShot" DurationMin="0.24605443" DurationMax="0.24605443">
+					<MediaRefs>
+						<MediaRef Id="227690843"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1022756005" Name="Play_MenuPlay" DurationType="OneShot" DurationMin="0.39591837" DurationMax="0.39591837">
+					<MediaRefs>
+						<MediaRef Id="174329229"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3159183902" Name="Play_MenuQuit" DurationType="OneShot" DurationMin="0.39591837" DurationMax="0.39591837">
+					<MediaRefs>
+						<MediaRef Id="93086034"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1654690896" Name="Play_MenuSelectionMove" DurationType="OneShot" DurationMin="0.18183674" DurationMax="0.18183674">
+					<MediaRefs>
+						<MediaRef Id="110537044"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="188908783" Name="Play_PauseMenuClose" DurationType="OneShot" DurationMin="0.4584354" DurationMax="0.4584354">
+					<MediaRefs>
+						<MediaRef Id="251070764"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2867286185" Name="Play_PauseMenuOpen" DurationType="OneShot" DurationMin="0.5005442" DurationMax="0.5005442">
+					<MediaRefs>
+						<MediaRef Id="132037434"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4000304925" Name="Play_PauseMenuRetry" DurationType="OneShot" DurationMin="0.27548754" DurationMax="0.27548754">
+					<MediaRefs>
+						<MediaRef Id="463881881"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{49894E1A-73C7-B7DD-786B-3AEA2035B038}</FileHash>
+</SoundBanksInfo>

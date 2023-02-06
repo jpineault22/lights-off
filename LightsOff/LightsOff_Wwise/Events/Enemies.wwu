@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Enemies" ID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_EnemyStunned" ID="{8AC8456C-2CA6-4033-B1D6-BD638B7CFA30}">
+					<ChildrenList>
+						<Action Name="" ID="{05623110-2601-4AD8-9F4F-CB6E06192CF1}" ShortID="995172889">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemy-bounced-on" ID="{F1D9674F-86D9-4D6D-A5D3-1922ED9CA540}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C2447526-3F20-4895-94C3-472D2F266FE4}" ShortID="123577574">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle" ID="{565D5026-F88F-404A-9FD2-77AF579E0669}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{61416BA1-40F2-4081-9BF1-9AE65ECD9830}" ShortID="663580681">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stop_EnemyPassOut" ID="{317A424E-44AE-4BC6-9158-B364E1C4FEB0}" WorkUnitID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{07EE5276-BC7D-4D7E-95F4-7AADE721189A}" ShortID="883063762">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stop_EnemyWander" ID="{0D951B91-7EB5-4C31-ACA7-19530062AAE3}" WorkUnitID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2AF74BFE-E561-43B0-87C1-E2E4EFCAF113}" ShortID="715014421">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Play_EnemyStopChasing" ID="{20442435-2B58-4508-AB26-0A0CD6A2C6DC}" WorkUnitID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EnemyLand" ID="{1043EB52-6707-43AC-ACC5-AA983E12D237}">
+					<ChildrenList>
+						<Action Name="" ID="{10EFF1AB-5536-4DAB-9C08-F5A338683DEB}" ShortID="847375617">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyLandsWood" ID="{8EF85624-8C9A-4364-BD48-C3ED2D983C8D}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C0344084-E769-4540-B2B5-DBE651085608}" ShortID="139037766">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.05"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyLandsVoice" ID="{07AF64BD-5159-47AA-BFA6-8FF74B9BAB1B}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EnemyPassOut" ID="{F9064CD9-B7B9-4EFB-A3DD-9AC6A8C510CF}">
+					<ChildrenList>
+						<Action Name="" ID="{64292530-72B6-49D5-AA92-B505E8983CC3}" ShortID="597366583">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyPassesOut" ID="{550EBEF0-5388-49A0-9105-568B97BB52F5}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EnemyStopChasing" ID="{20442435-2B58-4508-AB26-0A0CD6A2C6DC}">
+					<ChildrenList>
+						<Action Name="" ID="{5A1E8DE0-478C-4AE0-B1AD-96D37925A2F1}" ShortID="265922920">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyChasing" ID="{D3A330B7-E038-41AB-ABE7-1AB542CF1B2A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{87180879-5687-4E22-8042-033E5571CC24}" ShortID="915987692">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{CD1A99FF-DC92-462A-9D30-879213A56818}" ShortID="568486663">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.1"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyStopsChasingVoice" ID="{BF920CD5-1EF4-4ED2-8DFC-0458221F539A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EnemyWakeUp" ID="{91EB44EA-AC30-4063-BBEE-FC2D663EEEDB}">
+					<ChildrenList>
+						<Action Name="" ID="{22370F4C-1496-47A4-9A13-D43EA51DFB05}" ShortID="253910077">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stop_EnemyPassOut" ID="{317A424E-44AE-4BC6-9158-B364E1C4FEB0}" WorkUnitID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A99F7C8E-3A86-4FF1-8794-FA28BA9C55E6}" ShortID="435500392">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyWakesUp" ID="{A34AF05F-087A-46D3-B240-70C711AB9700}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EnemyWander" ID="{C351FC14-16AD-4599-B8EA-DC7367084178}">
+					<ChildrenList>
+						<Action Name="" ID="{AF80E8AC-58DD-48E2-914C-C5300D6BB596}" ShortID="571913043">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BF8D441B-26DF-4D9D-BC29-722BC4E37380}" ShortID="866127690">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyWanderHum" ID="{FC2A7496-5BE8-428B-8FE3-62826E919F8B}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EnemyStartChasing" ID="{EE0D30C7-0A1F-4D05-B4BF-DB372A313906}">
+					<ChildrenList>
+						<Action Name="" ID="{3EFD8EC9-3411-405B-8023-1E39636138CF}" ShortID="206244121">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyChasing" ID="{D3A330B7-E038-41AB-ABE7-1AB542CF1B2A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6FB85E58-E923-4559-B144-2EAC7BFC63B0}" ShortID="753258917">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_EnemyPassOut" ID="{317A424E-44AE-4BC6-9158-B364E1C4FEB0}">
+					<ChildrenList>
+						<Action Name="" ID="{C9BDC982-AC56-4A82-A3B4-8E2C7DEF7FCF}" ShortID="455951281">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyStartsVomitting" ID="{87C7CBA6-58E7-4EFD-8EB2-D6352A7C3BBC}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C8F86779-F817-40FD-877D-EF1DBD7A66B6}" ShortID="658973726">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyVomits" ID="{86F491EC-2B0F-43F7-824B-8EBCEE4F7366}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_EnemyWander" ID="{0D951B91-7EB5-4C31-ACA7-19530062AAE3}">
+					<ChildrenList>
+						<Action Name="" ID="{091E8E6A-BAAE-4246-A28E-CCDBFF3867F6}" ShortID="942664542">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyWanderHum" ID="{FC2A7496-5BE8-428B-8FE3-62826E919F8B}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1C16E37A-4AFD-4158-A46C-B67494EA5A46}" ShortID="972136395">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -2,6 +2,7 @@
 
 public class EnemyPassedOut : Enemy
 {
+	[SerializeField] private float wakeUpTime = 2f;
 	[SerializeField] private float chasingSpeed = 5f;
 	[SerializeField] private float playerDetectionRaycastDistance = 2f;         // The distance of the "line of sight" raycast detecting the player
 	[SerializeField] private float exitChasingDistance = 20f;                   // The distance the player needs to be from the enemy for it to stop chasing them
@@ -15,6 +16,13 @@ public class EnemyPassedOut : Enemy
 	private float chasingFlipTimer;
 	private float? playerClimbingHorizontalPosition;                            // The player's horizontal position when they start climbing
 	private bool crossingLadder;
+	private bool hasPassedOut;
+
+	private void OnDestroy()
+	{
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyStopChasing, gameObject);
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopEnemyPassOut, gameObject);
+	}
 
 	protected override void FixedUpdate()
 	{
@@ -24,20 +32,27 @@ public class EnemyPassedOut : Enemy
 
 			// Check if player has just started climbing
 			if (PlayerController.Instance.CurrentCharacterState == CharacterState.Climbing && playerClimbingHorizontalPosition == null)
-			{
 				playerClimbingHorizontalPosition = player.transform.position.x;
-			}
 
 			// Update chasing flip timer
 			if (chasingFlipTimer > 0)
-			{
 				chasingFlipTimer -= Time.fixedDeltaTime;
-			}
+
+			if (currentEnemyState != EnemyState.PassedOut)
+				hasPassedOut = false;
 
 			// Process action for the corresponding enemy state
 			if (currentEnemyState == EnemyState.PassedOut && GameManager.Instance.CurrentGameState == GameState.Playing)
 			{
-				DetectPlayer();
+				if (!hasPassedOut)
+				{
+					hasPassedOut = true;
+					AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyPassOut, gameObject);
+				}
+				else
+				{
+					DetectPlayer();
+				}
 			}
 			else if (currentEnemyState == EnemyState.Chasing)
 			{
@@ -64,8 +79,11 @@ public class EnemyPassedOut : Enemy
 
 		if (playerInfoFront.collider || playerInfoBack.collider)
 		{
-			currentEnemyState = EnemyState.Chasing;
+			currentEnemyState = EnemyState.WakingUp;
+			currentStateTimer = wakeUpTime;
+			animator.SetFloat(Constants.AnimatorEnemyCurrentStateTimer, currentStateTimer);
 			animator.SetBool(Constants.AnimatorEnemyIsChasing, true);
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyWakeUp, gameObject);
 		}
 	}
 
@@ -141,6 +159,7 @@ public class EnemyPassedOut : Enemy
 		currentEnemyState = EnemyState.ChasingIdle;
 		animator.SetBool(Constants.AnimatorEnemyIsChasing, false);
 		animator.SetFloat(Constants.AnimatorEnemyCurrentStateTimer, currentStateTimer);
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyStopChasing, gameObject);
 		rb.velocity = Vector2.zero;
 	}
 }
