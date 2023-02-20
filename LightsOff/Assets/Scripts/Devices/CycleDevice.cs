@@ -99,7 +99,7 @@ public abstract class CycleDevice : RotatableObject
 			{
 				outlineSpriteRenderer = obj.GetComponent<SpriteRenderer>();
 				outlineSpriteRenderer.color = UIManager.Instance.deviceOutlineColor;
-				ShowOutline(false);
+				ShowOutline(false, true);
 			}
 		}
 
@@ -176,9 +176,26 @@ public abstract class CycleDevice : RotatableObject
 
 	public abstract void FailToSwitch(bool pNextState);
 
-	public virtual void ShowOutline(bool pShow)
+	public virtual void ShowOutline(bool pShow, bool pFromBreaker)
 	{
+		ChangeOutlineColor(pFromBreaker);
+
 		outlineSpriteRenderer.enabled = pShow;
+	}
+
+	public virtual void ChangeOutlineColor(bool pFromBreaker)
+	{
+		if (pFromBreaker)
+		{
+			outlineSpriteRenderer.color = UIManager.Instance.breakerOutlineColor;
+		}
+		else
+		{
+			if (isConnected)
+				outlineSpriteRenderer.color = UIManager.Instance.deviceOutlineColor;
+			else
+				outlineSpriteRenderer.color = UIManager.Instance.inactiveOutlineColor;
+		}
 	}
 
 	public bool IsConnected()

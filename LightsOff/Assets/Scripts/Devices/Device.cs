@@ -11,6 +11,8 @@ public class Device : RotatableObject
     protected SpriteRenderer spriteRenderer;
 	protected SpriteRenderer outlineSpriteRenderer;
 
+	public bool profiling;
+
 	protected override void Awake()
 	{
 		base.Awake();
@@ -25,7 +27,7 @@ public class Device : RotatableObject
 			{
 				outlineSpriteRenderer = obj.GetComponent<SpriteRenderer>();
 				outlineSpriteRenderer.color = UIManager.Instance.deviceOutlineColor;
-				ShowOutline(false);
+				ShowOutline(false, false, false);
 			}
 		}
 
@@ -74,14 +76,29 @@ public class Device : RotatableObject
 		}
 	}
 
-	public virtual void ShowOutline(bool pShow)
+	public virtual void ShowOutline(bool pShow, bool pFromBreaker, bool pSwitchBlocked)
 	{
+		ChangeOutlineColor(pFromBreaker, pSwitchBlocked);
+		
 		outlineSpriteRenderer.enabled = pShow;
 	}
 
-	public virtual void ChangeOutlineColor(Color pColor)
+	public virtual void ChangeOutlineColor(bool pFromBreaker, bool pSwitchBlocked)
 	{
-		outlineSpriteRenderer.color = pColor;
+		if (pFromBreaker)
+		{
+			outlineSpriteRenderer.color = UIManager.Instance.breakerOutlineColor;
+		}
+		else
+		{
+			if (profiling)
+				Debug.Log("switch blocked: " + pSwitchBlocked);
+
+			if (isConnected && !pSwitchBlocked)
+				outlineSpriteRenderer.color = UIManager.Instance.deviceOutlineColor;
+			else
+				outlineSpriteRenderer.color = UIManager.Instance.inactiveOutlineColor;
+		}
 	}
 
 	public bool IsOnAndConnected()

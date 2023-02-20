@@ -56,9 +56,9 @@ public class GameManager : Singleton<GameManager>
 		return savedLevelNumber;
 	}
 
-	public void DeleteSaveFile()
+	public void DeleteSaveFileFromMenu()
 	{
-		SaveSystem.DeleteSaveFile();
+		DeleteSaveFile();
 
 		if (LevelLoader.Instance.CurrentLevelNumber == Constants.StartingLevelNumber)
 		{
@@ -70,6 +70,11 @@ public class GameManager : Singleton<GameManager>
 		EventSystemManager.Instance.DeactivateModule();
 		LevelLoader.Instance.RefreshMenuLevelAfterFileDeletion();
 		MainMenu.Instance.DisplaySaveFileDeletedMessage();
+	}
+
+	public void DeleteSaveFile()
+	{
+		SaveSystem.DeleteSaveFile();
 	}
 
 	private void DisplayPresentationScreen()
@@ -89,6 +94,8 @@ public class GameManager : Singleton<GameManager>
 	{
 		Time.timeScale = 1f;
 		CurrentGameState = GameState.Menu;
+		PlayerController.Instance.ResetCharacterForQuitToMenu();
+		InputManager.Instance.DisableGameplayMap();
 		EventSystemManager.Instance.DeactivateModule();
 		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventMusicBackToMenu);
 		LevelLoader.Instance.QuitToMenu();

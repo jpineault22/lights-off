@@ -2,7 +2,6 @@
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -10,11 +9,14 @@ public class UIManager : Singleton<UIManager>
 	[SerializeField] private TMP_Text levelNumberText = default;
 	[SerializeField] private TMP_Text keyNumberText = default;
 	[SerializeField] private float inGameUIFadeTime = 0.5f;
+	[SerializeField] public float ScrollSensitivity { get; private set; } = 15f;
 
 	public Sprite interactMessageImageKeyboard = default;
 	public Sprite interactMessageImageController = default;
 	
 	public Color deviceOutlineColor = Color.white;
+	public Color inactiveOutlineColor = Color.white;
+	public Color breakerOutlineColor = Color.white;
 
 	private bool uiIsFadingIn;
 	private float inGameUIFadeCounter;

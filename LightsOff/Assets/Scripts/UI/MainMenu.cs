@@ -175,7 +175,7 @@ public class MainMenu : Singleton<MainMenu>
 
 	public void DeleteSaveFile()
 	{
-		GameManager.Instance.DeleteSaveFile();
+		GameManager.Instance.DeleteSaveFileFromMenu();
 	}
 
 	public void DisplaySaveFileDeletedMessage()

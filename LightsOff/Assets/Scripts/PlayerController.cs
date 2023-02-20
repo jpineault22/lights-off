@@ -217,7 +217,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void EndJump(InputAction.CallbackContext ctx)
     {
-        if (this != null && CurrentCharacterState == CharacterState.Jumping)
+        if (this != null && CanPerformGameplayAction() && CurrentCharacterState == CharacterState.Jumping)
         {
             SetStateToFalling();
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / incompleteJumpFallVelocityDivider);
@@ -262,54 +262,10 @@ public class PlayerController : Singleton<PlayerController>
 		}
 
         if (ladderList.Count > 0 && climbCooldownCounter <= 0 && (CurrentCharacterState == CharacterState.Climbing || (Mathf.Abs(verticalMoveInput) > Mathf.Abs(horizontalMoveInput) && climbingInValidDirection)))
-        {
-            if (CurrentCharacterState != CharacterState.Climbing)
-            {
-                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
-                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerClimb, gameObject);
-            }
-
-            CurrentCharacterState = CharacterState.Climbing;
-            animator.SetBool(Constants.AnimatorCharacterIsJumping, false);
-            animator.SetBool(Constants.AnimatorCharacterIsClimbing, true);
-            rb.gravityScale = 0;
-
-            // Process vertical movement (climbing)
-            if (Mathf.Abs(verticalMoveInput) >= moveInputThreshold && (!reachedLadderTop || verticalMoveInput < 0))
-            {
-                if (!animator.enabled)
-                    AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerClimb, gameObject);
-                
-                int direction = verticalMoveInput > 0 ? 1 : -1;
-                rb.velocity = new Vector2(0, direction * climbingSpeed);
-                animator.enabled = true;
-            }
-            else
-            {
-                rb.velocity = new Vector2(rb.velocity.x, 0);
-
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName(Constants.AnimationCharacterClimb))
-				{
-                    animator.enabled = false;
-                    AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerClimb, gameObject);
-                }
-            }
-
-            // Snap player to horizontal middle of ladder
-            transform.position = new Vector2(ladderList[0].transform.position.x, transform.position.y);
-
-            // Check if reached ladder's bottom
-            if (playerFeetGroundedBuffer > lowestLadderEnd)
-			{
-                readyToLeaveClimbingState = true;
-			}
-            else if (readyToLeaveClimbingState)
-			{
-                LeaveClimbingState();
-                SetStateToFalling();
-            }
-        }
-        else
+		{
+			ProcessClimbing(playerFeetGroundedBuffer);
+		}
+		else
         {
             // Set state to falling if player was climbing
             if (CurrentCharacterState == CharacterState.Climbing)
@@ -323,26 +279,78 @@ public class PlayerController : Singleton<PlayerController>
                 climbCooldownCounter -= Time.fixedDeltaTime;
             }
 
-            // Process horizontal movement
-            if (Mathf.Abs(horizontalMoveInput) >= moveInputThreshold || conveyorMomentumBonus > 1f)
-            {
-                int direction = facingRight ? 1 : -1;
-                rb.velocity = new Vector2(direction * speed * conveyorMomentumBonus, rb.velocity.y);
+            ProcessHorizontalMovement();
+        }
+    }
 
-                if (isGrounded && CurrentCharacterState != CharacterState.Jumping && CurrentCharacterState != CharacterState.Bouncing)
-                {
-                    if (CurrentCharacterState != CharacterState.Walking)
-                        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerWalk, gameObject);
-                    
-                    CurrentCharacterState = CharacterState.Walking;
-                }
-            }
-            else
-            {
-                StopHorizontalMovement();
-            }
+	private void ProcessHorizontalMovement()
+	{
+        if (Mathf.Abs(horizontalMoveInput) >= moveInputThreshold || conveyorMomentumBonus > 1f)
+        {
+            int direction = facingRight ? 1 : -1;
+            rb.velocity = new Vector2(direction * speed * conveyorMomentumBonus, rb.velocity.y);
 
-            animator.SetFloat(Constants.AnimatorCharacterSpeed, Mathf.Abs(horizontalMoveInput));
+            if (isGrounded && CurrentCharacterState != CharacterState.Jumping && CurrentCharacterState != CharacterState.Bouncing)
+            {
+                if (CurrentCharacterState != CharacterState.Walking)
+                    AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerWalk, gameObject);
+
+                CurrentCharacterState = CharacterState.Walking;
+            }
+        }
+        else
+        {
+            StopHorizontalMovement();
+        }
+
+        animator.SetFloat(Constants.AnimatorCharacterSpeed, Mathf.Abs(horizontalMoveInput));
+    }
+
+    private void ProcessClimbing(float pPlayerFeetGroundedBuffer)
+    {
+        if (CurrentCharacterState != CharacterState.Climbing)
+        {
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
+            AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerClimb, gameObject);
+        }
+
+        CurrentCharacterState = CharacterState.Climbing;
+        animator.SetBool(Constants.AnimatorCharacterIsJumping, false);
+        animator.SetBool(Constants.AnimatorCharacterIsClimbing, true);
+        rb.gravityScale = 0;
+
+        if (Mathf.Abs(verticalMoveInput) >= moveInputThreshold && (!reachedLadderTop || verticalMoveInput < 0))
+        {
+            if (!animator.enabled)
+                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerClimb, gameObject);
+
+            int direction = verticalMoveInput > 0 ? 1 : -1;
+            rb.velocity = new Vector2(0, direction * climbingSpeed);
+            animator.enabled = true;
+        }
+        else
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName(Constants.AnimationCharacterClimb))
+            {
+                animator.enabled = false;
+                AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerClimb, gameObject);
+            }
+        }
+
+        // Snap player to horizontal middle of ladder
+        transform.position = new Vector2(ladderList[0].transform.position.x, transform.position.y);
+
+        // Check if reached ladder's bottom
+        if (pPlayerFeetGroundedBuffer > lowestLadderEnd)
+        {
+            readyToLeaveClimbingState = true;
+        }
+        else if (readyToLeaveClimbingState)
+        {
+            LeaveClimbingState();
+            SetStateToFalling();
         }
     }
 
@@ -707,12 +715,20 @@ public class PlayerController : Singleton<PlayerController>
         rb.gravityScale = gravityScale;
     }
 
+    public void ResetCharacterForQuitToMenu()
+	{
+        ResetState();
+        rb.gravityScale = 0;
+	}
+
     public void ResetState()
 	{
         CurrentCharacterState = CharacterState.Idle;
+        animator.SetFloat(Constants.AnimatorCharacterSpeed, 0);
         animator.SetBool(Constants.AnimatorCharacterIsExitingLevel, false);
         animator.SetBool(Constants.AnimatorCharacterIsEnteringLevel, false);
         boxCollider.enabled = true;
+        rb.velocity = Vector2.zero;
         rb.gravityScale = gravityScale;
     }
 

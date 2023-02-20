@@ -192,7 +192,7 @@ public class TransitionManager : Singleton<TransitionManager>
                 else if (LevelLoader.Instance.CurrentMenuLevelState == MenuLevelState.StartGameMenuUnloaded)
                 {
                     LevelLoader.Instance.CurrentMenuLevelState = MenuLevelState.None;
-                    InputManager.Instance.EnablePlayerInput();
+                    InputManager.Instance.EnableGameplayMap();
                     GameManager.Instance.CurrentGameState = GameState.Playing;
                     GameManager.Instance.ResetCharacterState();
                 }

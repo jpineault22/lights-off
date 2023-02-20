@@ -202,15 +202,14 @@ MonoBehaviour:
   inGameUICanvasGroup: {fileID: 1665466614}
   levelNumberText: {fileID: 773539093}
   keyNumberText: {fileID: 857628729}
-  saveFileDeletedCanvasGroup: {fileID: 0}
   inGameUIFadeTime: 0.5
-  saveFileDeletedMessageFadeTime: 0.5
-  saveFileDeletedMessageWaitTime: 4
   interactMessageImageKeyboard: {fileID: 21300000, guid: 37d8e4a73c5f79a41a8aadc2f31695f2,
     type: 3}
   interactMessageImageController: {fileID: 21300000, guid: 184ae114e275a254d9df5541628849e2,
     type: 3}
   deviceOutlineColor: {r: 0, g: 0.8910995, b: 1, a: 1}
+  inactiveOutlineColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  breakerOutlineColor: {r: 0.990566, g: 0.2663314, b: 0.2663314, a: 1}
 --- !u!4 &323274261
 Transform:
   m_ObjectHideFlags: 0
@@ -296,27 +295,27 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_PointAction: {fileID: 2858273901356560312, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_MoveAction: {fileID: -6446559766047592736, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_SubmitAction: {fileID: -4388434262173865162, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_CancelAction: {fileID: -7142965292100953013, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_LeftClickAction: {fileID: 5923604673676299375, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_MiddleClickAction: {fileID: -3007722798198435335, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_RightClickAction: {fileID: -4869880211708579846, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_ScrollWheelAction: {fileID: 7277820600276773284, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_TrackedDevicePositionAction: {fileID: -2604012455991260766, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_TrackedDeviceOrientationAction: {fileID: 6611010333727313614, guid: 52b37eacd0ea3b34a92202a5e75c4143,
     type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0

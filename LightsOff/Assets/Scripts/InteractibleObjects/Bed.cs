@@ -31,7 +31,7 @@ public class Bed : InteractibleObject
 	{
 		if (GameManager.Instance.CheckIfAllLightsOff())
 		{
-			InputManager.Instance.DisablePlayerInput();
+			InputManager.Instance.DisableGameplayMap();
 			UIManager.Instance.EnableInGameUI(false);
 			animator.enabled = true;
 			StartCoroutine(TransitionManager.Instance.TriggerEndingCinematic(this));

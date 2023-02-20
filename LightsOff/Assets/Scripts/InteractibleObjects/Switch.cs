@@ -34,26 +34,31 @@ public class Switch : InteractibleObject
 		{
 			if (!blockingDevice.readyToSwitch)
 			{
-				blocked = true;
+				if (!blocked)
+				{
+					blocked = true;
+					ChangeDevicesOutlineColor();
+				}
+
 				break;
 			}
 			else
 			{
-				blocked = false;
+				if (blocked)
+				{
+					blocked = false;
+					ChangeDevicesOutlineColor();
+				}
 			}
 		}
 	}
 
 	protected override void OnTriggerEnter2D(Collider2D pCollision)
 	{
-		if (!blocked && switchDevice.IsConnected() && pCollision.gameObject.CompareTag(Constants.TagPlayer))
+		if (switchDevice.IsConnected() && pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
 			EnableDisableInteractMessage(true);
-
-			foreach (Device device in devices)
-			{
-				device.ShowOutline(true);
-			}
+			ShowDevicesOutline(true);
 		}
 	}
 
@@ -62,20 +67,30 @@ public class Switch : InteractibleObject
 		if (pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
 			EnableDisableInteractMessage(false);
+			ShowDevicesOutline(false);
+		}
+	}
 
-			foreach (Device device in devices)
-			{
-				device.ShowOutline(false);
-			}
+	private void ShowDevicesOutline(bool pShow)
+	{
+		foreach (Device device in devices)
+		{
+			device.ShowOutline(pShow, false, blocked);
+		}
+	}
+
+	private void ChangeDevicesOutlineColor()
+	{
+		foreach (Device device in devices)
+		{
+			device.ChangeOutlineColor(false, blocked);
 		}
 	}
 
 	public override void Interact()
 	{
 		if (blocked || !switchDevice.IsConnected())
-		{
 			return;
-		}
 
 		switchDevice.SwitchOnOff();
 

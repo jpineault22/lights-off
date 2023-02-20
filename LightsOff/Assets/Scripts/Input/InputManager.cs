@@ -30,8 +30,6 @@ public class InputManager : Singleton<InputManager>
         UIMap = playerInput.actions.FindActionMap(Constants.InputActionMapUI);
         creditsEndMap = playerInput.actions.FindActionMap(Constants.InputActionMapCreditsEnd);
         CurrentControlScheme = playerInput.currentControlScheme;
-
-        DisablePlayerInput();
 	}
 
 	private void Start()
@@ -41,7 +39,7 @@ public class InputManager : Singleton<InputManager>
 
 	private void OnEnable()
     {
-        gameplayMap.Enable();
+        gameplayMap.Disable();
         UIMap.Enable();
         creditsEndMap.Disable();
         InputUser.onChange += ChangeControlScheme;
@@ -115,14 +113,14 @@ public class InputManager : Singleton<InputManager>
 
     // Enabling/Disabling Input
 
-    public void EnablePlayerInput()
+    public void EnableGameplayMap()
 	{
-        playerInput.enabled = true;
+        gameplayMap.Enable();
 	}
 
-    public void DisablePlayerInput()
+    public void DisableGameplayMap()
 	{
-        playerInput.enabled = false;
+        gameplayMap.Disable();
     }
 
     public void EnablePlayerInputCreditsEnd()
@@ -130,7 +128,7 @@ public class InputManager : Singleton<InputManager>
         gameplayMap.Disable();
         UIMap.Disable();
         creditsEndMap.Enable();
-        playerInput.enabled = true;
+        playerInput.ActivateInput();
 	}
 
     public void DisablePlayerInputCreditsEnd()

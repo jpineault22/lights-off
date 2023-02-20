@@ -79,7 +79,8 @@ public class LevelLoader : Singleton<LevelLoader>
         catch (NullReferenceException e)
 		{
             Debug.LogException(e);
-            Debug.LogWarning("[LevelLoader] Unable to load level. Quitting game...");
+            Debug.LogWarning("[LevelLoader] Unable to load level. Deleting save file and quitting game...");
+            GameManager.Instance.DeleteSaveFile();
             GameManager.Instance.QuitGame();
 		}
 
