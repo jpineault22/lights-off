@@ -33,19 +33,22 @@ public class MovingPlatform : Device
 	{
 		if (Mathf.Abs(pTarget.x - transform.position.x) <= 0.01f && Mathf.Abs(pTarget.y - transform.position.y) <= 0.01f)
 		{
-			currentTargetIndex++;
-
-			if (currentTargetIndex >= targetPoints.Length)
-			{
-				currentTargetIndex = 0;
-			}
-
+			IncrementTargetIndex();
 			StopPlatform();
-
 			return true;
 		}
 
 		return false;
+	}
+
+	protected void IncrementTargetIndex()
+	{
+		currentTargetIndex++;
+
+		if (currentTargetIndex >= targetPoints.Length)
+		{
+			currentTargetIndex = 0;
+		}
 	}
 
 	private void OnCollisionStay2D(Collision2D collision)

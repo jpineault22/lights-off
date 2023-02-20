@@ -5,13 +5,14 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4199164049310659032, guid: 8a46fdd9ef41b074ba81029625091ceb,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5c569367401abb248b12bad61b37c399,
+      objectReference: {fileID: 21300000, guid: 872fea3a7ac81fe4690d1e2861cbe4f2,
         type: 3}
     - target: {fileID: 4199164049310659032, guid: 8a46fdd9ef41b074ba81029625091ceb,
         type: 3}
@@ -82,19 +83,19 @@ PrefabInstance:
         type: 3}
       propertyPath: spriteOn
       value: 
-      objectReference: {fileID: 21300000, guid: e81644a8f469c0a4e9c1cdd1e22b9be4,
+      objectReference: {fileID: 21300000, guid: 872fea3a7ac81fe4690d1e2861cbe4f2,
         type: 3}
     - target: {fileID: 7207814838029763442, guid: 8a46fdd9ef41b074ba81029625091ceb,
         type: 3}
       propertyPath: spriteOff
       value: 
-      objectReference: {fileID: 21300000, guid: 5c569367401abb248b12bad61b37c399,
+      objectReference: {fileID: 21300000, guid: eef1e7d0cfda1d7469056650e7d34fbf,
         type: 3}
     - target: {fileID: 7207814838029763442, guid: 8a46fdd9ef41b074ba81029625091ceb,
         type: 3}
       propertyPath: spriteInactive
       value: 
-      objectReference: {fileID: 21300000, guid: 5c569367401abb248b12bad61b37c399,
+      objectReference: {fileID: 21300000, guid: eef1e7d0cfda1d7469056650e7d34fbf,
         type: 3}
     - target: {fileID: 7207814838029763442, guid: 8a46fdd9ef41b074ba81029625091ceb,
         type: 3}
@@ -107,4 +108,5 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a46fdd9ef41b074ba81029625091ceb, type: 3}

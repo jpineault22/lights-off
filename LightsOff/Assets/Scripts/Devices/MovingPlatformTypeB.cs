@@ -7,16 +7,8 @@ public class MovingPlatformTypeB : MovingPlatform
 	[SerializeField] private Sprite spriteOtherDirectionOff = default;
 	[SerializeField] private Sprite spriteOtherDirectionInactive = default;
 	
-	[HideInInspector] public bool readyToSwitch;
 	private bool otherDirection;
 	public bool Moving { get; private set; }
-
-	protected override void Awake()
-	{
-		base.Awake();
-
-		readyToSwitch = true;
-	}
 
 	private void OnDestroy()
 	{
@@ -36,11 +28,9 @@ public class MovingPlatformTypeB : MovingPlatform
 				if (!CheckIfReachedTarget(target))
 				{
 					MoveTowardsTarget(target);
-					readyToSwitch = false;
 				}
 				else
 				{
-					readyToSwitch = true;
 					Moving = false;
 					otherDirection = !otherDirection;
 					SwitchOnOff();
@@ -67,7 +57,16 @@ public class MovingPlatformTypeB : MovingPlatform
 
 	public void StartMoving()
 	{
-		Moving = true;
-		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayMovingPlatformTypeB, gameObject);
+		if (!Moving)
+		{
+			Moving = true;
+			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayMovingPlatformTypeB, gameObject);
+		}
+		else
+		{
+			IncrementTargetIndex();
+			otherDirection = !otherDirection;
+			SwitchOnOff();
+		}
 	}
 }

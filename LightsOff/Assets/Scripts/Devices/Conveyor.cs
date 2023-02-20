@@ -35,7 +35,7 @@ public class Conveyor : Device
 			}
 		}
 
-		ShowOutline(false, false, false);
+		ShowOutline(false, false);
 
 		if (IsOnAndConnected())
 			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayConveyor, gameObject);
@@ -121,9 +121,9 @@ public class Conveyor : Device
 		return;
 	}
 
-	public override void ShowOutline(bool pShow, bool pFromBreaker, bool pSwitchBlocked)
+	public override void ShowOutline(bool pShow, bool pFromBreaker)
 	{
-		ChangeOutlineColor(pFromBreaker, pSwitchBlocked);
+		ChangeOutlineColor(pFromBreaker);
 
 		foreach (SpriteRenderer blockOutline in conveyorBlockOutlines)
 		{
@@ -131,7 +131,7 @@ public class Conveyor : Device
 		}
 	}
 
-	public override void ChangeOutlineColor(bool pFromBreaker, bool pSwitchBlocked)
+	public override void ChangeOutlineColor(bool pFromBreaker)
 	{
 		if (pFromBreaker)
 		{
@@ -139,7 +139,7 @@ public class Conveyor : Device
 		}
 		else
 		{
-			if (isConnected && !pSwitchBlocked)
+			if (isConnected)
 				ChangeConveyorBlocksColor(UIManager.Instance.deviceOutlineColor);
 			else
 				ChangeConveyorBlocksColor(UIManager.Instance.inactiveOutlineColor);

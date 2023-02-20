@@ -221,7 +221,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 357c5fc53b2b4c34a9b29576ebc3032c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c2fb676e3f4ca946a3fb646f0da5489, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -303,10 +303,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConnected: 1
   isOn: 0
-  spriteOn: {fileID: 21300000, guid: 357c5fc53b2b4c34a9b29576ebc3032c, type: 3}
-  spriteOff: {fileID: 21300000, guid: 0da4df0e1241d6a40ba8f51108a314a7, type: 3}
-  spriteInactive: {fileID: 21300000, guid: 0da4df0e1241d6a40ba8f51108a314a7, type: 3}
-  profiling: 0
+  spriteOn: {fileID: 21300000, guid: 9c2fb676e3f4ca946a3fb646f0da5489, type: 3}
+  spriteOff: {fileID: 21300000, guid: e572c9f98bb9aa343a524275017ebc98, type: 3}
+  spriteInactive: {fileID: 21300000, guid: e572c9f98bb9aa343a524275017ebc98, type: 3}
   targetPoints:
   - {fileID: 0}
   - {fileID: 0}
