@@ -5,12 +5,35 @@ public class Fan : Device
 	[SerializeField] private float forceMagnitude = 500f;
 	[SerializeField] private float forceMagnitudeUpwards = 125f;
 	
+	public ObjectOrientation Orientation { get; private set; }
 	private GameObject functionalFan;
 	private ParticleSystem functionalFanParticleSystem;
 	private AreaEffector2D functionalFanAreaEffector;
 	private BoxCollider2D functionalFanCollider;
 	private Animator animator;
 	private Animator outlineAnimator;
+
+	private void OnValidate()
+	{
+		switch(transform.localEulerAngles.z)
+		{
+			case 90:
+				Orientation = ObjectOrientation.North;
+				break;
+			case 180:
+				Orientation = ObjectOrientation.West;
+				break;
+			case 270:
+				Orientation = ObjectOrientation.South;
+				break;
+			case 0:
+				Orientation = ObjectOrientation.East;
+				break;
+			default:
+				Orientation = ObjectOrientation.North;
+				break;
+		}
+	}
 
 	protected override void Awake()
 	{
@@ -32,7 +55,7 @@ public class Fan : Device
 		
 		base.Awake();
 
-		functionalFanAreaEffector.forceMagnitude = objectRotation == ObjectRotation.West ? forceMagnitudeUpwards : forceMagnitude;
+		functionalFanAreaEffector.forceMagnitude = objectRotation == ObjectOrientation.West ? forceMagnitudeUpwards : forceMagnitude;
 	}
 
 	private void OnDestroy()

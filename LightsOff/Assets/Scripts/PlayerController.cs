@@ -23,7 +23,8 @@ public class PlayerController : Singleton<PlayerController>
     private GameObject interactibleGameObject;
     private List<PivotingGate> pivotingGateList;
     private List<GameObject> ladderList;                                        // List of ladders whose trigger collider the player is currently touching. It should technically not have more than two elements,
-                                                                                // those being ladders directly one above the other.
+    private GameObject functionalFan;                                           // those being ladders directly one above the other.
+
     // Modifiable in inspector
     [Header("Movement settings")]
     [SerializeField] private float moveInputThreshold = 0.2f;
@@ -44,6 +45,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float bounceBuffer = 1f;                           // When bouncing, the player reaches their last falling start height + this buffer (except when it's a second bounce)
     [SerializeField] private float minBounceForce = 10f;
     [SerializeField] private float conveyorSpeedMultiplier = 3f;
+    [SerializeField] private float fanSpeedMultiplier = 2f;
 
     // State variables
     private float horizontalMoveInput;
@@ -66,10 +68,10 @@ public class PlayerController : Singleton<PlayerController>
     private float lastFallingStartHeight;                                       // Stores the height at which the player last started falling. Used by ProcessBounce() to reach just above that same height, and by the collision detection, to determine if the player is high enough to trigger a bounce.
     private bool justBounced;
 
-    private float conveyorMomentumBonus;
+    private float momentumBonus;
     private Vector2 velocityBeforePhysicsUpdate;
 
-    private int nbKeys;
+    private int numberOfKeys;
 
 
     #region MonoBehaviour methods
@@ -90,8 +92,8 @@ public class PlayerController : Singleton<PlayerController>
         ladderList = new List<GameObject>();
 
         facingRight = true;
-        nbKeys = 0;
-        conveyorMomentumBonus = 1f;
+        numberOfKeys = 0;
+        momentumBonus = 1f;
     }
 
 	protected override void OnDestroy()
@@ -163,7 +165,7 @@ public class PlayerController : Singleton<PlayerController>
 
             SetIsGrounded();
             CheckIfFalling();
-            ManageConveyorMomentum();
+            ManageMomentumBonus();
             Move();
 
             if (CurrentCharacterState == CharacterState.Jumping)
@@ -202,9 +204,9 @@ public class PlayerController : Singleton<PlayerController>
         if (this != null && CanPerformGameplayAction() && (isGrounded || coyoteTimeCounter > 0 || CurrentCharacterState == CharacterState.Climbing) && pivotingGateTimeCounter <= 0)
         {
             if (CurrentCharacterState == CharacterState.Climbing)
-            {
                 LeaveClimbingState();
-            }
+            else if (inFanArea)
+                SetFanMomentum();
 
             CurrentCharacterState = CharacterState.Jumping;
             animator.SetBool(Constants.AnimatorCharacterIsJumping, true);
@@ -244,10 +246,10 @@ public class PlayerController : Singleton<PlayerController>
 		reachedLadderTop = playerFeetGroundedBuffer > highestLadderEnd - groundedRadius - spriteRenderer.bounds.extents.y && !boxCollider.IsTouchingLayers(groundLayerMask);
 
         climbingInValidDirection = SetUpLadders(climbingInValidDirection, playerFeetGroundedBuffer);
-
+        
 		if (ladderList.Count > 0 && climbCooldownCounter <= 0 && (CurrentCharacterState == CharacterState.Climbing || (Mathf.Abs(verticalMoveInput) > Mathf.Abs(horizontalMoveInput) && climbingInValidDirection)))
 		{
-			ProcessClimbing(playerFeetGroundedBuffer);
+            ProcessClimbing(playerFeetGroundedBuffer);
 		}
 		else
 		{
@@ -287,10 +289,10 @@ public class PlayerController : Singleton<PlayerController>
 
 	private void ProcessHorizontalMovement()
 	{
-        if (Mathf.Abs(horizontalMoveInput) >= moveInputThreshold || conveyorMomentumBonus > 1f)
+        if (Mathf.Abs(horizontalMoveInput) >= moveInputThreshold || momentumBonus > 1f)
         {
             int direction = facingRight ? 1 : -1;
-            rb.velocity = new Vector2(direction * speed * conveyorMomentumBonus, rb.velocity.y);
+            rb.velocity = new Vector2(direction * speed * momentumBonus, rb.velocity.y);
 
             if (isGrounded && CurrentCharacterState != CharacterState.Jumping && CurrentCharacterState != CharacterState.Bouncing)
             {
@@ -321,6 +323,17 @@ public class PlayerController : Singleton<PlayerController>
         animator.SetBool(Constants.AnimatorCharacterIsClimbing, true);
         rb.gravityScale = 0;
 
+        // Check if reached ladder's bottom
+        if (pPlayerFeetGroundedBuffer > lowestLadderEnd + groundedRadius)
+        {
+            readyToLeaveClimbingState = true;
+        }
+        else if (readyToLeaveClimbingState)
+        {
+            LeaveClimbingState();
+            SetStateToFalling();
+        }
+
         if (Mathf.Abs(verticalMoveInput) >= moveInputThreshold && (!reachedLadderTop || verticalMoveInput < 0))
         {
             if (!animator.enabled)
@@ -343,17 +356,6 @@ public class PlayerController : Singleton<PlayerController>
 
         // Snap player to horizontal middle of ladder
         transform.position = new Vector2(ladderList[0].transform.position.x, transform.position.y);
-
-        // Check if reached ladder's bottom
-        if (pPlayerFeetGroundedBuffer > lowestLadderEnd)
-        {
-            readyToLeaveClimbingState = true;
-        }
-        else if (readyToLeaveClimbingState)
-        {
-            LeaveClimbingState();
-            SetStateToFalling();
-        }
     }
 
     private void ProcessJump()
@@ -403,76 +405,77 @@ public class PlayerController : Singleton<PlayerController>
 
     #region Collisions
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D pCollision)
     {
-        if (collision.gameObject.CompareTag(Constants.TagKey))
+        if (pCollision.gameObject.CompareTag(Constants.TagKey))
         {
-            CollectKey(collision.gameObject);
+            CollectKey(pCollision.gameObject);
         }
-        else if (collision.gameObject.CompareTag(Constants.TagKeygate) && nbKeys > 0)
+        else if (pCollision.gameObject.CompareTag(Constants.TagKeygate) && numberOfKeys > 0)
         {
-            nbKeys--;
-            UIManager.Instance.UpdateKeyNumberText(nbKeys);
-            collision.gameObject.GetComponent<GateTypeA>().SwitchOnOff();
+            numberOfKeys--;
+            UIManager.Instance.UpdateKeyNumberText(numberOfKeys);
+            pCollision.gameObject.GetComponent<GateTypeA>().SwitchOnOff();
         }
-        else if (collision.gameObject.CompareTag(Constants.TagPivotingGate))
+        else if (pCollision.gameObject.CompareTag(Constants.TagPivotingGate))
         {
-            pivotingGateList.Add(collision.gameObject.GetComponent<PivotingGate>());
+            pivotingGateList.Add(pCollision.gameObject.GetComponent<PivotingGate>());
         }
-        else if (collision.gameObject.CompareTag(Constants.TagEnemy))
+        else if (pCollision.gameObject.CompareTag(Constants.TagEnemy))
 		{
             Die();
 		}
     }
 
-	private void OnCollisionExit2D(Collision2D collision)
+	private void OnCollisionExit2D(Collision2D pCollision)
 	{
-        if (collision.gameObject.CompareTag(Constants.TagPivotingGate))
+        if (pCollision.gameObject.CompareTag(Constants.TagPivotingGate))
         {
-            pivotingGateList.Remove(collision.gameObject.GetComponent<PivotingGate>());
+            pivotingGateList.Remove(pCollision.gameObject.GetComponent<PivotingGate>());
         }
-        else if (collision.gameObject.CompareTag(Constants.TagConveyor) && transform.position.y > collision.gameObject.transform.position.y)
+        else if (pCollision.gameObject.CompareTag(Constants.TagConveyor) && transform.position.y > pCollision.gameObject.transform.position.y)
         {
             CheckIfFalling();
 
             if (CurrentCharacterState == CharacterState.Jumping || CurrentCharacterState == CharacterState.Falling)
 			{
-                Conveyor conveyor = collision.gameObject.GetComponent<Conveyor>();
+                Conveyor conveyor = pCollision.gameObject.GetComponent<Conveyor>();
                 bool sameDirection = (facingRight && conveyor.IsDirectionRight()) || (!facingRight && !conveyor.IsDirectionRight());
 
                 if (conveyor.IsOnAndConnected() && sameDirection)
 				{
                     float momentumDivider = Mathf.Abs(horizontalMoveInput) > moveInputThreshold ? 1f : 2f;
-                    conveyorMomentumBonus = conveyorSpeedMultiplier / momentumDivider;
+                    momentumBonus = conveyorSpeedMultiplier / momentumDivider;
                 }
 			}
         }
     }
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D pCollision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer(Constants.LayerInteractibleObject))
+        if (pCollision.gameObject.layer == LayerMask.NameToLayer(Constants.LayerInteractibleObject))
         {
-            interactibleGameObject = collision.gameObject;
+            interactibleGameObject = pCollision.gameObject;
         }
-        else if (collision.gameObject.CompareTag(Constants.TagLadder))
+        else if (pCollision.gameObject.CompareTag(Constants.TagLadder))
         {
-            ladderList.Add(collision.gameObject);
+            ladderList.Add(pCollision.gameObject);
             UpdateLadderEnds();
         }
-        else if (collision.gameObject.CompareTag(Constants.TagKey))
+        else if (pCollision.gameObject.CompareTag(Constants.TagKey))
 		{
-            CollectKey(collision.gameObject);
+            CollectKey(pCollision.gameObject);
 		}
-        else if (collision.gameObject.CompareTag(Constants.TagFunctionalFan))
+        else if (pCollision.gameObject.CompareTag(Constants.TagFunctionalFan))
 		{
             inFanArea = true;
+            functionalFan = pCollision.gameObject;
 		}
-        else if (collision.gameObject.CompareTag(Constants.TagEnemy))
+        else if (pCollision.gameObject.CompareTag(Constants.TagEnemy))
         {
-            if (CurrentCharacterState == CharacterState.Falling && lastFallingStartHeight - collision.gameObject.transform.position.y >= bounceMinFallingVerticalDistance)
+            if (CurrentCharacterState == CharacterState.Falling && lastFallingStartHeight - pCollision.gameObject.transform.position.y >= bounceMinFallingVerticalDistance)
             {
-                collision.gameObject.GetComponent<Enemy>().GetStunned();
+                pCollision.gameObject.GetComponent<Enemy>().GetStunned();
                 CurrentCharacterState = CharacterState.Bouncing;
                 animator.SetTrigger(Constants.AnimatorCharacterIsJumping);
                 rb.velocity = new Vector2(velocityBeforePhysicsUpdate.x, -velocityBeforePhysicsUpdate.y);
@@ -482,20 +485,21 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-	private void OnTriggerExit2D(Collider2D collision)
+	private void OnTriggerExit2D(Collider2D pCollision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer(Constants.LayerInteractibleObject))
+        if (pCollision.gameObject.layer == LayerMask.NameToLayer(Constants.LayerInteractibleObject))
         {
             interactibleGameObject = null;
         }
-        else if (collision.gameObject.CompareTag(Constants.TagLadder))
+        else if (pCollision.gameObject.CompareTag(Constants.TagLadder))
         {
-            ladderList.Remove(collision.gameObject);
+            ladderList.Remove(pCollision.gameObject);
             UpdateLadderEnds();
         }
-        else if (collision.gameObject.CompareTag(Constants.TagFunctionalFan))
+        else if (pCollision.gameObject.CompareTag(Constants.TagFunctionalFan))
         {
             inFanArea = false;
+            functionalFan = null;
         }
     }
 
@@ -524,14 +528,14 @@ public class PlayerController : Singleton<PlayerController>
         {
             if (horizontalMoveInput > 0)
             {
-                if (!facingRight && conveyorMomentumBonus > 1f) conveyorMomentumBonus = 1f;
+                if (!facingRight && momentumBonus > 1f) momentumBonus = 1f;
 
                 spriteRenderer.flipX = false;
                 facingRight = true;
             }
             else if (horizontalMoveInput < 0)
             {
-                if (facingRight && conveyorMomentumBonus > 1f) conveyorMomentumBonus = 1f;
+                if (facingRight && momentumBonus > 1f) momentumBonus = 1f;
 
                 spriteRenderer.flipX = true;
                 facingRight = false;
@@ -612,13 +616,25 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    private void ManageConveyorMomentum()
+    private void SetFanMomentum()
 	{
-        if (conveyorMomentumBonus > 1f)
+        Fan fan = functionalFan.GetComponentInParent<Fan>();
+        bool sameDirection = (facingRight && fan.Orientation == ObjectOrientation.East) || (!facingRight && fan.Orientation == ObjectOrientation.West);
+
+        if (sameDirection)
+        {
+            float momentumDivider = Mathf.Abs(horizontalMoveInput) > moveInputThreshold ? 1f : 2f;
+            momentumBonus = fanSpeedMultiplier / momentumDivider;
+        }
+    }
+
+    private void ManageMomentumBonus()
+	{
+        if (momentumBonus > 1f)
 		{
             if (CurrentCharacterState == CharacterState.Idle || CurrentCharacterState == CharacterState.Walking || CurrentCharacterState == CharacterState.Climbing || CurrentCharacterState == CharacterState.Dying)
 			{
-                conveyorMomentumBonus = 1f;
+                momentumBonus = 1f;
 			}
 		}
 	}
@@ -701,7 +717,7 @@ public class PlayerController : Singleton<PlayerController>
         rb.gravityScale = 0;
         boxCollider.enabled = false;
         ladderList.Clear();
-        nbKeys = 0;
+        numberOfKeys = 0;
 	}
 
     public void ResetCharacterAfterReload()
@@ -736,8 +752,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private void CollectKey(GameObject pKey)
 	{
-        nbKeys++;
-        UIManager.Instance.UpdateKeyNumberText(nbKeys);
+        numberOfKeys++;
+        UIManager.Instance.UpdateKeyNumberText(numberOfKeys);
         AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayKeyCollect, gameObject);
         Destroy(pKey);
     }

@@ -2,32 +2,32 @@
 
 public abstract class RotatableObject : MonoBehaviour
 {
-    protected ObjectRotation objectRotation;
+    protected ObjectOrientation objectRotation;
     
     protected virtual void Awake()
 	{
         switch(transform.localEulerAngles.z)
 		{
             case 0:
-                objectRotation = ObjectRotation.North;
+                objectRotation = ObjectOrientation.North;
                 break;
             case 90:
-                objectRotation = ObjectRotation.West;
+                objectRotation = ObjectOrientation.West;
                 break;
             case 180:
-                objectRotation = ObjectRotation.South;
+                objectRotation = ObjectOrientation.South;
                 break;
             case 270:
-                objectRotation = ObjectRotation.East;
+                objectRotation = ObjectOrientation.East;
                 break;
             default:
-                objectRotation = ObjectRotation.North;
+                objectRotation = ObjectOrientation.North;
                 break;
 		}
 	}
 }
 
-public enum ObjectRotation
+public enum ObjectOrientation
 {
     North,
     West,

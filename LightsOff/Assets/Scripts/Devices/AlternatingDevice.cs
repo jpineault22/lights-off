@@ -7,9 +7,17 @@ public class AlternatingDevice : Device
 	[SerializeField] private bool movesHorizontally = false;
 	[SerializeField] private float movementDuration = 0.225f;
 
+	private Collider2D deviceCollider;
 	private Vector2? target;
 	private float targetDistance;
 	private float movementTimer;
+
+	protected override void Awake()
+	{
+		base.Awake();
+
+		deviceCollider = GetComponent<Collider2D>();
+	}
 
 	protected virtual void Update()
 	{
@@ -22,6 +30,7 @@ public class AlternatingDevice : Device
 		else if (target != null)
 		{
 			transform.position = (Vector2) target;
+			deviceCollider.enabled = true;
 		}
 	}
 
@@ -60,6 +69,9 @@ public class AlternatingDevice : Device
 		}
 
 		movementTimer = movementDuration;
+
+		if (deviceCollider && deviceCollider.isTrigger)
+			deviceCollider.enabled = false;
 
 		if (gameObject.CompareTag(Constants.TagLadder))
 			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayLadderMoves, gameObject);

@@ -223,5 +223,5 @@ MonoBehaviour:
   isConnected: 1
   isOn: 1
   spriteOn: {fileID: 21300000, guid: 24ce1bdafc3de2b439cff61c3b793b53, type: 3}
-  spriteOff: {fileID: 21300000, guid: 17ea0c89ba687f642ad781ca296b2467, type: 3}
-  spriteInactive: {fileID: 21300000, guid: 17ea0c89ba687f642ad781ca296b2467, type: 3}
+  spriteOff: {fileID: 21300000, guid: aa7b6846d547c834d8c8dfec26303593, type: 3}
+  spriteInactive: {fileID: 21300000, guid: aa7b6846d547c834d8c8dfec26303593, type: 3}

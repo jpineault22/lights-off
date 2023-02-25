@@ -75,16 +75,16 @@ public abstract class CycleDevice : RotatableObject
 		{
 			switch (objectRotation)
 			{
-				case ObjectRotation.North:
+				case ObjectOrientation.North:
 					currentState = 0;
 					break;
-				case ObjectRotation.East:
+				case ObjectOrientation.East:
 					currentState = 1;
 					break;
-				case ObjectRotation.South:
+				case ObjectOrientation.South:
 					currentState = 2;
 					break;
-				case ObjectRotation.West:
+				case ObjectOrientation.West:
 					currentState = 3;
 					break;
 				default:

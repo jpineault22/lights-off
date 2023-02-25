@@ -51,20 +51,30 @@ public class MovingPlatform : Device
 		}
 	}
 
-	private void OnCollisionStay2D(Collision2D collision)
+	private void SetPlayerAsChild(Collision2D pCollision)
 	{
-		if (GameManager.Instance.CurrentGameState == GameState.Playing && collision.gameObject.CompareTag(Constants.TagPlayer) && PlayerController.Instance.IsGrounded())
+		if (GameManager.Instance.CurrentGameState == GameState.Playing && pCollision.gameObject.CompareTag(Constants.TagPlayer) && PlayerController.Instance.IsGrounded())
 		{
-			collision.gameObject.transform.SetParent(transform);
+			pCollision.gameObject.transform.SetParent(transform);
 		}
 	}
 
-	private void OnCollisionExit2D(Collision2D collision)
+	private void OnCollisionEnter2D(Collision2D pCollision)
 	{
-		if (collision.gameObject.CompareTag(Constants.TagPlayer))
+		SetPlayerAsChild(pCollision);
+	}
+
+	private void OnCollisionStay2D(Collision2D pCollision)
+	{
+		SetPlayerAsChild(pCollision);
+	}
+
+	private void OnCollisionExit2D(Collision2D pCollision)
+	{
+		if (pCollision.gameObject.CompareTag(Constants.TagPlayer))
 		{
-			collision.gameObject.transform.SetParent(null);
-			DontDestroyOnLoad(collision.gameObject);
+			pCollision.gameObject.transform.SetParent(null);
+			DontDestroyOnLoad(pCollision.gameObject);
 		}
 	}
 }

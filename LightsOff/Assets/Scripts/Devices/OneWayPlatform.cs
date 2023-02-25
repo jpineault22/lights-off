@@ -18,7 +18,7 @@ public class OneWayPlatform : RotatableObject
 	{
 		if (PlayerController.IsInitialized && (disappearingDevice == default || disappearingDevice.IsOnAndConnected()))
 		{
-			if (objectRotation == ObjectRotation.West)
+			if (objectRotation == ObjectOrientation.West)
 			{
 				if (PlayerController.Instance.transform.position.x + PlayerController.Instance.boxCollider.bounds.extents.x > transform.position.x - platformWidthHalf)
 				{
@@ -29,7 +29,7 @@ public class OneWayPlatform : RotatableObject
 					edgeCollider.isTrigger = false;
 				}
 			}
-			else if (objectRotation == ObjectRotation.East)
+			else if (objectRotation == ObjectOrientation.East)
 			{
 				if (PlayerController.Instance.transform.position.x - PlayerController.Instance.boxCollider.bounds.extents.x < transform.position.x + platformWidthHalf)
 				{
@@ -40,7 +40,7 @@ public class OneWayPlatform : RotatableObject
 					edgeCollider.isTrigger = false;
 				}
 			}
-			else if (objectRotation == ObjectRotation.South)
+			else if (objectRotation == ObjectOrientation.South)
 			{
 				if (PlayerController.Instance.transform.position.y + PlayerController.Instance.boxCollider.bounds.extents.y > transform.position.y - platformWidthHalf)
 				{

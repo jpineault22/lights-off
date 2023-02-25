@@ -8,6 +8,7 @@ public class UIManager : Singleton<UIManager>
 	[SerializeField] private CanvasGroup inGameUICanvasGroup = default;
 	[SerializeField] private TMP_Text levelNumberText = default;
 	[SerializeField] private TMP_Text keyNumberText = default;
+	[SerializeField] private TMP_Text lightNumberText = default;
 	[SerializeField] private float inGameUIFadeTime = 0.5f;
 	[SerializeField] public float ScrollSensitivity { get; private set; } = 15f;
 
@@ -88,7 +89,12 @@ public class UIManager : Singleton<UIManager>
 
 	public void UpdateKeyNumberText(int pKeyNumber)
 	{
-		keyNumberText.text = Constants.UIKeyNumberText + pKeyNumber;
+		keyNumberText.text = Constants.UILightKeyNumberText + pKeyNumber;
+	}
+
+	public void UpdateLightNumberText(int pLightNumber)
+	{
+		lightNumberText.text = Constants.UILightKeyNumberText + pLightNumber;
 	}
 
 	public void EnableInGameUI(bool pEnable)

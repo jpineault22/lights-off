@@ -176,6 +176,7 @@ MonoBehaviour:
   bounceBuffer: 1
   minBounceForce: 10
   conveyorSpeedMultiplier: 3
+  fanSpeedMultiplier: 3
 --- !u!95 &289328072031550851
 Animator:
   serializedVersion: 4

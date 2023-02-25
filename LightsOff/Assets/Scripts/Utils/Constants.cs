@@ -73,7 +73,7 @@ public static class Constants
 
     // UI
     public const string UILevelNumberText = "Level ";
-    public const string UIKeyNumberText = "x";
+    public const string UILightKeyNumberText = "x";
     public const string UIInteractMessagePress = "Press";
     public const string UIInteractMessageEnter = "Enter";
     public const string UIInteractMessageSleep = "Sleep";

@@ -246,6 +246,8 @@ public class GameManager : Singleton<GameManager>
 
 	public bool CheckIfAllLightsOff()
 	{
+		int lightsRemaining = 0;
+		
 		foreach (Light light in levelLights)
 		{
 			if (light.IsOnAndConnected())
@@ -253,14 +255,16 @@ public class GameManager : Singleton<GameManager>
 				if (door != null)
 					door.CloseDoor();
 
-				return false;
+				lightsRemaining++;
 			}
 		}
 
-		if (door != null)
+		if (door != null && lightsRemaining == 0)
 			door.OpenDoor();
 
-		return true;
+		UIManager.Instance.UpdateLightNumberText(lightsRemaining);
+
+		return lightsRemaining == 0;
 	}
 
 	private void SetPlayerPosition()
