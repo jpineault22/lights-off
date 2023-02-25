@@ -18,25 +18,28 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: c2311dc96b6b31b41a143192055ac393
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/Level_3.unity
     guid: f6f4d1ccdbaf6604db430a8cedfcd2b5
   - enabled: 1
-    path: Assets/Scenes/Level4.unity
+    path: Assets/Scenes/Level_4.unity
     guid: 30d359ffcda60b547b052ba888acb2cc
   - enabled: 1
-    path: Assets/Scenes/Level5.unity
-    guid: e34b3d172b0050c428c525148e1b2339
+    path: Assets/Scenes/Level_5.unity
+    guid: f85b99cde1bd5d14a8c8623f35a2fbf8
   - enabled: 1
     path: Assets/Scenes/Level_6.unity
     guid: 510cb474f6a89f34785953335a836316
   - enabled: 1
-    path: Assets/Scenes/Level_5.unity
-    guid: a9687f0a126fc89489acda443b81dc17
+    path: Assets/Scenes/Level_7.unity
+    guid: e34b3d172b0050c428c525148e1b2339
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Level_2.unity
+    path: Assets/Scenes/Level_8.unity
     guid: cf1c55b18e16b974fbfc9bd89c1aa363
   - enabled: 1
-    path: Assets/Scenes/Level_1.unity
+    path: Assets/Scenes/Level_9.unity
     guid: d6b5b54b53fe65c419d3b4a09a3825d8
   - enabled: 1
     path: Assets/Scenes/Level_10.unity
@@ -96,13 +99,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_28.unity
     guid: 65adf14dbc6a2cf439ade8795bba306a
   - enabled: 1
-    path: Assets/Scenes/Level_29.unity
+    path: Assets/Scenes/Level_1.unity
     guid: e33c80d9573d56d4999f0ba9cd2d796d
   - enabled: 1
     path: Assets/Scenes/Level_30.unity
     guid: fe763e2de1f736547b428b73bb24784e
   - enabled: 1
-    path: Assets/Scenes/Level_3.unity
+    path: Assets/Scenes/Level_31.unity
     guid: b862590f7bec07d40aed5532d8ad3b08
   - enabled: 1
     path: Assets/Scenes/Level_32.unity
@@ -114,7 +117,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_34.unity
     guid: 2aa64a8f27ebbb64394cd8493041aae0
   - enabled: 1
-    path: Assets/Scenes/Level_4.unity
+    path: Assets/Scenes/Level_35.unity
     guid: 3aacd2c334b11f0478070fa3d65a53a1
   - enabled: 0
     path: Assets/Scenes/arch/Test_1.unity

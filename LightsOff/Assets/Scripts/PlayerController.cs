@@ -238,50 +238,52 @@ public class PlayerController : Singleton<PlayerController>
     #region Action processing methods, called from FixedUpdate
 
     private void Move()
-    {
-        bool climbingInValidDirection = false;          // Variable used to evaluate validity of the direction input when starting to climb, in order to allow it
-        float playerFeetGroundedBuffer = transform.position.y - boxCollider.bounds.extents.y - groundedRadius;
-        reachedLadderTop = playerFeetGroundedBuffer > highestLadderEnd - groundedRadius - spriteRenderer.bounds.extents.y && !boxCollider.IsTouchingLayers(groundLayerMask);
+	{
+		bool climbingInValidDirection = false;          // Variable used to evaluate validity of the direction input when starting to climb, in order to allow it
+		float playerFeetGroundedBuffer = transform.position.y - boxCollider.bounds.extents.y - groundedRadius;
+		reachedLadderTop = playerFeetGroundedBuffer > highestLadderEnd - groundedRadius - spriteRenderer.bounds.extents.y && !boxCollider.IsTouchingLayers(groundLayerMask);
 
-        // Move to 2 other separate methods (SetUpLadders, ProcessClimb)?
-        // trust the code.
-        if (ladderList.Count > 0)
-		{
-            if (CurrentCharacterState != CharacterState.Climbing)
-			{
-                // Determine if player is climbing in a valid direction
-                if (Mathf.Abs(verticalMoveInput) >= moveInputThreshold &&
-                    ((verticalMoveInput > 0 && playerFeetGroundedBuffer < highestLadderEnd - groundedRadius) || (verticalMoveInput < 0 && playerFeetGroundedBuffer > lowestLadderEnd)))
-				{
-                    if (!reachedLadderTop)
-					{
-                        climbingInValidDirection = true;
-                    }
-				}
-            }
-		}
+        climbingInValidDirection = SetUpLadders(climbingInValidDirection, playerFeetGroundedBuffer);
 
-        if (ladderList.Count > 0 && climbCooldownCounter <= 0 && (CurrentCharacterState == CharacterState.Climbing || (Mathf.Abs(verticalMoveInput) > Mathf.Abs(horizontalMoveInput) && climbingInValidDirection)))
+		if (ladderList.Count > 0 && climbCooldownCounter <= 0 && (CurrentCharacterState == CharacterState.Climbing || (Mathf.Abs(verticalMoveInput) > Mathf.Abs(horizontalMoveInput) && climbingInValidDirection)))
 		{
 			ProcessClimbing(playerFeetGroundedBuffer);
 		}
 		else
-        {
-            // Set state to falling if player was climbing
-            if (CurrentCharacterState == CharacterState.Climbing)
+		{
+			// Set state to falling if player was climbing
+			if (CurrentCharacterState == CharacterState.Climbing)
 			{
-                LeaveClimbingState();
-                SetStateToFalling();
-            }
+				LeaveClimbingState();
+				SetStateToFalling();
+			}
 
-            if (climbCooldownCounter > 0)
+			if (climbCooldownCounter > 0)
+			{
+				climbCooldownCounter -= Time.fixedDeltaTime;
+			}
+
+			ProcessHorizontalMovement();
+		}
+	}
+
+	private bool SetUpLadders(bool climbingInValidDirection, float playerFeetGroundedBuffer)
+	{
+		if (ladderList.Count > 0 && CurrentCharacterState != CharacterState.Climbing)
+		{
+            // Determine if player is climbing in a valid direction
+            if (Mathf.Abs(verticalMoveInput) >= moveInputThreshold &&
+                ((verticalMoveInput > 0 && playerFeetGroundedBuffer < highestLadderEnd - groundedRadius) || (verticalMoveInput < 0 && playerFeetGroundedBuffer > lowestLadderEnd + groundedRadius)))
             {
-                climbCooldownCounter -= Time.fixedDeltaTime;
+                if (!reachedLadderTop)
+                {
+                    climbingInValidDirection = true;
+                }
             }
-
-            ProcessHorizontalMovement();
         }
-    }
+
+		return climbingInValidDirection;
+	}
 
 	private void ProcessHorizontalMovement()
 	{
