@@ -16,8 +16,10 @@ public class MovingPlatformTypeB : MovingPlatform
 			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopMovingPlatformTypeB, gameObject);
 	}
 
-	private void FixedUpdate()
+	protected override void FixedUpdate()
 	{
+		base.FixedUpdate();
+		
 		if (isConnected)
 		{
 			if (Moving)

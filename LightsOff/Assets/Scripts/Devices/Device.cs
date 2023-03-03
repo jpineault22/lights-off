@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Device : RotatableObject
 {
@@ -7,9 +8,15 @@ public class Device : RotatableObject
     [SerializeField] protected Sprite spriteOn = default;
     [SerializeField] protected Sprite spriteOff = default;
 	[SerializeField] protected Sprite spriteInactive = default;
+	[SerializeField] protected float enemyDistanceToBlock = 6f;
 
     protected SpriteRenderer spriteRenderer;
 	protected SpriteRenderer outlineSpriteRenderer;
+	protected GameObject spawnedEnemy;									// This works only with the current setups, that is only one enemy per level allowed
+	protected Vector2 spawnedEnemyBoundsExtents;
+	protected bool deviceBlocked;
+
+	public event Action<GameObject, bool> DeviceBlocked;
 
 	protected override void Awake()
 	{
@@ -38,11 +45,13 @@ public class Device : RotatableObject
 	protected virtual void OnEnable()
 	{
 		GameManager.Instance.PlayerSpawned += AssignAudioEmitterToPlayerListener;
+		Spawner.Instance.EnemySpawned += GetEnemyReference;
 	}
 
 	protected virtual void OnDisable()
 	{
 		GameManager.Instance.PlayerSpawned -= AssignAudioEmitterToPlayerListener;
+		Spawner.Instance.EnemySpawned -= GetEnemyReference;
 	}
 
 	public void SwitchOnOff()
@@ -76,12 +85,12 @@ public class Device : RotatableObject
 
 	public virtual void ShowOutline(bool pShow, bool pFromBreaker)
 	{
-		ChangeOutlineColor(pFromBreaker);
+		ChangeOutlineColor(pFromBreaker, false);
 		
 		outlineSpriteRenderer.enabled = pShow;
 	}
 
-	public virtual void ChangeOutlineColor(bool pFromBreaker)
+	public virtual void ChangeOutlineColor(bool pFromBreaker, bool pSwitchBlocked)
 	{
 		if (pFromBreaker)
 		{
@@ -89,7 +98,7 @@ public class Device : RotatableObject
 		}
 		else
 		{
-			if (isConnected)
+			if (isConnected && !pSwitchBlocked)
 				outlineSpriteRenderer.color = UIManager.Instance.deviceOutlineColor;
 			else
 				outlineSpriteRenderer.color = UIManager.Instance.inactiveOutlineColor;
@@ -109,5 +118,37 @@ public class Device : RotatableObject
 	private void AssignAudioEmitterToPlayerListener()
 	{
 		AudioManager.Instance.AssignEmitterToPlayerListener(gameObject);
+	}
+
+	protected void GetEnemyReference(GameObject pSpawnedEnemy)
+	{
+		spawnedEnemy = pSpawnedEnemy;
+		SpriteRenderer spawnedEnemySpriteRenderer = pSpawnedEnemy.GetComponent<SpriteRenderer>();
+		spawnedEnemyBoundsExtents = new Vector2(spawnedEnemySpriteRenderer.bounds.extents.x, spawnedEnemySpriteRenderer.bounds.extents.y);
+	}
+
+	protected void CheckIfDeviceBlocked(float pDeviceLeftEdge, float pDeviceRightEdge, float pEnemyDistanceBuffer)
+	{
+		if (transform.eulerAngles.z != 0 || Mathf.Abs(spawnedEnemy.transform.position.y - transform.position.y) >= enemyDistanceToBlock)
+			return;
+		
+		float enemyRightEdge = spawnedEnemy.transform.position.x + spawnedEnemyBoundsExtents.x;
+		float enemyLeftEdge = spawnedEnemy.transform.position.x - spawnedEnemyBoundsExtents.x;
+
+		if (!deviceBlocked && enemyRightEdge - pEnemyDistanceBuffer > pDeviceLeftEdge && enemyLeftEdge + pEnemyDistanceBuffer < pDeviceRightEdge)
+		{
+			deviceBlocked = true;
+			InvokeDeviceBlocked(true);
+		}
+		else if (deviceBlocked && (enemyRightEdge - pEnemyDistanceBuffer <= pDeviceLeftEdge || enemyLeftEdge + pEnemyDistanceBuffer >= pDeviceRightEdge))
+		{
+			deviceBlocked = false;
+			InvokeDeviceBlocked(false);
+		}
+	}
+
+	protected void InvokeDeviceBlocked(bool pBlocked)
+	{
+		DeviceBlocked?.Invoke(gameObject, pBlocked);
 	}
 }

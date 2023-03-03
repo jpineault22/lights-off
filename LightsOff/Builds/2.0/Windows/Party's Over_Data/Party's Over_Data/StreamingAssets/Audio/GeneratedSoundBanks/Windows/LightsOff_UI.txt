@@ -1,0 +1,24 @@
+Event	ID	Name			Wwise Object Path	Notes
+	188908783	Play_PauseMenuClose			\UI\Play_PauseMenuClose	
+	1022756005	Play_MenuPlay			\UI\Play_MenuPlay	
+	1030696368	Play_MenuDeleteSaveFileButtonPress			\UI\Play_MenuDeleteSaveFileButtonPress	
+	1578733045	Play_MenuChangeSetting			\UI\Play_MenuChangeSetting	
+	1654690896	Play_MenuSelectionMove			\UI\Play_MenuSelectionMove	
+	1910628788	Play_MenuButtonPress			\UI\Play_MenuButtonPress	
+	2694787811	Play_MenuButtonBackPress			\UI\Play_MenuButtonBackPress	
+	2867286185	Play_PauseMenuOpen			\UI\Play_PauseMenuOpen	
+	3159183902	Play_MenuQuit			\UI\Play_MenuQuit	
+	4000304925	Play_PauseMenuRetry			\UI\Play_PauseMenuRetry	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	93086034	menu-quit	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\menu-quit_10C4C929.wem		\Actor-Mixer Hierarchy\UI\menu-quit		69936
+	110537044	menu-selection-move	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\menu-selection-move_10C4C929.wem		\Actor-Mixer Hierarchy\UI\menu-selection-move		16134
+	132037434	pause-menu-open	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\pause-menu-open_10C4C929.wem		\Actor-Mixer Hierarchy\UI\pause-menu-open		88392
+	174329229	menu-play	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\menu-play_10C4C929.wem		\Actor-Mixer Hierarchy\UI\menu-play		69936
+	227690843	menu-select-button	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\menu-select-button_10C4C929.wem		\Actor-Mixer Hierarchy\UI\menu-select-button		43500
+	251070764	pause-menu-close	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\pause-menu-close_10C4C929.wem		\Actor-Mixer Hierarchy\UI\pause-menu-close		80964
+	463881881	menu-retry	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\menu-retry_10C4C929.wem		\Actor-Mixer Hierarchy\UI\menu-retry		48692
+	775318270	menu_confirm_setting	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\menu_confirm_setting_10C4C929.wem		\Actor-Mixer Hierarchy\UI\menu_confirm_setting		31480
+	879937095	menu-select-setting	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\menu-select-setting_10C4C929.wem		\Actor-Mixer Hierarchy\UI\menu-select-setting		30432
+	962681339	menu-change-setting	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\menu-change-setting_10C4C929.wem		\Actor-Mixer Hierarchy\UI\menu-change-setting		5708
+

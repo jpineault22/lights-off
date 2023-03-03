@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 153636889
+  m_SortingLayerID: 1448501565
   m_SortingLayer: -2
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: f041e8e000a936a46b91edd3dc4a566e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -243,9 +243,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 153636889
-  m_SortingLayer: -2
-  m_SortingOrder: 2
+  m_SortingLayerID: -1617993793
+  m_SortingLayer: -1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 74b56c9fdd87e644a879143d3e79aa97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -274,7 +274,6 @@ MonoBehaviour:
   spriteOn: {fileID: 21300000, guid: 74b56c9fdd87e644a879143d3e79aa97, type: 3}
   spriteOff: {fileID: 21300000, guid: 3a6957bd21b2bc541a2fab9e57343703, type: 3}
   spriteInactive: {fileID: 21300000, guid: 3a6957bd21b2bc541a2fab9e57343703, type: 3}
-  profiling: 0
 --- !u!1001 &1557951785403382521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -728,7 +727,7 @@ PrefabInstance:
     - target: {fileID: 1859946017683810841, guid: c14b2eed8d7c409438563e53c5afe7bd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.36
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1859946017683810841, guid: c14b2eed8d7c409438563e53c5afe7bd,
         type: 3}

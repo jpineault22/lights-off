@@ -1,16 +1,17 @@
 ﻿using TMPro;
+using UnityEngine;
 
 [System.Serializable]
 public class CreditScreen
 {
-    public TMP_Text[] creditText;
+    public RectTransform[] creditElement;
     public float screenDuration;
 
     public void EnableScreenText(bool pEnable)
 	{
-        foreach (TMP_Text text in creditText)
+        foreach (RectTransform element in creditElement)
 		{
-			text.enabled = pEnable;
+			element.gameObject.SetActive(pEnable);
 		}
 	}
 }

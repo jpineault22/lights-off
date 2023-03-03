@@ -18,6 +18,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1196441153	Play_DoorOpens			\Devices\Door\Play_DoorOpens	
 	1297425129	Play_OWBOn			\Devices\OneWayPlatform\Play_OWBOn	
 	1371404669	Play_EnemyWander			\Enemies\Play_EnemyWander	
+	1671381815	Stop_EnemyChasing			\Enemies\Stop_EnemyChasing	
 	1730740323	Play_PlayerBunk			\Player\Play_PlayerBunk	
 	1824093213	Play_EnemyStopChasing			\Enemies\Play_EnemyStopChasing	
 	1824946087	Play_TimerSwitchEnds			\Devices\Switch\Play_TimerSwitchEnds	

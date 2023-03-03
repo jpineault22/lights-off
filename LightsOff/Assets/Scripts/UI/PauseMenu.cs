@@ -66,4 +66,9 @@ public class PauseMenu : Singleton<PauseMenu>
 		quitGameButton.interactable = false;
 		GameManager.Instance.UnloadToQuit();
 	}
+
+	public void SelectHighlightedButton(Button pButton)
+	{
+		UIManager.Instance.SelectHighlightedButton(pButton);
+	}
 }

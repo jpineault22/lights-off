@@ -24,12 +24,13 @@ public class PivotingGate : CycleDevice
 	{
 		Quaternion targetRotation = Quaternion.Euler(0, 0, 90 * (nbStates - currentState));                                         // States/rotation: 0/0, 1/270, 2/180, 3/90
 
+		if (targetRotation.eulerAngles.z != Mathf.Floor(targetRotation.eulerAngles.z))
+			targetRotation = Quaternion.Euler(0, 0, 0);
+
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotatingSpeed * Time.fixedDeltaTime);
 
 		if (transform.rotation == targetRotation)
-		{
 			rotating = false;
-		}
 	}
 
 	private void ProcessSwitchAttempt()

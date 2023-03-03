@@ -240,7 +240,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1713275401" Type="User" Language="SFX" Hash="{55FC21AF-8B99-06AC-B6B6-DDD0D9E36C0E}">
+		<SoundBank Id="1713275401" Type="User" Language="SFX" Hash="{50A3B401-5314-E15F-D52F-BB78677E5044}">
 			<ShortName>LightsOff_SFX</ShortName>
 			<Path>LightsOff_SFX.bnk</Path>
 			<Media>
@@ -1021,10 +1021,17 @@
 				<Event Id="904139487" Name="Play_EnemyPassOut" MaxAttenuation="20" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="201782597"/>
+						<MediaRef Id="238411238"/>
 						<MediaRef Id="306199374"/>
+						<MediaRef Id="444209950"/>
+						<MediaRef Id="516234311"/>
 						<MediaRef Id="670458841"/>
 						<MediaRef Id="685610327"/>
+						<MediaRef Id="717821777"/>
+						<MediaRef Id="758458434"/>
 						<MediaRef Id="777935697"/>
+						<MediaRef Id="874063927"/>
+						<MediaRef Id="1022857879"/>
 						<MediaRef Id="1069924916"/>
 					</MediaRefs>
 				</Event>
@@ -1060,40 +1067,17 @@
 				</Event>
 				<Event Id="1824093213" Name="Play_EnemyStopChasing" MaxAttenuation="20" DurationType="OneShot" DurationMin="0.37552083" DurationMax="93.137184">
 					<MediaRefs>
-						<MediaRef Id="16023837"/>
-						<MediaRef Id="26783373"/>
-						<MediaRef Id="39962822"/>
-						<MediaRef Id="64180705"/>
-						<MediaRef Id="99741202"/>
-						<MediaRef Id="135577203"/>
-						<MediaRef Id="218848308"/>
-						<MediaRef Id="224403191"/>
 						<MediaRef Id="238411238"/>
-						<MediaRef Id="249288272"/>
-						<MediaRef Id="257496725"/>
-						<MediaRef Id="272034696"/>
-						<MediaRef Id="291072036"/>
-						<MediaRef Id="428104059"/>
 						<MediaRef Id="444209950"/>
-						<MediaRef Id="467736086"/>
-						<MediaRef Id="469286048"/>
-						<MediaRef Id="504629262"/>
-						<MediaRef Id="513622564"/>
 						<MediaRef Id="516234311"/>
-						<MediaRef Id="542131375"/>
-						<MediaRef Id="610989497"/>
-						<MediaRef Id="665546155"/>
-						<MediaRef Id="707979610"/>
 						<MediaRef Id="717821777"/>
 						<MediaRef Id="758458434"/>
-						<MediaRef Id="775541173"/>
-						<MediaRef Id="800195420"/>
 						<MediaRef Id="874063927"/>
-						<MediaRef Id="878337161"/>
-						<MediaRef Id="954233564"/>
 						<MediaRef Id="1022857879"/>
-						<MediaRef Id="1070822844"/>
 					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="1671381815" Name="Stop_EnemyChasing"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="871860279" Name="Play_EnemyStunned" MaxAttenuation="20" DurationType="OneShot" DurationMin="1.5833334" DurationMax="1.5833334">
 					<MediaRefs>
@@ -1352,13 +1336,50 @@
 						<MediaRef Id="963634068"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1671381815" Name="Stop_EnemyChasing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="16023837"/>
+						<MediaRef Id="26783373"/>
+						<MediaRef Id="39962822"/>
+						<MediaRef Id="64180705"/>
+						<MediaRef Id="99741202"/>
+						<MediaRef Id="135577203"/>
+						<MediaRef Id="218848308"/>
+						<MediaRef Id="224403191"/>
+						<MediaRef Id="249288272"/>
+						<MediaRef Id="257496725"/>
+						<MediaRef Id="272034696"/>
+						<MediaRef Id="291072036"/>
+						<MediaRef Id="428104059"/>
+						<MediaRef Id="467736086"/>
+						<MediaRef Id="469286048"/>
+						<MediaRef Id="504629262"/>
+						<MediaRef Id="513622564"/>
+						<MediaRef Id="542131375"/>
+						<MediaRef Id="610989497"/>
+						<MediaRef Id="665546155"/>
+						<MediaRef Id="707979610"/>
+						<MediaRef Id="775541173"/>
+						<MediaRef Id="800195420"/>
+						<MediaRef Id="878337161"/>
+						<MediaRef Id="954233564"/>
+						<MediaRef Id="1070822844"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1832694765" Name="Stop_EnemyPassOut" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="201782597"/>
+						<MediaRef Id="238411238"/>
 						<MediaRef Id="306199374"/>
+						<MediaRef Id="444209950"/>
+						<MediaRef Id="516234311"/>
 						<MediaRef Id="670458841"/>
 						<MediaRef Id="685610327"/>
+						<MediaRef Id="717821777"/>
+						<MediaRef Id="758458434"/>
 						<MediaRef Id="777935697"/>
+						<MediaRef Id="874063927"/>
+						<MediaRef Id="1022857879"/>
 						<MediaRef Id="1069924916"/>
 					</MediaRefs>
 				</Event>
@@ -1533,5 +1554,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1731FC1C-A312-88CF-0D15-3C4528B3C3FE}</FileHash>
+	<FileHash>{99281F14-E913-2647-75E1-64BBE738F7B7}</FileHash>
 </SoundBanksInfo>

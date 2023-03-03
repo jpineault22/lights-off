@@ -5,12 +5,11 @@ using UnityEngine.UI;
 // This class defines objects that have a trigger collider displaying a short message when in range, and with which the player can interact (such as switches, breakers and exit doors)
 public abstract class InteractibleObject : MonoBehaviour
 {
+	[SerializeField] protected Image interactMessageBackground = default;
 	[SerializeField] protected TMP_Text interactMessageText = default;
 	[SerializeField] private Image interactMessageImage = default;
 	[SerializeField] private InteractMessage interactMessage = default;
 	[SerializeField] protected float cooldownTime = 0.5f;
-	[SerializeField] protected Color accessibleColor = default;
-	[SerializeField] protected Color inaccessibleColor = default;
 
 	public bool InRange { get; protected set; }
 	protected float cooldownCounter = 0;
@@ -24,8 +23,7 @@ public abstract class InteractibleObject : MonoBehaviour
 		else if (interactMessage == InteractMessage.Sleep) interactMessageText.text = Constants.UIInteractMessageSleep;
 
 		EnableDisableInteractMessage(false);
-		interactMessageText.color = accessibleColor;
-		interactMessageText.outlineWidth = 0.4f;
+		interactMessageText.color = UIManager.Instance.accessibleColor;
 	}
 
 	private void Start()
@@ -73,11 +71,12 @@ public abstract class InteractibleObject : MonoBehaviour
 
 	private void UpdateInteractMessageColor(bool pAccessible)
 	{
-		interactMessageText.color = pAccessible ? accessibleColor : inaccessibleColor;
+		interactMessageText.color = pAccessible ? UIManager.Instance.accessibleColor : UIManager.Instance.inaccessibleColor;
 	}
 
 	protected void EnableDisableInteractMessage(bool pValue)
 	{
+		interactMessageBackground.enabled = pValue;
 		interactMessageText.enabled = pValue;
 		if (interactMessageImage != null)
 			interactMessageImage.enabled = pValue;

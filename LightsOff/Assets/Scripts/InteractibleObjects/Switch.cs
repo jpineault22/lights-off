@@ -1,17 +1,38 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 public class Switch : InteractibleObject
 {
 	[SerializeField] protected Device[] devices = default;
 
-	protected Device switchDevice;								// The Device script component of a switch. It should not be null. when connected to a breaker, it can activate/deactivate it.
+	protected Device switchDevice;                              // The Device script component of a switch. It should not be null. when connected to a breaker, it can activate/deactivate it.
+
+	protected bool switchBlocked;
 
 	protected override void Awake()
 	{
 		base.Awake();
 
 		switchDevice = GetComponent<Device>();
+	}
+
+	protected override void OnEnable()
+	{
+		base.OnEnable();
+
+		foreach (Device device in devices)
+		{
+			device.DeviceBlocked += CheckIfDevicesBlocked;
+		}
+	}
+
+	protected override void OnDisable()
+	{
+		base.OnDisable();
+
+		foreach (Device device in devices)
+		{
+			device.DeviceBlocked -= CheckIfDevicesBlocked;
+		}
 	}
 
 	protected override void OnTriggerEnter2D(Collider2D pCollision)
@@ -42,7 +63,7 @@ public class Switch : InteractibleObject
 
 	public override void Interact()
 	{
-		if (!switchDevice.IsConnected())
+		if (!switchDevice.IsConnected() || switchBlocked)
 			return;
 
 		switchDevice.SwitchOnOff();
@@ -62,5 +83,31 @@ public class Switch : InteractibleObject
 		}
 
 		GameManager.Instance.CheckIfAllLightsOff();
+	}
+
+	private void CheckIfDevicesBlocked(GameObject pObject, bool pDeviceBlocked)
+	{
+		foreach (Device obj in devices)
+		{
+			if (obj.gameObject == pObject)
+			{
+				if (pDeviceBlocked && !switchBlocked)
+				{
+					switchBlocked = true;
+
+					foreach (Device device in devices)
+						device.ChangeOutlineColor(false, true);
+				}
+				else if (!pDeviceBlocked && switchBlocked)
+				{
+					switchBlocked = false;
+
+					foreach (Device device in devices)
+						device.ChangeOutlineColor(false, false);
+				}
+
+				return;
+			}
+		}
 	}
 }

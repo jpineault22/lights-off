@@ -20,7 +20,7 @@ public class EnemyPassedOut : Enemy
 
 	private void OnDestroy()
 	{
-		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyStopChasing, gameObject);
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopEnemyChasing, gameObject);
 		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopEnemyPassOut, gameObject);
 	}
 
@@ -30,8 +30,8 @@ public class EnemyPassedOut : Enemy
 		{
 			base.FixedUpdate();
 
-			// Check if player has just started climbing
-			if (PlayerController.Instance.CurrentCharacterState == CharacterState.Climbing && playerClimbingHorizontalPosition == null)
+			// Check if player has just started climbing while chasing him
+			if ((currentEnemyState == EnemyState.Chasing || currentEnemyState == EnemyState.WakingUp) && PlayerController.Instance.CurrentCharacterState == CharacterState.Climbing && playerClimbingHorizontalPosition == null)
 				playerClimbingHorizontalPosition = player.transform.position.x;
 
 			// Update chasing flip timer
@@ -84,6 +84,9 @@ public class EnemyPassedOut : Enemy
 			animator.SetFloat(Constants.AnimatorEnemyCurrentStateTimer, currentStateTimer);
 			animator.SetBool(Constants.AnimatorEnemyIsChasing, true);
 			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyWakeUp, gameObject);
+
+			if (playerInfoBack.collider)
+				Flip();
 		}
 	}
 
@@ -93,8 +96,8 @@ public class EnemyPassedOut : Enemy
 		bool playerWithinVerticalRange = Mathf.Abs(playerVerticalDistance) < verticalExitChasingDistance;
 		int chasingDirection = CheckChasingDirection(playerWithinVerticalRange);
 
-		RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, new Vector2(chasingDirection, 0), wallDetectionRaycastDistance, LayerMask.GetMask(Constants.LayerGround));
-		RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, groundDetectionRaycastDistance, LayerMask.GetMask(Constants.LayerGround));
+		RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, new Vector2(chasingDirection, 0), wallDetectionRaycastDistance, groundLayerMask);
+		RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, groundDetectionRaycastDistance, groundLayerMask);
 
 		bool hasCrossedLadder = false;
 
@@ -123,8 +126,8 @@ public class EnemyPassedOut : Enemy
 		// OR the player is far enough from the enemy
 		// OR the player is far enough above the enemy
 		// OR the player has climbed up or down out of reach from the enemy
-		if (!crossingLadder && (wallInfo.collider || (!groundInfo.collider && playerLevelOrAbove) || hasCrossedLadder || Vector2.Distance(transform.position, player.transform.position) > exitChasingDistance ||
-			player.transform.position.y - transform.position.y > verticalExitChasingDistance || playerClimbingOutOfReach))
+		if (!crossingLadder && ((wallInfo.collider && !wallInfo.collider.isTrigger) || (!groundInfo.collider && playerLevelOrAbove) || hasCrossedLadder || Vector2.Distance(transform.position, player.transform.position) > exitChasingDistance ||
+			playerVerticalDistance > verticalExitChasingDistance || playerClimbingOutOfReach))
 		{
 			BecomeChasingIdle(chasingIdleTime);
 		}

@@ -26,6 +26,8 @@ TagManager:
   - SpawnPoints
   - SpawnPointEnemyDrunk
   - SpawnPointEnemyPassedOut
+  - OWPB
+  - Gate
   layers:
   - Default
   - TransparentFX
@@ -41,7 +43,7 @@ TagManager:
   - Enemy
   - ColliderForEnemies
   - NoPost
-  - 
+  - GroundForPlayer
   - 
   - 
   - 
@@ -65,6 +67,12 @@ TagManager:
     locked: 0
   - name: Tiles
     uniqueID: 3368261557
+    locked: 0
+  - name: BackgroundEnvironment
+    uniqueID: 1448501565
+    locked: 0
+  - name: Environment
+    uniqueID: 2676973503
     locked: 0
   - name: Default
     uniqueID: 0

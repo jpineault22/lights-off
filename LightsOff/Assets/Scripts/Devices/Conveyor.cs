@@ -123,7 +123,7 @@ public class Conveyor : Device
 
 	public override void ShowOutline(bool pShow, bool pFromBreaker)
 	{
-		ChangeOutlineColor(pFromBreaker);
+		ChangeOutlineColor(pFromBreaker, false);
 
 		foreach (SpriteRenderer blockOutline in conveyorBlockOutlines)
 		{
@@ -131,7 +131,7 @@ public class Conveyor : Device
 		}
 	}
 
-	public override void ChangeOutlineColor(bool pFromBreaker)
+	public override void ChangeOutlineColor(bool pFromBreaker, bool pSwitchBlocked)
 	{
 		if (pFromBreaker)
 		{
@@ -139,7 +139,7 @@ public class Conveyor : Device
 		}
 		else
 		{
-			if (isConnected)
+			if (isConnected && !pSwitchBlocked)
 				ChangeConveyorBlocksColor(UIManager.Instance.deviceOutlineColor);
 			else
 				ChangeConveyorBlocksColor(UIManager.Instance.inactiveOutlineColor);

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : Singleton<Spawner>
@@ -22,6 +23,8 @@ public class Spawner : Singleton<Spawner>
 	private GameObject currentFunctionalLevel;
 	private GameObject[] spawnPoints;
 	private Vector2 startDoorPosition;
+
+	public event Action<GameObject> EnemySpawned;
 
 	protected override void Awake()
 	{
@@ -68,14 +71,18 @@ public class Spawner : Singleton<Spawner>
 		{
 			foreach (GameObject spawnPoint in spawnPoints)
 			{
+				GameObject spawnedEnemy = new GameObject();
+				
 				if (spawnPoint.CompareTag(Constants.TagSpawnPointEnemyDrunk))
 				{
-					Instantiate(enemyDrunkPrefab, spawnPoint.transform);
+					spawnedEnemy = Instantiate(enemyDrunkPrefab, spawnPoint.transform);
 				}
 				else if (spawnPoint.CompareTag(Constants.TagSpawnPointEnemyPassedOut))
 				{
-					Instantiate(enemyPassedOutPrefab, spawnPoint.transform);
+					spawnedEnemy = Instantiate(enemyPassedOutPrefab, spawnPoint.transform);
 				}
+
+				EnemySpawned?.Invoke(spawnedEnemy);
 			}
 		}
 	}

@@ -193,7 +193,8 @@ MonoBehaviour:
   groundDetection: {fileID: 7029993100610155267}
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4608
+  landParticles: {fileID: 0}
   stunnedTime: 2
   groundDetectionRaycastDistance: 1
   wallDetectionRaycastDistance: 0.25

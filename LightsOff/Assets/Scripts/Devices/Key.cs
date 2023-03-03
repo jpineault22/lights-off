@@ -5,6 +5,7 @@ public class Key : MonoBehaviour
 	[SerializeField] private bool carriedUpByFan;           // This variable is used to check whether the key's collider has to be set to trigger when carried upwards by a fan, in order to avoid colliding with One-way Platforms.
 	[SerializeField] private GameObject keyLight;
 	[SerializeField] private float lightRotatingSpeed = 0.1f;
+	[SerializeField] private GameObject collectParticlesPrefab;
 
 	private BoxCollider2D boxCollider;
 	private Rigidbody2D rb;
@@ -28,9 +29,17 @@ public class Key : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D pCollision)
 	{
-		if (pCollision.collider.gameObject.layer == LayerMask.NameToLayer(Constants.LayerGround))
+		if (pCollision.collider.gameObject.layer == LayerMask.NameToLayer(Constants.LayerGround) || pCollision.collider.gameObject.layer == LayerMask.NameToLayer(Constants.LayerGroundForPlayer))
 		{
 			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayKeyLands, gameObject);
 		}
+	}
+
+	public void CollectKey()
+	{
+		GameObject collectParticles = Instantiate(collectParticlesPrefab, transform.position, transform.rotation);
+		collectParticles.GetComponent<ParticleSystem>().Play();
+		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayKeyCollect, gameObject);
+		Destroy(gameObject);
 	}
 }

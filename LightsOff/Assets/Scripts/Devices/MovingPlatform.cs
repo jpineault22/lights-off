@@ -6,6 +6,7 @@ public class MovingPlatform : Device
 
 	[SerializeField] protected GameObject[] targetPoints = default;
 	[SerializeField] protected float speed = 5f;
+	[SerializeField] protected BoxCollider2D colliderForEnemies = default;
 
     protected int currentTargetIndex;
 
@@ -16,6 +17,14 @@ public class MovingPlatform : Device
 		rb = GetComponent<Rigidbody2D>();
 
 		currentTargetIndex = 0;
+	}
+
+	protected virtual void FixedUpdate()
+	{
+		if (spawnedEnemy)
+		{
+			colliderForEnemies.isTrigger = spawnedEnemy.transform.position.y - spawnedEnemyBoundsExtents.y + 0.2f < transform.position.y + spriteRenderer.bounds.extents.y;
+		}
 	}
 
 	protected void MoveTowardsTarget(Vector2 pTarget)
@@ -51,30 +60,40 @@ public class MovingPlatform : Device
 		}
 	}
 
-	private void SetPlayerAsChild(Collision2D pCollision)
+	private void SetPlayerAsChild(GameObject pCollision)
 	{
-		if (GameManager.Instance.CurrentGameState == GameState.Playing && pCollision.gameObject.CompareTag(Constants.TagPlayer) && PlayerController.Instance.IsGrounded())
+		if (GameManager.Instance.CurrentGameState == GameState.Playing && pCollision.CompareTag(Constants.TagPlayer) && PlayerController.Instance.IsGrounded())
 		{
-			pCollision.gameObject.transform.SetParent(transform);
+			pCollision.transform.SetParent(transform);
+		}
+	}
+
+	private void RemovePlayerFromChildren(GameObject pCollision)
+	{
+		if (pCollision.CompareTag(Constants.TagPlayer))
+		{
+			pCollision.transform.SetParent(null);
+			DontDestroyOnLoad(pCollision);
 		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D pCollision)
 	{
-		SetPlayerAsChild(pCollision);
+		SetPlayerAsChild(pCollision.gameObject);
 	}
 
 	private void OnCollisionStay2D(Collision2D pCollision)
 	{
-		SetPlayerAsChild(pCollision);
+		SetPlayerAsChild(pCollision.gameObject);
 	}
 
 	private void OnCollisionExit2D(Collision2D pCollision)
 	{
-		if (pCollision.gameObject.CompareTag(Constants.TagPlayer))
-		{
-			pCollision.gameObject.transform.SetParent(null);
-			DontDestroyOnLoad(pCollision.gameObject);
-		}
+		RemovePlayerFromChildren(pCollision.gameObject);
+	}
+
+	private void OnTriggerExit2D(Collider2D pCollider)
+	{
+		RemovePlayerFromChildren(pCollider.gameObject);
 	}
 }

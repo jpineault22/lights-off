@@ -14,6 +14,8 @@ public class GameManager : Singleton<GameManager>
 	public bool EndingGame { get; set; }
 
 	public event Action PlayerSpawned;
+	public event Action PlayerEnteredClimbingState;
+	public event Action PlayerExitedClimbingState;
 
 	private void Start()
 	{
@@ -94,7 +96,10 @@ public class GameManager : Singleton<GameManager>
 	{
 		Time.timeScale = 1f;
 		CurrentGameState = GameState.Menu;
-		PlayerController.Instance.ResetCharacterForQuitToMenu();
+
+		if (PlayerController.IsInitialized)
+			PlayerController.Instance.ResetCharacterForQuitToMenu();
+
 		InputManager.Instance.DisableGameplayMap();
 		EventSystemManager.Instance.DeactivateModule();
 		AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventMusicBackToMenu);
@@ -166,6 +171,9 @@ public class GameManager : Singleton<GameManager>
 	// When quitting the game, first the currently loaded scene is unloaded, then some mutually dependent game objects/scripts need to be destroyed, and finally we quit the application
 	public void UnloadToQuit()
 	{
+		if (PlayerController.IsInitialized)
+			PlayerController.Instance.ResetCharacterForQuitToMenu();
+
 		Time.timeScale = 1f;
 		CurrentGameState = GameState.Quitting;
 		LevelLoader.Instance.StartQuitTransition();
@@ -271,6 +279,16 @@ public class GameManager : Singleton<GameManager>
 	{
 		if (player != null)
 			player.transform.position = Spawner.Instance.GetPositionForPlayerSpawn();
+	}
+
+	public void InvokePlayerEnteredClimbingState()
+	{
+		PlayerEnteredClimbingState?.Invoke();
+	}
+
+	public void InvokePlayerExitedClimbingState()
+	{
+		PlayerExitedClimbingState?.Invoke();
 	}
 
 	#endregion

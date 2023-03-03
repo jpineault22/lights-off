@@ -2,6 +2,7 @@
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -18,6 +19,8 @@ public class UIManager : Singleton<UIManager>
 	public Color deviceOutlineColor = Color.white;
 	public Color inactiveOutlineColor = Color.white;
 	public Color breakerOutlineColor = Color.white;
+	public Color accessibleColor = Color.white;
+	public Color inaccessibleColor = Color.white;
 
 	private bool uiIsFadingIn;
 	private float inGameUIFadeCounter;
@@ -80,6 +83,11 @@ public class UIManager : Singleton<UIManager>
 			default:
 				break;
 		}
+	}
+
+	public void SelectHighlightedButton(Button pButton)
+	{
+		pButton.Select();
 	}
 
 	public void UpdateLevelNumberText(int pLevelNumber)

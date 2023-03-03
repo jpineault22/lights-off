@@ -20,8 +20,10 @@ public class MovingPlatformTypeA : MovingPlatform
 			AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopMovingPlatformTypeA, gameObject);
 	}
 
-	private void FixedUpdate()
+	protected override void FixedUpdate()
 	{
+		base.FixedUpdate();
+
 		if (isOn && isConnected)
 		{
 			Vector2 target = targetPoints[currentTargetIndex].transform.position;

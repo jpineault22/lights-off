@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 153636889
+  m_SortingLayerID: 1448501565
   m_SortingLayer: -2
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: a02e971b74fdf1a4280744a42846a1f9, type: 3}
@@ -142,7 +142,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1617993793
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d76aa4a1029eed948aa9cc7c84e661b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -212,12 +212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3e3945fea410e4db77d35a73721d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactMessageBackground: {fileID: 2606089628067907203}
   interactMessageText: {fileID: 81464465482405003}
   interactMessageImage: {fileID: 4492102169644406476}
   interactMessage: 0
   cooldownTime: 0.5
-  accessibleColor: {r: 1, g: 1, b: 1, a: 1}
-  inaccessibleColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   devices:
   - {fileID: 0}
   cycleSwitchLeft: 1
@@ -239,7 +238,6 @@ MonoBehaviour:
   spriteOn: {fileID: 21300000, guid: d76aa4a1029eed948aa9cc7c84e661b0, type: 3}
   spriteOff: {fileID: 21300000, guid: d76aa4a1029eed948aa9cc7c84e661b0, type: 3}
   spriteInactive: {fileID: 21300000, guid: ef9114f27b987be4d90eda991a4df320, type: 3}
-  profiling: 0
 --- !u!1001 &156887385797329149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,6 +369,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2606089628067907203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2740388191581357694, guid: 23aa0ee5790ed4440bf53e23c8dbb1ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 156887385797329149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4492102169644406476 stripped

@@ -77,6 +77,18 @@
 				</Event>
 				<Event Name="Play_EnemyPassOut" ID="{F9064CD9-B7B9-4EFB-A3DD-9AC6A8C510CF}">
 					<ChildrenList>
+						<Action Name="" ID="{6CA0A40B-BD6E-432F-97C4-9A49B5BAE44C}" ShortID="929874721">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="0.1"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyStopsChasingVoice" ID="{BF920CD5-1EF4-4ED2-8DFC-0458221F539A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{64292530-72B6-49D5-AA92-B505E8983CC3}" ShortID="597366583">
 							<ReferenceList>
 								<Reference Name="Target">
@@ -88,23 +100,13 @@
 				</Event>
 				<Event Name="Play_EnemyStopChasing" ID="{20442435-2B58-4508-AB26-0A0CD6A2C6DC}">
 					<ChildrenList>
-						<Action Name="" ID="{5A1E8DE0-478C-4AE0-B1AD-96D37925A2F1}" ShortID="265922920">
+						<Action Name="" ID="{F3CBB421-8446-4989-87ED-3BE39A6239F1}" ShortID="257203555">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="ActionType" Type="int16" Value="41"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="EnemyChasing" ID="{D3A330B7-E038-41AB-ABE7-1AB542CF1B2A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{87180879-5687-4E22-8042-033E5571CC24}" ShortID="915987692">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+									<ObjectRef Name="Stop_EnemyChasing" ID="{C97BB41E-AD1B-41D9-9E6E-5C02C87051B1}" WorkUnitID="{F5F12C40-044F-44CC-8E38-5887C538CCA9}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -180,6 +182,18 @@
 				</Event>
 				<Event Name="Stop_EnemyPassOut" ID="{317A424E-44AE-4BC6-9158-B364E1C4FEB0}">
 					<ChildrenList>
+						<Action Name="" ID="{D746D4E8-1330-4962-8E37-14843E6CA620}" ShortID="899467433">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="0.1"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyStopsChasingVoice" ID="{BF920CD5-1EF4-4ED2-8DFC-0458221F539A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{C9BDC982-AC56-4A82-A3B4-8E2C7DEF7FCF}" ShortID="455951281">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
@@ -221,6 +235,30 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_EnemyChasing" ID="{C97BB41E-AD1B-41D9-9E6E-5C02C87051B1}">
+					<ChildrenList>
+						<Action Name="" ID="{7CF8C758-C39D-4296-90FC-0794BF6461D1}" ShortID="329027525">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyWalksWood" ID="{6D732F38-56D3-4BEC-B2CC-D320C50D69A3}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F4C1685D-538A-4CD6-9C41-369A829D3AC9}" ShortID="693118800">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EnemyChasing" ID="{D3A330B7-E038-41AB-ABE7-1AB542CF1B2A}" WorkUnitID="{F30C4C16-0030-4366-80B0-1204B65A8CAE}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

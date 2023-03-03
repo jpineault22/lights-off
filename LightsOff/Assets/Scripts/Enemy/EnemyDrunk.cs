@@ -31,10 +31,10 @@ public class EnemyDrunk : Enemy
 		{
 			int direction = facingRight ? 1 : -1;
 
-			RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, groundDetectionRaycastDistance, LayerMask.GetMask(Constants.LayerGround));
-			RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, new Vector2(direction, 0), wallDetectionRaycastDistance, LayerMask.GetMask(Constants.LayerGround));
+			RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, groundDetectionRaycastDistance, groundLayerMask);
+			RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, new Vector2(direction, 0), wallDetectionRaycastDistance, groundLayerMask);
 
-			if (currentEnemyState != EnemyState.Falling && currentEnemyState != EnemyState.Stunned && (!groundInfo.collider || wallInfo.collider))
+			if (currentEnemyState != EnemyState.Falling && currentEnemyState != EnemyState.Stunned && (!groundInfo.collider || (wallInfo.collider && !wallInfo.collider.isTrigger)))
 			{
 				Flip();
 			}

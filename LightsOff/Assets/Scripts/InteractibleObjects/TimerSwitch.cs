@@ -59,10 +59,8 @@ public class TimerSwitch : Switch
 	// Consider using a variable (switch on/off?) to avoid repeating the exact same Interact method from Switch
 	public override void Interact()
 	{
-		if (triggered || (switchDevice != null && !switchDevice.IsConnected()))
-		{
+		if (triggered || (switchDevice != null && !switchDevice.IsConnected()) || switchBlocked)
 			return;
-		}
 
 		SwitchDevices();
 

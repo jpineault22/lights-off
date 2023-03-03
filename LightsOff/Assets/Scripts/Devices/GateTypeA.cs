@@ -2,8 +2,13 @@
 
 public class GateTypeA : DisappearingDevice
 {
-    private Animator animator;
+	[SerializeField] private float enemyDistanceBuffer = 1f;
+	
+	private Animator animator;
 	private Animator outlineAnimator;
+
+	private float deviceLeftEdge;
+	private float deviceRightEdge;
 
 	protected override void Awake()
 	{
@@ -18,6 +23,9 @@ public class GateTypeA : DisappearingDevice
 		}
 
 		base.Awake();
+
+		deviceLeftEdge = transform.position.x - spriteRenderer.bounds.extents.x;
+		deviceRightEdge = transform.position.x + spriteRenderer.bounds.extents.x;
 	}
 
 	private void Update()
@@ -26,6 +34,12 @@ public class GateTypeA : DisappearingDevice
 		{
 			deviceCollider.enabled = false;
 		}
+	}
+
+	private void FixedUpdate()
+	{
+		if (spawnedEnemy)
+			CheckIfDeviceBlocked(deviceLeftEdge, deviceRightEdge, enemyDistanceBuffer);
 	}
 
 	public override void ApplyOnOffBehavior()

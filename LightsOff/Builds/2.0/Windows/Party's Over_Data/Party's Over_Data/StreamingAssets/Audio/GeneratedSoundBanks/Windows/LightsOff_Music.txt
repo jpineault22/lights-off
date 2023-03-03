@@ -1,0 +1,19 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2575825050	Music_BackToMenu			\Music\Music_BackToMenu	
+	2919733517	Music_PlayGame			\Music\Music_PlayGame	
+	3725903807	Music_Start			\Music\Music_Start	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	258110631	Game_Music			\Default Work Unit\Game_Music	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Game_Music			
+	984691642	InGame	Game_Music			
+	2607556080	Menu	Game_Music			
+	3966194980	Ending	Game_Music			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	163572459	Lights Off-Piano2-Partie1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\Lights Off-Piano2-Partie1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\GameMusic\Part1\Lights Off-PARTIE-1\Lights Off-Piano2-Partie1		5973432
+	812072501	Lights Off-PARTIE-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\Lights Off-PARTIE-2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\GameMusic\Part2\Lights Off-PARTIE-2\Lights Off-PARTIE-2		23693348
+	926978453	Lights Off-VLC2-Partie-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Windows\SFX\Lights Off-VLC2-Partie-1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\GameMusic\Part1\Lights Off-PARTIE-1\Lights Off-VLC2-Partie-1		5973428
+

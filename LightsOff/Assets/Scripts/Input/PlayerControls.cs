@@ -29,21 +29,21 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""MoveHorizontally"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""3948f4e9-ae9b-4f73-ac8a-f51968436903"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""MoveVertically"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""0bd6ed1c-a56d-40dc-993c-7c4922d1f759"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Interact"",

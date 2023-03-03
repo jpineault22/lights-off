@@ -208,6 +208,11 @@ public class MainMenu : Singleton<MainMenu>
 		backgroundBlur.focalLength.value += pDifference;
 		backgroundBlur.focalLength.overrideState = true;
 	}
+
+	public void SelectHighlightedButton(Button pButton)
+	{
+		UIManager.Instance.SelectHighlightedButton(pButton);
+	}
 }
 
 public enum Menu

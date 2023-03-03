@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 153636889
+  m_SortingLayerID: 1448501565
   m_SortingLayer: -2
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: a02e971b74fdf1a4280744a42846a1f9, type: 3}
@@ -142,7 +142,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1617993793
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 79e77fb398998f548a18aa13dcafbfaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -212,12 +212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee625156f7a1a340a9ab9d5978b391c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactMessageBackground: {fileID: 236812767731703816}
   interactMessageText: {fileID: 2756915727307436544}
   interactMessageImage: {fileID: 1816292462631006279}
   interactMessage: 0
   cooldownTime: 0.5
-  accessibleColor: {r: 1, g: 1, b: 1, a: 1}
-  inaccessibleColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   devices:
   - {fileID: 0}
   timerTime: 5
@@ -365,6 +364,18 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 23aa0ee5790ed4440bf53e23c8dbb1ad, type: 3}
+--- !u!114 &236812767731703816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2740388191581357694, guid: 23aa0ee5790ed4440bf53e23c8dbb1ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 2688230611806398070}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1816292462631006279 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4357873794352289329, guid: 23aa0ee5790ed4440bf53e23c8dbb1ad,

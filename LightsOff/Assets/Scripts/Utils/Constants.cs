@@ -36,11 +36,13 @@ public static class Constants
     public const string TagDirectionalLight = "DirectionalLight";
     public const string TagWindow = "Window";
     public const string TagOneWayPlatformTypeB = "OWPB";
+    public const string TagGate = "Gate";
 
     // Layers
     public const string LayerPlayer = "Player";
     public const string LayerInteractibleObject = "InteractibleObject";
     public const string LayerGround = "Ground";
+    public const string LayerGroundForPlayer = "GroundForPlayer";
     public const string LayerColliderForEnemies = "ColliderForEnemies";
 
     // Animator parameters/Animations
@@ -81,7 +83,7 @@ public static class Constants
     public const string UINoSaveFileFoundMessage = "No save file found.";
 
 
-    // WWISE
+    // ***** WWISE *****
 
     // Music
     public const string WwiseEventMusicStart = "Music_Start";
@@ -111,6 +113,7 @@ public static class Constants
     public const string WwiseEventPlayEnemyWander = "Play_EnemyWander";
     public const string WwiseEventStopEnemyPassOut = "Stop_EnemyPassOut";
     public const string WwiseEventStopEnemyWander = "Stop_EnemyWander";
+    public const string WwiseEventStopEnemyChasing = "Stop_EnemyChasing";
 
     // Devices
     public const string WwiseEventPlaySwitchOn = "Play_SwitchOn";

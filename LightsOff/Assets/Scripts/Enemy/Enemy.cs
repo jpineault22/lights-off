@@ -5,6 +5,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected EnemyState defaultEnemyState = default;
     [SerializeField] protected Transform groundDetection = default;
     [SerializeField] protected LayerMask groundLayerMask = default;
+    [SerializeField] protected ParticleSystem landParticles = default;
     [SerializeField] protected float stunnedTime = 2f;
     [SerializeField] protected float groundDetectionRaycastDistance = 1f;           // The distance of the raycast detecting the ground
     [SerializeField] protected float wallDetectionRaycastDistance = 0.25f;          // The distance of the raycast detecting walls
@@ -123,6 +124,10 @@ public abstract class Enemy : MonoBehaviour
         else if (isGrounded && currentEnemyState == EnemyState.Falling)
 		{
             currentEnemyState = previousEnemyState;
+
+            if (landParticles != null)
+                landParticles.Play();
+
             AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayEnemyLand, gameObject);
 		}
 	}
