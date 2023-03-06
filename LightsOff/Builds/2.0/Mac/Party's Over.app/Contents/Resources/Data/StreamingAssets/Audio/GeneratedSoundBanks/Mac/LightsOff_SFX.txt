@@ -1,0 +1,233 @@
+Event	ID	Name			Wwise Object Path	Notes
+	46699921	Play_KeygateOpens			\Devices\Keygate\Play_KeygateOpens	
+	232698797	Play_EnemyWakeUp			\Enemies\Play_EnemyWakeUp	
+	343926793	Play_PlayerEnterLevel			\Player\Play_PlayerEnterLevel	
+	503719263	Stop_Fan			\Devices\Fan\Stop_Fan	
+	658862086	Play_PlayerLand			\Player\Play_PlayerLand	
+	678353528	Stop_PlayerWalk			\Player\Stop_PlayerWalk	
+	724595405	Play_PlayerBounce			\Player\Play_PlayerBounce	
+	778267133	Play_TimerSwitch			\Devices\Switch\Play_TimerSwitch	
+	823015437	Play_SwitchOn			\Devices\Switch\Play_SwitchOn	
+	871860279	Play_EnemyStunned			\Enemies\Play_EnemyStunned	
+	904139487	Play_EnemyPassOut			\Enemies\Play_EnemyPassOut	
+	904873965	Play_MovingPlatformTypeB			\Devices\MovingPlatform\Play_MovingPlatformTypeB	
+	904873966	Play_MovingPlatformTypeA			\Devices\MovingPlatform\Play_MovingPlatformTypeA	
+	910581297	Play_PlayerDeath			\Player\Play_PlayerDeath	
+	1046622137	Play_SwitchOff			\Devices\Switch\Play_SwitchOff	
+	1153633900	Play_CycleSwitch			\Devices\Switch\Play_CycleSwitch	
+	1196441153	Play_DoorOpens			\Devices\Door\Play_DoorOpens	
+	1297425129	Play_OWBOn			\Devices\OneWayPlatform\Play_OWBOn	
+	1371404669	Play_EnemyWander			\Enemies\Play_EnemyWander	
+	1671381815	Stop_EnemyChasing			\Enemies\Stop_EnemyChasing	
+	1730740323	Play_PlayerBunk			\Player\Play_PlayerBunk	
+	1824093213	Play_EnemyStopChasing			\Enemies\Play_EnemyStopChasing	
+	1824946087	Play_TimerSwitchEnds			\Devices\Switch\Play_TimerSwitchEnds	
+	1832694765	Stop_EnemyPassOut			\Enemies\Stop_EnemyPassOut	
+	1950697752	Play_PlayerClimb			\Player\Play_PlayerClimb	
+	2093119550	Play_PlayerWalk			\Player\Play_PlayerWalk	
+	2277044357	Play_PlayerExitLevel			\Player\Play_PlayerExitLevel	
+	2293005965	Play_BreakerOn			\Devices\Breaker\Play_BreakerOn	
+	2347523137	Play_PivotingGateRotates			\Devices\PivotingGate\Play_PivotingGateRotates	
+	2353504566	Stop_PlayerClimb			\Player\Stop_PlayerClimb	
+	2492934017	Play_Conveyor			\Devices\Conveyor\Play_Conveyor	
+	2590346567	Stop_EnemyWander			\Enemies\Stop_EnemyWander	
+	2651187285	Play_OWBOff			\Devices\OneWayPlatform\Play_OWBOff	
+	2666922589	Play_EnemyStartChasing			\Enemies\Play_EnemyStartChasing	
+	2757069037	Play_Fan			\Devices\Fan\Play_Fan	
+	2894801721	Play_BreakerOff			\Devices\Breaker\Play_BreakerOff	
+	2976372756	Stop_MovingPlatformTypeA			\Devices\MovingPlatform\Stop_MovingPlatformTypeA	
+	2976372759	Stop_MovingPlatformTypeB			\Devices\MovingPlatform\Stop_MovingPlatformTypeB	
+	3004097409	Play_EnemyLand			\Enemies\Play_EnemyLand	
+	3073568824	Play_LadderMoves			\Devices\Ladder\Play_LadderMoves	
+	3519553787	Play_GateMoves			\Devices\Gate\Play_GateMoves	
+	3688398039	Stop_Conveyor			\Devices\Conveyor\Stop_Conveyor	
+	3690359235	Play_KeyCollect			\Devices\Key\Play_KeyCollect	
+	3817990921	Play_PlayerJump			\Player\Play_PlayerJump	
+	3883944503	Stop_TimerSwitch			\Devices\Switch\Stop_TimerSwitch	
+	3948844197	Play_DoorCloses			\Devices\Door\Play_DoorCloses	
+	4143950057	Play_PivotingGateBlocks			\Devices\PivotingGate\Play_PivotingGateBlocks	
+	4262882519	Play_KeyLands			\Devices\Key\Play_KeyLands	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	8277886	player-lands-wood-5_ZOOM0022_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-wood-5_ZOOM0022_Tr1_169007AD.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsWood\player-lands-wood-5_ZOOM0022_Tr1		14720
+	16023837	enemy-chasing-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-2		292952
+	26783373	enemy-walks-wood-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-1_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-1		13204
+	32110842	enemy-lands-voice-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-voice-3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsVoice\enemy-lands-voice-3		54114
+	39962822	enemy-chasing-15	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-15_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-15		167058
+	43950190	player-dies-1_ZOOM0026_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-dies-1_ZOOM0026_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\player-dies-1_ZOOM0026_Tr1		26842
+	52485885	breaker-off	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\breaker-off_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\breaker-off		30918
+	64180705	enemy-walks-wood-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-7_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-7		13202
+	80310197	player-lands-voice-36	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-36_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-36		33084
+	87376263	player-lands-voice-15	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-15_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-15		33220
+	92828044	enemy-lands-wood-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-wood-5_4D8D5A7E.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsWood\enemy-lands-wood-5		19148
+	95515676	player-lands-voice-27	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-27_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-27		34572
+	97547257	player-lands-voice-38	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-38_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-38		28760
+	99741202	enemy-chasing-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-4		236702
+	104883812	enemy-wander-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-2		125540
+	106768567	enemy-wakes-up-10	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-10_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-10		22976
+	118652009	moving-platform-type-a	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\moving-platform-type-a_33B49C2F.wem		\Actor-Mixer Hierarchy\Devices\moving-platform-type-a		91256
+	135577203	enemy-chasing-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-6_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-6		235808
+	136968152	enemy-wander-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-7_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-7		293398
+	138006938	breaker-on	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\breaker-on_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\breaker-on		36868
+	140287771	player-lands-voice-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-7_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-7		35248
+	148631401	player-enters-level_ZOOM0022_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-enters-level_ZOOM0022_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\player-enters-level_ZOOM0022_Tr1		120932
+	151974467	enemy-lands-voice-8	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-voice-8_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsVoice\enemy-lands-voice-8		36926
+	152115907	player-lands-voice-42	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-42_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-42		30516
+	164245154	player-lands-voice-25	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-25_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-25		40386
+	168883880	switch-timer-ends	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\switch-timer-ends_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\switch-timer-ends		234776
+	178639356	player-lands-voice-24	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-24_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-24		34032
+	179593651	player-lands-voice-2_ZOOM0025_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-2_ZOOM0025_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-2_ZOOM0025_Tr1		27964
+	184444105	player-lands-wood-2_ZOOM0022_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-wood-2_ZOOM0022_Tr1_169007AD.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsWood\player-lands-wood-2_ZOOM0022_Tr1		14462
+	198778753	enemy-wakes-up-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-3		40608
+	199886752	owb-appears	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\owb-appears_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\owb-appears		29314
+	201012351	door-opens-full	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\door-opens-full_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\door-opens-full		132142
+	201782597	enemy-starts-vomitting-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-starts-vomitting-1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyPassesOut\EnemyStartsVomitting\enemy-starts-vomitting-1		79560
+	205010729	enemy-lands-wood-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-wood-2_4D8D5A7E.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsWood\enemy-lands-wood-2		18668
+	207757407	player-lands-voice-35	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-35_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-35		29976
+	209000171	player-lands-voice-46	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-46_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-46		27136
+	209218441	player-lands-voice-31	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-31_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-31		31598
+	209831460	player-hit-11	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-11_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-11		16514
+	210811848	player-jumps_ZOOM0018_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-jumps_ZOOM0018_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\player-jumps_ZOOM0018_Tr1		8740
+	213622537	enemy-wander-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-1		142952
+	218848308	enemy-walks-wood-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-6_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-6		13202
+	223289746	enemy-lands-wood-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-wood-3_4D8D5A7E.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsWood\enemy-lands-wood-3		18140
+	224403191	enemy-chasing-8	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-8_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-8		169738
+	231413083	player-lands-voice-26	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-26_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-26		23486
+	236794105	player-climbs-feet-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-climbs-feet-1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerClimbsFeet\player-climbs-feet-1		11896
+	238411238	enemy-stops-chasing-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-stops-chasing-3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyStopsChasingVoice\enemy-stops-chasing-3		26546
+	244737482	enemy-lands-voice-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-voice-7_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsVoice\enemy-lands-voice-7		32350
+	249288272	enemy-chasing-11	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-11_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-11		222416
+	257496725	enemy-chasing-12	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-12_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-12		225094
+	258062463	enemy-wakes-up-8	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-8_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-8		16446
+	271655904	enemy-wander-10	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-10_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-10		112596
+	272034696	enemy-walks-wood-9	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-9_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-9		13202
+	274844215	keygate-opens	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\keygate-opens_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\KeygateOpens\keygate-opens		104010
+	282312269	enemy-lands-voice-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-voice-5_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsVoice\enemy-lands-voice-5		53500
+	283827296	moving-platform-type-b	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\moving-platform-type-b_2ACEC106.wem		\Actor-Mixer Hierarchy\Devices\moving-platform-type-b		49170
+	284836172	enemy-wakes-up-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-5_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-5		45296
+	287891295	switch-timer-on	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\switch-timer-on_D79FB2B7.wem		\Actor-Mixer Hierarchy\Devices\switch-timer-on		99364
+	291072036	enemy-chasing-13	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-13_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-13		214380
+	306199374	enemy-vomits-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-vomits-1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyPassesOut\EnemyVomits\enemy-vomits-1		311702
+	306516321	player-hit-9	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-9_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-9		23392
+	330865697	player-lands-voice-44	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-44_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-44		40184
+	338870114	player-lands-voice-50	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-50_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-50		19836
+	340189371	enemy-wander-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-3		158130
+	346775758	player-walks-wood-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-6_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-6		9350
+	347521397	enemy-lands-wood-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-wood-4_4D8D5A7E.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsWood\enemy-lands-wood-4		16532
+	363213536	player-lands-voice-9	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-9_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-9		26054
+	372556561	player-hit-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-5_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-5		19526
+	374997479	enemy-wakes-up-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-7_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-7		27494
+	394661085	player-lands-voice-45	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-45_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-45		20984
+	408265785	key-lands	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\key-lands_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\key-lands		44936
+	412251079	enemy-wakes-up-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-1		29952
+	428104059	enemy-chasing-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-3		414940
+	428317779	player-bounce_ZOOM0016_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-bounce_louder-more-bass_ZOOM0016_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\player-bounce_ZOOM0016_Tr1		22646
+	432145853	enemy-wander-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-6_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-6		212594
+	435811951	player-lands-voice-20	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-20_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-20		26190
+	442184811	enemy-lands-voice-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-voice-2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsVoice\enemy-lands-voice-2		41166
+	444209950	enemy-stops-chasing-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-stops-chasing-2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyStopsChasingVoice\enemy-stops-chasing-2		8931666
+	455002223	player-lands-voice-49	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-49_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-49		23420
+	455200698	enemy-wakes-up-9	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-9_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-9		41614
+	463999406	player-lands-voice-21	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-21_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-21		30516
+	467736086	enemy-chasing-17	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-17_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-17		110810
+	469286048	enemy-chasing-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-5_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-5		200988
+	470058010	player-walks-wood-9	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-9_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-9		9350
+	487794462	door-closes	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\door-closes_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\door-closes		84942
+	488856948	gate-moves	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\gate-moves_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\KeygateOpens\gate-moves		27436
+	496262937	player-lands-voice-43	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-43_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-43		25446
+	502625090	player-lands-wood-1_ZOOM0022_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-wood-1_ZOOM0022_Tr1_169007AD.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsWood\player-lands-wood-1_ZOOM0022_Tr1		12154
+	504629262	enemy-walks-wood-8	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-8_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-8		13204
+	511408978	player-lands-voice-48	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-48_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-48		22946
+	512902393	player-hit-8	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-8_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-8		23592
+	513335707	player-walks-wood-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-5_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-5		9350
+	513622564	enemy-walks-wood-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-2_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-2		13204
+	516234311	enemy-stops-chasing-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-stops-chasing-5_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyStopsChasingVoice\enemy-stops-chasing-5		32352
+	518728630	owb-disappears	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\owb-disappears_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\owb-disappears		25982
+	537131472	enemy-wander-8	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-8_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-8		225094
+	542131375	enemy-walks-wood-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-5_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-5		13202
+	557193747	player-lands-voice-53	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-53_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-53		23080
+	558759438	player-climbs-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-climbs-1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerClimbs\player-climbs-1		11896
+	560600803	player-lands-wood-4_ZOOM0022_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-wood-4_ZOOM0022_Tr1_169007AD.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsWood\player-lands-wood-4_ZOOM0022_Tr1		15490
+	563021380	player-hit-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-7_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-7		18974
+	569575878	player-lands-voice-11	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-11_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-11		30110
+	588297075	player-lands-voice-1_ZOOM0025_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-1_ZOOM0025_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-1_ZOOM0025_Tr1		27144
+	591881644	key-collect	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\key-collect_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\key-collect		203660
+	596890748	enemy-lands-voice-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-voice-4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsVoice\enemy-lands-voice-4		43846
+	609840789	pivoting-gate-rotates	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\pivoting-gate-rotates_louder_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\pivoting-gate-rotates		51554
+	610436761	player-bunks-wood-1_ZOOM0022_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-bunks-wood-1_ZOOM0022_Tr1_9E8B789E.wem		\Actor-Mixer Hierarchy\Player\player-bunks-wood-1_ZOOM0022_Tr1		14462
+	610989497	enemy-chasing-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-1		295630
+	640962474	player-lands-voice-40	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-40_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-40		23350
+	643338500	switch-on	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\switch-on_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\CycleSwitchPressed\switch-on		20640
+	644787074	player-lands-wood-3_ZOOM0022_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-wood-3_ZOOM0022_Tr1_169007AD.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsWood\player-lands-wood-3_ZOOM0022_Tr1		16354
+	646085168	player-lands-voice-47	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-47_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-47		20782
+	657599322	player-lands-voice-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-6_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-6		30516
+	665546155	enemy-walks-wood-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-3_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-3		13200
+	666016965	player-walks-wood-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-2_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-2		9350
+	666901976	switch-off	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\switch-off_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\CycleSwitchPressed\switch-off		20836
+	668180104	player-walks-wood-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-3_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-3		9350
+	670458841	enemy-vomits-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-vomits-4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyPassesOut\EnemyVomits\enemy-vomits-4		458128
+	679276883	player-lands-voice-52	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-52_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-52		23284
+	685610327	enemy-vomits-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-vomits-2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyPassesOut\EnemyVomits\enemy-vomits-2		653662
+	707979610	enemy-chasing-10	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-10_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-10		190274
+	717821777	enemy-stops-chasing-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-stops-chasing-1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyStopsChasingVoice\enemy-stops-chasing-1		44740
+	720630617	enemy-bounced-on	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-bounced-on_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\enemy-bounced-on		26010
+	722972426	player-lands-voice-55	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-55_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-55		24636
+	739743102	enemy-wander-11	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-11_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-11		134024
+	753638620	enemy-wakes-up-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-2		23590
+	755884316	enemy-wander-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-4		164380
+	758061761	player-hit-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-3_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-3		22186
+	758458434	enemy-stops-chasing-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-stops-chasing-7_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyStopsChasingVoice\enemy-stops-chasing-7		51658
+	764486082	enemy-wakes-up-11	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-11_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-11		49204
+	765591026	enemy-wakes-up-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-6_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-6		28612
+	765927644	player-climbs-feet-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-climbs-feet-2_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerClimbsFeet\player-climbs-feet-2		11896
+	775541173	enemy-chasing-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-7_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-7		207238
+	777935697	enemy-vomits-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-vomits-3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyPassesOut\EnemyVomits\enemy-vomits-3		578662
+	787255345	enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\enemy-stunned_403002__martian__classic-dizzy-take-slide-whistle		208096
+	792969787	player-climbs-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-climbs-2_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerClimbs\player-climbs-2		11896
+	795839262	player-climbs-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-climbs-3_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerClimbs\player-climbs-3		11896
+	800195420	enemy-walks-wood-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-walks-wood-4_14970987.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWalksWood\enemy-walks-wood-4		13200
+	812174385	player-lands-voice-37	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-37_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-37		34572
+	819038912	player-lands-voice-29	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-29_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-29		29298
+	819739533	player-lands-voice-12	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-12_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-12		35384
+	821390946	player-hit-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-6_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-6		22864
+	822185327	player-climbs-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-climbs-4_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerClimbs\player-climbs-4		11896
+	823867311	player-hit-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-4_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-4		28314
+	844091219	enemy-wander-9	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-9_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-9		59916
+	847140302	player-lands-voice-39	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-39_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-39		19836
+	857885265	player-climbs-feet-3	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-climbs-feet-3_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerClimbsFeet\player-climbs-feet-3		11896
+	860358613	player-lands-voice-23	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-23_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-23		23486
+	871759193	player-lands-voice-51	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-51_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-51		20714
+	874063927	enemy-stops-chasing-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-stops-chasing-6_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyStopsChasingVoice\enemy-stops-chasing-6		36146
+	877580922	enemy-wander-12	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-12_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-12		226434
+	878337161	enemy-chasing-16	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-16_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-16		164380
+	878517920	player-walks-wood-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-4_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-4		9350
+	878616986	player-dies-full_ZOOM0026_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-dies-full_ZOOM0026_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\player-dies-full_ZOOM0026_Tr1		100640
+	880708887	enemy-wakes-up-12	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-12_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-12		27048
+	898801930	enemy-lands-voice-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-voice-1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsVoice\enemy-lands-voice-1		38934
+	905898784	player-walks-wood-7	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-7_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-7		9350
+	913261334	ladder-moves	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\ladder-moves_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\ladder-moves		21828
+	917795215	enemy-lands-wood-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-wood-1_4D8D5A7E.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsWood\enemy-lands-wood-1		14372
+	933315066	enemy-lands-voice-6	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-lands-voice-6_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyLandsVoice\enemy-lands-voice-6		40498
+	936193947	player-lands-voice-54	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-54_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-54		27406
+	948516692	player-climbs-feet-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-climbs-feet-4_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerClimbsFeet\player-climbs-feet-4		11896
+	954233564	enemy-chasing-14	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-14_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-14		194738
+	955218869	pivoting-gate-blocks	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\pivoting-gate-blocks_louder_10C4C929.wem		\Actor-Mixer Hierarchy\Devices\pivoting-gate-blocks		38170
+	957291573	player-hit-10	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-10_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-10		15860
+	963456079	player-dies-2_ZOOM0026_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-dies-2_ZOOM0026_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\player-dies-2_ZOOM0026_Tr1		48182
+	963634068	conveyor	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\conveyor_76DF60E8.wem		\Actor-Mixer Hierarchy\Devices\conveyor		186696
+	969968094	player-walks-wood-8	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-8_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-8		9350
+	978607854	player-hit-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-1_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-1		29216
+	981294644	player-lands-voice-8	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-8_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-8		28760
+	1010198537	player-exits-level_ZOOM0022_Tr1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-exits-level_ZOOM0022_Tr1_10C4C929.wem		\Actor-Mixer Hierarchy\Player\player-exits-level_ZOOM0022_Tr1		120932
+	1017646361	player-lands-voice-41	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-41_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-41		22540
+	1022102076	enemy-wander-5	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wander-5_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWanderHum\enemy-wander-5		258578
+	1022857879	enemy-stops-chasing-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-stops-chasing-4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyStopsChasingVoice\enemy-stops-chasing-4		31012
+	1023741356	player-walks-wood-1	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-walks-wood-1_99173E45.wem		\Actor-Mixer Hierarchy\Player\PlayerWalksWood\player-walks-wood-1		9350
+	1030741682	player-lands-voice-18	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-18_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-18		45660
+	1039224084	fan	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\fan-2_D74CF663.wem		\Actor-Mixer Hierarchy\Devices\fan		263488
+	1042923582	player-hit-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-hit-2_9CDAB852.wem		\Actor-Mixer Hierarchy\Player\PlayerHit\player-hit-2		32378
+	1043677084	enemy-wakes-up-4	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-wakes-up-4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyWakesUp\enemy-wakes-up-4		33578
+	1046704695	player-lands-voice-10	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\player-lands-voice-10_10C4C929.wem		\Actor-Mixer Hierarchy\Player\PlayerLandsVoice\player-lands-voice-10		23486
+	1069924916	enemy-starts-vomitting-2	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-starts-vomitting-2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyPassesOut\EnemyStartsVomitting\enemy-starts-vomitting-2		151880
+	1070822844	enemy-chasing-9	C:\Users\client\Documents\GitHub\lights-off\LightsOff\LightsOff_Wwise\.cache\Mac\SFX\enemy-chasing-9_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\EnemyChasing\enemy-chasing-9		190274
+
