@@ -1958,7 +1958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPosition: {x: -2, y: 1.75}
-  cameraSize: 10
+  cameraSize: 10.5
 --- !u!1001 &543762588
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class Breaker : InteractibleObject
 
 			foreach (Device device in devices)
 			{
-				device.ShowOutline(true, true);
+				device.ShowOutline(true, true, false);
 			}
 		}
 	}
@@ -49,7 +49,7 @@ public class Breaker : InteractibleObject
 
 			foreach (Device device in devices)
 			{
-				device.ShowOutline(false, true);
+				device.ShowOutline(false, true, false);
 			}
 		}
 	}

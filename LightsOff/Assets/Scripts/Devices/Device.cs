@@ -32,7 +32,7 @@ public class Device : RotatableObject
 			{
 				outlineSpriteRenderer = obj.GetComponent<SpriteRenderer>();
 				outlineSpriteRenderer.color = UIManager.Instance.deviceOutlineColor;
-				ShowOutline(false, false);
+				ShowOutline(false, false, false);
 			}
 		}
 
@@ -83,9 +83,9 @@ public class Device : RotatableObject
 		}
 	}
 
-	public virtual void ShowOutline(bool pShow, bool pFromBreaker)
+	public virtual void ShowOutline(bool pShow, bool pFromBreaker, bool pSwitchBlocked)
 	{
-		ChangeOutlineColor(pFromBreaker, false);
+		ChangeOutlineColor(pFromBreaker, pSwitchBlocked);
 		
 		outlineSpriteRenderer.enabled = pShow;
 	}

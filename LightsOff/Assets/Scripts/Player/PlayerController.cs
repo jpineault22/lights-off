@@ -527,9 +527,11 @@ public class PlayerController : Singleton<PlayerController>
         if (previouslyNotGrounded && isGrounded && justFell)
 		{
             justFell = false;
-            
+
             if (CurrentCharacterState != CharacterState.Jumping)
                 landParticles.Play();
+            else
+                return;
 
             AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerLand, gameObject);
         }
@@ -718,7 +720,6 @@ public class PlayerController : Singleton<PlayerController>
         transform.position = new Vector2(pDoorHorizontalPosition, transform.position.y);
         ResetCharacterForReload();
         animator.SetBool(Constants.AnimatorCharacterIsExitingLevel, true);
-        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
         AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventPlayPlayerExitLevel, gameObject);
     }
 
@@ -735,6 +736,7 @@ public class PlayerController : Singleton<PlayerController>
 	{
         CurrentCharacterState = CharacterState.LevelTransition;
         animator.SetFloat(Constants.AnimatorCharacterSpeed, 0);
+        AudioManager.Instance.TriggerWwiseEvent(Constants.WwiseEventStopPlayerWalk, gameObject);
         rb.velocity = Vector2.zero;
         rb.gravityScale = 0;
         boxCollider.enabled = false;

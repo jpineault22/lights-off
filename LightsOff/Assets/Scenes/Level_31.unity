@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPosition: {x: -5, y: 1}
-  cameraSize: 8
+  cameraSize: 9
 --- !u!1 &542254044
 GameObject:
   m_ObjectHideFlags: 0

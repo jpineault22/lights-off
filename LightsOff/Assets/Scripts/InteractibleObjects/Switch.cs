@@ -57,7 +57,7 @@ public class Switch : InteractibleObject
 	{
 		foreach (Device device in devices)
 		{
-			device.ShowOutline(pShow, false);
+			device.ShowOutline(pShow, false, switchBlocked);
 		}
 	}
 

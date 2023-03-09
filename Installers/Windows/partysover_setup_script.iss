@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Party's Over"
-#define MyAppVersion "2.0"
+#define MyAppVersion "2.1"
 #define MyAppPublisher "GlutenFactory"
 #define MyAppExeName "Party's Over.exe"
 
@@ -18,8 +18,8 @@ DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\client\Documents\GitHub\lights-off\Installers\Windows
-OutputBaseFilename=PartysOver_Setup_2.0_x64
+OutputDir=C:\Users\client\Documents\GitHub\lights-off\Installers\Windows\2.1
+OutputBaseFilename=PartysOver_Setup_2.1_x64
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -31,11 +31,11 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.0\Windows\Party's Over.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.0\Windows\UnityCrashHandler64.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.0\Windows\UnityPlayer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.0\Windows\Party's Over_Data\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.0\Windows\MonoBleedingEdge\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.1\Windows\Party's Over.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.1\Windows\UnityCrashHandler64.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.1\Windows\UnityPlayer.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.1\Windows\Party's Over_Data\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\client\Documents\GitHub\lights-off\LightsOff\Builds\2.1\Windows\MonoBleedingEdge\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
