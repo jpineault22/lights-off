@@ -1,0 +1,42 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	258110631	Game_Music			\Default Work Unit\Game_Music	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Game_Music			
+	984691642	InGame	Game_Music			
+	2607556080	Menu	Game_Music			
+	3966194980	Ending	Game_Music			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	116136895	TransitionMusicVolume			\Default Work Unit\TransitionMusicVolume	
+	365633811	AmbianceVolume			\Default Work Unit\AmbianceVolume	
+	988953028	SFXVolume			\Default Work Unit\SFXVolume	
+	2346531308	MusicVolume			\Default Work Unit\MusicVolume	
+	2918011349	MasterVolume			\Default Work Unit\MasterVolume	
+	3415057477	UIVolume			\Default Work Unit\UIVolume	
+	3759402643	TransitionSFXVolume			\Default Work Unit\TransitionSFXVolume	
+	3806583020	TransitionUIVolume			\Default Work Unit\TransitionUIVolume	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	539823707	Transition SFX Bus			\Default Work Unit\Master Audio Bus\Transition SFX Bus	
+	1502772432	SFX Bus			\Default Work Unit\Master Audio Bus\Transition SFX Bus\SFX Bus	
+	1869333166	Ambiances Bus			\Default Work Unit\Master Audio Bus\Ambiances Bus	
+	1944779609	Devices SFX Bus			\Default Work Unit\Master Audio Bus\Transition SFX Bus\SFX Bus\Devices SFX Bus	
+	2827189892	Enemies SFX Bus			\Default Work Unit\Master Audio Bus\Transition SFX Bus\SFX Bus\Enemies SFX Bus	
+	3127962312	Music Bus			\Default Work Unit\Master Audio Bus\Transition Music Bus\Music Bus	
+	3386330335	Transition Music Bus			\Default Work Unit\Master Audio Bus\Transition Music Bus	
+	3600729941	UI Bus			\Default Work Unit\Master Audio Bus\Transition UI Bus\UI Bus	
+	3651706989	Player SFX Bus			\Default Work Unit\Master Audio Bus\Transition SFX Bus\SFX Bus\Player SFX Bus	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3947286728	Transition UI Bus			\Default Work Unit\Master Audio Bus\Transition UI Bus	
+
+Effect plug-ins	ID	Name	Type				Notes
+	45716448	Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)	Wwise Peak Limiter			
+	332853730	Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)	Wwise Peak Limiter			
+	490705677	Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)	Wwise Peak Limiter			
+	855840085	Brick_Wall_Minus_6dB_Peak_Fast_Release (Custom)	Wwise Peak Limiter			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+
